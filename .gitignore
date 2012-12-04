@@ -1,0 +1,9 @@
+.DS_Store
+.sass-cache
+node_modules
+logs/*
+*.gz
+/config/test/config.yml
+/config/prod/config.yml
+/config/dev/config.yml
+tmp/*
