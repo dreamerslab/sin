@@ -9,7 +9,7 @@ var Schema = function ( Schema ){
   var Models = {
 
     Post : new Schema({
-      artist_id  : { type : ObjectId, required : true },
+      artist     : { type : ObjectId, ref : 'Artist', required : true, index : true },
       title      : { type : String, required : true },
       content    : { type : String, required : true },
       cover      : { type : String }, // url
