@@ -8,15 +8,6 @@ var Schema = function ( Schema ){
 
   var Models = {
 
-    Post : new Schema({
-      artist     : { type : ObjectId, ref : 'Artist', required : true, index : true },
-      title      : { type : String, required : true },
-      content    : { type : String, required : true },
-      cover      : { type : String }, // url
-      created_at : { type : Number, default : Date.now },
-      updated_at : { type : Number }
-    }),
-
     Artist : new Schema({
       name       : { type : String, required : true },
       brief      : { type : String },
@@ -34,6 +25,15 @@ var Schema = function ( Schema ){
     Link : new Schema({
       title      : { type : String, required : true },
       url        : { type : String, required : true },
+      created_at : { type : Number, default : Date.now },
+      updated_at : { type : Number }
+    }),
+
+    Post : new Schema({
+      artist     : { type : ObjectId, ref : 'Artist', required : true, index : true },
+      title      : { type : String, required : true },
+      content    : { type : String, required : true },
+      cover      : { type : String }, // url
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
