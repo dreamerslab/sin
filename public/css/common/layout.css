@@ -1,0 +1,177 @@
+/* line 17, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../../../app/sass/common/layout.sass */
+#wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* line 8, ../../../app/sass/common/layout.sass */
+#header {
+  height: 450px;
+  margin: 0 auto;
+  background-size: 912px 400px;
+  background-repeat: no-repeat;
+  background-position: 48px 77px;
+}
+
+/* line 18, ../../../app/sass/common/layout.sass */
+#logo-wrap {
+  display: inline;
+  float: left;
+  width: 200px;
+  height: 179px;
+  padding: 8px 0 0;
+}
+
+/* line 24, ../../../app/sass/common/layout.sass */
+#logo {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  display: block;
+  width: 200px;
+  height: 179px;
+  background: url('/img/common/logo@2x.png?1355199476') no-repeat;
+  background-size: 200px 179px;
+}
+
+/* line 32, ../../../app/sass/common/layout.sass */
+#nav {
+  display: inline;
+  float: right;
+}
+
+/* line 35, ../../../app/sass/common/layout.sass */
+.nav-item {
+  display: inline;
+  float: left;
+}
+
+/* line 41, ../../../app/sass/common/layout.sass */
+.nav-link {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  display: block;
+  background-size: 120px auto;
+  background-repeat: no-repeat;
+  background-position: top left;
+  width: 120px;
+  height: 60px;
+  text-decoration: none;
+}
+/* line 50, ../../../app/sass/common/layout.sass */
+.nav-link:hover, .nav-link:active {
+  background-position: 0 -60px;
+}
+
+/* line 53, ../../../app/sass/common/layout.sass */
+#nav-news {
+  background-image: url('/img/common/nav-news@2x.png?1355201422');
+}
+
+/* line 56, ../../../app/sass/common/layout.sass */
+#nav-artists {
+  background-image: url('/img/common/nav-artists@2x.png?1355212745');
+}
+
+/* line 59, ../../../app/sass/common/layout.sass */
+#nav-releases {
+  background-image: url('/img/common/nav-releases@2x.png?1355212824');
+}
+
+/* line 62, ../../../app/sass/common/layout.sass */
+#nav-live {
+  background-image: url('/img/common/nav-live@2x.png?1355212918');
+}
+
+/* line 65, ../../../app/sass/common/layout.sass */
+#nav-videos {
+  background-image: url('/img/common/nav-videos@2x.png?1355212980');
+}
+
+/* line 68, ../../../app/sass/common/layout.sass */
+#nav-contact {
+  background-image: url('/img/common/nav-contact@2x.png?1355213140');
+}
+
+/* line 71, ../../../app/sass/common/layout.sass */
+#footer {
+  clear: both;
+  text-align: center;
+  color: #888888;
+}
+
+/* line 76, ../../../app/sass/common/layout.sass */
+.footer-link {
+  text-decoration: none;
+  color: #888888;
+}
+/* line 79, ../../../app/sass/common/layout.sass */
+.footer-link:hover {
+  color: black;
+}

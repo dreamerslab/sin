@@ -1,0 +1,133 @@
+@import compass
+
+$title-font: Helvetica, sans-serif
+$body-font: Helvetica, sans-serif
+
+$color-main: #000
+$color-link: #6da4b2
+
+#main
+  +float-left
+  width: 800px
+  padding: 50px 0 0
+
+.block-title
+  +hide-text
+  display: block
+
+$news-title-width: 162px
+$news-title-height: 31px
+
+#news-title-link
+  background-image: image-url( 'common/news-title@2x.png' )
+  background-size: $news-title-width $news-title-height
+  width: $news-title-width
+  height: $news-title-height
+
+.news-entry
+  position: relative
+  width: 490px
+  padding: 30px 0 30px
+
+.title
+  +inline-block
+  font-size: 21px
+  color: $color-main
+
+.news-entry-title-link
+  color: $color-main
+  font-family: $title-font
+  font-size: 22px
+  line-height: 26px
+  text-decoration: none
+  &:hover
+    color: $color-link
+
+.news-entry-p
+  font-family: $body-font
+  font-size: 13px
+  color: $color-main
+  line-height: 18px
+  margin: 0 0 20px
+
+.read-more
+  color: $color-link
+  text-decoration: none
+  font-size: 13px
+  position: absolute
+  bottom: 53px
+  right: 8px
+  &:hover
+    text-decoration: underline
+
+.news-date
+  position: absolute
+  top: 5px
+  left: 0
+  font-family: $body-font
+  font-size: 14px
+  color: $color-link
+  line-height: 18px
+
+.news-thumb
+  position: absolute
+  top: 10px
+  right: -180px
+  border: 5px solid #eaeaea
+  width: 150px
+  height: 150px
+
+$release-title-width: 200px
+$release-title-height: 43px
+
+#release-title-link
+  background-image: image-url( 'common/releases-title@2x.png' )
+  background-size: $release-title-width $release-title-height
+  width: $release-title-width
+  height: $release-title-height
+
+#releases-list, #videos-list
+  +clearfix
+  padding: 30px 0
+
+.release-link, .video-link
+  +float-left
+  width: 145px
+  padding: 0 10px 0 0
+  text-decoration: none
+
+.release-thumb, .video-thumb
+  +inline-block
+  border: 10px solid #eaeaea
+  margin: 0 0 5px
+
+.release-thumb
+  width: 120px
+  height: 120px
+
+$videos-title-width: 200px
+$videos-title-height: 43px
+
+#videos-title-link
+  background-image: image-url( 'common/videos-title@2x.png' )
+  background-size: $videos-title-width $videos-title-height
+  width: $videos-title-width
+  height: $videos-title-height
+
+.video-thumb
+  width: 120px
+  height: 90px
+
+.release-title, .release-author, .video-title, .video-author
+  font-size: 14px
+  font-weight: bold
+
+.release-date, .video-date
+  display: block
+  color: $color-link
+  font-size: 13px
+
+#sidebar
+  +float-right
+  width: 320px
+  padding: 30px 0 0

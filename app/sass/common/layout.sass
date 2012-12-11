@@ -1,0 +1,80 @@
+@import compass
+@import compass/reset
+
+#wrap
+  width: 960px
+  margin: 0 auto
+
+#header
+  height: 450px
+  margin: 0 auto
+  background-size: 912px 400px
+  background-repeat: no-repeat
+  background-position: 48px 77px
+
+$logo-width: 200px
+$logo-height: 179px
+
+#logo-wrap
+  +float-left
+  width: $logo-width
+  height: $logo-height
+  padding: 8px 0 0
+
+#logo
+  +hide-text
+  display: block
+  width: $logo-width
+  height: $logo-height
+  background: image-url( 'common/logo@2x.png' ) no-repeat
+  background-size: $logo-width $logo-height
+
+#nav
+  +float-right
+
+.nav-item
+  +float-left
+
+$nav-width: 120px
+$nav-height: 60px
+
+.nav-link
+  +hide-text
+  display: block
+  background-size: $nav-width auto
+  background-repeat: no-repeat
+  background-position: top left
+  width: $nav-width
+  height: $nav-height
+  text-decoration: none
+  &:hover, &:active
+    background-position: 0 -60px
+
+#nav-news
+  background-image: image-url( 'common/nav-news@2x.png' )
+
+#nav-artists
+  background-image: image-url( 'common/nav-artists@2x.png' )
+
+#nav-releases
+  background-image: image-url( 'common/nav-releases@2x.png' )
+
+#nav-live
+  background-image: image-url( 'common/nav-live@2x.png' )
+
+#nav-videos
+  background-image: image-url( 'common/nav-videos@2x.png' )
+
+#nav-contact
+  background-image: image-url( 'common/nav-contact@2x.png' )
+
+#footer
+  clear: both
+  text-align: center
+  color: #888
+
+.footer-link
+  text-decoration: none
+  color: #888
+  &:hover
+    color: #000

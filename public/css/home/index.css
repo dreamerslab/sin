@@ -1,0 +1,182 @@
+/* line 9, ../../../app/sass/home/index.sass */
+#main {
+  display: inline;
+  float: left;
+  width: 800px;
+  padding: 50px 0 0;
+}
+
+/* line 14, ../../../app/sass/home/index.sass */
+.block-title {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  display: block;
+}
+
+/* line 21, ../../../app/sass/home/index.sass */
+#news-title-link {
+  background-image: url('/img/common/news-title@2x.png?1355217177');
+  background-size: 162px 31px;
+  width: 162px;
+  height: 31px;
+}
+
+/* line 27, ../../../app/sass/home/index.sass */
+.news-entry {
+  position: relative;
+  width: 490px;
+  padding: 30px 0 30px;
+}
+
+/* line 32, ../../../app/sass/home/index.sass */
+.title {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  font-size: 21px;
+  color: black;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.title {
+  *display: inline;
+}
+
+/* line 37, ../../../app/sass/home/index.sass */
+.news-entry-title-link {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  text-decoration: none;
+}
+/* line 43, ../../../app/sass/home/index.sass */
+.news-entry-title-link:hover {
+  color: #6da4b2;
+}
+
+/* line 46, ../../../app/sass/home/index.sass */
+.news-entry-p {
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  color: black;
+  line-height: 18px;
+  margin: 0 0 20px;
+}
+
+/* line 53, ../../../app/sass/home/index.sass */
+.read-more {
+  color: #6da4b2;
+  text-decoration: none;
+  font-size: 13px;
+  position: absolute;
+  bottom: 53px;
+  right: 8px;
+}
+/* line 60, ../../../app/sass/home/index.sass */
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* line 63, ../../../app/sass/home/index.sass */
+.news-date {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: #6da4b2;
+  line-height: 18px;
+}
+
+/* line 72, ../../../app/sass/home/index.sass */
+.news-thumb {
+  position: absolute;
+  top: 10px;
+  right: -180px;
+  border: 5px solid #eaeaea;
+  width: 150px;
+  height: 150px;
+}
+
+/* line 83, ../../../app/sass/home/index.sass */
+#release-title-link {
+  background-image: url('/img/common/releases-title@2x.png?1355217040');
+  background-size: 200px 43px;
+  width: 200px;
+  height: 43px;
+}
+
+/* line 89, ../../../app/sass/home/index.sass */
+#releases-list, #videos-list {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 30px 0;
+}
+
+/* line 93, ../../../app/sass/home/index.sass */
+.release-link, .video-link {
+  display: inline;
+  float: left;
+  width: 145px;
+  padding: 0 10px 0 0;
+  text-decoration: none;
+}
+
+/* line 99, ../../../app/sass/home/index.sass */
+.release-thumb, .video-thumb {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  border: 10px solid #eaeaea;
+  margin: 0 0 5px;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.release-thumb, .video-thumb {
+  *display: inline;
+}
+
+/* line 104, ../../../app/sass/home/index.sass */
+.release-thumb {
+  width: 120px;
+  height: 120px;
+}
+
+/* line 111, ../../../app/sass/home/index.sass */
+#videos-title-link {
+  background-image: url('/img/common/videos-title@2x.png?1355217121');
+  background-size: 200px 43px;
+  width: 200px;
+  height: 43px;
+}
+
+/* line 117, ../../../app/sass/home/index.sass */
+.video-thumb {
+  width: 120px;
+  height: 90px;
+}
+
+/* line 121, ../../../app/sass/home/index.sass */
+.release-title, .release-author, .video-title, .video-author {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* line 125, ../../../app/sass/home/index.sass */
+.release-date, .video-date {
+  display: block;
+  color: #6da4b2;
+  font-size: 13px;
+}
+
+/* line 130, ../../../app/sass/home/index.sass */
+#sidebar {
+  display: inline;
+  float: right;
+  width: 320px;
+  padding: 30px 0 0;
+}

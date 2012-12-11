@@ -7,28 +7,42 @@
     <meta name="description" content="<?= it.description || '' ?>" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <?= it.css( it.styles ) ?>
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div id="wrap">
-      <div id="header">
-        <header>
-          <h1><?= it.title ?></h1>
-          <a id="logo" href="/" rel="home" title="Go to home page">
-            sin
-          </a>
-        </header>
-        <?= it.partial( 'common/_nav' ) ?>
+      <div id="header" style="background-image: url( '/img/cover.jpeg' );">
+        <h1 id="logo-wrap">
+          <a id="logo" href="/" title="Go to 三十而立 homepage">三十而立</a>
+        </h1>
+        <div id="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/" id="nav-news" class="nav-link" title="Go to News page">News</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" id="nav-artists" class="nav-link" title="Go to Artists page">Artists</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" id="nav-releases" class="nav-link" title="Go to Releases page">Releases</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" id="nav-live" class="nav-link" title="Go to Live page">Live</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" id="nav-videos" class="nav-link" title="Go to Videos page">Videos</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" id="nav-contact" class="nav-link" title="Go to Contact page">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div id="content" role="main">
-        <?= it.messages() ?>
         <?= it.body ?>
       </div>
-      <footer>
-        Powered by <a id="logo-s" href="http://coke-js.org">COKE</a>
-      </footer>
+      <div id="footer">
+        Powered by <a class="footer-link" href="http://coke-js.org">三十而立</a>
+      </div>
     </div>
     <?= it.js( it.scripts ) ?>
   </body>

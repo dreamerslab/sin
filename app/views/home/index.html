@@ -1,6 +1,27 @@
-<? it.title = 'Welcome to sin'; ?>
+<? it.title = '三十而立 homepage'; ?>
 <? it.nav_selected = 'home'; ?>
 
-<h2>
-  “ COKE is a lightweight node.js MVC framework that speeds up your web development. It’s simple, it’s modulized, it’s somking fast! ”
-</h2>
+<? it.styles.push( 'home' ); ?>
+
+<div id="main">
+  <?= it.partial( 'home/_news' ) ?>
+  <?= it.partial( 'home/_releases' ) ?>
+  <?= it.partial( 'home/_videos' ) ?>
+</div>
+
+<div id="sidebar">
+  <div id="soundcould-player">
+    <iframe
+      width="100%"
+      height="450"
+      scrolling="no"
+      frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1983744&amp;color=75d0dc&amp;auto_play=false&amp;show_artwork=true">
+    </iframe>
+  </div>
+  <div id="latest-lives">
+    Wait for JO
+  </div>
+  <div id="fb-fanpage">
+    FB page badges
+  </div>
+</div>
