@@ -30,7 +30,7 @@
 }
 /* line 28, ../../../app/sass/news/show.sass */
 .news-entry a {
-  color: #86b6c6;
+  color: #6da4b2;
   text-decoration: none;
 }
 /* line 31, ../../../app/sass/news/show.sass */
@@ -51,7 +51,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: #86b6c6;
+  color: #6da4b2;
   font-family: sans-serif;
 }
 
@@ -75,7 +75,7 @@
   vertical-align: middle;
   *vertical-align: auto;
   font-family: sans-serif;
-  color: #86b6c6;
+  color: #6da4b2;
   text-decoration: none;
   background: url('/img/common/footer-nav-prev@2x.png?1355804387') no-repeat top left;
   background-size: 12px auto;

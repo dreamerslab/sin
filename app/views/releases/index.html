@@ -1,15 +1,20 @@
 <? it.title = 'Releases Index'; ?>
+<? it.styles.push( 'releases-index' ); ?>
 
 <div id="releases">
-  <a href="/release/show" class="release-link">
-    <img src="/img/home/release-thumb.jpeg" alt="Album Cover" class="release-thumb">
-    <span class="release-date">2012.12.12</span>
-    <h4 class="release-artist">偷摸大雞</h4>
-    <h3 class="release-album">偷摸大雞同名EP</h3>
-  </a>
+  <? var releases = [ '', '', '', '', '', '' ]; ?>
+
+  <? releases.forEach( function ( release ){ ?>
+    <a href="/release/show" class="release-link">
+      <img src="/img/home/release-thumb.jpeg" alt="Album Cover" class="release-thumb">
+      <span class="release-date">2012.12.12</span>
+      <h4 class="release-artist">偷摸大雞</h4>
+      <h3 class="release-album">偷摸大雞同名EP</h3>
+    </a>
+  <? }); ?>
 </div>
 
 <div id="release-nav">
-  <a href="/release/prev" class="nav-prev">Prev</a>
-  <a href="/release/next" class="nav-next">Next</a>
+  <a id="/releases/prev" href="/release/prev">prev</a>
+  <a id="/releases/next" href="/release/next">next</a>
 </div>

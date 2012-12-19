@@ -1,0 +1,83 @@
+/* line 5, ../../../app/sass/releases/index.sass */
+.release-link {
+  display: inline;
+  float: left;
+  color: black;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+  padding: 0 24px 48px 0;
+}
+/* line 12, ../../../app/sass/releases/index.sass */
+.release-link:hover .release-thumb {
+  opacity: 0.5;
+}
+/* line 14, ../../../app/sass/releases/index.sass */
+.release-link:hover .release-artist, .release-link:hover .release-album {
+  color: #6da4b2;
+}
+
+/* line 17, ../../../app/sass/releases/index.sass */
+.release-thumb {
+  display: block;
+  width: 272px;
+  height: 272px;
+}
+
+/* line 22, ../../../app/sass/releases/index.sass */
+.release-date {
+  font-size: 14px;
+  color: #6da4b2;
+  display: block;
+  padding: 16px 0 3px;
+}
+
+/* line 28, ../../../app/sass/releases/index.sass */
+.release-artist, .release-album {
+  font-size: 13px;
+  line-height: 21px;
+}
+
+/* line 32, ../../../app/sass/releases/index.sass */
+#release-nav {
+  text-align: center;
+  margin: 0 0 0 -48px;
+}
+
+/* line 36, ../../../app/sass/releases/index.sass */
+#prev, #next {
+  color: #6da4b2;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+/* line 43, ../../../app/sass/releases/index.sass */
+#prev {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  background: url('/img/common/footer-nav-prev@2x.png?1355804387') no-repeat top left;
+  background-size: 12px auto;
+  padding: 5px 40px 5px 28px;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#prev {
+  *display: inline;
+}
+
+/* line 49, ../../../app/sass/releases/index.sass */
+#next {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  background: url('/img/common/footer-nav-next@2x.png?1355824825') no-repeat top right;
+  background-size: 12px auto;
+  padding: 5px 28px 5px 40px;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#next {
+  *display: inline;
+}
