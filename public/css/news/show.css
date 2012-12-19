@@ -37,8 +37,16 @@
 .news-entry a:hover {
   text-decoration: underline;
 }
+/* line 33, ../../../app/sass/news/show.sass */
+.news-entry strong {
+  font-weight: bold;
+}
+/* line 35, ../../../app/sass/news/show.sass */
+.news-entry em {
+  font-style: italic;
+}
 
-/* line 36, ../../../app/sass/news/show.sass */
+/* line 40, ../../../app/sass/news/show.sass */
 .news-date {
   position: absolute;
   top: 0;
@@ -47,19 +55,19 @@
   font-family: sans-serif;
 }
 
-/* line 43, ../../../app/sass/news/show.sass */
+/* line 47, ../../../app/sass/news/show.sass */
 .btn-delete {
   position: absolute;
   top: 0;
   right: -300px;
 }
 
-/* line 48, ../../../app/sass/news/show.sass */
+/* line 52, ../../../app/sass/news/show.sass */
 #nav-wrap {
   text-align: center;
 }
 
-/* line 51, ../../../app/sass/news/show.sass */
+/* line 55, ../../../app/sass/news/show.sass */
 .btn-back {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -76,8 +84,4 @@
 /* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .btn-back {
   *display: inline;
-}
-/* line 59, ../../../app/sass/news/show.sass */
-.btn-back:hover {
-  text-decoration: none;
 }

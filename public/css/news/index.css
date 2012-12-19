@@ -35,14 +35,32 @@
   color: #86b6c6;
 }
 
-/* line 30, ../../../app/sass/news/index.sass */
-.news-entry-p {
+/* line 31, ../../../app/sass/news/index.sass */
+.news-entry p {
+  margin: 0 0 24px;
   font-family: sans-serif;
   font-size: 13px;
   line-height: 1.5em;
 }
+/* line 36, ../../../app/sass/news/index.sass */
+.news-entry a {
+  color: #86b6c6;
+  text-decoration: none;
+}
+/* line 39, ../../../app/sass/news/index.sass */
+.news-entry a:hover {
+  text-decoration: underline;
+}
+/* line 41, ../../../app/sass/news/index.sass */
+.news-entry strong {
+  font-weight: bold;
+}
+/* line 43, ../../../app/sass/news/index.sass */
+.news-entry em {
+  font-style: italic;
+}
 
-/* line 37, ../../../app/sass/news/index.sass */
+/* line 48, ../../../app/sass/news/index.sass */
 .news-date {
   position: absolute;
   top: 0;
@@ -51,41 +69,41 @@
   font-family: sans-serif;
 }
 
-/* line 44, ../../../app/sass/news/index.sass */
+/* line 55, ../../../app/sass/news/index.sass */
 .news-thumb-link {
   position: absolute;
   top: 24px;
   right: -300px;
 }
 
-/* line 49, ../../../app/sass/news/index.sass */
+/* line 60, ../../../app/sass/news/index.sass */
 .news-thumb {
   display: block;
   width: 280px;
   height: 280px;
 }
 
-/* line 54, ../../../app/sass/news/index.sass */
+/* line 65, ../../../app/sass/news/index.sass */
 .btn-delete {
   position: absolute;
   top: 0;
   right: -300px;
 }
 
-/* line 59, ../../../app/sass/news/index.sass */
+/* line 70, ../../../app/sass/news/index.sass */
 #news-nav {
   text-align: center;
   margin: 0 0 0 -48px;
 }
 
-/* line 63, ../../../app/sass/news/index.sass */
+/* line 74, ../../../app/sass/news/index.sass */
 #prev, #next {
   color: #86b6c6;
   font-family: sans-serif;
   text-decoration: none;
 }
 
-/* line 70, ../../../app/sass/news/index.sass */
+/* line 81, ../../../app/sass/news/index.sass */
 #prev {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -101,7 +119,7 @@
   *display: inline;
 }
 
-/* line 76, ../../../app/sass/news/index.sass */
+/* line 87, ../../../app/sass/news/index.sass */
 #next {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
