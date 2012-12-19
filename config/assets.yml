@@ -16,6 +16,12 @@ css:
   home:
     site:
       - home/index
+  news-index:
+    site:
+      - news/index
+  news-show:
+    site:
+      - news/show
 
 js:
   # js group name

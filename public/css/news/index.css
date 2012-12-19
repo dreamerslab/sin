@@ -1,0 +1,118 @@
+/* line 5, ../../../app/sass/news/index.sass */
+#btn-add {
+  display: none;
+}
+
+/* line 8, ../../../app/sass/news/index.sass */
+.news-entry {
+  width: 580px;
+  position: relative;
+  min-height: 280px;
+  padding: 24px 0 48px;
+}
+
+/* line 14, ../../../app/sass/news/index.sass */
+.news-entry-title {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 17, ../../../app/sass/news/index.sass */
+.news-entry-title-link {
+  display: inline;
+  float: left;
+  font-family: serif;
+  font-size: 24px;
+  line-height: 28px;
+  text-decoration: none;
+  color: black;
+  padding: 0 0 10px;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+/* line 27, ../../../app/sass/news/index.sass */
+.news-entry-title-link:hover {
+  color: #86b6c6;
+}
+
+/* line 30, ../../../app/sass/news/index.sass */
+.news-entry-p {
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
+/* line 37, ../../../app/sass/news/index.sass */
+.news-date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #86b6c6;
+  font-family: sans-serif;
+}
+
+/* line 44, ../../../app/sass/news/index.sass */
+.news-thumb-link {
+  position: absolute;
+  top: 24px;
+  right: -300px;
+}
+
+/* line 49, ../../../app/sass/news/index.sass */
+.news-thumb {
+  display: block;
+  width: 280px;
+  height: 280px;
+}
+
+/* line 54, ../../../app/sass/news/index.sass */
+.btn-delete {
+  position: absolute;
+  top: 0;
+  right: -300px;
+}
+
+/* line 59, ../../../app/sass/news/index.sass */
+#news-nav {
+  text-align: center;
+  margin: 0 0 0 -48px;
+}
+
+/* line 63, ../../../app/sass/news/index.sass */
+#prev, #next {
+  color: #86b6c6;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+/* line 70, ../../../app/sass/news/index.sass */
+#prev {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  background: url('/img/common/footer-nav-prev@2x.png?1355804387') no-repeat top left;
+  background-size: 12px auto;
+  padding: 5px 40px 5px 28px;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#prev {
+  *display: inline;
+}
+
+/* line 76, ../../../app/sass/news/index.sass */
+#next {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  background: url('/img/common/footer-nav-next@2x.png?1355824825') no-repeat top right;
+  background-size: 12px auto;
+  padding: 5px 28px 5px 40px;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#next {
+  *display: inline;
+}

@@ -1,0 +1,14 @@
+<form action="/contact" method="POST" accept-charset="UTF-8" >
+  <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+
+  <label for="email">郵件地址 / email</label>
+  <input id="email" type="email" name="email" value=""/>
+
+  <label for="subject">主旨 / subject</label>
+  <input id="subject" name="subject" type="text" value=""/>
+
+  <label for="msg">內容 / message </label>
+  <textarea id="msg" name="msg" rows="10"></textarea>
+
+  <input type="submit" class="btn-submit" value="SEND">
+</form>

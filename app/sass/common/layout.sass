@@ -1,19 +1,28 @@
 @import compass
 @import compass/reset
 
+$body-font: Helvetica, sans-serif
+
 #wrap
+  position: relative
   width: 960px
   margin: 0 auto
 
 #header
-  height: 450px
+  +clearfix
+  height: 208px
   margin: 0 auto
-  background-size: 912px 400px
-  background-repeat: no-repeat
-  background-position: 48px 77px
+  background: #fff
 
-$logo-width: 200px
-$logo-height: 179px
+#cover
+  position: absolute
+  top: 78px
+  left: 45px
+  width: 912px
+  height: 400px
+
+$logo-width: 240px
+$logo-height: 200px
 
 #logo-wrap
   +float-left
@@ -68,13 +77,16 @@ $nav-height: 60px
 #nav-contact
   background-image: image-url( 'common/nav-contact@2x.png' )
 
+#content
+  +clearfix
+  background: #ececec
+  padding: 325px 0 96px 48px
+
 #footer
   clear: both
+  color: #aaa
+  font-family: $body-font
+  font-size: 13px
   text-align: center
-  color: #888
-
-.footer-link
-  text-decoration: none
-  color: #888
-  &:hover
-    color: #000
+  padding: 16px 0 28px
+  border-top: 1px solid #ccc

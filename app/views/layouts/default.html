@@ -10,38 +10,39 @@
   </head>
   <body>
     <div id="wrap">
-      <div id="header" style="background-image: url( '/img/cover.jpeg' );">
+      <div id="header">
         <h1 id="logo-wrap">
           <a id="logo" href="/" title="Go to 三十而立 homepage">三十而立</a>
         </h1>
         <div id="nav">
           <ul class="nav-list">
             <li class="nav-item">
-              <a href="/" id="nav-news" class="nav-link" title="Go to News page">News</a>
+              <a href="/news" id="nav-news" class="nav-link" title="Go to News page">News</a>
             </li>
             <li class="nav-item">
-              <a href="/" id="nav-artists" class="nav-link" title="Go to Artists page">Artists</a>
+              <a href="/artists" id="nav-artists" class="nav-link" title="Go to Artists page">Artists</a>
             </li>
             <li class="nav-item">
-              <a href="/" id="nav-releases" class="nav-link" title="Go to Releases page">Releases</a>
+              <a href="/releases" id="nav-releases" class="nav-link" title="Go to Releases page">Releases</a>
             </li>
             <li class="nav-item">
-              <a href="/" id="nav-live" class="nav-link" title="Go to Live page">Live</a>
+              <a href="/live" id="nav-live" class="nav-link" title="Go to Live page">Live</a>
             </li>
             <li class="nav-item">
-              <a href="/" id="nav-videos" class="nav-link" title="Go to Videos page">Videos</a>
+              <a href="/videos" id="nav-videos" class="nav-link" title="Go to Videos page">Videos</a>
             </li>
             <li class="nav-item">
-              <a href="/" id="nav-contact" class="nav-link" title="Go to Contact page">Contact</a>
+              <a href="/contact" id="nav-contact" class="nav-link" title="Go to Contact page">Contact</a>
             </li>
           </ul>
         </div>
+        <img id="cover" src="/img/cover.jpeg" alt="cover">
       </div>
       <div id="content" role="main">
         <?= it.body ?>
       </div>
       <div id="footer">
-        Powered by <a class="footer-link" href="http://coke-js.org">三十而立</a>
+        &#169; 2012 Sincerely Music Inc. All rights reserved.
       </div>
     </div>
     <?= it.js( it.scripts ) ?>

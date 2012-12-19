@@ -1,0 +1,80 @@
+@import compass
+
+$hover-color: #86b6c6
+
+#btn-add
+  display: none
+
+.news-entry
+  width: 580px
+  position: relative
+  min-height: 280px
+  padding: 24px 0 48px
+
+.news-entry-title
+  +clearfix
+
+.news-entry-title-link
+  +float-left
+  font-family: serif
+  font-size: 24px
+  line-height: 28px
+  text-decoration: none
+  color: #000
+  padding: 0 0 10px
+  background-repeat: no-repeat
+  background-position: top right
+  &:hover
+    color: $hover-color
+
+.news-entry-p
+  font-family: sans-serif
+  font-size: 13px
+  line-height: 1.5em
+
+$news-els-position-top: 0
+
+.news-date
+  position: absolute
+  top: $news-els-position-top
+  left: 0
+  color: $hover-color
+  font-family: sans-serif
+
+.news-thumb-link
+  position: absolute
+  top: $news-els-position-top + 24px
+  right: -300px
+
+.news-thumb
+  display: block
+  width: 280px
+  height: 280px
+
+.btn-delete
+  position: absolute
+  top: $news-els-position-top
+  right: -300px
+
+#news-nav
+  text-align: center
+  margin: 0 0 0 -48px
+
+#prev, #next
+  color: $hover-color
+  font-family: sans-serif
+  text-decoration: none
+
+$nav-padding-top-n-bot: 5px
+
+#prev
+  +inline-block
+  background: image-url( "common/footer-nav-prev@2x.png" ) no-repeat top left
+  background-size: 12px auto
+  padding: $nav-padding-top-n-bot 40px $nav-padding-top-n-bot 28px
+
+#next
+  +inline-block
+  background: image-url( "common/footer-nav-next@2x.png" ) no-repeat top right
+  background-size: 12px auto
+  padding: $nav-padding-top-n-bot 28px $nav-padding-top-n-bot 40px

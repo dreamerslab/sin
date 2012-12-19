@@ -4,16 +4,12 @@
   </h2>
 
   <div id="videos-list">
-    <? var entries = [ '', '', '', '', '' ]; ?>
+    <? var entries = [ '', '' ]; ?>
 
     <? entries.forEach( function (){ ?>
-      <a href="/" class="video-link">
-        <img class="video-thumb" src="/img/home/videos-thumb.jpeg" alt="thumb">
-        <h3 class="video-title">No World</h3>
-        <span class="video-by"> by </span>
-        <h4 class="video-author">inc.</h4>
-        <p class="video-date">Released 18th February</p>
-      </a>
+      <iframe class="video" width="248" height="140" src="https://www.youtube.com/embed/E6Rd7UE8jQc" frameborder="0" allowfullscreen></iframe>
     <? }); ?>
+
+    <a id="videos-more" class="btn-more" href="/">More</a>
   </div>
 </div>

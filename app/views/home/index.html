@@ -11,17 +11,32 @@
 
 <div id="sidebar">
   <div id="soundcould-player">
+    <h3 id="soundcould-player-title">music</h3>
     <iframe
       width="100%"
       height="450"
       scrolling="no"
-      frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1983744&amp;color=75d0dc&amp;auto_play=false&amp;show_artwork=true">
+      frameborder="no"
+      src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1983744&amp;color=75d0dc&amp;auto_play=false&amp;show_artwork=true">
     </iframe>
   </div>
   <div id="latest-lives">
-    Wait for JO
+    <h3 id="lives-title">live</h3>
+    <div id="live-list">
+      <? var lives = [ '', '', '', '' ]; ?>
+
+      <? lives.forEach( function ( live ){ ?>
+        <!-- remember truncate artist, prevent layout crash -->
+        <a href="/live/show" class="live-link">
+          偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL<span class="live-date">12.25</span>
+        </a>
+      <? }); ?>
+
+      <a href="/live" id="live-more">more</a>
+    </div>
   </div>
   <div id="fb-fanpage">
-    FB page badges
+    <h3 id="fb-fanpage-title">facebook</h3>
+    <!-- fb fan page badge embed code goes here -->
   </div>
 </div>

@@ -1,4 +1,23 @@
-<? it.title = 'videos#index'; ?>
-<p>
-  Find this file in app/views/videos/index.html
-</p>
+<? it.title = 'Videos Index'; ?>
+
+<? var videos = [ '', '', '', '', '' ]; ?>
+
+<div id="videos">
+  <? videos.forEach( function ( video ){ ?>
+    <div class="video">
+      <div class="video-wrap">
+        <iframe class="video" width="600" height="337" src="https://www.youtube.com/embed/E6Rd7UE8jQc" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-intro">
+        <span class="video-date">2012.01.22</span>
+        <a class="video-link" href="/youtube-link">偷摸大雞 樂團 我也想變成比基尼辣妹 official MV</a>
+        <h3 class="video-title">偷摸大雞</h3>
+      </div>
+    </div>
+  <? }); ?>
+</div>
+
+<div id="video-nav">
+  <a href="/videos/prev" class="nav-prev">Prev</a>
+  <a href="/videos/next" class="nav-next">Next</a>
+</div>

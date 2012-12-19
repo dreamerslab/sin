@@ -63,55 +63,65 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 4, ../../../app/sass/common/layout.sass */
+/* line 6, ../../../app/sass/common/layout.sass */
 #wrap {
+  position: relative;
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 8, ../../../app/sass/common/layout.sass */
+/* line 11, ../../../app/sass/common/layout.sass */
 #header {
-  height: 450px;
+  overflow: hidden;
+  *zoom: 1;
+  height: 208px;
   margin: 0 auto;
-  background-size: 912px 400px;
-  background-repeat: no-repeat;
-  background-position: 48px 77px;
+  background: white;
 }
 
-/* line 18, ../../../app/sass/common/layout.sass */
+/* line 17, ../../../app/sass/common/layout.sass */
+#cover {
+  position: absolute;
+  top: 78px;
+  left: 45px;
+  width: 912px;
+  height: 400px;
+}
+
+/* line 27, ../../../app/sass/common/layout.sass */
 #logo-wrap {
   display: inline;
   float: left;
-  width: 200px;
-  height: 179px;
+  width: 240px;
+  height: 200px;
   padding: 8px 0 0;
 }
 
-/* line 24, ../../../app/sass/common/layout.sass */
+/* line 33, ../../../app/sass/common/layout.sass */
 #logo {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
   display: block;
-  width: 200px;
-  height: 179px;
-  background: url('/img/common/logo@2x.png?1355199476') no-repeat;
-  background-size: 200px 179px;
+  width: 240px;
+  height: 200px;
+  background: url('/img/common/logo@2x.png?1355718430') no-repeat;
+  background-size: 240px 200px;
 }
 
-/* line 32, ../../../app/sass/common/layout.sass */
+/* line 41, ../../../app/sass/common/layout.sass */
 #nav {
   display: inline;
   float: right;
 }
 
-/* line 35, ../../../app/sass/common/layout.sass */
+/* line 44, ../../../app/sass/common/layout.sass */
 .nav-item {
   display: inline;
   float: left;
 }
 
-/* line 41, ../../../app/sass/common/layout.sass */
+/* line 50, ../../../app/sass/common/layout.sass */
 .nav-link {
   text-indent: -119988px;
   overflow: hidden;
@@ -124,54 +134,56 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 60px;
   text-decoration: none;
 }
-/* line 50, ../../../app/sass/common/layout.sass */
+/* line 59, ../../../app/sass/common/layout.sass */
 .nav-link:hover, .nav-link:active {
   background-position: 0 -60px;
 }
 
-/* line 53, ../../../app/sass/common/layout.sass */
+/* line 62, ../../../app/sass/common/layout.sass */
 #nav-news {
   background-image: url('/img/common/nav-news@2x.png?1355201422');
 }
 
-/* line 56, ../../../app/sass/common/layout.sass */
+/* line 65, ../../../app/sass/common/layout.sass */
 #nav-artists {
   background-image: url('/img/common/nav-artists@2x.png?1355212745');
 }
 
-/* line 59, ../../../app/sass/common/layout.sass */
+/* line 68, ../../../app/sass/common/layout.sass */
 #nav-releases {
   background-image: url('/img/common/nav-releases@2x.png?1355212824');
 }
 
-/* line 62, ../../../app/sass/common/layout.sass */
+/* line 71, ../../../app/sass/common/layout.sass */
 #nav-live {
   background-image: url('/img/common/nav-live@2x.png?1355212918');
 }
 
-/* line 65, ../../../app/sass/common/layout.sass */
+/* line 74, ../../../app/sass/common/layout.sass */
 #nav-videos {
   background-image: url('/img/common/nav-videos@2x.png?1355212980');
 }
 
-/* line 68, ../../../app/sass/common/layout.sass */
+/* line 77, ../../../app/sass/common/layout.sass */
 #nav-contact {
   background-image: url('/img/common/nav-contact@2x.png?1355213140');
 }
 
-/* line 71, ../../../app/sass/common/layout.sass */
-#footer {
-  clear: both;
-  text-align: center;
-  color: #888888;
+/* line 80, ../../../app/sass/common/layout.sass */
+#content {
+  overflow: hidden;
+  *zoom: 1;
+  background: #ececec;
+  padding: 325px 0 96px 48px;
 }
 
-/* line 76, ../../../app/sass/common/layout.sass */
-.footer-link {
-  text-decoration: none;
-  color: #888888;
-}
-/* line 79, ../../../app/sass/common/layout.sass */
-.footer-link:hover {
-  color: black;
+/* line 85, ../../../app/sass/common/layout.sass */
+#footer {
+  clear: both;
+  color: #aaaaaa;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  padding: 16px 0 28px;
+  border-top: 1px solid #cccccc;
 }

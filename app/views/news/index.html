@@ -1,4 +1,28 @@
-<? it.title = 'news#index'; ?>
-<p>
-  Find this file in app/views/news/index.html
-</p>
+<? it.title = 'Latest News'; ?>
+<? it.styles.push( 'news-index' ); ?>
+
+<div id="news">
+  <div id="news-entries">
+    <a href="/" id="btn-add">Add entry</a>
+
+    <? var entries = [ '', '', '' ]; ?>
+
+    <? entries.forEach( function ( entry ){ ?>
+      <div class="news-entry">
+        <h2 class="news-entry-title">
+          <a href="/" class="news-entry-title-link" title="See more about 流亞定合大前">流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前</a>
+        </h2>
+        <p class="news-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是</p>
+        <p class="news-date">2012.12.10</p>
+        <a href="/news/show" class="news-thumb-link">
+          <img class="news-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
+        </a>
+        <a href="/" class="btn-delete">Delete this entry</a>
+      </div>
+    <? }); ?>
+  </div>
+  <div id="news-nav">
+    <a id="prev" href="/">prev</a>
+    <a id="next" href="/">next</a>
+  </div>
+</div>

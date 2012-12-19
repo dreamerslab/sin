@@ -1,0 +1,83 @@
+/* line 5, ../../../app/sass/news/show.sass */
+.news-entry {
+  position: relative;
+  padding: 21px 0 64px;
+  width: 864px;
+}
+
+/* line 10, ../../../app/sass/news/show.sass */
+.news-entry-title {
+  font-family: serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: black;
+  margin: 0 0 32px;
+}
+
+/* line 18, ../../../app/sass/news/show.sass */
+.news-entry p {
+  margin: 0 0 24px;
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+/* line 23, ../../../app/sass/news/show.sass */
+.news-entry img {
+  display: block;
+  margin: 0 auto 24px;
+  max-width: 864px;
+  max-height: 600px;
+}
+/* line 28, ../../../app/sass/news/show.sass */
+.news-entry a {
+  color: #86b6c6;
+  text-decoration: none;
+}
+/* line 31, ../../../app/sass/news/show.sass */
+.news-entry a:hover {
+  text-decoration: underline;
+}
+
+/* line 36, ../../../app/sass/news/show.sass */
+.news-date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #86b6c6;
+  font-family: sans-serif;
+}
+
+/* line 43, ../../../app/sass/news/show.sass */
+.btn-delete {
+  position: absolute;
+  top: 0;
+  right: -300px;
+}
+
+/* line 48, ../../../app/sass/news/show.sass */
+#nav-wrap {
+  text-align: center;
+}
+
+/* line 51, ../../../app/sass/news/show.sass */
+.btn-back {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  font-family: sans-serif;
+  color: #86b6c6;
+  text-decoration: none;
+  background: url('/img/common/footer-nav-prev@2x.png?1355804387') no-repeat top left;
+  background-size: 12px auto;
+  padding: 5px 40px 5px 28px;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.btn-back {
+  *display: inline;
+}
+/* line 59, ../../../app/sass/news/show.sass */
+.btn-back:hover {
+  text-decoration: none;
+}

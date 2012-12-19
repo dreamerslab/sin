@@ -8,14 +8,15 @@ $color-link: #6da4b2
 
 #main
   +float-left
-  width: 800px
-  padding: 50px 0 0
+  font-family: $body-font
+  width: 552px
+  padding: 0 32px 0 0
 
 .block-title
   +hide-text
   display: block
 
-$news-title-width: 162px
+$news-title-width: 156px
 $news-title-height: 31px
 
 #news-title-link
@@ -26,19 +27,22 @@ $news-title-height: 31px
 
 .news-entry
   position: relative
-  width: 490px
-  padding: 30px 0 30px
+  width: 416px
+  padding: 31px 0 17px
 
 .title
   +inline-block
   font-size: 21px
   color: $color-main
 
+.news-entry-title
+  padding: 0 0 12px
+
 .news-entry-title-link
   color: $color-main
-  font-family: $title-font
-  font-size: 22px
-  line-height: 26px
+  font-family: serif
+  font-size: 24px
+  line-height: 28px
   text-decoration: none
   &:hover
     color: $color-link
@@ -50,19 +54,9 @@ $news-title-height: 31px
   line-height: 18px
   margin: 0 0 20px
 
-.read-more
-  color: $color-link
-  text-decoration: none
-  font-size: 13px
-  position: absolute
-  bottom: 53px
-  right: 8px
-  &:hover
-    text-decoration: underline
-
 .news-date
   position: absolute
-  top: 5px
+  top: 9px
   left: 0
   font-family: $body-font
   font-size: 14px
@@ -72,12 +66,12 @@ $news-title-height: 31px
 .news-thumb
   position: absolute
   top: 10px
-  right: -180px
+  right: -136px
   border: 5px solid #eaeaea
-  width: 150px
-  height: 150px
+  width: 120px
+  height: 120px
 
-$release-title-width: 200px
+$release-title-width: 217px
 $release-title-height: 43px
 
 #release-title-link
@@ -86,27 +80,32 @@ $release-title-height: 43px
   width: $release-title-width
   height: $release-title-height
 
-#releases-list, #videos-list
+#releases-list
   +clearfix
+  position: relative
   padding: 30px 0
 
-.release-link, .video-link
+.release-link
   +float-left
-  width: 145px
-  padding: 0 10px 0 0
+  width: 160px
+  color: $color-main
+  padding: 0 16px 0 0
   text-decoration: none
-
-.release-thumb, .video-thumb
-  +inline-block
-  border: 10px solid #eaeaea
-  margin: 0 0 5px
+  &:hover
+    color: $color-link
 
 .release-thumb
-  width: 120px
-  height: 120px
+  +inline-block
 
-$videos-title-width: 200px
+.release-thumb
+  width: 160px
+  height: 160px
+
+$videos-title-width: 186px
 $videos-title-height: 43px
+
+#videos-title
+  padding: 0 0 16px
 
 #videos-title-link
   background-image: image-url( 'common/videos-title@2x.png' )
@@ -114,20 +113,102 @@ $videos-title-height: 43px
   width: $videos-title-width
   height: $videos-title-height
 
+.release-date
+  display: block
+  color: $color-link
+  padding: 8px 0 0
+  font-size: 14px
+
+.release-author, .release-title
+  font-size: 13px
+  line-height: 21px
+
+.btn-more
+  +hide-text
+  position: absolute
+  right: 3px
+  background: image-url( "common/more@2x.png" ) no-repeat top right / 18px auto
+  width: 18px
+  height: 50px
+
+#releases-more
+  top: 82px
+
+#videos-more
+  top: 46px
+
+#videos-list
+  position: relative
+
+.video
+  +float-left
+  padding: 0 16px 0 0
+
 .video-thumb
   width: 120px
   height: 90px
 
-.release-title, .release-author, .video-title, .video-author
-  font-size: 14px
-  font-weight: bold
-
-.release-date, .video-date
-  display: block
-  color: $color-link
-  font-size: 13px
-
 #sidebar
   +float-right
-  width: 320px
-  padding: 30px 0 0
+  width: 280px
+  padding: 0 48px 0 0
+
+#soundcould-player, #latest-lives, #fb-fanpage
+  padding: 0 0 48px
+
+#soundcould-player-title, #lives-title, #fb-fanpage-title
+  +hide-text
+  padding: 0 0 15px
+  background-repeat: no-repeat
+  background-position: top left
+
+#soundcould-player-title
+  background-image: image-url( "home/sidebar-music-title.png" )
+  width: 54px
+  height: 14px
+  background-size: 54px auto
+
+#lives-title
+  background-image: image-url( "home/sidebar-live-title.png" )
+  width: 33px
+  height: 16px
+  background-size: 33px auto
+
+#fb-fanpage-title
+  background-image: image-url( "home/sidebar-facebook-title.png" )
+  width: 87px
+  height: 16px
+  background-size: 87px auto
+
+#live-list
+  +clearfix
+  border: 1px solid $color-link
+  padding: 16px 24px 20px
+
+.live-link
+  display: block
+  position: relative
+  padding: 10px 0 10px 42px
+  border-bottom: 1px solid $color-link
+  font-family: sans-serif
+  font-size: 13px
+  color: #000
+  text-decoration: none
+  line-height: 21px
+  &:hover
+    color: $color-link
+
+.live-date
+  position: absolute
+  top: 10px
+  left: 0
+  color: $color-link
+  margin: 0 10px 0 0
+
+#live-more
+  +float-right
+  color: $color-link
+  text-decoration: none
+  padding: 10px 0 0
+  &:hover
+    text-decoration: underline

@@ -1,4 +1,42 @@
-<? it.title = 'artists#show'; ?>
-<p>
-  Find this file in app/views/artists/show.html
-</p>
+<? it.title = 'Artists Show'; ?>
+
+<div id="artist-intro-wrap">
+  <div class="artists-entry">
+    <h2 class="artists-entry-title">流亞定合大前</h2>
+    <p class="artists-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+  </div>
+  <div id="social-links">
+    <a class="social-link" href="/">facebook</a>
+    <span class="pipe">|</span>
+    <a class="social-link" href="/">streetvoice</a>
+    <span class="pipe">|</span>
+    <a class="social-link" href="/">indievox</a>
+    <span class="pipe">|</span>
+    <a class="social-link" href="/">12.25</a>
+  </div>
+  <img class="artists-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
+</div>
+
+<div id="news">
+  <h2 id="news-title" class="title">
+    <a id="news-title-link" class="block-title" href="/">LATEST NEWS</a>
+  </h2>
+
+  <? var entries = [ '' ]; ?>
+
+  <? entries.forEach( function (){ ?>
+    <div class="news-entry">
+      <h3 class="news-entry-title">
+        <a href="/" class="news-entry-title-link" title="">流亞定合大前</a>
+      </h3>
+      <p class="news-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+      <p class="news-date">2012.12.10</p>
+    </div>
+  <? }); ?>
+</div>
+
+<?= it.partial( 'home/_videos' ) ?>
+
+<div id="sidebar">
+  <?= it.partial( 'home/_releases' ) ?>
+</div>
