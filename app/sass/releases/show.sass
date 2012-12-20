@@ -1,0 +1,105 @@
+@import compass
+
+$link-color: #6da4b2
+$content-font: Helvetica, sans-serif
+
+#main
+  +float-left
+  width: 600px
+
+#sidebar
+  +float-right
+  width: 232px
+  padding: 0 48px 0 0
+
+#release-cover
+  display: block
+  width: 232px
+  height: 232px
+  padding: 0 0 16px
+
+#artist, #release-name
+  font-family: serif
+  font-size: 24px
+  line-height: 28px
+  color: #000
+  margin: 0 0 8px
+
+#release-date
+  display: block
+  margin: 12px 0 32px
+  color: $link-color
+  font-family: $content-font
+
+#release-intro
+  padding: 0 0 48px
+  p
+    margin: 0 0 24px
+    font-family: $content-font
+    font-size: 13px
+    line-height: 1.5em
+  a
+    color: $link-color
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  strong
+    font-weight: bold
+  em
+    font-style: italic
+
+#songs
+  border-top: 1px dotted $link-color
+
+.songs-item
+  border-bottom: 1px dotted $link-color
+  position: relative
+  padding: 14px 0 14px 48px
+
+.song-link
+  display: block
+  width: 400px
+  background: image-url( "releases/btn-play@2x.png" ) no-repeat left 3px
+  background-size: 12px auto
+  padding: 0 0 0 30px
+  text-decoration: none
+  color: #000
+  font-family: $content-font
+  font-size: 13px
+  line-height: 1.5em
+  &:hover
+    color: $link-color
+
+$itunes-top: 17px
+$itunes-right: 8px
+$itunes-width: 44px
+$length-color: #555
+
+.song-number
+  position: absolute
+  top: $itunes-top
+  left: 10px
+  font-family: $content-font
+  font-size: 13px
+  color: $length-color
+
+.song-length
+  position: absolute
+  top: $itunes-top
+  right: $itunes-right + $itunes-width + 32px
+  font-family: $content-font
+  font-size: 13px
+  color: $length-color
+
+.song-itunes-link
+  +hide-text
+  background: image-url( "releases/itunes-badge@2x.jpg" ) no-repeat top left
+  background-size: 44px auto
+  width: $itunes-width
+  height: 13px
+  position: absolute
+  top: $itunes-top
+  right: $itunes-right
+  opacity: 0.7
+  &:hover
+    opacity: 1

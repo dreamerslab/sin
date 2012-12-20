@@ -1,4 +1,46 @@
 <? it.title = 'releases#show'; ?>
-<p>
-  Find this file in app/views/releases/show.html
-</p>
+<? it.styles.push( 'releases-show' ); ?>
+
+<div id="main">
+  <h2 id="artist">偷摸大雞</h2>
+  <h3 id="release-name">偷摸大雞同名EP</h3>
+  <span id="release-date">2012.12.21</span>
+  <div id="release-intro">
+    <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面。</p>
+
+    <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面。</p>
+  </div>
+
+  <?
+    var songs = [ '', '', '', '', '', '', '', '', '', '' ];
+    var count = 1;
+  ?>
+
+  <div id="songs">
+    <ul class="songs-list">
+      <? songs.forEach( function ( song ){ ?>
+        <li class="songs-item">
+          <a class="song-link" href="releases/show?song=1">ASUS 華碩與三十而立</a>
+          <span class="song-number"><?= count ?>.</span>
+          <span class="song-length">3:49</span>
+          <a class="song-itunes-link" href="/releases/show?itunes-link=111">Download on iTunes</a>
+        </li>
+      <?
+          count++;
+        });
+      ?>
+    </ul>
+  </div>
+</div>
+
+<div id="sidebar">
+  <img id="release-cover" src="/img/home/release-thumb.jpeg" alt="cover">
+  <!-- soundcloud player goes here -->
+  <iframe
+    width="232px"
+    height="59px"
+    scrolling="no"
+    frameborder="no"
+    src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1983744&amp;color=75d0dc&amp;auto_play=false&amp;show_artwork=true">
+  </iframe>
+</div>

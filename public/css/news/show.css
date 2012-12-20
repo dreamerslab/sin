@@ -5,8 +5,48 @@
   width: 864px;
 }
 
-/* line 10, ../../../app/sass/news/show.sass */
-.news-entry-title {
+/* line 11, ../../../app/sass/news/show.sass */
+.news-entry h1 {
+  font-family: serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: black;
+  margin: 0 0 16px;
+}
+/* line 17, ../../../app/sass/news/show.sass */
+.news-entry p, .news-entry h2, .news-entry h3, .news-entry h4, .news-entry h5, .news-entry h6 {
+  margin: 0 0 24px;
+  font-family: sans-serif;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+/* line 22, ../../../app/sass/news/show.sass */
+.news-entry img {
+  display: block;
+  margin: 0 auto 24px;
+  max-width: 864px;
+  max-height: 600px;
+}
+/* line 27, ../../../app/sass/news/show.sass */
+.news-entry a {
+  color: #6da4b2;
+  text-decoration: none;
+}
+/* line 30, ../../../app/sass/news/show.sass */
+.news-entry a:hover {
+  text-decoration: underline;
+}
+/* line 32, ../../../app/sass/news/show.sass */
+.news-entry strong {
+  font-weight: bold;
+}
+/* line 34, ../../../app/sass/news/show.sass */
+.news-entry em {
+  font-style: italic;
+}
+
+/* line 37, ../../../app/sass/news/show.sass */
+h3.news-entry-title {
   font-family: serif;
   font-size: 24px;
   line-height: 28px;
@@ -14,39 +54,7 @@
   margin: 0 0 32px;
 }
 
-/* line 18, ../../../app/sass/news/show.sass */
-.news-entry p {
-  margin: 0 0 24px;
-  font-family: sans-serif;
-  font-size: 13px;
-  line-height: 1.5em;
-}
-/* line 23, ../../../app/sass/news/show.sass */
-.news-entry img {
-  display: block;
-  margin: 0 auto 24px;
-  max-width: 864px;
-  max-height: 600px;
-}
-/* line 28, ../../../app/sass/news/show.sass */
-.news-entry a {
-  color: #6da4b2;
-  text-decoration: none;
-}
-/* line 31, ../../../app/sass/news/show.sass */
-.news-entry a:hover {
-  text-decoration: underline;
-}
-/* line 33, ../../../app/sass/news/show.sass */
-.news-entry strong {
-  font-weight: bold;
-}
-/* line 35, ../../../app/sass/news/show.sass */
-.news-entry em {
-  font-style: italic;
-}
-
-/* line 40, ../../../app/sass/news/show.sass */
+/* line 46, ../../../app/sass/news/show.sass */
 .news-date {
   position: absolute;
   top: 0;
@@ -55,19 +63,19 @@
   font-family: sans-serif;
 }
 
-/* line 47, ../../../app/sass/news/show.sass */
+/* line 53, ../../../app/sass/news/show.sass */
 .btn-delete {
   position: absolute;
   top: 0;
   right: -300px;
 }
 
-/* line 52, ../../../app/sass/news/show.sass */
+/* line 58, ../../../app/sass/news/show.sass */
 #nav-wrap {
   text-align: center;
 }
 
-/* line 55, ../../../app/sass/news/show.sass */
+/* line 61, ../../../app/sass/news/show.sass */
 .btn-back {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -80,8 +88,13 @@
   background: url('/img/common/footer-nav-prev@2x.png?1355804387') no-repeat top left;
   background-size: 12px auto;
   padding: 5px 40px 5px 28px;
+  opacity: 0.7;
 }
 /* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .btn-back {
   *display: inline;
+}
+/* line 70, ../../../app/sass/news/show.sass */
+.btn-back:hover {
+  opacity: 1;
 }

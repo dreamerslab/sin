@@ -7,15 +7,14 @@ $link-color: #6da4b2
   padding: 21px 0 64px
   width: 864px
 
-.news-entry-title
-  font-family: serif
-  font-size: 24px
-  line-height: 28px
-  color: #000
-  margin: 0 0 32px
-
 .news-entry
-  p
+  h1
+    font-family: serif
+    font-size: 24px
+    line-height: 28px
+    color: #000
+    margin: 0 0 16px
+  p, h2, h3, h4, h5, h6
     margin: 0 0 24px
     font-family: sans-serif
     font-size: 13px
@@ -34,6 +33,13 @@ $link-color: #6da4b2
     font-weight: bold
   em
     font-style: italic
+
+h3.news-entry-title
+  font-family: serif
+  font-size: 24px
+  line-height: 28px
+  color: #000
+  margin: 0 0 32px
 
 $news-els-position-top: 0
 
@@ -60,3 +66,6 @@ $news-els-position-top: 0
   background: image-url( 'common/footer-nav-prev@2x.png' ) no-repeat top left
   background-size: 12px auto
   padding: 5px 40px 5px 28px
+  opacity: 0.7
+  &:hover
+    opacity: 1

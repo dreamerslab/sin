@@ -22,6 +22,12 @@ css:
   news-show:
     site:
       - news/show
+  releases-index:
+    site:
+      - releases/index
+  releases-show:
+    site:
+      - releases/show
 
 js:
   # js group name

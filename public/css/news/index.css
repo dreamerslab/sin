@@ -98,39 +98,35 @@
 
 /* line 74, ../../../app/sass/news/index.sass */
 #prev, #next {
-  color: #6da4b2;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-
-/* line 81, ../../../app/sass/news/index.sass */
-#prev {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
+  color: #6da4b2;
+  font-family: sans-serif;
+  text-decoration: none;
+  opacity: 0.7;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#prev, #next {
+  *display: inline;
+}
+/* line 80, ../../../app/sass/news/index.sass */
+#prev:hover, #next:hover {
+  opacity: 1;
+}
+
+/* line 85, ../../../app/sass/news/index.sass */
+#prev {
   background: url('/img/common/footer-nav-prev@2x.png?1355804387') no-repeat top left;
   background-size: 12px auto;
   padding: 5px 40px 5px 28px;
 }
-/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-#prev {
-  *display: inline;
-}
 
-/* line 87, ../../../app/sass/news/index.sass */
+/* line 90, ../../../app/sass/news/index.sass */
 #next {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
   background: url('/img/common/footer-nav-next@2x.png?1355824825') no-repeat top right;
   background-size: 12px auto;
   padding: 5px 28px 5px 40px;
-}
-/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-#next {
-  *display: inline;
 }
