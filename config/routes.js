@@ -11,6 +11,10 @@ module.exports = function ( map ){
 
   map.get( 'admin', 'admin/home#index' );
   map.namespace( 'admin', function ( admin ){
+    admin.get(    'login',    'sessions#new' );
+    admin.post(   'sessions', 'sessions#create' );
+    admin.delete( 'sessions', 'sessions#destroy' );
+
     admin.get( 'edit',  'home#edit' );
     map.put(   'admin', 'home#update' );
     admin.resources( 'news' );

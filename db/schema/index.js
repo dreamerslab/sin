@@ -73,6 +73,9 @@ var Schema = function ( Schema ){
       place      : { type : String, required : true },
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
+    }),
+
+    Tag : new Schema({
     })
   };
 

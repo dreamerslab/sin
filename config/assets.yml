@@ -17,6 +17,10 @@ css:
   home:
     site:
       - home/index
+  admin-home:
+    site:
+      - admin/base
+      - admin/home/index
   news-index:
     site:
       - news/index
@@ -44,6 +48,9 @@ css:
   contact-index:
     site:
       - contact/index
+  sessions:
+    site:
+      - sessions/new
 
 js:
   # js group name
