@@ -37,6 +37,9 @@
           </ul>
         </div>
         <img id="cover" src="/img/cover.jpeg" alt="cover">
+        <? if ( it.is_login ){ ?>
+          <?= it.partial( 'admin/common/_admin_panel' ) ?>
+        <? } ?>
       </div>
       <div id="content" role="main">
         <?= it.body ?>

@@ -1,0 +1,15 @@
+<div id="admin-panel">
+  <a id="panel-link-edit" href="/admin/header/edit">EDIT HEADER</a>
+  <form id="header-form" action="">
+    <input id="header-input" type="text" placeholder="size: 912x400 px">
+    <p class="error-msg">error message goes here</p>
+    <input id="confirm-btn" type="submit" value="Submit" />
+    <a id="link-cancel" href="/admin" title="Back to previous page">Cancel</a>
+  </form>
+
+  <form id="panel-logout-form" action="/admin/sessions" method="POST" accept-charset="UTF-8" >
+    <input type="hidden" name="_method" value="delete" />
+    <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+    <input id="btn-logout" type="submit" value="LOG OUT" />
+  </form>
+</div>

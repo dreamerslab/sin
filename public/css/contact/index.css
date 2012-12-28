@@ -1,7 +1,7 @@
 /* line 11, ../../../app/sass/contact/index.sass */
 #contact-form {
   font-family: Helvetica, sans-serif;
-  color: #6da4b2;
+  color: #555555;
   width: 600px;
   padding: 0 180px 0 132px;
 }
@@ -18,7 +18,7 @@
 .contact-form-input, .contact-form-textarea {
   display: block;
   width: 100%;
-  border: 1px solid #6da4b2;
+  border: none;
   font-family: serif;
   font-size: 16px;
   color: #6da4b2;
@@ -39,11 +39,11 @@
 /* line 39, ../../../app/sass/contact/index.sass */
 #btn-submit {
   display: block;
-  background: none;
-  border: 1px solid #6da4b2;
+  background: #6da4b2;
+  border: none;
   padding: 10px 56px;
   margin: 48px auto 0;
-  color: #6da4b2;
+  color: white;
   font-size: 14px;
   letter-spacing: 3px;
 }

@@ -4,13 +4,13 @@
 <form id="contact-form" action="/contact" method="POST" accept-charset="UTF-8" >
   <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
 
-  <label class="form-label" for="email">郵件地址 <span class="form-span">/</span> email</label>
+  <label class="form-label" for="email">郵件地址 Email</label>
   <input id="email" class="contact-form-input" type="email" name="email" value=""/>
 
-  <label class="form-label" for="subject">主旨 <span class="form-span">/</span> subject</label>
+  <label class="form-label" for="subject">主旨 Subject</label>
   <input id="subject" class="contact-form-input" name="subject" type="text" value=""/>
 
-  <label class="form-label" for="msg">內容 <span class="form-span">/</span> message </label>
+  <label class="form-label" for="msg">內容 Message </label>
   <textarea id="msg" class="contact-form-textarea" name="msg" rows="16"></textarea>
 
   <input id="btn-submit" type="submit" class="btn-submit" value="SEND">
