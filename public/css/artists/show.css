@@ -1,0 +1,172 @@
+/* line 7, ../../../app/sass/artists/show.sass */
+#content {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 11, ../../../app/sass/artists/show.sass */
+#main {
+  display: inline;
+  float: left;
+  width: 600px;
+  font-family: Helvetica, sans-serif;
+}
+
+/* line 16, ../../../app/sass/artists/show.sass */
+#artists-entry-title {
+  color: black;
+  font-family: serif;
+  font-size: 24px;
+  line-height: 28px;
+  text-decoration: none;
+}
+
+/* line 24, ../../../app/sass/artists/show.sass */
+#artist-intro p {
+  margin: 0 0 24px;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+/* line 29, ../../../app/sass/artists/show.sass */
+#artist-intro a {
+  color: #6da4b2;
+  text-decoration: none;
+}
+/* line 32, ../../../app/sass/artists/show.sass */
+#artist-intro a:hover {
+  text-decoration: underline;
+}
+/* line 34, ../../../app/sass/artists/show.sass */
+#artist-intro strong {
+  font-weight: bold;
+}
+/* line 36, ../../../app/sass/artists/show.sass */
+#artist-intro em {
+  font-style: italic;
+}
+
+/* line 39, ../../../app/sass/artists/show.sass */
+#social-links {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 44, ../../../app/sass/artists/show.sass */
+.social-link {
+  display: inline;
+  float: left;
+  font-size: 14px;
+  color: #6da4b2;
+  text-decoration: none;
+  padding: 1px 16px;
+  border-right: 1px solid #6da4b2;
+}
+/* line 51, ../../../app/sass/artists/show.sass */
+.social-link:hover {
+  text-decoration: underline;
+}
+
+/* line 54, ../../../app/sass/artists/show.sass */
+.social-link:first-child {
+  padding: 1px 16px 1px 0;
+}
+
+/* line 57, ../../../app/sass/artists/show.sass */
+.social-link:last-child {
+  border: none;
+}
+
+/* line 60, ../../../app/sass/artists/show.sass */
+#news {
+  padding: 48px 0 0;
+}
+
+/* line 63, ../../../app/sass/artists/show.sass */
+#videos-more {
+  right: 52px;
+}
+
+/* line 66, ../../../app/sass/artists/show.sass */
+#sidebar {
+  display: inline;
+  float: right;
+  position: relative;
+  top: -55px;
+  height: 100%;
+  background: #e6e6e6;
+  width: 168px;
+  padding: 55px 48px 48px;
+  font-family: Helvetica, sans-serif;
+}
+
+/* line 76, ../../../app/sass/artists/show.sass */
+#releases-list {
+  padding: 10px 0 30px;
+}
+
+/* line 79, ../../../app/sass/artists/show.sass */
+#release-title {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background: url('/img/common/sidebar-releases-title.png?1356513456') no-repeat left top/75px auto;
+  width: 75px;
+  height: 18px;
+}
+
+/* line 85, ../../../app/sass/artists/show.sass */
+.release-link {
+  padding: 0 16px 18px 0;
+}
+
+/* line 88, ../../../app/sass/artists/show.sass */
+.release-thumb {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.release-thumb {
+  *display: inline;
+}
+
+/* line 91, ../../../app/sass/artists/show.sass */
+.release-thumb {
+  width: 160px;
+  height: 160px;
+}
+
+/* line 95, ../../../app/sass/artists/show.sass */
+.release-date {
+  display: block;
+  color: #6da4b2;
+  padding: 8px 0 0;
+  font-size: 14px;
+}
+
+/* line 101, ../../../app/sass/artists/show.sass */
+.release-author, .release-title {
+  font-size: 13px;
+  line-height: 21px;
+}
+
+/* line 105, ../../../app/sass/artists/show.sass */
+#releases-more {
+  display: inline;
+  float: right;
+  position: initial;
+  background: url('/img/common/footer-nav-next@2x.png?1355824825') no-repeat right center/12px auto;
+  font-size: 14px;
+  color: #6da4b2;
+  text-decoration: none;
+  padding: 5px 21px 5px 0;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+/* line 115, ../../../app/sass/artists/show.sass */
+#releases-more:hover {
+  opacity: 1;
+}

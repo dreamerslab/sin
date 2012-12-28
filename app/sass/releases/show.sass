@@ -1,16 +1,13 @@
 @import compass
 
+$default-font: Helvetica, sans-serif
 $link-color: #6da4b2
-$content-font: Helvetica, sans-serif
 
 #main
-  +float-left
   width: 600px
 
 #sidebar
-  +float-right
   width: 232px
-  padding: 0 48px 0 0
 
 #release-cover
   display: block
@@ -29,13 +26,13 @@ $content-font: Helvetica, sans-serif
   display: block
   margin: 12px 0 32px
   color: $link-color
-  font-family: $content-font
+  font-family: $default-font
 
 #release-intro
   padding: 0 0 48px
   p
     margin: 0 0 24px
-    font-family: $content-font
+    font-family: $default-font
     font-size: 13px
     line-height: 1.5em
   a
@@ -64,7 +61,7 @@ $content-font: Helvetica, sans-serif
   padding: 0 0 0 30px
   text-decoration: none
   color: #000
-  font-family: $content-font
+  font-family: $default-font
   font-size: 13px
   line-height: 1.5em
   &:hover
@@ -79,7 +76,7 @@ $length-color: #555
   position: absolute
   top: $itunes-top
   left: 10px
-  font-family: $content-font
+  font-family: $default-font
   font-size: 13px
   color: $length-color
 
@@ -87,7 +84,7 @@ $length-color: #555
   position: absolute
   top: $itunes-top
   right: $itunes-right + $itunes-width + 32px
-  font-family: $content-font
+  font-family: $default-font
   font-size: 13px
   color: $length-color
 

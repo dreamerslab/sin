@@ -1,18 +1,21 @@
 <? it.title = 'Lives Index'; ?>
+<? it.styles.push( 'live-index' ); ?>
 
 <? var lives = [ '', '', '', '', '', '', '', '', '', '' ]; ?>
 
 <div id="live-list">
   <? lives.forEach( function ( live ){ ?>
-    <a class="live-link" href="/live/show">
-      <span class="live-date">2012.12.12</span>
-      <h3>熊寶貝樂團 live 耶耶！！</h3>
-      <span class="live-position">The WALL 公館</span>
-    </a>
+    <div class="live-link-wrap">
+      <a class="live-link" href="/live/show">
+        <h3 class="live-title">熊寶貝樂團 live 耶耶！！</h3>
+        <span class="live-location">The WALL 公館</span>
+        <span class="live-date">2012.12.12</span>
+      </a>
+    </div>
   <? }); ?>
 </div>
 
-<div id="live-nav">
-  <a class="nav-prev" href="/live/prev">Prev</a>
-  <a class="nav-next" href="/live/next">Next</a>
+<div id="nav-wrap">
+  <a id="btn-prev" href="/live/prev">Prev</a>
+  <a id="btn-next" href="/live/next">Next</a>
 </div>

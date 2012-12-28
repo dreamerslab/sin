@@ -1,18 +1,15 @@
 @import compass
 
-$hover-color: #6da4b2
+$default-font: Helvetica, sans-serif
+$color-link: #6da4b2
 
 .release-link
-  +float-left
-  color: #000
-  font-family: Helvetica, sans-serif
-  text-decoration: none
+  font-family: $default-font
   padding: 0 24px 48px 0
+  width: auto
   &:hover
     .release-thumb
       opacity: 0.5
-    .release-artist, .release-album
-      color: $hover-color
 
 .release-thumb
   display: block
@@ -20,34 +17,4 @@ $hover-color: #6da4b2
   height: 272px
 
 .release-date
-  font-size: 14px
-  color: $hover-color
-  display: block
   padding: 16px 0 3px
-
-.release-artist, .release-album
-  font-size: 13px
-  line-height: 21px
-
-#release-nav
-  text-align: center
-  margin: 0 0 0 -48px
-
-#prev, #next
-  color: $hover-color
-  font-family: sans-serif
-  text-decoration: none
-
-$nav-padding-top-n-bot: 5px
-
-#prev
-  +inline-block
-  background: image-url( "common/footer-nav-prev@2x.png" ) no-repeat top left
-  background-size: 12px auto
-  padding: $nav-padding-top-n-bot 40px $nav-padding-top-n-bot 28px
-
-#next
-  +inline-block
-  background: image-url( "common/footer-nav-next@2x.png" ) no-repeat top right
-  background-size: 12px auto
-  padding: $nav-padding-top-n-bot 28px $nav-padding-top-n-bot 40px

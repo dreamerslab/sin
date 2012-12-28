@@ -1,7 +1,7 @@
 @import compass
 @import compass/reset
 
-$body-font: Helvetica, sans-serif
+$default-font: Helvetica, sans-serif
 
 #wrap
   position: relative
@@ -20,6 +20,7 @@ $body-font: Helvetica, sans-serif
   left: 48px
   width: 912px
   height: 400px
+  z-index: 2
 
 $logo-width: 240px
 $logo-height: 200px
@@ -59,6 +60,9 @@ $nav-height: 60px
   &:hover, &:active
     background-position: 0 -60px
 
+.selected
+  background-position: 0 -60px
+
 #nav-news
   background-image: image-url( 'common/nav-news@2x.png' )
 
@@ -85,7 +89,7 @@ $nav-height: 60px
 #footer
   clear: both
   color: #aaa
-  font-family: $body-font
+  font-family: $default-font
   font-size: 13px
   text-align: center
   padding: 16px 0 28px

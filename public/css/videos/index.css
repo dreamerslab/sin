@@ -1,0 +1,36 @@
+/* line 9, ../../../app/sass/videos/index.sass */
+#videos {
+  overflow: hidden;
+  *zoom: 1;
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* line 16, ../../../app/sass/videos/index.sass */
+.video-intro {
+  position: relative;
+  padding: 13px 0 48px 96px;
+}
+
+/* line 20, ../../../app/sass/videos/index.sass */
+.video-link {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+/* line 26, ../../../app/sass/videos/index.sass */
+.video-link:hover {
+  color: #6da4b2;
+}
+
+/* line 29, ../../../app/sass/videos/index.sass */
+.video-date {
+  position: absolute;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: #535353;
+  top: 16px;
+  left: 0;
+}

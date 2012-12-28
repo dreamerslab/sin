@@ -1,262 +1,4 @@
-/* line 9, ../../../app/sass/home/index.sass */
-#main {
-  display: inline;
-  float: left;
-  font-family: Helvetica, sans-serif;
-  width: 552px;
-  padding: 0 32px 0 0;
-}
-
-/* line 15, ../../../app/sass/home/index.sass */
-.block-title {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
-  display: block;
-}
-
-/* line 22, ../../../app/sass/home/index.sass */
-#news-title-link {
-  background-image: url('/img/common/news-title@2x.png?1355815432');
-  background-size: 156px 31px;
-  width: 156px;
-  height: 31px;
-}
-
-/* line 28, ../../../app/sass/home/index.sass */
-.news-entry {
-  position: relative;
-  width: 416px;
-  padding: 31px 0 17px;
-}
-
-/* line 33, ../../../app/sass/home/index.sass */
-.title {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  font-size: 21px;
-  color: black;
-}
-/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.title {
-  *display: inline;
-}
-
-/* line 38, ../../../app/sass/home/index.sass */
-.news-entry-title {
-  padding: 0 0 12px;
-}
-
-/* line 41, ../../../app/sass/home/index.sass */
-.news-entry-title-link {
-  color: black;
-  font-family: serif;
-  font-size: 24px;
-  line-height: 28px;
-  text-decoration: none;
-}
-/* line 47, ../../../app/sass/home/index.sass */
-.news-entry-title-link:hover {
-  color: #6da4b2;
-}
-
-/* line 50, ../../../app/sass/home/index.sass */
-.news-entry-p {
-  font-family: Helvetica, sans-serif;
-  font-size: 13px;
-  color: black;
-  line-height: 18px;
-  margin: 0 0 20px;
-}
-
-/* line 57, ../../../app/sass/home/index.sass */
-.news-date {
-  position: absolute;
-  top: 9px;
-  left: 0;
-  font-family: Helvetica, sans-serif;
-  font-size: 14px;
-  color: #6da4b2;
-  line-height: 18px;
-}
-
-/* line 66, ../../../app/sass/home/index.sass */
-.news-thumb {
-  position: absolute;
-  top: 10px;
-  right: -136px;
-  border: 5px solid #eaeaea;
-  width: 120px;
-  height: 120px;
-}
-
-/* line 77, ../../../app/sass/home/index.sass */
-#release-title-link {
-  background-image: url('/img/common/releases-title@2x.png?1355815562');
-  background-size: 217px 43px;
-  width: 217px;
-  height: 43px;
-}
-
-/* line 83, ../../../app/sass/home/index.sass */
-#releases-list {
-  overflow: hidden;
-  *zoom: 1;
-  position: relative;
-  padding: 30px 0;
-}
-
-/* line 88, ../../../app/sass/home/index.sass */
-.release-link {
-  display: inline;
-  float: left;
-  width: 160px;
-  color: black;
-  padding: 0 16px 0 0;
-  text-decoration: none;
-}
-/* line 94, ../../../app/sass/home/index.sass */
-.release-link:hover {
-  color: #6da4b2;
-}
-
-/* line 97, ../../../app/sass/home/index.sass */
-.release-thumb {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-}
-/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.release-thumb {
-  *display: inline;
-}
-
-/* line 100, ../../../app/sass/home/index.sass */
-.release-thumb {
-  width: 160px;
-  height: 160px;
-}
-
-/* line 107, ../../../app/sass/home/index.sass */
-#videos-title {
-  padding: 0 0 16px;
-}
-
-/* line 110, ../../../app/sass/home/index.sass */
-#videos-title-link {
-  background-image: url('/img/common/videos-title@2x.png?1355816003');
-  background-size: 186px 43px;
-  width: 186px;
-  height: 43px;
-}
-
-/* line 116, ../../../app/sass/home/index.sass */
-.release-date {
-  display: block;
-  color: #6da4b2;
-  padding: 8px 0 0;
-  font-size: 14px;
-}
-
-/* line 122, ../../../app/sass/home/index.sass */
-.release-author, .release-title {
-  font-size: 13px;
-  line-height: 21px;
-}
-
-/* line 126, ../../../app/sass/home/index.sass */
-.btn-more {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
-  position: absolute;
-  right: 3px;
-  background: url('/img/common/more@2x.png?1355742650') no-repeat top right/18px auto;
-  width: 18px;
-  height: 50px;
-}
-
-/* line 134, ../../../app/sass/home/index.sass */
-#releases-more {
-  top: 82px;
-}
-
-/* line 137, ../../../app/sass/home/index.sass */
-#videos-more {
-  top: 46px;
-}
-
-/* line 140, ../../../app/sass/home/index.sass */
-#videos-list {
-  position: relative;
-}
-
-/* line 143, ../../../app/sass/home/index.sass */
-.video {
-  display: inline;
-  float: left;
-  padding: 0 16px 0 0;
-}
-
-/* line 147, ../../../app/sass/home/index.sass */
-.video-thumb {
-  width: 120px;
-  height: 90px;
-}
-
-/* line 151, ../../../app/sass/home/index.sass */
-#sidebar {
-  display: inline;
-  float: right;
-  width: 280px;
-  padding: 0 48px 0 0;
-}
-
-/* line 156, ../../../app/sass/home/index.sass */
-#soundcould-player, #latest-lives, #fb-fanpage {
-  padding: 0 0 48px;
-}
-
-/* line 159, ../../../app/sass/home/index.sass */
-#soundcould-player-title, #lives-title, #fb-fanpage-title {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
-  padding: 0 0 15px;
-  background-repeat: no-repeat;
-  background-position: top left;
-}
-
-/* line 165, ../../../app/sass/home/index.sass */
-#soundcould-player-title {
-  background-image: url('/img/home/sidebar-music-title.png?1355217379');
-  width: 54px;
-  height: 14px;
-  background-size: 54px auto;
-}
-
-/* line 171, ../../../app/sass/home/index.sass */
-#lives-title {
-  background-image: url('/img/home/sidebar-live-title.png?1355217500');
-  width: 33px;
-  height: 16px;
-  background-size: 33px auto;
-}
-
-/* line 177, ../../../app/sass/home/index.sass */
-#fb-fanpage-title {
-  background-image: url('/img/home/sidebar-facebook-title.png?1355217545');
-  width: 87px;
-  height: 16px;
-  background-size: 87px auto;
-}
-
-/* line 183, ../../../app/sass/home/index.sass */
+/* line 8, ../../../app/sass/home/index.sass */
 #live-list {
   overflow: hidden;
   *zoom: 1;
@@ -264,24 +6,24 @@
   padding: 16px 24px 20px;
 }
 
-/* line 188, ../../../app/sass/home/index.sass */
+/* line 13, ../../../app/sass/home/index.sass */
 .live-link {
   display: block;
   position: relative;
   padding: 10px 0 10px 42px;
   border-bottom: 1px solid #6da4b2;
-  font-family: sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 13px;
   color: black;
   text-decoration: none;
   line-height: 21px;
 }
-/* line 198, ../../../app/sass/home/index.sass */
+/* line 23, ../../../app/sass/home/index.sass */
 .live-link:hover {
   color: #6da4b2;
 }
 
-/* line 201, ../../../app/sass/home/index.sass */
+/* line 26, ../../../app/sass/home/index.sass */
 .live-date {
   position: absolute;
   top: 10px;
@@ -290,7 +32,7 @@
   margin: 0 10px 0 0;
 }
 
-/* line 208, ../../../app/sass/home/index.sass */
+/* line 33, ../../../app/sass/home/index.sass */
 #live-more {
   display: inline;
   float: right;
@@ -298,7 +40,7 @@
   text-decoration: none;
   padding: 10px 0 0;
 }
-/* line 213, ../../../app/sass/home/index.sass */
+/* line 38, ../../../app/sass/home/index.sass */
 #live-more:hover {
   text-decoration: underline;
 }

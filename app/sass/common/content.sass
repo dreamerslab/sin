@@ -1,0 +1,208 @@
+@import compass
+
+$default-font: Helvetica, sans-serif
+$color-main: #000
+$color-link: #6da4b2
+
+#main
+  +float-left
+  font-family: $default-font
+  width: 552px
+  padding: 0 32px 0 0
+
+.block-title
+  +hide-text
+  display: block
+
+$news-title-width: 132px / 2
+$news-title-height: 96px / 4
+
+#news-title-link
+  background-image: image-url( 'common/news-title@2x.png' )
+  background-size: $news-title-width auto
+  width: $news-title-width
+  height: $news-title-height
+  &:hover
+    background-position: 0 $news-title-height * ( -1 )
+
+.news-entry
+  position: relative
+  width: 416px
+  padding: 31px 0 17px
+
+.title
+  +inline-block
+  font-size: 21px
+  color: $color-main
+
+.news-entry-title
+  padding: 0 0 12px
+
+.news-entry-title-link
+  color: $color-main
+  font-family: serif
+  font-size: 24px
+  line-height: 28px
+  text-decoration: none
+  &:hover
+    color: $color-link
+
+.news-entry-p
+  font-family: $default-font
+  font-size: 13px
+  color: $color-main
+  line-height: 18px
+  margin: 0 0 20px
+
+.news-date
+  position: absolute
+  top: 9px
+  left: 0
+  font-family: $default-font
+  font-size: 14px
+  color: $color-link
+  line-height: 18px
+
+.news-thumb
+  position: absolute
+  top: 10px
+  right: -136px
+  border: 5px solid #eaeaea
+  width: 120px
+  height: 120px
+
+$release-title-width: 186px / 2
+$release-title-height: 96px / 4
+
+#release-title-link
+  background-image: image-url( 'common/releases-title@2x.png' )
+  background-size: $release-title-width auto
+  width: $release-title-width
+  height: $release-title-height
+  &:hover
+    background-position: 0 $release-title-height * ( -1 )
+
+#releases-list
+  +clearfix
+  position: relative
+  padding: 30px 0
+
+.release-link
+  +float-left
+  width: 160px
+  color: $color-main
+  padding: 0 16px 0 0
+  text-decoration: none
+  &:hover
+    color: $color-link
+
+.release-thumb
+  +inline-block
+  width: 160px
+  height: 160px
+
+$videos-title-width: 158px / 2
+$videos-title-height: 96px / 4
+
+#videos-title
+  padding: 0 0 16px
+
+#videos-title-link
+  background-image: image-url( 'common/videos-title@2x.png' )
+  background-size: $videos-title-width auto
+  width: $videos-title-width
+  height: $videos-title-height
+  &:hover
+    background-position: 0 $videos-title-height * ( -1 )
+
+.release-date
+  display: block
+  color: $color-link
+  padding: 8px 0 0
+  font-size: 14px
+
+.release-author, .release-title
+  font-size: 13px
+  line-height: 21px
+
+.btn-more
+  +hide-text
+  position: absolute
+  right: 3px
+  background: image-url( "common/more@2x.png" ) no-repeat top right / 18px auto
+  width: 18px
+  height: 50px
+
+#releases-more
+  top: 82px
+
+#videos-more
+  top: 46px
+
+#videos-list
+  position: relative
+
+.video
+  +float-left
+  padding: 0 16px 0 0
+
+.video-thumb
+  width: 120px
+  height: 90px
+
+#sidebar
+  +float-right
+  width: 280px
+  padding: 0 48px 0 0
+
+#soundcould-player, #latest-lives, #fb-fanpage
+  padding: 0 0 48px
+
+#soundcould-player-title, #lives-title, #fb-fanpage-title
+  +hide-text
+  padding: 0 0 15px
+  background-repeat: no-repeat
+  background-position: top left
+
+#soundcould-player-title
+  background-image: image-url( "home/sidebar-music-title.png" )
+  width: 54px
+  height: 14px
+  background-size: 54px auto
+
+#lives-title
+  background-image: image-url( "home/sidebar-live-title.png" )
+  width: 33px
+  height: 16px
+  background-size: 33px auto
+
+#fb-fanpage-title
+  background-image: image-url( "home/sidebar-facebook-title.png" )
+  width: 87px
+  height: 16px
+  background-size: 87px auto
+
+#nav-wrap
+  text-align: center
+  margin: 0 0 0 -48px
+
+#btn-prev, #btn-next
+  +inline-block
+  color: $color-link
+  font-family: $default-font
+  text-decoration: none
+  opacity: 0.7
+  &:hover
+    opacity: 1
+
+$nav-padding-top-n-bot: 5px
+
+#btn-prev
+  background: image-url( "common/footer-nav-prev@2x.png" ) no-repeat top left
+  background-size: 12px auto
+  padding: $nav-padding-top-n-bot 40px $nav-padding-top-n-bot 28px
+
+#btn-next
+  background: image-url( "common/footer-nav-next@2x.png" ) no-repeat top right
+  background-size: 12px auto
+  padding: $nav-padding-top-n-bot 28px $nav-padding-top-n-bot 40px

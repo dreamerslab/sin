@@ -1,0 +1,54 @@
+/* line 11, ../../../app/sass/contact/index.sass */
+#contact-form {
+  font-family: Helvetica, sans-serif;
+  color: #6da4b2;
+  width: 600px;
+  padding: 0 180px 0 132px;
+}
+
+/* line 17, ../../../app/sass/contact/index.sass */
+.form-label {
+  display: block;
+  padding: 24px 0 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+/* line 23, ../../../app/sass/contact/index.sass */
+.contact-form-input, .contact-form-textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #6da4b2;
+  font-family: serif;
+  font-size: 16px;
+  color: #6da4b2;
+  padding: 0 0 0 16px;
+}
+
+/* line 32, ../../../app/sass/contact/index.sass */
+.contact-form-input {
+  height: 40px;
+}
+
+/* line 35, ../../../app/sass/contact/index.sass */
+.contact-form-textarea {
+  padding: 16px 0 0 16px;
+  line-height: 1.5em;
+}
+
+/* line 39, ../../../app/sass/contact/index.sass */
+#btn-submit {
+  display: block;
+  background: none;
+  border: 1px solid #6da4b2;
+  padding: 10px 56px;
+  margin: 48px auto 0;
+  color: #6da4b2;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+/* line 48, ../../../app/sass/contact/index.sass */
+#btn-submit:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}

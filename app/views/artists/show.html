@@ -1,42 +1,78 @@
 <? it.title = 'Artists Show'; ?>
+<? it.styles.push( 'artists-show' ); ?>
 
-<div id="artist-intro-wrap">
-  <div class="artists-entry">
-    <h2 class="artists-entry-title">流亞定合大前</h2>
-    <p class="artists-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-  </div>
-  <div id="social-links">
-    <a class="social-link" href="/">facebook</a>
-    <span class="pipe">|</span>
-    <a class="social-link" href="/">streetvoice</a>
-    <span class="pipe">|</span>
-    <a class="social-link" href="/">indievox</a>
-    <span class="pipe">|</span>
-    <a class="social-link" href="/">12.25</a>
-  </div>
-  <img class="artists-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
-</div>
+<div id="main">
+  <div id="artist-intro-wrap">
+    <div class="artists-entry">
+      <h2 id="artists-entry-title">流亞定合大前</h2>
 
-<div id="news">
-  <h2 id="news-title" class="title">
-    <a id="news-title-link" class="block-title" href="/">LATEST NEWS</a>
-  </h2>
-
-  <? var entries = [ '' ]; ?>
-
-  <? entries.forEach( function (){ ?>
-    <div class="news-entry">
-      <h3 class="news-entry-title">
-        <a href="/" class="news-entry-title-link" title="">流亞定合大前</a>
-      </h3>
-      <p class="news-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-      <p class="news-date">2012.12.10</p>
+      <div id="artist-intro">
+        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+      </div>
     </div>
-  <? }); ?>
-</div>
+    <div id="social-links">
+      <a class="social-link" href="/">facebook</a>
+      <a class="social-link" href="/">streetvoice</a>
+      <a class="social-link" href="/">indievox</a>
+      <a class="social-link" href="/">streetvoice</a>
+    </div>
+  </div>
 
-<?= it.partial( 'home/_videos' ) ?>
+  <div id="news">
+    <h2 id="news-title" class="title">
+      <a id="news-title-link" class="block-title" href="/">LATEST NEWS</a>
+    </h2>
+
+    <? var entries = [ '' , '', '' ]; ?>
+
+    <? entries.forEach( function ( entry ){ ?>
+      <div class="news-entry">
+        <h3 class="news-entry-title">
+          <a href="/news/show" class="news-entry-title-link" title="">流亞定合大前</a>
+        </h3>
+        <p class="news-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+        <p class="news-date">2012.12.10</p>
+      </div>
+    <? }); ?>
+  </div>
+  <div id="videos">
+    <h2 id="videos-title" class="title">
+      <a id="videos-title-link" class="block-title" href="/videos">NEW VIDEOS</a>
+    </h2>
+
+    <div id="videos-list">
+      <? var entries = [ '', '' ]; ?>
+
+      <? entries.forEach( function (){ ?>
+        <iframe class="video" width="248" height="140" src="https://www.youtube.com/embed/E6Rd7UE8jQc" frameborder="0" allowfullscreen></iframe>
+      <? }); ?>
+
+      <a id="videos-more" class="btn-more" href="/">More</a>
+    </div>
+  </div>
+</div>
 
 <div id="sidebar">
-  <?= it.partial( 'home/_releases' ) ?>
+  <div id="releases">
+    <h2 id="release-title" class="title">
+      NEW RELEASES
+    </h2>
+
+    <div id="releases-list">
+      <? var releases = [ '', '', '' ]; ?>
+
+      <? releases.forEach( function (){ ?>
+        <a href="/releases/show" class="release-link">
+          <img class="release-thumb" src="/img/home/release-thumb.jpeg" alt="thumb">
+          <p class="release-date">2011</p>
+          <h4 class="release-author">偷摸大雞</h4>
+          <h3 class="release-title">同名EP</h3>
+        </a>
+      <? }); ?>
+
+      <a id="releases-more" href="/">more</a>
+    </div>
+  </div>
 </div>

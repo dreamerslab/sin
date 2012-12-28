@@ -1,6 +1,7 @@
 @import compass
 
-$link-color: #6da4b2
+$default-font: Helvetica, sans-serif
+$color-link: #6da4b2
 
 .news-entry
   position: relative
@@ -16,7 +17,7 @@ $link-color: #6da4b2
     margin: 0 0 16px
   p, h2, h3, h4, h5, h6
     margin: 0 0 24px
-    font-family: sans-serif
+    font-family: $default-font
     font-size: 13px
     line-height: 1.5em
   img
@@ -25,7 +26,7 @@ $link-color: #6da4b2
     max-width: 864px
     max-height: 600px
   a
-    color: $link-color
+    color: $color-link
     text-decoration: none
     &:hover
       text-decoration: underline
@@ -44,28 +45,9 @@ h3.news-entry-title
 $news-els-position-top: 0
 
 .news-date
-  position: absolute
   top: $news-els-position-top
-  left: 0
-  color: $link-color
-  font-family: sans-serif
 
 .btn-delete
   position: absolute
   top: $news-els-position-top
   right: -300px
-
-#nav-wrap
-  text-align: center
-
-.btn-back
-  +inline-block
-  font-family: sans-serif
-  color: $link-color
-  text-decoration: none
-  background: image-url( 'common/footer-nav-prev@2x.png' ) no-repeat top left
-  background-size: 12px auto
-  padding: 5px 40px 5px 28px
-  opacity: 0.7
-  &:hover
-    opacity: 1

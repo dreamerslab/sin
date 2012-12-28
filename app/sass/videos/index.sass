@@ -1,0 +1,35 @@
+@import compass
+
+$default-font: Helvetica, sans-serif
+$default-font-size: 14px
+
+$color-main: #000
+$color-link: #6da4b2
+
+#videos
+  +clearfix
+  width: 600px
+  margin: 0 auto
+
+$video-intro-padding-top: 13px
+
+.video-intro
+  position: relative
+  padding: $video-intro-padding-top 0 48px 96px
+
+.video-link
+  color: $color-main
+  font-family: $default-font
+  font-size: $default-font-size
+  line-height: 1.5em
+  text-decoration: none
+  &:hover
+    color: $color-link
+
+.video-date
+  position: absolute
+  font-family: $default-font
+  font-size: $default-font-size
+  color: #535353
+  top: $video-intro-padding-top + 3px
+  left: 0

@@ -13,6 +13,7 @@ css:
   common:
     site:
       - common/layout
+      - common/content
   home:
     site:
       - home/index
@@ -22,12 +23,27 @@ css:
   news-show:
     site:
       - news/show
+  artists-index:
+    site:
+      - artists/index
+  artists-show:
+    site:
+      - artists/show
   releases-index:
     site:
       - releases/index
   releases-show:
     site:
       - releases/show
+  videos-index:
+    site:
+      - videos/index
+  live-index:
+    site:
+      - live/index
+  contact-index:
+    site:
+      - contact/index
 
 js:
   # js group name

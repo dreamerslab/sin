@@ -1,24 +1,30 @@
 <? it.title = 'Artists Index'; ?>
+<? it.styles.push( 'artists-index' ); ?>
 
 <div id="artists">
-  <h2 id="artists-title">
-    Artists Index
-  </h2>
   <div id="artists-entries">
-    <a href="/" class="btn-add">Add artist</a>
-    <div class="artists-entry">
-      <div class="artist-intro-wrap">
-        <h3 class="artists-entry-title">
-          <a href="/" class="artists-entry-title-link" title="">流亞定合大前</a>
+    <a href="/" id="btn-add">Add artist</a>
+
+    <? var entries = [ '', '', '' ]; ?>
+
+    <? entries.forEach( function ( entry ){ ?>
+      <div class="news-entry">
+        <h3 class="news-entry-title">
+          <a href="/artists/show" class="news-entry-title-link" title="">流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前</a>
         </h3>
-        <p class="artists-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身</p>
+
+        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身</p>
+
+        <a href="/news/show" class="news-thumb-link">
+          <img class="news-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
+        </a>
+        <a href="/" class="btn-delete">Delete this artist</a>
       </div>
-      <img class="artists-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
-      <a href="/" class="btn-delete">Delete this artist</a>
-    </div>
+    <? }); ?>
   </div>
-  <div id="artists-nav">
-    <a id="prev" href="/">Prev</a>
-    <a id="next" href="/">Next</a>
+  <div id="nav-wrap">
+    <a id="btn-prev" href="/" title="Previous page">prev</a>
+    <a id="btn-next" href="/" title="Next page">next</a>
   </div>
 </div>

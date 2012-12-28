@@ -1,0 +1,116 @@
+@import compass
+
+$default-font: Helvetica, sans-serif
+$color-main: #000
+$color-link: #6da4b2
+
+#content
+  position: relative
+  z-index: 1
+
+#main
+  +float-left
+  width: 600px
+  font-family: $default-font
+
+#artists-entry-title
+  color: $color-main
+  font-family: serif
+  font-size: 24px
+  line-height: 28px
+  text-decoration: none
+
+#artist-intro
+  p
+    margin: 0 0 24px
+    font-family: $default-font
+    font-size: 13px
+    line-height: 1.5em
+  a
+    color: $color-link
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  strong
+    font-weight: bold
+  em
+    font-style: italic
+
+#social-links
+  +clearfix
+
+$social-link-padding-top-n-bot: 1px
+
+.social-link
+  +float-left
+  font-size: 14px
+  color: $color-link
+  text-decoration: none
+  padding: $social-link-padding-top-n-bot 16px
+  border-right: 1px solid $color-link
+  &:hover
+    text-decoration: underline
+
+.social-link:first-child
+  padding: $social-link-padding-top-n-bot 16px $social-link-padding-top-n-bot 0
+
+.social-link:last-child
+  border: none
+
+#news
+  padding: 48px 0 0
+
+#videos-more
+  right: 52px
+
+#sidebar
+  +float-right
+  position: relative
+  top: -55px
+  height: 100%
+  background: #e6e6e6
+  width: 168px
+  padding: 55px 48px 48px
+  font-family: $default-font
+
+#releases-list
+  padding: 10px 0 30px
+
+#release-title
+  +hide-text
+  background: image-url( 'common/sidebar-releases-title.png' ) no-repeat left top / 75px auto
+  width: 75px
+  height: 18px
+
+.release-link
+  padding: 0 16px 18px 0
+
+.release-thumb
+  +inline-block
+
+.release-thumb
+  width: 160px
+  height: 160px
+
+.release-date
+  display: block
+  color: $color-link
+  padding: 8px 0 0
+  font-size: 14px
+
+.release-author, .release-title
+  font-size: 13px
+  line-height: 21px
+
+#releases-more
+  +float-right
+  position: initial
+  background: image-url( "common/footer-nav-next@2x.png" ) no-repeat right center / 12px auto
+  font-size: 14px
+  color: $color-link
+  text-decoration: none
+  padding: 5px 21px 5px 0
+  margin: 0 8px 0 0
+  opacity: 0.7
+  &:hover
+    opacity: 1
