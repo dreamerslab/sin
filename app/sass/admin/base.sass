@@ -1,16 +1,5 @@
 @import compass
-
-$default-font: Helvetica, sans-serif
-
-$bg-panel-logout: #ebebeb
-$bg-panel-edit: #6da4b2
-
-$panel-btn-height: 48px
-$panel-link-eidt-pading-top: 19px
-
-$color-panel-main: #555
-$color-panel-edit: #fff
-$color-link: $bg-panel-edit
+@import ../common/lib
 
 #admin-panel
   position: absolute
@@ -19,18 +8,10 @@ $color-link: $bg-panel-edit
   z-index: 4
 
 #panel-link-edit
+  +link-edit
   position: absolute
   top: 0
   right: 0
-  background: $bg-panel-edit image-url( 'common/admin-edit@2x.png' ) no-repeat 16px 16px
-  background-size: 16px auto
-  color: $color-panel-edit
-  text-decoration: none
-  font-family: $default-font
-  font-size: 12px
-  height: $panel-btn-height - $panel-link-eidt-pading-top
-  width: 83px
-  padding: $panel-link-eidt-pading-top 16px 0 46px
 
 #header-form
   position: absolute
@@ -50,44 +31,25 @@ $color-link: $bg-panel-edit
   padding: 5px
 
 .error-msg
-  color: #bb322e
+  color: $color-error-msg
   font-family: $default-font
   font-size: 12px
   padding: 8px 0 0 6px
 
-#confirm-btn
-  +hide-text
+#btn-confirm
+  +btn-confirm
   position: absolute
   top: 82px
   right: 0
-  border: none
-  background: $bg-panel-edit image-url( 'common/admin-confirm@2x.png' ) no-repeat 16px 16px
-  background-size: 16px auto
-  height: $panel-btn-height
-  width: $panel-btn-height
-  &:hover
-    cursor: pointer
 
 #link-cancel
-  +hide-text
+  +link-cancel
   position: absolute
   top: 82px
   right: 48px
-  background: $bg-panel-logout image-url( 'common/admin-cancel@2x.png' ) no-repeat 16px 16px
-  background-size: 16px auto
-  height: $panel-btn-height
-  width: $panel-btn-height
 
 #btn-logout
+  +btn-logout
   position: absolute
   top: 0
   right: -117px
-  border: none
-  background: $bg-panel-logout image-url( 'common/admin-logout@2x.png' ) no-repeat 16px 16px
-  background-size: 16px auto
-  color: $color-panel-main
-  height: $panel-btn-height
-  padding: 0 16px 0 46px
-  font-size: 12px
-  &:hover
-    cursor: pointer

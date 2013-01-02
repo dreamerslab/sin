@@ -1,4 +1,4 @@
-/* line 15, ../../../app/sass/admin/base.sass */
+/* line 4, ../../../app/sass/admin/base.sass */
 #admin-panel {
   position: absolute;
   top: 78px;
@@ -6,12 +6,9 @@
   z-index: 4;
 }
 
-/* line 21, ../../../app/sass/admin/base.sass */
+/* line 10, ../../../app/sass/admin/base.sass */
 #panel-link-edit {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: #6da4b2 url('/img/common/admin-edit@2x.png?1356320064') no-repeat 16px 16px;
+  background: #6da4b2 url('/img/common/admin-edit@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   color: white;
   text-decoration: none;
@@ -20,9 +17,12 @@
   height: 29px;
   width: 83px;
   padding: 19px 16px 0 46px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-/* line 35, ../../../app/sass/admin/base.sass */
+/* line 16, ../../../app/sass/admin/base.sass */
 #header-form {
   position: absolute;
   top: 48px;
@@ -32,7 +32,7 @@
   padding: 16px;
 }
 
-/* line 43, ../../../app/sass/admin/base.sass */
+/* line 24, ../../../app/sass/admin/base.sass */
 #header-input {
   border: 1px solid white;
   background: none;
@@ -43,7 +43,7 @@
   padding: 5px;
 }
 
-/* line 52, ../../../app/sass/admin/base.sass */
+/* line 33, ../../../app/sass/admin/base.sass */
 .error-msg {
   color: #bb322e;
   font-family: Helvetica, sans-serif;
@@ -51,53 +51,53 @@
   padding: 8px 0 0 6px;
 }
 
-/* line 58, ../../../app/sass/admin/base.sass */
-#confirm-btn {
+/* line 39, ../../../app/sass/admin/base.sass */
+#btn-confirm {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  position: absolute;
-  top: 82px;
-  right: 0;
   border: none;
-  background: #6da4b2 url('/img/common/admin-confirm@2x.png?1356320179') no-repeat 16px 16px;
+  background: #6da4b2 url('/img/common/admin-confirm@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   height: 48px;
   width: 48px;
+  position: absolute;
+  top: 82px;
+  right: 0;
 }
-/* line 68, ../../../app/sass/admin/base.sass */
-#confirm-btn:hover {
+/* line 34, ../../../app/sass/common/lib.sass */
+#btn-confirm:hover {
   cursor: pointer;
 }
 
-/* line 71, ../../../app/sass/admin/base.sass */
+/* line 45, ../../../app/sass/admin/base.sass */
 #link-cancel {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  position: absolute;
-  top: 82px;
-  right: 48px;
-  background: #ebebeb url('/img/common/admin-cancel@2x.png?1356320134') no-repeat 16px 16px;
+  background: #ebebeb url('/img/common/admin-cancel@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   height: 48px;
   width: 48px;
+  position: absolute;
+  top: 82px;
+  right: 48px;
 }
 
-/* line 81, ../../../app/sass/admin/base.sass */
+/* line 51, ../../../app/sass/admin/base.sass */
 #btn-logout {
-  position: absolute;
-  top: 0;
-  right: -117px;
   border: none;
-  background: #ebebeb url('/img/common/admin-logout@2x.png?1356320017') no-repeat 16px 16px;
+  background: #ebebeb url('/img/common/admin-logout@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   color: #555555;
   height: 48px;
   padding: 0 16px 0 46px;
   font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: -117px;
 }
-/* line 92, ../../../app/sass/admin/base.sass */
+/* line 52, ../../../app/sass/common/lib.sass */
 #btn-logout:hover {
   cursor: pointer;
 }
