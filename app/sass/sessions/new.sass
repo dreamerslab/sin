@@ -1,8 +1,7 @@
 @import compass
+@import ../common/lib
 
 $wrap-width: 200px
-$default-font: Helvetica, sans-serif
-$color-link: #6da4b2
 $password-padding-left: 20px
 
 html, body
@@ -12,8 +11,6 @@ html, body
   float: left
   height: 50%
   width: 1px /* only for IE7 */
-
-#floater
   margin: 0 0 -85px
 
 #wrap
@@ -62,9 +59,9 @@ html, body
     opacity: 0.8
 
 .error
+  font-family: $default-font
   font-size: 13px
-  border: 1px solid #f00
   color: #f00
-  width: 160px
+  width: $wrap-width
   height: 26px
   margin: 12px 0 0

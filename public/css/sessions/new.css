@@ -1,21 +1,17 @@
-/* line 8, ../../../app/sass/sessions/new.sass */
+/* line 7, ../../../app/sass/sessions/new.sass */
 html, body {
   height: 100%;
 }
 
-/* line 11, ../../../app/sass/sessions/new.sass */
+/* line 10, ../../../app/sass/sessions/new.sass */
 #floater {
   float: left;
   height: 50%;
   width: 1px;
-}
-
-/* line 16, ../../../app/sass/sessions/new.sass */
-#floater {
   margin: 0 0 -85px;
 }
 
-/* line 19, ../../../app/sass/sessions/new.sass */
+/* line 16, ../../../app/sass/sessions/new.sass */
 #wrap {
   text-align: center;
   clear: both;
@@ -25,12 +21,12 @@ html, body {
   margin: 0 auto;
 }
 
-/* line 27, ../../../app/sass/sessions/new.sass */
+/* line 24, ../../../app/sass/sessions/new.sass */
 #logo {
   margin: 0 auto;
 }
 
-/* line 30, ../../../app/sass/sessions/new.sass */
+/* line 27, ../../../app/sass/sessions/new.sass */
 #login-title {
   font-family: Helvetica, sans-serif;
   font-size: 14px;
@@ -38,12 +34,12 @@ html, body {
   color: #aaaaaa;
 }
 
-/* line 36, ../../../app/sass/sessions/new.sass */
+/* line 33, ../../../app/sass/sessions/new.sass */
 #login-form {
   padding: 32px 0 0;
 }
 
-/* line 39, ../../../app/sass/sessions/new.sass */
+/* line 36, ../../../app/sass/sessions/new.sass */
 #password {
   background: #efefef;
   border: none;
@@ -55,7 +51,7 @@ html, body {
   padding: 0 0 0 20px;
 }
 
-/* line 49, ../../../app/sass/sessions/new.sass */
+/* line 46, ../../../app/sass/sessions/new.sass */
 #login-btn {
   text-align: center;
   background: #6da4b2;
@@ -68,18 +64,18 @@ html, body {
   font-size: 12px;
   margin: 24px 0 0;
 }
-/* line 60, ../../../app/sass/sessions/new.sass */
+/* line 57, ../../../app/sass/sessions/new.sass */
 #login-btn:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-/* line 64, ../../../app/sass/sessions/new.sass */
+/* line 61, ../../../app/sass/sessions/new.sass */
 .error {
+  font-family: Helvetica, sans-serif;
   font-size: 13px;
-  border: 1px solid red;
   color: red;
-  width: 160px;
+  width: 200px;
   height: 26px;
   margin: 12px 0 0;
 }
