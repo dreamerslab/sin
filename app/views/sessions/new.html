@@ -13,8 +13,8 @@
       <h2 id="login-title">ADMIN PANEL</h2>
       <form id="login-form" action="/admin/sessions" method="POST" accept-charset="UTF-8" >
         <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
-        <input id="password" type="password" name="password" placeholder="Password">
-        <input id="login-btn" type="submit" value="Log in" />
+        <input id="password" type="password" name="password" placeholder="PASSWORD">
+        <input id="login-btn" type="submit" value="LOG IN" />
 
         <? it.exist( it.login_err, function (){ ?>
           <p class="error"><?= it.login_err ?></p>

@@ -1,0 +1,70 @@
+@import compass
+
+$wrap-width: 200px
+$default-font: Helvetica, sans-serif
+$color-link: #6da4b2
+$password-padding-left: 20px
+
+html, body
+  height: 100%
+
+#floater
+  float: left
+  height: 50%
+  width: 1px /* only for IE7 */
+
+#floater
+  margin: 0 0 -85px
+
+#wrap
+  text-align: center
+  clear: both
+  position: static
+  width: $wrap-width
+  height: 170px
+  margin: 0 auto
+
+#logo
+  margin: 0 auto
+
+#login-title
+  font-family: $default-font
+  font-size: 14px
+  padding: 6px 0 0
+  color: #aaa
+
+#login-form
+  padding: 32px 0 0
+
+#password
+  background: #efefef
+  border: none
+  color: #555
+  font-size: 12px
+  display: block
+  width: $wrap-width - $password-padding-left
+  height: 48px
+  padding: 0 0 0 $password-padding-left
+
+#login-btn
+  text-align: center
+  background: $color-link
+  border: none
+  color: #fff
+  display: block
+  width: $wrap-width
+  height: 48px
+  font-family: $default-font
+  font-size: 12px
+  margin: 24px 0 0
+  &:hover
+    cursor: pointer
+    opacity: 0.8
+
+.error
+  font-size: 13px
+  border: 1px solid #f00
+  color: #f00
+  width: 160px
+  height: 26px
+  margin: 12px 0 0

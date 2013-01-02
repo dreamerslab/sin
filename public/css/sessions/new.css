@@ -1,0 +1,85 @@
+/* line 8, ../../../app/sass/sessions/new.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 11, ../../../app/sass/sessions/new.sass */
+#floater {
+  float: left;
+  height: 50%;
+  width: 1px;
+}
+
+/* line 16, ../../../app/sass/sessions/new.sass */
+#floater {
+  margin: 0 0 -85px;
+}
+
+/* line 19, ../../../app/sass/sessions/new.sass */
+#wrap {
+  text-align: center;
+  clear: both;
+  position: static;
+  width: 200px;
+  height: 170px;
+  margin: 0 auto;
+}
+
+/* line 27, ../../../app/sass/sessions/new.sass */
+#logo {
+  margin: 0 auto;
+}
+
+/* line 30, ../../../app/sass/sessions/new.sass */
+#login-title {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 6px 0 0;
+  color: #aaaaaa;
+}
+
+/* line 36, ../../../app/sass/sessions/new.sass */
+#login-form {
+  padding: 32px 0 0;
+}
+
+/* line 39, ../../../app/sass/sessions/new.sass */
+#password {
+  background: #efefef;
+  border: none;
+  color: #555555;
+  font-size: 12px;
+  display: block;
+  width: 180px;
+  height: 48px;
+  padding: 0 0 0 20px;
+}
+
+/* line 49, ../../../app/sass/sessions/new.sass */
+#login-btn {
+  text-align: center;
+  background: #6da4b2;
+  border: none;
+  color: white;
+  display: block;
+  width: 200px;
+  height: 48px;
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  margin: 24px 0 0;
+}
+/* line 60, ../../../app/sass/sessions/new.sass */
+#login-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* line 64, ../../../app/sass/sessions/new.sass */
+.error {
+  font-size: 13px;
+  border: 1px solid red;
+  color: red;
+  width: 160px;
+  height: 26px;
+  margin: 12px 0 0;
+}
