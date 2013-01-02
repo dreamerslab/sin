@@ -3,12 +3,10 @@ var Application = require( CONTROLLER_DIR + 'application' );
 module.exports = Application.extend({
 
   index : function ( req, res, next ){
-    console.log( req.session.is_authenticated );
-
     res.render( 'home/index', {
-      title   : '三十而立 sincerely music',
-      _assets : 'admin/home/assets/_index',
-      is_login : req.session.is_authenticated
+      title            : '三十而立 sincerely music',
+      _assets          : 'admin/home/assets/_index',
+      is_authenticated : req.session.is_authenticated
     });
   },
 

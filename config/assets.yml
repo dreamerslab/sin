@@ -27,6 +27,11 @@ css:
   news-index:
     site:
       - news/index
+  admin-news-index:
+    site:
+      - news/index
+      - admin/base
+      - admin/news/index
   news-show:
     site:
       - news/show

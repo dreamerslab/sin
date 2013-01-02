@@ -1,4 +1,12 @@
 var moment = require( 'moment' );
+var covers = {
+  news     : '/img/common/cover-news.png',
+  artists  : '/img/common/cover-artists.png',
+  releases : '/img/common/cover-releases.png',
+  live     : '/img/common/cover-live.png',
+  videos   : '/img/common/cover-videos.png',
+  contact  : '/img/common/cover-contact.png'
+};
 
 module.exports = function ( app ){
   app.helpers({
@@ -11,6 +19,12 @@ module.exports = function ( app ){
 
     selected : function ( target, current ){
       return target === current ? 'selected' : '';
+    },
+
+    header_overlay : function ( name ){
+      return covers[ name ] ?
+        '<img id="header-overlay" src="' + covers[ name ] + '" alt="Header Overlay">' :
+        '';
     },
 
     val : function ( obj, prop ){

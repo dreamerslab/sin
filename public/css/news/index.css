@@ -1,9 +1,4 @@
-/* line 6, ../../../app/sass/news/index.sass */
-#btn-add {
-  display: none;
-}
-
-/* line 9, ../../../app/sass/news/index.sass */
+/* line 7, ../../../app/sass/news/index.sass */
 .news-entry {
   width: 580px;
   position: relative;
@@ -11,55 +6,48 @@
   padding: 24px 0 48px;
 }
 
-/* line 16, ../../../app/sass/news/index.sass */
+/* line 14, ../../../app/sass/news/index.sass */
 .news-entry p {
   margin: 0 0 24px;
   font-family: Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.5em;
 }
-/* line 21, ../../../app/sass/news/index.sass */
+/* line 19, ../../../app/sass/news/index.sass */
 .news-entry a {
   color: #6da4b2;
   text-decoration: none;
 }
-/* line 24, ../../../app/sass/news/index.sass */
+/* line 22, ../../../app/sass/news/index.sass */
 .news-entry a:hover {
   text-decoration: underline;
 }
-/* line 26, ../../../app/sass/news/index.sass */
+/* line 24, ../../../app/sass/news/index.sass */
 .news-entry strong {
   font-weight: bold;
 }
-/* line 28, ../../../app/sass/news/index.sass */
+/* line 26, ../../../app/sass/news/index.sass */
 .news-entry em {
   font-style: italic;
 }
 
-/* line 33, ../../../app/sass/news/index.sass */
+/* line 29, ../../../app/sass/news/index.sass */
 .news-date {
   top: 0;
 }
 
-/* line 36, ../../../app/sass/news/index.sass */
+/* line 32, ../../../app/sass/news/index.sass */
 .news-thumb-link {
   position: absolute;
   top: 24px;
   right: -300px;
 }
 
-/* line 41, ../../../app/sass/news/index.sass */
+/* line 37, ../../../app/sass/news/index.sass */
 .news-thumb {
   border: none;
   position: initial;
   display: block;
   width: 280px;
   height: 280px;
-}
-
-/* line 48, ../../../app/sass/news/index.sass */
-.btn-delete {
-  position: absolute;
-  top: 0;
-  right: -300px;
 }

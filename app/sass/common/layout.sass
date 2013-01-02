@@ -3,6 +3,14 @@
 
 $default-font: Helvetica, sans-serif
 
+@mixin header-cover( $z_index )
+  position: absolute
+  top: 78px
+  left: 48px
+  width: 912px
+  height: 400px
+  z-index: $z_index
+
 #wrap
   position: relative
   width: 960px
@@ -15,12 +23,10 @@ $default-font: Helvetica, sans-serif
   background: #fff
 
 #cover
-  position: absolute
-  top: 78px
-  left: 48px
-  width: 912px
-  height: 400px
-  z-index: 2
+  +header-cover( 2 )
+
+#header-overlay
+  +header-cover( 3 )
 
 $logo-width: 240px
 $logo-height: 200px

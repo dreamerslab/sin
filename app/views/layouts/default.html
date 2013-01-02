@@ -17,27 +17,29 @@
         <div id="nav">
           <ul class="nav-list">
             <li class="nav-item">
-              <a href="/news" id="nav-news" class="nav-link" title="Go to News page">News</a>
+              <a href="/news" id="nav-news" class="nav-link <?= it.selected( 'news', it.nav_selected ) ?>" title="Go to News page">News</a>
             </li>
             <li class="nav-item">
-              <a href="/artists" id="nav-artists" class="nav-link" title="Go to Artists page">Artists</a>
+              <a href="/artists" id="nav-artists" class="nav-link <?= it.selected( 'artists', it.nav_selected ) ?>" title="Go to Artists page">Artists</a>
             </li>
             <li class="nav-item">
-              <a href="/releases" id="nav-releases" class="nav-link" title="Go to Releases page">Releases</a>
+              <a href="/releases" id="nav-releases" class="nav-link <?= it.selected( 'releases', it.nav_selected ) ?>" title="Go to Releases page">Releases</a>
             </li>
             <li class="nav-item">
-              <a href="/live" id="nav-live" class="nav-link" title="Go to Live page">Live</a>
+              <a href="/live" id="nav-live" class="nav-link <?= it.selected( 'live', it.nav_selected ) ?>" title="Go to Live page">Live</a>
             </li>
             <li class="nav-item">
-              <a href="/videos" id="nav-videos" class="nav-link" title="Go to Videos page">Videos</a>
+              <a href="/videos" id="nav-videos" class="nav-link <?= it.selected( 'videos', it.nav_selected ) ?>" title="Go to Videos page">Videos</a>
             </li>
             <li class="nav-item">
-              <a href="/contact" id="nav-contact" class="nav-link" title="Go to Contact page">Contact</a>
+              <a href="/contact" id="nav-contact" class="nav-link <?= it.selected( 'contact', it.nav_selected ) ?>" title="Go to Contact page">Contact</a>
             </li>
           </ul>
         </div>
         <img id="cover" src="/img/cover.jpeg" alt="cover">
-        <? if ( it.is_login ){ ?>
+        <?= it.header_overlay( it.nav_selected ) ?>
+
+        <? if ( it.is_authenticated ){ ?>
           <?= it.partial( 'admin/common/_admin_panel' ) ?>
         <? } ?>
       </div>

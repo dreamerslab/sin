@@ -67,7 +67,7 @@
   top: 82px;
   right: 0;
 }
-/* line 57, ../../../app/sass/common/lib.sass */
+/* line 88, ../../../app/sass/common/lib.sass */
 #btn-confirm:hover {
   cursor: pointer;
 }
@@ -104,7 +104,7 @@
   font-size: 12px;
   border-radius: 0;
 }
-/* line 69, ../../../app/sass/common/lib.sass */
+/* line 100, ../../../app/sass/common/lib.sass */
 #btn-logout:hover {
   cursor: pointer;
 }

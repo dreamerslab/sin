@@ -1,9 +1,13 @@
+<?= it.partial( it._assets ) ?>
+
 <? it.title = '三十而立 sincerely music | 新聞'; ?>
-<? it.styles.push( 'news-index' ); ?>
+<? it.nav_selected = 'news'; ?>
 
 <div id="news">
   <div id="news-entries">
-    <a href="/" id="btn-add">Add entry</a>
+    <? if ( it.is_authenticated ){ ?>
+      <a href="/" id="btn-add">ADD NEW ENTRY</a>
+    <? } ?>
 
     <? var entries = [ '', '', '' ]; ?>
 
@@ -19,7 +23,9 @@
         <a href="/news/show" class="news-thumb-link">
           <img class="news-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
         </a>
-        <a href="/" class="btn-delete">Delete this entry</a>
+        <? if( it.is_authenticated ){ ?>
+          <a href="/admin/news/delete" class="link-delete">DELETE THIS ENTRY</a>
+        <? } ?>
       </div>
     <? }); ?>
   </div>

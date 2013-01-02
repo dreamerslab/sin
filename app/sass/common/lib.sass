@@ -4,6 +4,7 @@ $default-font: Helvetica, sans-serif
 
 $color-panel-main: #555
 $color-panel-edit: #fff
+$color-link-delete: #c66
 $color-link: #6da4b2
 $color-error-msg: #bb322e
 
@@ -44,6 +45,36 @@ $panel-link-eidt-pading-top: 19px
   padding: 20px 0 0
   opacity: 0.7
   &:hover
+    opacity: 1
+
+@mixin link-add
+  background: $color-link image-url( 'common/admin-add@2x.png' ) no-repeat 16px 16px
+  background-size: 16px auto
+  color: $color-panel-edit
+  text-decoration: none
+  font-family: $default-font
+  font-size: 12px
+  height: $panel-btn-height-n-width - $panel-link-eidt-pading-top
+  width: 103px
+  padding: $panel-link-eidt-pading-top 16px 0 46px
+  opacity: 0.8
+  &:hover
+    text-decoration: none
+    opacity: 1
+
+@mixin link-delete
+  background: $color-link-delete image-url( 'common/admin-delete@2x.png' ) no-repeat 16px 16px
+  background-size: 16px auto
+  color: $color-panel-edit
+  text-decoration: none
+  font-family: $default-font
+  font-size: 12px
+  height: $panel-btn-height-n-width - $panel-link-eidt-pading-top
+  width: 123px
+  padding: $panel-link-eidt-pading-top 16px 0 46px
+  opacity: 0.8
+  &:hover
+    text-decoration: none
     opacity: 1
 
 @mixin btn-confirm
