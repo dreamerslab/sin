@@ -9,6 +9,8 @@ module.exports = Application.extend({
   },
 
   show : function ( req, res, next ){
-    res.render( 'news/show' );
+    res.render( 'news/show', {
+      _assets : 'news/assets/_show'
+    });
   }
 });

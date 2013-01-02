@@ -14,7 +14,7 @@ $bg-panel-edit: $color-link
 $panel-btn-height-n-width: 48px
 $panel-link-eidt-pading-top: 19px
 
-@mixin link-edit
+@mixin link-edit( $width: 83px )
   background: $bg-panel-edit image-url( 'common/admin-edit@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
   color: $color-panel-edit
@@ -22,8 +22,11 @@ $panel-link-eidt-pading-top: 19px
   font-family: $default-font
   font-size: 12px
   height: $panel-btn-height-n-width - $panel-link-eidt-pading-top
-  width: 83px
+  width: $width
   padding: $panel-link-eidt-pading-top 16px 0 46px
+  opacity: 0.8
+  &:hover
+    opacity: 1
 
 @mixin link-cancel
   +hide-text

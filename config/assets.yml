@@ -35,6 +35,11 @@ css:
   news-show:
     site:
       - news/show
+  admin-news-show:
+    site:
+      - news/show
+      - admin/base
+      - admin/news/show
   artists-index:
     site:
       - artists/index

@@ -1,11 +1,6 @@
-/* line 4, ../../../../app/sass/admin/news/index.sass */
-#news {
-  position: relative;
-}
-
-/* line 7, ../../../../app/sass/admin/news/index.sass */
-#btn-add {
-  background: #6da4b2 url('/img/common/admin-add@2x.png?1356691196') no-repeat 16px 16px;
+/* line 6, ../../../../app/sass/admin/news/show.sass */
+#link-edit {
+  background: #6da4b2 url('/img/common/admin-edit@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   color: white;
   text-decoration: none;
@@ -16,17 +11,16 @@
   padding: 19px 16px 0 46px;
   opacity: 0.8;
   position: absolute;
-  top: -24px;
-  right: 32px;
+  top: -55px;
+  right: 137px;
 }
-/* line 64, ../../../../app/sass/common/lib.sass */
-#btn-add:hover {
-  text-decoration: none;
+/* line 28, ../../../../app/sass/common/lib.sass */
+#link-edit:hover {
   opacity: 1;
 }
 
-/* line 13, ../../../../app/sass/admin/news/index.sass */
-a.link-delete {
+/* line 12, ../../../../app/sass/admin/news/show.sass */
+#link-delete {
   background: #cc6666 url('/img/common/admin-delete@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   color: white;
@@ -38,11 +32,11 @@ a.link-delete {
   padding: 19px 16px 0 46px;
   opacity: 0.8;
   position: absolute;
-  top: 24px;
-  right: -300px;
+  top: -55px;
+  right: -48px;
 }
 /* line 79, ../../../../app/sass/common/lib.sass */
-a.link-delete:hover {
+#link-delete:hover {
   text-decoration: none;
   opacity: 1;
 }
