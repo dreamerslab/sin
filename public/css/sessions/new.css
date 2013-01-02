@@ -49,9 +49,10 @@ html, body {
   width: 180px;
   height: 48px;
   padding: 0 0 0 20px;
+  border-radius: 0;
 }
 
-/* line 46, ../../../app/sass/sessions/new.sass */
+/* line 47, ../../../app/sass/sessions/new.sass */
 #login-btn {
   text-align: center;
   background: #6da4b2;
@@ -63,14 +64,15 @@ html, body {
   font-family: Helvetica, sans-serif;
   font-size: 12px;
   margin: 24px 0 0;
+  border-radius: 0;
 }
-/* line 57, ../../../app/sass/sessions/new.sass */
+/* line 59, ../../../app/sass/sessions/new.sass */
 #login-btn:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-/* line 61, ../../../app/sass/sessions/new.sass */
+/* line 63, ../../../app/sass/sessions/new.sass */
 .error {
   font-family: Helvetica, sans-serif;
   font-size: 13px;
