@@ -14,6 +14,9 @@ css:
     site:
       - common/layout
       - common/content
+  error:
+    site:
+      - error/base
   home:
     site:
       - home/index

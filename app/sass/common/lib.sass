@@ -10,7 +10,7 @@ $color-error-msg: #bb322e
 $bg-panel-logout: #ebebeb
 $bg-panel-edit: $color-link
 
-$panel-btn-height: 48px
+$panel-btn-height-n-width: 48px
 $panel-link-eidt-pading-top: 19px
 
 @mixin link-edit
@@ -20,34 +20,51 @@ $panel-link-eidt-pading-top: 19px
   text-decoration: none
   font-family: $default-font
   font-size: 12px
-  height: $panel-btn-height - $panel-link-eidt-pading-top
+  height: $panel-btn-height-n-width - $panel-link-eidt-pading-top
   width: 83px
   padding: $panel-link-eidt-pading-top 16px 0 46px
+
+@mixin link-cancel
+  +hide-text
+  background: $bg-panel-logout image-url( 'common/admin-cancel@2x.png' ) no-repeat 16px 16px
+  background-size: 16px auto
+  height: $panel-btn-height-n-width
+  width: $panel-btn-height-n-width
+
+@mixin link-homepage
+  display: block
+  border: 1px solid #fff
+  background: $color-link
+  width: 200px
+  height: 29px
+  text-decoration: none
+  font-family: $default-font
+  font-size: 12px
+  color: #fff
+  padding: 20px 0 0
+  opacity: 0.7
+  &:hover
+    opacity: 1
 
 @mixin btn-confirm
   +hide-text
   border: none
   background: $bg-panel-edit image-url( 'common/admin-confirm@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
-  height: $panel-btn-height
-  width: $panel-btn-height
+  height: $panel-btn-height-n-width
+  width: $panel-btn-height-n-width
+  border-radius: 0
   &:hover
     cursor: pointer
-
-@mixin link-cancel
-  +hide-text
-  background: $bg-panel-logout image-url( 'common/admin-cancel@2x.png' ) no-repeat 16px 16px
-  background-size: 16px auto
-  height: $panel-btn-height
-  width: $panel-btn-height
 
 @mixin btn-logout
   border: none
   background: $bg-panel-logout image-url( 'common/admin-logout@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
   color: $color-panel-main
-  height: $panel-btn-height
+  height: $panel-btn-height-n-width
   padding: 0 16px 0 46px
   font-size: 12px
+  border-radius: 0
   &:hover
     cursor: pointer

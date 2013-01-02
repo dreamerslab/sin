@@ -1,0 +1,57 @@
+/* line 4, ../../../app/sass/error/base.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 7, ../../../app/sass/error/base.sass */
+#floater {
+  float: left;
+  height: 50%;
+  width: 1px;
+  margin: 0 0 -56px;
+}
+
+/* line 13, ../../../app/sass/error/base.sass */
+#wrap {
+  clear: both;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+/* line 21, ../../../app/sass/error/base.sass */
+#error-title {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: #555555;
+  padding: 0 0 16px;
+}
+
+/* line 27, ../../../app/sass/error/base.sass */
+.error-msg {
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  color: #aaaaaa;
+  padding: 0 0 32px;
+}
+
+/* line 33, ../../../app/sass/error/base.sass */
+#link-homepage {
+  display: block;
+  border: 1px solid white;
+  background: #6da4b2;
+  width: 200px;
+  height: 29px;
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  color: white;
+  padding: 20px 0 0;
+  opacity: 0.7;
+}
+/* line 46, ../../../app/sass/common/lib.sass */
+#link-homepage:hover {
+  opacity: 1;
+}
