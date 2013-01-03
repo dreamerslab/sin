@@ -40,6 +40,10 @@ css:
       - news/show
       - admin/base
       - admin/news/show
+  admin-news-new:
+    site:
+      - admin/base
+      - admin/news/new
   artists-index:
     site:
       - artists/index

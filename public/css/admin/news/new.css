@@ -1,0 +1,106 @@
+/* line 8, ../../../../app/sass/admin/news/new.sass */
+#news-form {
+  font-family: Helvetica, sans-serif;
+  color: #555555;
+  width: 600px;
+  padding: 0 180px 0 132px;
+}
+
+/* line 14, ../../../../app/sass/admin/news/new.sass */
+.form-block-wrap {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 24px 0 0;
+}
+
+/* line 18, ../../../../app/sass/admin/news/new.sass */
+.form-label {
+  display: inline;
+  float: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 24px 0 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 0 16px 10px 0;
+}
+
+/* line 24, ../../../../app/sass/admin/news/new.sass */
+.error {
+  display: inline;
+  float: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: red;
+}
+
+/* line 29, ../../../../app/sass/admin/news/new.sass */
+.form-tip {
+  display: inline;
+  float: right;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* line 34, ../../../../app/sass/admin/news/new.sass */
+#input-title, #input-content, #input-thumb {
+  display: block;
+  width: 100%;
+  border: none;
+  font-family: serif;
+  font-size: 16px;
+  color: #6da4b2;
+  padding: 0 0 0 16px;
+  height: 40px;
+}
+
+/* line 37, ../../../../app/sass/admin/news/new.sass */
+#input-content {
+  width: 584px;
+  padding: 16px 16px 0;
+  line-height: 1.5em;
+  height: initial;
+}
+
+/* line 43, ../../../../app/sass/admin/news/new.sass */
+#btns-wrap {
+  overflow: hidden;
+  *zoom: 1;
+  width: 98px;
+  padding: 48px 0 0;
+  margin: 0 auto;
+}
+
+/* line 49, ../../../../app/sass/admin/news/new.sass */
+#content-link-cancel {
+  display: inline;
+  float: left;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background: #ebebeb url('/img/common/admin-cancel@2x.png?1356691196') no-repeat 16px 16px;
+  background-size: 16px auto;
+  height: 48px;
+  width: 48px;
+  background-color: #d2d2d2;
+}
+
+/* line 54, ../../../../app/sass/admin/news/new.sass */
+#btn-submit {
+  display: inline;
+  float: left;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  border: none;
+  background: #6da4b2 url('/img/common/admin-confirm@2x.png?1356691196') no-repeat 16px 16px;
+  background-size: 16px auto;
+  height: 48px;
+  width: 48px;
+  border-radius: 0;
+}
+/* line 93, ../../../../app/sass/common/lib.sass */
+#btn-submit:hover {
+  cursor: pointer;
+}

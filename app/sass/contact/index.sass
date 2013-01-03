@@ -1,4 +1,5 @@
 @import compass
+@import ../common/lib
 
 $default-font: Helvetica, sans-serif
 $default-font-size: 14px
@@ -15,26 +16,17 @@ $color-link: #6da4b2
   padding: 0 180px 0 132px
 
 .form-label
+  +form-label
   display: block
-  padding: 24px 0 10px
-  font-size: 14px
-  letter-spacing: 3px
 
 .contact-form-input, .contact-form-textarea
-  display: block
-  width: 100%
-  border: none
-  font-family: $form-font
-  font-size: 16px
-  color: $color-link
-  padding: 0 0 0 16px
-
-.contact-form-input
-  height: 40px
+  +default-input
 
 .contact-form-textarea
-  padding: 16px 0 0 16px
+  width: 584px
+  padding: 16px 16px 0
   line-height: 1.5em
+  height: initial
 
 #btn-submit
   display: block
@@ -44,7 +36,7 @@ $color-link: #6da4b2
   margin: 48px auto 0
   color: #fff
   font-size: 14px
-  letter-spacing: 3px
+  letter-spacing: 1px
   &:hover
     cursor: pointer
     opacity: 0.7

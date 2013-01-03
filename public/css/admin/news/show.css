@@ -14,7 +14,7 @@
   top: -55px;
   right: 137px;
 }
-/* line 28, ../../../../app/sass/common/lib.sass */
+/* line 30, ../../../../app/sass/common/lib.sass */
 #link-edit:hover {
   opacity: 1;
 }
@@ -35,7 +35,7 @@
   top: -55px;
   right: -48px;
 }
-/* line 79, ../../../../app/sass/common/lib.sass */
+/* line 81, ../../../../app/sass/common/lib.sass */
 #link-delete:hover {
   text-decoration: none;
   opacity: 1;

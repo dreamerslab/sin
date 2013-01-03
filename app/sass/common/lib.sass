@@ -14,6 +14,8 @@ $bg-panel-edit: $color-link
 $panel-btn-height-n-width: 48px
 $panel-link-eidt-pading-top: 19px
 
+$form-font: serif
+
 @mixin link-edit( $width: 103px )
   background: $bg-panel-edit image-url( 'common/admin-edit@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
@@ -102,3 +104,18 @@ $panel-link-eidt-pading-top: 19px
   border-radius: 0
   &:hover
     cursor: pointer
+
+@mixin default-input
+  display: block
+  width: 100%
+  border: none
+  font-family: $form-font
+  font-size: 16px
+  color: $color-link
+  padding: 0 0 0 16px
+  height: 40px
+
+@mixin form-label
+  padding: 24px 0 10px
+  font-size: 14px
+  letter-spacing: 1px

@@ -1,0 +1,56 @@
+@import compass
+@import ../../common/lib
+
+@mixin default-font
+  font-family: $default-font
+  font-size: 14px
+
+#news-form
+  font-family: $default-font
+  color: #555
+  width: 600px
+  padding: 0 180px 0 132px
+
+.form-block-wrap
+  +clearfix
+  padding: 24px 0 0
+
+.form-label
+  +float-left
+  +default-font
+  +form-label
+  padding: 0 16px 10px 0
+
+.error
+  +float-left
+  +default-font
+  color: #f00
+
+.form-tip
+  +float-right
+  +default-font
+  color: #555
+
+#input-title, #input-content, #input-thumb
+  +default-input
+
+#input-content
+  width: 584px
+  padding: 16px 16px 0
+  line-height: 1.5em
+  height: initial
+
+#btns-wrap
+  +clearfix
+  width: 98px
+  padding: 48px 0 0
+  margin: 0 auto
+
+#content-link-cancel
+  +float-left
+  +link-cancel
+  background-color: darken( $bg-panel-logout, 10% )
+
+#btn-submit
+  +float-left
+  +btn-confirm
