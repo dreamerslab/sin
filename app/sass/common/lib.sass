@@ -105,8 +105,24 @@ $input-max-width: 584px
   &:hover
     cursor: pointer
 
+@mixin btn-delete
+  border: none
+  margin: 0
+  background: $color-link-delete image-url( 'common/admin-delete@2x.png' ) no-repeat 16px 16px
+  background-size: 16px auto
+  color: $color-panel-edit
+  height: $panel-btn-height-n-width
+  padding: 0 16px 0 46px
+  font-size: 12px
+  border-radius: 0
+  opacity: 0.8
+  &:hover
+    cursor: pointer
+    opacity: 1
+
 @mixin btn-logout
   border: none
+  margin: 0
   background: $bg-panel-logout image-url( 'common/admin-logout@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
   color: $color-panel-main

@@ -96,12 +96,14 @@
 #panel-logout-form {
   position: absolute;
   top: 0;
-  right: -117px;
+  right: -115px;
+  left: 0;
 }
 
-/* line 58, ../../../app/sass/admin/base.sass */
+/* line 59, ../../../app/sass/admin/base.sass */
 #btn-logout {
   border: none;
+  margin: 0;
   background: #ebebeb url('/img/common/admin-logout@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   color: #555555;
@@ -110,7 +112,7 @@
   font-size: 12px;
   border-radius: 0;
 }
-/* line 117, ../../../app/sass/common/lib.sass */
+/* line 133, ../../../app/sass/common/lib.sass */
 #btn-logout:hover {
   cursor: pointer;
 }
