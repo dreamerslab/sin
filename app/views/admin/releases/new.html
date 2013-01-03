@@ -1,4 +1,7 @@
-<? it.title = 'admin/releases#new'; ?>
-<p>
-  Find this file in app/views/admin/releases/new.html
-</p>
+<? it.title = '三十而立 sincerely music | 新增作品'; ?>
+<? it.nav_selected = 'releases'; ?>
+<? it.styles.push( 'admin-releases-new' ); ?>
+
+<form id="releases-form" action="/admin/releases/create" method="POST" accept-charset="UTF-8" >
+  <?= it.partial( 'admin/releases/_fields' ) ?>
+</form>

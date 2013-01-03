@@ -1,0 +1,46 @@
+<input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+
+<div class="form-block-wrap">
+  <label id="label-artist" class="form-label" for="input-artist">藝人名稱</label>
+  <p class="error">error message goes here</p>
+  <span class="form-tip">必填</span>
+</div>
+
+<input id="input-artist" type="text" name="artist">
+
+<div class="form-block-wrap">
+  <label id="label-name" class="form-label" for="input-name">專輯名稱</label>
+  <p class="error">error message goes here</p>
+  <span class="form-tip">必填</span>
+</div>
+
+<input id="input-name" type="text" name="name">
+
+<div class="form-block-wrap">
+  <label id="label-date" class="form-label" for="input-date">發行日期</label>
+  <p class="error">error message goes here</p>
+  <span class="form-tip">必填</span>
+</div>
+
+<input id="input-date" type="text" name="date">
+
+<div class="form-block-wrap">
+  <label id="label-intro" class="form-label" for="input-intro">內文介紹</label>
+  <p class="error">error message goes here</p>
+  <span class="form-tip">可換行，不建議加入圖片</span>
+</div>
+
+<textarea id="input-intro" type="text" name="intro" rows="16"></textarea>
+
+<div class="form-block-wrap">
+  <label id="label-cover" class="form-label" for="input-cover">專輯封面網址</label>
+  <p class="error">error message goes here</p>
+  <span class="form-tip">必填，最小尺寸需為 272x272 px</span>
+</div>
+
+<input id="input-cover" type="text" name="cover" placeholder="http://">
+
+<div id="btns-wrap">
+  <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
+  <input id="btn-submit" type="submit" value="Submit" />
+</div>
