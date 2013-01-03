@@ -3,34 +3,5 @@
 <? it.styles.push( 'admin-news-new' ); ?>
 
 <form id="news-form" action="/admin/news/create" method="POST" accept-charset="UTF-8" >
-  <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
-
-  <div class="form-block-wrap">
-    <label id="label-title" class="form-label" for="input-title">標題</label>
-    <p class="error">error message goes here</p>
-    <span class="form-tip">必填</span>
-  </div>
-
-  <input id="input-title" type="text" name="title">
-
-  <div class="form-block-wrap">
-    <label id="label-content" class="form-label" for="input-content">內文</label>
-    <p class="error">error message goes here</p>
-    <span class="form-tip">必填</span>
-  </div>
-
-  <textarea id="input-content" type="text" name="content" rows="16"></textarea>
-
-  <div class="form-block-wrap">
-    <label id="label-thumb" class="form-label" for="input-thumb">首頁縮圖網址</label>
-    <p class="error">error message goes here</p>
-    <span class="form-tip">最小尺寸為 280x280 px</span>
-  </div>
-
-  <input id="input-thumb" type="text" name="title" placeholder="http://">
-
-  <div id="btns-wrap">
-    <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
-    <input id="btn-submit" type="submit" value="Submit" />
-  </div>
+  <?= it.partial( 'admin/news/_fields' ) ?>
 </form>

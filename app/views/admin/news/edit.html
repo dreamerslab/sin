@@ -1,4 +1,8 @@
-<? it.title = 'admin/news#edit'; ?>
-<p>
-  Find this file in app/views/admin/news/edit.html
-</p>
+<? it.title = '三十而立 sincerely music | 編輯新聞'; ?>
+<? it.nav_selected = 'news'; ?>
+<? it.styles.push( 'admin-news-new' ); ?>
+
+<form id="news-form" action="/admin/news/update" method="POST" accept-charset="UTF-8" >
+  <input type="hidden" name="_method" value="put" />
+  <?= it.partial( 'admin/news/_fields' ) ?>
+</form>
