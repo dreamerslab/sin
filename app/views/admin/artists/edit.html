@@ -1,4 +1,8 @@
-<? it.title = 'admin/artists#edit'; ?>
-<p>
-  Find this file in app/views/admin/artists/edit.html
-</p>
+<? it.title = '三十而立 sincerely music | 編輯藝人'; ?>
+<? it.nav_selected = 'artists'; ?>
+<? it.styles.push( 'admin-artists-new' ); ?>
+
+<form id="artists-form" action="/admin/artists/update" method="POST" accept-charset="UTF-8" >
+  <input type="hidden" name="_method" value="put" />
+  <?= it.partial( 'admin/artists/_fields' ) ?>
+</form>
