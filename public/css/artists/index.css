@@ -50,10 +50,3 @@
   width: 280px;
   height: 280px;
 }
-
-/* line 42, ../../../app/sass/artists/index.sass */
-.btn-delete {
-  position: absolute;
-  top: 0;
-  right: -300px;
-}

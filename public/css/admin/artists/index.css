@@ -26,23 +26,27 @@
 }
 
 /* line 13, ../../../../app/sass/admin/artists/index.sass */
-a.link-delete {
-  background: #cc6666 url('/img/common/admin-delete@2x.png?1356691196') no-repeat 16px 16px;
-  background-size: 16px auto;
-  color: white;
-  text-decoration: none;
-  font-family: Helvetica, sans-serif;
-  font-size: 12px;
-  height: 29px;
-  width: 123px;
-  padding: 19px 16px 0 46px;
-  opacity: 0.8;
+.delete-form {
   position: absolute;
   top: 24px;
   right: -300px;
 }
-/* line 88, ../../../../app/sass/common/lib.sass */
-a.link-delete:hover {
-  text-decoration: none;
+
+/* line 18, ../../../../app/sass/admin/artists/index.sass */
+.btn-delete {
+  border: none;
+  margin: 0;
+  background: #cc6666 url('/img/common/admin-delete@2x.png?1356691196') no-repeat 16px 16px;
+  background-size: 16px auto;
+  color: white;
+  height: 48px;
+  padding: 0 16px 0 46px;
+  font-size: 12px;
+  border-radius: 0;
+  opacity: 0.8;
+}
+/* line 119, ../../../../app/sass/common/lib.sass */
+.btn-delete:hover {
+  cursor: pointer;
   opacity: 1;
 }
