@@ -26,7 +26,7 @@
 }
 
 /* line 13, ../../../../app/sass/admin/artists/index.sass */
-.delete-form {
+.form-delete {
   position: absolute;
   top: 24px;
   right: -300px;
