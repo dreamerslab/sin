@@ -47,6 +47,11 @@ css:
   artists-index:
     site:
       - artists/index
+  admin-artists-index:
+    site:
+      - artists/index
+      - admin/base
+      - admin/artists/index
   artists-show:
     site:
       - artists/show

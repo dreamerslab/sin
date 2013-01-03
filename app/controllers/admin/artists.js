@@ -11,7 +11,10 @@ module.exports = Application.extend({
   },
 
   index : function ( req, res, next ){
-    res.render( 'admin/artists/index' );
+    res.render( 'artists/index', {
+      _assets          : 'admin/artists/assets/_index',
+      is_authenticated : req.session.is_authenticated
+    });
   },
 
   show : function ( req, res, next ){

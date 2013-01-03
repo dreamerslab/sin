@@ -1,10 +1,13 @@
+<?= it.partial( it._assets ) ?>
+
 <? it.title = '三十而立 sincerely music | 藝人'; ?>
 <? it.nav_selected = 'artists'; ?>
-<? it.styles.push( 'artists-index' ); ?>
 
 <div id="artists">
   <div id="artists-entries">
-    <a href="/" id="btn-add">Add artist</a>
+    <? if ( it.is_authenticated ){ ?>
+      <a href="/" id="btn-add">ADD NEW ENTRY</a>
+    <? } ?>
 
     <? var entries = [ '', '', '' ]; ?>
 
@@ -20,7 +23,10 @@
         <a href="/news/show" class="news-thumb-link">
           <img class="news-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
         </a>
-        <a href="/" class="btn-delete">Delete this artist</a>
+        <? console.log( it.is_authenticated ); ?>
+        <? if( it.is_authenticated ){ ?>
+          <a href="/admin/news/delete" class="link-delete">DELETE THIS ENTRY</a>
+        <? } ?>
       </div>
     <? }); ?>
   </div>
