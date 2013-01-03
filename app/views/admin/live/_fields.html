@@ -1,0 +1,43 @@
+<input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+
+<div id="form-block-date-location-wrap">
+  <div id="form-block-date-wrap">
+    <div class="form-block-wrap">
+      <label id="label-date" class="form-label" for="input-date">日期</label>
+      <p class="error">error message goes here</p>
+      <span class="form-tip">必填</span>
+    </div>
+
+    <input id="input-date" type="text" name="date">
+  </div>
+
+  <div id="form-block-location-wrap">
+    <div class="form-block-wrap">
+      <label id="label-location" class="form-label" for="input-location">地點</label>
+      <p class="error">error message goes here</p>
+      <span class="form-tip">必填</span>
+    </div>
+
+    <input id="input-location" type="text" name="location">
+  </div>
+</div>
+
+<div class="form-block-wrap">
+  <label id="label-title" class="form-label" for="input-title">活動內容</label>
+  <p class="error">error message goes here</p>
+  <span class="form-tip">必填</span>
+</div>
+
+<input id="input-title" type="text" name="title">
+
+<div class="form-block-wrap">
+  <label id="label-url" class="form-label" for="input-url">活動網址</label>
+  <p class="error">error message goes here</p>
+</div>
+
+<input id="input-url" type="text" name="url" placeholder="http://">
+
+<div id="btns-wrap">
+  <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
+  <input id="btn-submit" type="submit" value="Submit" />
+</div>

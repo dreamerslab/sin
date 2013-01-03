@@ -91,6 +91,10 @@ css:
       - live/index
       - admin/base
       - admin/live/index
+  admin-live-new:
+    site:
+      - admin/base
+      - admin/live/new
   contact-index:
     site:
       - contact/index

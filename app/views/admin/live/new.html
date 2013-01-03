@@ -1,4 +1,7 @@
-<? it.title = 'admin/live#new'; ?>
-<p>
-  Find this file in app/views/admin/live/new.html
-</p>
+<? it.title = '三十而立 sincerely music | 新增表演'; ?>
+<? it.nav_selected = 'live'; ?>
+<? it.styles.push( 'admin-live-new' ); ?>
+
+<form id="live-form" action="/admin/live/create" method="POST" accept-charset="UTF-8" >
+  <?= it.partial( 'admin/live/_fields' ) ?>
+</form>
