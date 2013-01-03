@@ -17,7 +17,7 @@
 
 /* line 20, ../../../app/sass/common/content.sass */
 #news-title-link {
-  background-image: url('/img/common/news-title@2x.png?1356433457');
+  background-image: url('/img/common/news-title@2x.png?1356691196');
   background-size: 66px auto;
   width: 66px;
   height: 24px;
@@ -99,7 +99,7 @@
 
 /* line 77, ../../../app/sass/common/content.sass */
 #release-title-link {
-  background-image: url('/img/common/releases-title@2x.png?1356433739');
+  background-image: url('/img/common/releases-title@2x.png?1356691196');
   background-size: 93px auto;
   width: 93px;
   height: 24px;
@@ -153,7 +153,7 @@
 
 /* line 110, ../../../app/sass/common/content.sass */
 #videos-title-link {
-  background-image: url('/img/common/videos-title@2x.png?1356433327');
+  background-image: url('/img/common/videos-title@2x.png?1356691196');
   background-size: 79px auto;
   width: 79px;
   height: 24px;
@@ -184,7 +184,7 @@
   text-align: left;
   position: absolute;
   right: 3px;
-  background: url('/img/common/more@2x.png?1355742650') no-repeat top right/18px auto;
+  background: url('/img/common/more@2x.png?1356691196') no-repeat top right/18px auto;
   width: 18px;
   height: 50px;
 }
@@ -242,7 +242,7 @@
 
 /* line 167, ../../../app/sass/common/content.sass */
 #soundcould-player-title {
-  background-image: url('/img/home/sidebar-music-title.png?1355217379');
+  background-image: url('/img/home/sidebar-music-title.png?1356691196');
   width: 54px;
   height: 14px;
   background-size: 54px auto;
@@ -250,7 +250,7 @@
 
 /* line 173, ../../../app/sass/common/content.sass */
 #lives-title {
-  background-image: url('/img/home/sidebar-live-title.png?1355217500');
+  background-image: url('/img/home/sidebar-live-title.png?1356691196');
   width: 33px;
   height: 16px;
   background-size: 33px auto;
@@ -258,7 +258,7 @@
 
 /* line 179, ../../../app/sass/common/content.sass */
 #fb-fanpage-title {
-  background-image: url('/img/home/sidebar-facebook-title.png?1355217545');
+  background-image: url('/img/home/sidebar-facebook-title.png?1356691196');
   width: 87px;
   height: 16px;
   background-size: 87px auto;
@@ -268,9 +268,10 @@
 #nav-wrap {
   text-align: center;
   margin: 0 0 0 -48px;
+  clear: both;
 }
 
-/* line 189, ../../../app/sass/common/content.sass */
+/* line 190, ../../../app/sass/common/content.sass */
 #btn-prev, #btn-next {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -286,21 +287,21 @@
 #btn-prev, #btn-next {
   *display: inline;
 }
-/* line 195, ../../../app/sass/common/content.sass */
+/* line 196, ../../../app/sass/common/content.sass */
 #btn-prev:hover, #btn-next:hover {
   opacity: 1;
 }
 
-/* line 200, ../../../app/sass/common/content.sass */
+/* line 201, ../../../app/sass/common/content.sass */
 #btn-prev {
-  background: url('/img/common/footer-nav-prev@2x.png?1355804387') no-repeat top left;
+  background: url('/img/common/footer-nav-prev@2x.png?1356691196') no-repeat top left;
   background-size: 12px auto;
   padding: 5px 40px 5px 28px;
 }
 
-/* line 205, ../../../app/sass/common/content.sass */
+/* line 206, ../../../app/sass/common/content.sass */
 #btn-next {
-  background: url('/img/common/footer-nav-next@2x.png?1355824825') no-repeat top right;
+  background: url('/img/common/footer-nav-next@2x.png?1356691196') no-repeat top right;
   background-size: 12px auto;
   padding: 5px 28px 5px 40px;
 }

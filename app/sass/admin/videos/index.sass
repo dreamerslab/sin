@@ -1,0 +1,24 @@
+@import compass
+@import ../../common/lib
+
+$admin-btn-right: -156px
+
+#videos
+  position: relative
+
+.video
+  position: relative
+  float: none
+  display: block
+
+#btn-add
+  +link-add
+  position: absolute
+  top: -55px
+  right: $admin-btn-right
+
+a.link-delete
+  +link-delete
+  position: absolute
+  top: 0
+  right: $admin-btn-right

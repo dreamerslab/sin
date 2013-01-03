@@ -45,7 +45,7 @@
 /* line 35, ../../../app/sass/news/index.sass */
 .news-thumb {
   border: none;
-  position: initial;
+  position: static;
   display: block;
   width: 280px;
   height: 280px;

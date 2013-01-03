@@ -1,57 +1,57 @@
-/* line 6, ../../../app/sass/artists/index.sass */
+/* line 7, ../../../app/sass/artists/index.sass */
 .news-entry {
   width: 580px;
   position: relative;
   min-height: 280px;
   padding: 24px 0 48px;
 }
-/* line 11, ../../../app/sass/artists/index.sass */
+/* line 12, ../../../app/sass/artists/index.sass */
 .news-entry p {
   margin: 0 0 24px;
   font-family: Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.5em;
 }
-/* line 16, ../../../app/sass/artists/index.sass */
+/* line 17, ../../../app/sass/artists/index.sass */
 .news-entry a {
   color: #6da4b2;
   text-decoration: none;
 }
-/* line 19, ../../../app/sass/artists/index.sass */
+/* line 20, ../../../app/sass/artists/index.sass */
 .news-entry a:hover {
   text-decoration: underline;
 }
-/* line 21, ../../../app/sass/artists/index.sass */
+/* line 22, ../../../app/sass/artists/index.sass */
 .news-entry strong {
   font-weight: bold;
 }
-/* line 23, ../../../app/sass/artists/index.sass */
+/* line 24, ../../../app/sass/artists/index.sass */
 .news-entry em {
   font-style: italic;
 }
 
-/* line 28, ../../../app/sass/artists/index.sass */
+/* line 27, ../../../app/sass/artists/index.sass */
 .news-date {
   top: 0;
 }
 
-/* line 31, ../../../app/sass/artists/index.sass */
+/* line 30, ../../../app/sass/artists/index.sass */
 .news-thumb-link {
   position: absolute;
   top: 24px;
   right: -300px;
 }
 
-/* line 36, ../../../app/sass/artists/index.sass */
+/* line 35, ../../../app/sass/artists/index.sass */
 .news-thumb {
   border: none;
-  position: initial;
+  position: static;
   display: block;
   width: 280px;
   height: 280px;
 }
 
-/* line 43, ../../../app/sass/artists/index.sass */
+/* line 42, ../../../app/sass/artists/index.sass */
 .btn-delete {
   position: absolute;
   top: 0;

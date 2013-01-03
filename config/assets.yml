@@ -83,6 +83,11 @@ css:
   videos-index:
     site:
       - videos/index
+  admin-videos-index:
+    site:
+      - videos/index
+      - admin/base
+      - admin/videos/index
   live-index:
     site:
       - live/index

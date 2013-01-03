@@ -1,10 +1,15 @@
+<?= it.partial( it._assets ) ?>
+
 <? it.title = '三十而立 sincerely music | 影音'; ?>
 <? it.nav_selected = 'videos'; ?>
-<? it.styles.push( 'videos-index' ); ?>
 
 <? var videos = [ '', '', '', '', '' ]; ?>
 
 <div id="videos">
+  <? if ( it.is_authenticated ){ ?>
+    <a href="/" id="btn-add">ADD NEW ENTRY</a>
+  <? } ?>
+
   <? videos.forEach( function ( video ){ ?>
     <div class="video">
       <div class="video-wrap">
@@ -16,6 +21,9 @@
         </h3>
         <span class="video-date">2012.01.22</span>
       </div>
+      <? if( it.is_authenticated ){ ?>
+        <a href="/admin/news/delete" class="link-delete">DELETE THIS ENTRY</a>
+      <? } ?>
     </div>
   <? }); ?>
 </div>
