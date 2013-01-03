@@ -86,6 +86,11 @@ css:
   live-index:
     site:
       - live/index
+  admin-live-index:
+    site:
+      - live/index
+      - admin/base
+      - admin/live/index
   contact-index:
     site:
       - contact/index

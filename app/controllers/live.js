@@ -3,6 +3,8 @@ var Application = require( CONTROLLER_DIR + 'application' );
 module.exports = Application.extend({
 
   index : function ( req, res, next ){
-    res.render( 'live/index' );
+    res.render( 'live/index', {
+      _assets : 'admin/live/assets/_index'
+    });
   }
 });

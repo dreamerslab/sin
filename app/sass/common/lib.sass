@@ -18,20 +18,6 @@ $form-font: serif
 
 $input-max-width: 584px
 
-@mixin link-edit( $width: 103px )
-  background: $bg-panel-edit image-url( 'common/admin-edit@2x.png' ) no-repeat 16px 16px
-  background-size: 16px auto
-  color: $color-panel-edit
-  text-decoration: none
-  font-family: $default-font
-  font-size: 12px
-  height: $panel-btn-height-n-width - $panel-link-eidt-pading-top
-  width: $width
-  padding: $panel-link-eidt-pading-top 16px 0 46px
-  opacity: 0.8
-  &:hover
-    opacity: 1
-
 @mixin link-cancel
   +hide-text
   background: $bg-panel-logout image-url( 'common/admin-cancel@2x.png' ) no-repeat 16px 16px
@@ -69,7 +55,26 @@ $input-max-width: 584px
     text-decoration: none
     opacity: 1
 
-@mixin link-delete
+@mixin link-edit( $width: 103px )
+  background: $bg-panel-edit image-url( 'common/admin-edit@2x.png' ) no-repeat 16px 16px
+  background-size: 16px auto
+  color: $color-panel-edit
+  text-decoration: none
+  font-family: $default-font
+  font-size: 12px
+  height: $panel-btn-height-n-width - $panel-link-eidt-pading-top
+  width: $width
+  padding: $panel-link-eidt-pading-top 16px 0 46px
+  opacity: 0.8
+  &:hover
+    opacity: 1
+
+@mixin link-edit-hide-text
+  +hide-text
+  +link-edit( 48px )
+  padding: 19px 0 0
+
+@mixin link-delete( $width: 123px )
   background: $color-link-delete image-url( 'common/admin-delete@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
   color: $color-panel-edit
@@ -77,12 +82,17 @@ $input-max-width: 584px
   font-family: $default-font
   font-size: 12px
   height: $panel-btn-height-n-width - $panel-link-eidt-pading-top
-  width: 123px
+  width: $width
   padding: $panel-link-eidt-pading-top 16px 0 46px
   opacity: 0.8
   &:hover
     text-decoration: none
     opacity: 1
+
+@mixin link-delete-hide-text
+  +hide-text
+  +link-delete( 48px )
+  padding: 19px 0 0
 
 @mixin btn-confirm
   +hide-text

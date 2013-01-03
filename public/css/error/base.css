@@ -51,7 +51,7 @@ html, body {
   padding: 20px 0 0;
   opacity: 0.7;
 }
-/* line 54, ../../../app/sass/common/lib.sass */
+/* line 40, ../../../app/sass/common/lib.sass */
 #link-homepage:hover {
   opacity: 1;
 }

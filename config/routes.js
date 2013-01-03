@@ -6,7 +6,7 @@ module.exports = function ( map ){
   map.resources( 'releases', { only : [ 'index', 'show' ]});
 
   map.get( 'videos',  'videos#index' );
-  map.get( 'live',    'lives#index' );
+  map.get( 'live',    'live#index' );
   map.get( 'contact', 'contact#index' );
 
   map.get( 'admin', 'admin/home#index' );

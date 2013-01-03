@@ -1,0 +1,28 @@
+@import compass
+@import ../../common/lib
+
+$admin-btn-top: 0
+
+#live-list
+  position: relative
+
+#btn-add
+  +link-add
+  position: absolute
+  top: -55px
+  right: 0
+
+.live-link-wrap
+  position: relative
+
+.link-edit
+  +link-edit-hide-text
+  position: absolute
+  top: $admin-btn-top
+  right: 49px
+
+.link-delete
+  +link-delete-hide-text
+  position: absolute
+  top: $admin-btn-top
+  right: 0

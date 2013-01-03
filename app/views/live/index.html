@@ -1,10 +1,15 @@
+<?= it.partial( it._assets ) ?>
+
 <? it.title = '三十而立 sincerely music | 現場'; ?>
 <? it.nav_selected = 'live'; ?>
-<? it.styles.push( 'live-index' ); ?>
 
 <? var lives = [ '', '', '', '', '', '', '', '', '', '' ]; ?>
 
 <div id="live-list">
+  <? if ( it.is_authenticated ){ ?>
+    <a href="/" id="btn-add">ADD NEW ENTRY</a>
+  <? } ?>
+
   <? lives.forEach( function ( live ){ ?>
     <div class="live-link-wrap">
       <a class="live-link" href="/live/show">
@@ -12,6 +17,10 @@
         <span class="live-location">The WALL 公館</span>
         <span class="live-date">2012.12.12</span>
       </a>
+      <? if( it.is_authenticated ){ ?>
+        <a href="/admin/news/edit" class="link-edit">EDIT THIS ENTRY</a>
+        <a href="/admin/news/delete" class="link-delete">DELETE THIS ENTRY</a>
+      <? } ?>
     </div>
   <? }); ?>
 </div>

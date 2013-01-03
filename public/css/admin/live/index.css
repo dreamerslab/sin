@@ -1,14 +1,9 @@
-/* line 6, ../../../../app/sass/admin/releases/show.sass */
-#main {
+/* line 6, ../../../../app/sass/admin/live/index.sass */
+#live-list {
   position: relative;
 }
 
-/* line 9, ../../../../app/sass/admin/releases/show.sass */
-#songs {
-  position: relative;
-}
-
-/* line 12, ../../../../app/sass/admin/releases/show.sass */
+/* line 9, ../../../../app/sass/admin/live/index.sass */
 #btn-add {
   background: #6da4b2 url('/img/common/admin-add@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
@@ -21,7 +16,7 @@
   padding: 19px 16px 0 46px;
   opacity: 0.8;
   position: absolute;
-  top: -48px;
+  top: -55px;
   right: 0;
 }
 /* line 54, ../../../../app/sass/common/lib.sass */
@@ -30,8 +25,16 @@
   opacity: 1;
 }
 
-/* line 18, ../../../../app/sass/admin/releases/show.sass */
-#link-edit {
+/* line 15, ../../../../app/sass/admin/live/index.sass */
+.live-link-wrap {
+  position: relative;
+}
+
+/* line 18, ../../../../app/sass/admin/live/index.sass */
+.link-edit {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
   background: #6da4b2 url('/img/common/admin-edit@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   color: white;
@@ -39,20 +42,24 @@
   font-family: Helvetica, sans-serif;
   font-size: 12px;
   height: 29px;
-  width: 103px;
+  width: 48px;
   padding: 19px 16px 0 46px;
   opacity: 0.8;
+  padding: 19px 0 0;
   position: absolute;
-  top: -55px;
-  right: -95px;
+  top: 0;
+  right: 49px;
 }
 /* line 69, ../../../../app/sass/common/lib.sass */
-#link-edit:hover {
+.link-edit:hover {
   opacity: 1;
 }
 
-/* line 24, ../../../../app/sass/admin/releases/show.sass */
-#link-delete {
+/* line 24, ../../../../app/sass/admin/live/index.sass */
+.link-delete {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
   background: #cc6666 url('/img/common/admin-delete@2x.png?1356691196') no-repeat 16px 16px;
   background-size: 16px auto;
   color: white;
@@ -60,15 +67,16 @@
   font-family: Helvetica, sans-serif;
   font-size: 12px;
   height: 29px;
-  width: 123px;
+  width: 48px;
   padding: 19px 16px 0 46px;
   opacity: 0.8;
+  padding: 19px 0 0;
   position: absolute;
-  top: -55px;
-  right: -280px;
+  top: 0;
+  right: 0;
 }
 /* line 88, ../../../../app/sass/common/lib.sass */
-#link-delete:hover {
+.link-delete:hover {
   text-decoration: none;
   opacity: 1;
 }
