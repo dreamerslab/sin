@@ -63,14 +63,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 14, ../../../app/sass/common/layout.sass */
+/* line 20, ../../../app/sass/common/layout.sass */
 #wrap {
   position: relative;
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 19, ../../../app/sass/common/layout.sass */
+/* line 25, ../../../app/sass/common/layout.sass */
 #header {
   overflow: hidden;
   *zoom: 1;
@@ -79,7 +79,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background: white;
 }
 
-/* line 25, ../../../app/sass/common/layout.sass */
+/* line 31, ../../../app/sass/common/layout.sass */
 #cover {
   position: absolute;
   top: 78px;
@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 2;
 }
 
-/* line 28, ../../../app/sass/common/layout.sass */
+/* line 34, ../../../app/sass/common/layout.sass */
 #header-overlay {
   position: absolute;
   top: 78px;
@@ -99,7 +99,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 3;
 }
 
-/* line 34, ../../../app/sass/common/layout.sass */
+/* line 37, ../../../app/sass/common/layout.sass */
 #logo-wrap {
   display: inline;
   float: left;
@@ -108,7 +108,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   padding: 8px 0 0;
 }
 
-/* line 40, ../../../app/sass/common/layout.sass */
+/* line 43, ../../../app/sass/common/layout.sass */
 #logo {
   text-indent: -119988px;
   overflow: hidden;
@@ -120,13 +120,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background-size: 240px 200px;
 }
 
-/* line 48, ../../../app/sass/common/layout.sass */
+/* line 51, ../../../app/sass/common/layout.sass */
 #nav {
   display: inline;
   float: right;
 }
 
-/* line 51, ../../../app/sass/common/layout.sass */
+/* line 54, ../../../app/sass/common/layout.sass */
 .nav-item {
   display: inline;
   float: left;

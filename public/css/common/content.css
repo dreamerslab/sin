@@ -1,4 +1,4 @@
-/* line 7, ../../../app/sass/common/content.sass */
+/* line 18, ../../../app/sass/common/content.sass */
 #main {
   display: inline;
   float: left;
@@ -7,7 +7,7 @@
   padding: 0 32px 0 0;
 }
 
-/* line 13, ../../../app/sass/common/content.sass */
+/* line 24, ../../../app/sass/common/content.sass */
 .block-title {
   text-indent: -119988px;
   overflow: hidden;
@@ -15,26 +15,26 @@
   display: block;
 }
 
-/* line 20, ../../../app/sass/common/content.sass */
+/* line 28, ../../../app/sass/common/content.sass */
 #news-title-link {
   background-image: url('/img/common/news-title@2x.png?1356691196');
   background-size: 66px auto;
   width: 66px;
   height: 24px;
 }
-/* line 25, ../../../app/sass/common/content.sass */
+/* line 33, ../../../app/sass/common/content.sass */
 #news-title-link:hover {
   background-position: 0 -24px;
 }
 
-/* line 28, ../../../app/sass/common/content.sass */
+/* line 36, ../../../app/sass/common/content.sass */
 .news-entry {
   position: relative;
   width: 416px;
   padding: 31px 0 17px;
 }
 
-/* line 33, ../../../app/sass/common/content.sass */
+/* line 41, ../../../app/sass/common/content.sass */
 .title {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -49,12 +49,12 @@
   *display: inline;
 }
 
-/* line 38, ../../../app/sass/common/content.sass */
+/* line 46, ../../../app/sass/common/content.sass */
 .news-entry-title {
   padding: 0 0 12px;
 }
 
-/* line 41, ../../../app/sass/common/content.sass */
+/* line 49, ../../../app/sass/common/content.sass */
 .news-entry-title-link {
   color: black;
   font-family: serif;
@@ -62,12 +62,12 @@
   line-height: 28px;
   text-decoration: none;
 }
-/* line 47, ../../../app/sass/common/content.sass */
+/* line 55, ../../../app/sass/common/content.sass */
 .news-entry-title-link:hover {
   color: #6da4b2;
 }
 
-/* line 50, ../../../app/sass/common/content.sass */
+/* line 58, ../../../app/sass/common/content.sass */
 .news-entry-p {
   font-family: Helvetica, sans-serif;
   font-size: 13px;
@@ -76,7 +76,7 @@
   margin: 0 0 20px;
 }
 
-/* line 57, ../../../app/sass/common/content.sass */
+/* line 65, ../../../app/sass/common/content.sass */
 .news-date {
   position: absolute;
   top: 9px;
@@ -87,7 +87,7 @@
   line-height: 18px;
 }
 
-/* line 66, ../../../app/sass/common/content.sass */
+/* line 74, ../../../app/sass/common/content.sass */
 .news-thumb {
   position: absolute;
   top: 10px;
@@ -97,19 +97,19 @@
   height: 120px;
 }
 
-/* line 77, ../../../app/sass/common/content.sass */
+/* line 82, ../../../app/sass/common/content.sass */
 #release-title-link {
   background-image: url('/img/common/releases-title@2x.png?1356691196');
   background-size: 93px auto;
   width: 93px;
   height: 24px;
 }
-/* line 82, ../../../app/sass/common/content.sass */
+/* line 87, ../../../app/sass/common/content.sass */
 #release-title-link:hover {
   background-position: 0 -24px;
 }
 
-/* line 85, ../../../app/sass/common/content.sass */
+/* line 90, ../../../app/sass/common/content.sass */
 #releases-list {
   overflow: hidden;
   *zoom: 1;
@@ -117,7 +117,7 @@
   padding: 30px 0;
 }
 
-/* line 90, ../../../app/sass/common/content.sass */
+/* line 95, ../../../app/sass/common/content.sass */
 .release-link {
   display: inline;
   float: left;
@@ -126,12 +126,12 @@
   padding: 0 16px 0 0;
   text-decoration: none;
 }
-/* line 96, ../../../app/sass/common/content.sass */
+/* line 101, ../../../app/sass/common/content.sass */
 .release-link:hover {
   color: #6da4b2;
 }
 
-/* line 99, ../../../app/sass/common/content.sass */
+/* line 104, ../../../app/sass/common/content.sass */
 .release-thumb {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -146,24 +146,24 @@
   *display: inline;
 }
 
-/* line 107, ../../../app/sass/common/content.sass */
+/* line 109, ../../../app/sass/common/content.sass */
 #videos-title {
   padding: 0 0 16px;
 }
 
-/* line 110, ../../../app/sass/common/content.sass */
+/* line 112, ../../../app/sass/common/content.sass */
 #videos-title-link {
   background-image: url('/img/common/videos-title@2x.png?1356691196');
   background-size: 79px auto;
   width: 79px;
   height: 24px;
 }
-/* line 115, ../../../app/sass/common/content.sass */
+/* line 117, ../../../app/sass/common/content.sass */
 #videos-title-link:hover {
   background-position: 0 -24px;
 }
 
-/* line 118, ../../../app/sass/common/content.sass */
+/* line 120, ../../../app/sass/common/content.sass */
 .release-date {
   display: block;
   color: #6da4b2;
@@ -171,13 +171,13 @@
   font-size: 14px;
 }
 
-/* line 124, ../../../app/sass/common/content.sass */
+/* line 126, ../../../app/sass/common/content.sass */
 .release-author, .release-title {
   font-size: 13px;
   line-height: 21px;
 }
 
-/* line 128, ../../../app/sass/common/content.sass */
+/* line 130, ../../../app/sass/common/content.sass */
 .btn-more {
   text-indent: -119988px;
   overflow: hidden;
@@ -189,35 +189,35 @@
   height: 50px;
 }
 
-/* line 136, ../../../app/sass/common/content.sass */
+/* line 138, ../../../app/sass/common/content.sass */
 #releases-more {
   top: 82px;
 }
 
-/* line 139, ../../../app/sass/common/content.sass */
+/* line 141, ../../../app/sass/common/content.sass */
 #videos-more {
   top: 46px;
 }
 
-/* line 142, ../../../app/sass/common/content.sass */
+/* line 144, ../../../app/sass/common/content.sass */
 #videos-list {
   position: relative;
 }
 
-/* line 145, ../../../app/sass/common/content.sass */
+/* line 147, ../../../app/sass/common/content.sass */
 .video {
   display: inline;
   float: left;
   padding: 0 16px 0 0;
 }
 
-/* line 149, ../../../app/sass/common/content.sass */
+/* line 151, ../../../app/sass/common/content.sass */
 .video-thumb {
   width: 120px;
   height: 90px;
 }
 
-/* line 153, ../../../app/sass/common/content.sass */
+/* line 155, ../../../app/sass/common/content.sass */
 #sidebar {
   display: inline;
   float: right;
@@ -225,12 +225,12 @@
   padding: 0 48px 0 0;
 }
 
-/* line 158, ../../../app/sass/common/content.sass */
+/* line 160, ../../../app/sass/common/content.sass */
 #soundcould-player, #latest-lives, #fb-fanpage {
   padding: 0 0 48px;
 }
 
-/* line 161, ../../../app/sass/common/content.sass */
+/* line 163, ../../../app/sass/common/content.sass */
 #soundcould-player-title, #lives-title, #fb-fanpage-title {
   text-indent: -119988px;
   overflow: hidden;
@@ -240,7 +240,7 @@
   background-position: top left;
 }
 
-/* line 167, ../../../app/sass/common/content.sass */
+/* line 169, ../../../app/sass/common/content.sass */
 #soundcould-player-title {
   background-image: url('/img/home/sidebar-music-title.png?1356691196');
   width: 54px;
@@ -248,7 +248,7 @@
   background-size: 54px auto;
 }
 
-/* line 173, ../../../app/sass/common/content.sass */
+/* line 175, ../../../app/sass/common/content.sass */
 #lives-title {
   background-image: url('/img/home/sidebar-live-title.png?1356691196');
   width: 33px;
@@ -256,7 +256,7 @@
   background-size: 33px auto;
 }
 
-/* line 179, ../../../app/sass/common/content.sass */
+/* line 181, ../../../app/sass/common/content.sass */
 #fb-fanpage-title {
   background-image: url('/img/home/sidebar-facebook-title.png?1356691196');
   width: 87px;
@@ -264,14 +264,14 @@
   background-size: 87px auto;
 }
 
-/* line 185, ../../../app/sass/common/content.sass */
+/* line 187, ../../../app/sass/common/content.sass */
 #nav-wrap {
   text-align: center;
   margin: 0 0 0 -48px;
   clear: both;
 }
 
-/* line 190, ../../../app/sass/common/content.sass */
+/* line 192, ../../../app/sass/common/content.sass */
 #btn-prev, #btn-next {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -287,7 +287,7 @@
 #btn-prev, #btn-next {
   *display: inline;
 }
-/* line 196, ../../../app/sass/common/content.sass */
+/* line 198, ../../../app/sass/common/content.sass */
 #btn-prev:hover, #btn-next:hover {
   opacity: 1;
 }

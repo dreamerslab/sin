@@ -3,6 +3,12 @@
 
 $default-font: Helvetica, sans-serif
 
+$logo-width: 240px
+$logo-height: 200px
+
+$nav-width: 120px
+$nav-height: 60px
+
 @mixin header-cover( $z_index )
   position: absolute
   top: 78px
@@ -28,9 +34,6 @@ $default-font: Helvetica, sans-serif
 #header-overlay
   +header-cover( 3 )
 
-$logo-width: 240px
-$logo-height: 200px
-
 #logo-wrap
   +float-left
   width: $logo-width
@@ -50,9 +53,6 @@ $logo-height: 200px
 
 .nav-item
   +float-left
-
-$nav-width: 120px
-$nav-height: 60px
 
 .nav-link
   +hide-text
