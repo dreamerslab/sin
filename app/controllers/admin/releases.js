@@ -3,30 +3,33 @@ var Application = require( CONTROLLER_DIR + 'application' );
 module.exports = Application.extend({
 
   new : function ( req, res, next ){
-    res.render( 'admin/release/new' );
+    res.render( 'admin/releases/new' );
   },
 
   create : function ( req, res, next ){
-    res.render( 'admin/release/create' );
+    res.render( 'admin/releases/create' );
   },
 
   index : function ( req, res, next ){
-    res.render( 'admin/release/index' );
+    res.render( 'releases/index', {
+      _assets          : 'admin/releases/assets/_index',
+      is_authenticated : req.session.is_authenticated
+    });
   },
 
   show : function ( req, res, next ){
-    res.render( 'admin/release/show' );
+    res.render( 'admin/releases/show' );
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/release/edit' );
+    res.render( 'admin/releases/edit' );
   },
 
   update : function ( req, res, next ){
-    res.render( 'admin/release/update' );
+    res.render( 'admin/releases/update' );
   },
 
   destory : function ( req, res, next ){
-    res.render( 'admin/release/destory' );
+    res.render( 'admin/releases/destory' );
   }
 });

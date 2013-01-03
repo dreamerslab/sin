@@ -1,17 +1,27 @@
+<?= it.partial( it._assets ) ?>
+
 <? it.title = '三十而立 sincerely music | 作品'; ?>
 <? it.nav_selected = 'releases'; ?>
-<? it.styles.push( 'releases-index' ); ?>
 
 <div id="releases">
+  <? if ( it.is_authenticated ){ ?>
+    <a href="/" id="btn-add">ADD NEW ENTRY</a>
+  <? } ?>
+
   <? var releases = [ '', '', '', '', '', '' ]; ?>
 
   <? releases.forEach( function ( release ){ ?>
-    <a href="/releases/show" class="release-link">
-      <img src="/img/home/release-thumb.jpeg" alt="Album Cover" class="release-thumb">
-      <span class="release-date">2012.12.12</span>
-      <h4 class="release-author">偷摸大雞</h4>
-      <h3 class="release-title">偷摸大雞同名EP</h3>
-    </a>
+    <div class="release-link-wrap">
+      <a href="/releases/show" class="release-link">
+        <img src="/img/home/release-thumb.jpeg" alt="Album Cover" class="release-thumb">
+        <span class="release-date">2012.12.12</span>
+        <h4 class="release-author">偷摸大雞</h4>
+        <h3 class="release-title">偷摸大雞同名EP</h3>
+      </a>
+      <? if( it.is_authenticated ){ ?>
+        <a href="/admin/releases/delete" class="link-delete">DELETE THIS ENTRY</a>
+      <? } ?>
+    </div>
   <? }); ?>
 </div>
 

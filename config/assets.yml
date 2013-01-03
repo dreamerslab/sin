@@ -67,6 +67,11 @@ css:
   releases-index:
     site:
       - releases/index
+  admin-releases-index:
+    site:
+      - releases/index
+      - admin/base
+      - admin/releases/index
   releases-show:
     site:
       - releases/show
