@@ -83,6 +83,10 @@ css:
   videos-index:
     site:
       - videos/index
+  admin-videos-new:
+    site:
+      - admin/base
+      - admin/videos/new
   admin-videos-index:
     site:
       - videos/index

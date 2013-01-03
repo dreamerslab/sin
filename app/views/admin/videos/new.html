@@ -1,4 +1,7 @@
-<? it.title = 'admin/videos#new'; ?>
-<p>
-  Find this file in app/views/admin/videos/new.html
-</p>
+<? it.title = '三十而立 sincerely music | 新增影音'; ?>
+<? it.nav_selected = 'videos'; ?>
+<? it.styles.push( 'admin-videos-new' ); ?>
+
+<form id="videos-form" action="/admin/videos/create" method="POST" accept-charset="UTF-8" >
+  <?= it.partial( 'admin/videos/_fields' ) ?>
+</form>
