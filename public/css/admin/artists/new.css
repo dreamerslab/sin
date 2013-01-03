@@ -1,19 +1,19 @@
-/* line 8, ../../../../app/sass/admin/news/new.sass */
-#news-form {
+/* line 8, ../../../../app/sass/admin/artists/new.sass */
+#artists-form {
   font-family: Helvetica, sans-serif;
   color: #555555;
   width: 600px;
   padding: 0 180px 0 132px;
 }
 
-/* line 14, ../../../../app/sass/admin/news/new.sass */
+/* line 14, ../../../../app/sass/admin/artists/new.sass */
 .form-block-wrap {
   overflow: hidden;
   *zoom: 1;
   padding: 24px 0 0;
 }
 
-/* line 18, ../../../../app/sass/admin/news/new.sass */
+/* line 18, ../../../../app/sass/admin/artists/new.sass */
 .form-label {
   display: inline;
   float: left;
@@ -25,7 +25,7 @@
   padding: 0 16px 10px 0;
 }
 
-/* line 24, ../../../../app/sass/admin/news/new.sass */
+/* line 24, ../../../../app/sass/admin/artists/new.sass */
 .error {
   display: inline;
   float: left;
@@ -34,7 +34,7 @@
   color: red;
 }
 
-/* line 29, ../../../../app/sass/admin/news/new.sass */
+/* line 29, ../../../../app/sass/admin/artists/new.sass */
 .form-tip {
   display: inline;
   float: right;
@@ -43,8 +43,8 @@
   color: #555555;
 }
 
-/* line 34, ../../../../app/sass/admin/news/new.sass */
-#input-title, #input-thumb {
+/* line 34, ../../../../app/sass/admin/artists/new.sass */
+#input-name, #input-thumb, #input-cover, .input-link {
   display: block;
   width: 100%;
   border: none;
@@ -56,8 +56,8 @@
   max-width: 584px;
 }
 
-/* line 37, ../../../../app/sass/admin/news/new.sass */
-#input-content {
+/* line 37, ../../../../app/sass/admin/artists/new.sass */
+#input-intro {
   display: block;
   width: 100%;
   border: none;
@@ -74,7 +74,33 @@
   max-width: 568px;
 }
 
-/* line 40, ../../../../app/sass/admin/news/new.sass */
+/* line 40, ../../../../app/sass/admin/artists/new.sass */
+#links-wrap {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 43, ../../../../app/sass/admin/artists/new.sass */
+#link-titles {
+  display: inline;
+  float: left;
+  width: 160px;
+}
+
+/* line 47, ../../../../app/sass/admin/artists/new.sass */
+.input-link {
+  max-width: 383px;
+  margin: 0 0 24px;
+}
+
+/* line 51, ../../../../app/sass/admin/artists/new.sass */
+#links {
+  display: inline;
+  float: right;
+  width: 400px;
+}
+
+/* line 55, ../../../../app/sass/admin/artists/new.sass */
 #btns-wrap {
   overflow: hidden;
   *zoom: 1;
@@ -83,7 +109,7 @@
   margin: 0 auto;
 }
 
-/* line 46, ../../../../app/sass/admin/news/new.sass */
+/* line 61, ../../../../app/sass/admin/artists/new.sass */
 #content-link-cancel {
   display: inline;
   float: left;
@@ -97,7 +123,7 @@
   background-color: #d2d2d2;
 }
 
-/* line 51, ../../../../app/sass/admin/news/new.sass */
+/* line 66, ../../../../app/sass/admin/artists/new.sass */
 #btn-submit {
   display: inline;
   float: left;
@@ -111,7 +137,7 @@
   width: 48px;
   border-radius: 0;
 }
-/* line 95, ../../../../app/sass/common/lib.sass */
+/* line 95, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 #btn-submit:hover {
   cursor: pointer;
 }

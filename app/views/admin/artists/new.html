@@ -1,4 +1,69 @@
-<? it.title = 'admin/artists#new'; ?>
-<p>
-  Find this file in app/views/admin/artists/new.html
-</p>
+<? it.title = '三十而立 sincerely music | 新增藝人'; ?>
+<? it.nav_selected = 'artists'; ?>
+<? it.styles.push( 'admin-artists-new' ); ?>
+
+<form id="artists-form" action="/admin/artists/create" method="POST" accept-charset="UTF-8" >
+  <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+
+  <div class="form-block-wrap">
+    <label id="label-name" class="form-label" for="input-name">藝人名稱</label>
+    <p class="error">error message goes here</p>
+    <span class="form-tip">必填</span>
+  </div>
+
+  <input id="input-name" type="text" name="name">
+
+  <div class="form-block-wrap">
+    <label id="label-intro" class="form-label" for="input-intro">內文介紹</label>
+    <p class="error">error message goes here</p>
+    <span class="form-tip">必填</span>
+  </div>
+
+  <textarea id="input-intro" type="text" name="intro" rows="16"></textarea>
+
+  <div id="links-wrap">
+    <div id="link-titles">
+      <div class="form-block-wrap">
+        <label id="label-name" class="form-label" for="input-name">連結名稱</label>
+        <p class="error">err msg</p>
+      </div>
+      <input id="input-link-name1" class="input-link" type="text" name="link_name1">
+      <input id="input-link-name2" class="input-link" type="text" name="link_name2">
+      <input id="input-link-name3" class="input-link" type="text" name="link_name3">
+      <input id="input-link-name4" class="input-link" type="text" name="link_name4">
+      <input id="input-link-name5" class="input-link" type="text" name="link_name5">
+    </div>
+    <div id="links">
+      <div class="form-block-wrap">
+        <label id="label-name" class="form-label" for="input-name">網址</label>
+        <p class="error">error message goes here</p>
+      </div>
+      <input id="input-link1" class="input-link" type="text" name="link1" placeholder="http://">
+      <input id="input-link2" class="input-link" type="text" name="link2" placeholder="http://">
+      <input id="input-link3" class="input-link" type="text" name="link3" placeholder="http://">
+      <input id="input-link4" class="input-link" type="text" name="link4" placeholder="http://">
+      <input id="input-link5" class="input-link" type="text" name="link5" placeholder="http://">
+    </div>
+  </div>
+
+  <div class="form-block-wrap">
+    <label id="label-thumb" class="form-label" for="input-thumb">首頁縮圖網址</label>
+    <p class="error">error message goes here</p>
+    <span class="form-tip">必填 + 最小尺寸為 280x280 px</span>
+  </div>
+
+  <input id="input-thumb" type="text" name="thumb" placeholder="http://">
+
+  <div class="form-block-wrap">
+    <label id="label-cover" class="form-label" for="input-cover">內頁大圖網址</label>
+    <p class="error">error message goes here</p>
+    <span class="form-tip">必填 + 最小尺寸為 912x400 px</span>
+  </div>
+
+  <input id="input-cover" type="text" name="cover" placeholder="http://">
+
+  <div id="btns-wrap">
+    <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
+    <input id="btn-submit" type="submit" value="Submit" />
+  </div>
+</form>

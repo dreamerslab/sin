@@ -24,17 +24,28 @@
   color: #6da4b2;
   padding: 0 0 0 16px;
   height: 40px;
+  max-width: 584px;
 }
 
 /* line 25, ../../../app/sass/contact/index.sass */
 .contact-form-textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  font-family: serif;
+  font-size: 16px;
+  color: #6da4b2;
+  padding: 0 0 0 16px;
+  height: 40px;
+  max-width: 584px;
   width: 584px;
   padding: 16px 16px 0;
   line-height: 1.5em;
-  height: initial;
+  height: 400px;
+  max-width: 568px;
 }
 
-/* line 31, ../../../app/sass/contact/index.sass */
+/* line 28, ../../../app/sass/contact/index.sass */
 #btn-submit {
   display: block;
   background: #6da4b2;
@@ -45,7 +56,7 @@
   font-size: 14px;
   letter-spacing: 1px;
 }
-/* line 40, ../../../app/sass/contact/index.sass */
+/* line 37, ../../../app/sass/contact/index.sass */
 #btn-submit:hover {
   cursor: pointer;
   opacity: 0.7;

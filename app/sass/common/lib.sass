@@ -16,6 +16,8 @@ $panel-link-eidt-pading-top: 19px
 
 $form-font: serif
 
+$input-max-width: 584px
+
 @mixin link-edit( $width: 103px )
   background: $bg-panel-edit image-url( 'common/admin-edit@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
@@ -114,6 +116,15 @@ $form-font: serif
   color: $color-link
   padding: 0 0 0 16px
   height: 40px
+  max-width: $input-max-width
+
+@mixin default-textarea
+  +default-input
+  width: 584px
+  padding: 16px 16px 0
+  line-height: 1.5em
+  height: 400px
+  max-width: $input-max-width - 16px
 
 @mixin form-label
   padding: 24px 0 10px

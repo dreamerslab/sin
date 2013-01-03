@@ -60,6 +60,10 @@ css:
       - artists/show
       - admin/base
       - admin/artists/show
+  admin-artists-new:
+    site:
+      - admin/base
+      - admin/artists/new
   releases-index:
     site:
       - releases/index
