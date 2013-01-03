@@ -1,6 +1,7 @@
+<?= it.partial( it._assets ) ?>
+
 <? it.title = '三十而立 sincerely music | (藝人名稱) - (專輯名稱)'; ?>
 <? it.nav_selected = 'releases'; ?>
-<? it.styles.push( 'releases-show' ); ?>
 
 <div id="main">
   <h2 id="artist">偷摸大雞</h2>
@@ -31,7 +32,16 @@
         });
       ?>
     </ul>
+
+    <? if( it.is_authenticated ){ ?>
+      <a href="/" id="btn-add">ADD NEW SONG</a>
+    <? } ?>
   </div>
+
+  <? if( it.is_authenticated ){ ?>
+    <a id="link-edit" href="/admin/releases/edit">EDIT THIS ENTRY</a>
+    <a id="link-delete" href="/admin/releases/delete">DELETE THIS ENTRY</a>
+  <? } ?>
 </div>
 
 <div id="sidebar">

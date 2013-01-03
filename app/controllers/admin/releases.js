@@ -18,7 +18,10 @@ module.exports = Application.extend({
   },
 
   show : function ( req, res, next ){
-    res.render( 'admin/releases/show' );
+    res.render( 'releases/show', {
+      _assets          : 'admin/releases/assets/_show',
+      is_authenticated : req.session.is_authenticated
+    });
   },
 
   edit : function ( req, res, next ){

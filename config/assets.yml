@@ -75,6 +75,11 @@ css:
   releases-show:
     site:
       - releases/show
+  admin-releases-show:
+    site:
+      - releases/show
+      - admin/base
+      - admin/releases/show
   videos-index:
     site:
       - videos/index

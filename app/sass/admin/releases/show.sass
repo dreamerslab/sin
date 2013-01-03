@@ -1,0 +1,28 @@
+@import compass
+@import ../../common/lib
+
+$admin-btn-top: -55px
+
+#main
+  position: relative
+
+#songs
+  position: relative
+
+#btn-add
+  +link-add
+  position: absolute
+  top: -48px
+  right: 0
+
+#link-edit
+  +link-edit
+  position: absolute
+  top: $admin-btn-top
+  right: -95px
+
+#link-delete
+  +link-delete
+  position: absolute
+  top: $admin-btn-top
+  right: -280px
