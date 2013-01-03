@@ -1,6 +1,7 @@
+<?= it.partial( it._assets ) ?>
+
 <? it.title = '三十而立 sincerely music | (藝人名稱)'; ?>
 <? it.nav_selected = 'artists'; ?>
-<? it.styles.push( 'artists-show' ); ?>
 
 <div id="main">
   <div id="artist-intro-wrap">
@@ -53,6 +54,10 @@
       <a id="videos-more" class="btn-more" href="/">More</a>
     </div>
   </div>
+  <? if( it.is_authenticated ){ ?>
+    <a href="/admin/artists/edit" id="link-edit">EDIT THIS ENTRY</a>
+    <a href="/admin/artists/delete" id="link-delete">DELETE THIS ENTRY</a>
+  <? } ?>
 </div>
 
 <div id="sidebar">

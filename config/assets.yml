@@ -55,6 +55,11 @@ css:
   artists-show:
     site:
       - artists/show
+  admin-artists-show:
+    site:
+      - artists/show
+      - admin/base
+      - admin/artists/show
   releases-index:
     site:
       - releases/index
