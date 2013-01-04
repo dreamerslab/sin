@@ -84,6 +84,9 @@ css:
       - releases/show
       - admin/base
       - admin/releases/show
+  admin-songs:
+    site:
+      - admin/songs/base
   videos-index:
     site:
       - videos/index

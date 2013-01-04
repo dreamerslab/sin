@@ -1,0 +1,177 @@
+/* line 8, ../../../../app/sass/admin/songs/base.sass */
+.songs-form, .songs-form-edit {
+  overflow: hidden;
+  *zoom: 1;
+  font-family: Helvetica, sans-serif;
+  color: #555555;
+  width: 602px;
+  padding: 16px 0 0;
+}
+
+/* line 15, ../../../../app/sass/admin/songs/base.sass */
+.songs-form-edit {
+  border-bottom: 1px dotted #6da4b2;
+}
+
+/* line 19, ../../../../app/sass/admin/songs/base.sass */
+.form-block-wrap {
+  display: inline;
+  float: left;
+  padding: 0 16px 24px 0;
+}
+
+/* line 23, ../../../../app/sass/admin/songs/base.sass */
+#form-block-duration {
+  padding: 0 14px 24px 0;
+}
+
+/* line 26, ../../../../app/sass/admin/songs/base.sass */
+#form-block-itunes {
+  padding: 0 0 24px;
+}
+
+/* line 29, ../../../../app/sass/admin/songs/base.sass */
+.form-tip-wrap {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 24px 0 0;
+}
+
+/* line 33, ../../../../app/sass/admin/songs/base.sass */
+.form-label {
+  display: inline;
+  float: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 24px 0 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 0 0 10px;
+}
+
+/* line 39, ../../../../app/sass/admin/songs/base.sass */
+.error {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: red;
+  clear: both;
+  padding: 0 0 24px;
+}
+
+/* line 45, ../../../../app/sass/admin/songs/base.sass */
+.form-tip {
+  display: inline;
+  float: right;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* line 50, ../../../../app/sass/admin/songs/base.sass */
+#input-order, #input-name, #input-duration, #input-itunes, #input-soundcloud {
+  display: block;
+  width: 100%;
+  border: none;
+  font-family: serif;
+  font-size: 16px;
+  color: #6da4b2;
+  padding: 0 0 0 16px;
+  height: 40px;
+  max-width: 584px;
+}
+
+/* line 53, ../../../../app/sass/admin/songs/base.sass */
+#input-order {
+  width: 24px;
+}
+
+/* line 56, ../../../../app/sass/admin/songs/base.sass */
+#input-name {
+  width: 144px;
+}
+
+/* line 59, ../../../../app/sass/admin/songs/base.sass */
+#input-duration {
+  width: 48px;
+}
+
+/* line 62, ../../../../app/sass/admin/songs/base.sass */
+#input-itunes {
+  width: 272px;
+}
+
+/* line 65, ../../../../app/sass/admin/songs/base.sass */
+#input-soundcloud {
+  width: 272px;
+}
+
+/* line 68, ../../../../app/sass/admin/songs/base.sass */
+.songs-form-delete {
+  padding: 24px 0 0;
+}
+
+/* line 71, ../../../../app/sass/admin/songs/base.sass */
+.songs-btn-delete {
+  display: inline;
+  float: right;
+  border: none;
+  margin: 0;
+  background: #cc6666 url('/img/common/admin-delete@2x.png?1356691196') no-repeat 16px 16px;
+  background-size: 16px auto;
+  color: white;
+  height: 48px;
+  width: 176px;
+  padding: 0 16px 0 46px;
+  font-size: 12px;
+  border-radius: 0;
+  opacity: 0.8;
+}
+/* line 120, ../../../../app/sass/common/lib.sass */
+.songs-btn-delete:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* line 75, ../../../../app/sass/admin/songs/base.sass */
+#btns-wrap {
+  overflow: hidden;
+  *zoom: 1;
+  display: inline;
+  float: right;
+  width: 98px;
+  padding: 19px 0 0;
+  margin: 0 auto;
+}
+
+/* line 82, ../../../../app/sass/admin/songs/base.sass */
+#content-link-cancel {
+  display: inline;
+  float: left;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background: #ebebeb url('/img/common/admin-cancel@2x.png?1356691196') no-repeat 16px 16px;
+  background-size: 16px auto;
+  height: 48px;
+  width: 48px;
+  background-color: #d2d2d2;
+}
+
+/* line 87, ../../../../app/sass/admin/songs/base.sass */
+#btn-submit {
+  display: inline;
+  float: left;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  border: none;
+  background: #6da4b2 url('/img/common/admin-confirm@2x.png?1356691196') no-repeat 16px 16px;
+  background-size: 16px auto;
+  height: 48px;
+  width: 48px;
+  border-radius: 0;
+}
+/* line 105, ../../../../app/sass/common/lib.sass */
+#btn-submit:hover {
+  cursor: pointer;
+}

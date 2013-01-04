@@ -1,0 +1,89 @@
+@import compass
+@import ../../common/lib
+
+@mixin default-font
+  font-family: $default-font
+  font-size: 14px
+
+.songs-form
+  +clearfix
+  font-family: $default-font
+  color: #555
+  width: 602px
+  padding: 16px 0 0
+
+.songs-form-edit
+  @extend .songs-form
+  border-bottom: 1px dotted $color-link
+
+.form-block-wrap
+  +float-left
+  padding: 0 16px 24px 0
+
+#form-block-duration
+  padding: 0 14px 24px 0
+
+#form-block-itunes
+  padding: 0 0 24px
+
+.form-tip-wrap
+  +clearfix
+  padding: 24px 0 0
+
+.form-label
+  +float-left
+  +default-font
+  +form-label
+  padding: 0 0 10px
+
+.error
+  +default-font
+  color: #f00
+  clear: both
+  padding: 0 0 24px
+
+.form-tip
+  +float-right
+  +default-font
+  color: #555
+
+#input-order, #input-name, #input-duration, #input-itunes, #input-soundcloud
+  +default-input
+
+#input-order
+  width: 24px
+
+#input-name
+  width: 144px
+
+#input-duration
+  width: 48px
+
+#input-itunes
+  width: 272px
+
+#input-soundcloud
+  width: 272px
+
+.songs-form-delete
+  padding: 24px 0 0
+
+.songs-btn-delete
+  +float-right
+  +btn-delete
+
+#btns-wrap
+  +clearfix
+  +float-right
+  width: 98px
+  padding: 19px 0 0
+  margin: 0 auto
+
+#content-link-cancel
+  +float-left
+  +link-cancel
+  background-color: darken( $bg-panel-logout, 10% )
+
+#btn-submit
+  +float-left
+  +btn-confirm
