@@ -17,12 +17,20 @@
 <textarea id="input-content" type="text" name="content" rows="16"></textarea>
 
 <div class="form-block-wrap">
+  <label id="label-artists" class="form-label" for="input-artists">相關藝人</label>
+  <p class="error">error message goes here</p>
+  <span class="form-tip">此欄位為多選，請用逗號作分隔</span>
+</div>
+
+<input id="input-artists" type="text" name="artists">
+
+<div class="form-block-wrap">
   <label id="label-thumb" class="form-label" for="input-thumb">首頁縮圖網址</label>
   <p class="error">error message goes here</p>
   <span class="form-tip">最小尺寸需為 280x280 px</span>
 </div>
 
-<input id="input-thumb" type="text" name="title" placeholder="http://">
+<input id="input-thumb" type="text" name="thumb" placeholder="http://">
 
 <div id="btns-wrap">
   <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
