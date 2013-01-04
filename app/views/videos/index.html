@@ -22,7 +22,7 @@
         <span class="video-date">2012.01.22</span>
       </div>
       <? if( it.is_authenticated ){ ?>
-        <form class="form-delete" action="/admin/artists" method="POST" accept-charset="UTF-8" >
+        <form class="form-delete" action="/admin/videos" method="POST" accept-charset="UTF-8" >
           <input type="hidden" name="_method" value="delete" />
           <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
           <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />

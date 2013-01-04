@@ -19,7 +19,7 @@
         <h3 class="release-title">偷摸大雞同名EP</h3>
       </a>
       <? if( it.is_authenticated ){ ?>
-        <form class="form-delete" action="/admin/artists" method="POST" accept-charset="UTF-8" >
+        <form class="form-delete" action="/admin/releases" method="POST" accept-charset="UTF-8" >
           <input type="hidden" name="_method" value="delete" />
           <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
           <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />
