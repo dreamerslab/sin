@@ -24,7 +24,11 @@
 
   <? if( it.is_authenticated ){ ?>
     <a href="/admin/news/edit" id="link-edit">EDIT THIS ENTRY</a>
-    <a href="/admin/news/delete" id="link-delete">DELETE THIS ENTRY</a>
+    <form class="form-delete" action="/admin/artists" method="POST" accept-charset="UTF-8" >
+      <input type="hidden" name="_method" value="delete" />
+      <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+      <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />
+    </form>
   <? } ?>
 </div>
 <div id="nav-wrap">

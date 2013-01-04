@@ -58,10 +58,3 @@ h3.news-entry-title {
 .news-date {
   top: 0;
 }
-
-/* line 50, ../../../app/sass/news/show.sass */
-.btn-delete {
-  position: absolute;
-  top: 0;
-  right: -300px;
-}
