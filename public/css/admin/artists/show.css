@@ -39,12 +39,13 @@
   background-size: 16px auto;
   color: white;
   height: 48px;
+  width: 176px;
   padding: 0 16px 0 46px;
   font-size: 12px;
   border-radius: 0;
   opacity: 0.8;
 }
-/* line 119, ../../../../app/sass/common/lib.sass */
+/* line 120, ../../../../app/sass/common/lib.sass */
 .btn-delete:hover {
   cursor: pointer;
   opacity: 1;

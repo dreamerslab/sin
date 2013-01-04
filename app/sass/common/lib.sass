@@ -105,15 +105,31 @@ $input-max-width: 584px
   &:hover
     cursor: pointer
 
-@mixin btn-delete
+@mixin btn-delete( $width: 176px )
   border: none
   margin: 0
   background: $color-link-delete image-url( 'common/admin-delete@2x.png' ) no-repeat 16px 16px
   background-size: 16px auto
   color: $color-panel-edit
   height: $panel-btn-height-n-width
+  width: $width // for firefox
   padding: 0 16px 0 46px
   font-size: 12px
+  border-radius: 0
+  opacity: 0.8
+  &:hover
+    cursor: pointer
+    opacity: 1
+
+@mixin btn-delete-hide-text
+  +hide-text
+  border: none
+  margin: 0
+  background: $color-link-delete image-url( 'common/admin-delete@2x.png' ) no-repeat 16px 16px
+  background-size: 16px auto
+  height: $panel-btn-height-n-width
+  width: $panel-btn-height-n-width
+  padding: 0
   border-radius: 0
   opacity: 0.8
   &:hover
