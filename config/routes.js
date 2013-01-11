@@ -3,7 +3,14 @@ module.exports = function ( map ){
 
   map.resources( 'news',     { only : [ 'index', 'show' ]});
   map.resources( 'artists',  { only : [ 'index', 'show' ]});
-  map.resources( 'releases', { only : [ 'index', 'show' ]});
+
+  map.resources(
+    'releases',
+    { only : [ 'index', 'show' ]},
+    function ( releases ){
+      releases.resources( 'songs', { only : [ 'index', 'show' ]});
+    }
+  );
 
   map.get( 'videos',  'videos#index' );
   map.get( 'live',    'live#index' );
@@ -17,9 +24,14 @@ module.exports = function ( map ){
 
     admin.get( 'edit',  'home#edit' );
     map.put(   'admin', 'home#update' );
+
+    admin.get( 'banners/edit/:type', 'banners#edit' );
+
     admin.resources( 'news' );
     admin.resources( 'artists' );
-    admin.resources( 'releases' );
+    admin.resources( 'releases', function ( releases ){
+      releases.resources( 'songs' );
+    });
     admin.resources( 'videos', { except : [ 'show' ]});
     admin.resources( 'live',   { except : [ 'show' ]});
   });
