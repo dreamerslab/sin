@@ -14,9 +14,9 @@ module.exports = {
   ),
 
   validate_create_n_update : form(
-    field( 'title' ).required( '', lang.required.title ).maxLength(       50, lang.invalid.title ),
-    field( 'date' ).required(  '', lang.required.date ).maxLength(        10, lang.invalid.date ),
+    field( 'title'    ).required( '', lang.required.title    ).maxLength( 50, lang.invalid.title ),
+    field( 'date'     ).required( '', lang.required.date     ).maxLength( 10, lang.invalid.date ),
     field( 'location' ).required( '', lang.required.location ).maxLength( 50, lang.invalid.location ),
-    field( 'url' ).isUrl( lang.invalid.url )
+    field( 'url'      ).isUrl(        lang.invalid.url )
   )
 };
