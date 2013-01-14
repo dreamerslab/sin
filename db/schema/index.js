@@ -48,13 +48,14 @@ var Schema = function ( Schema ){
     }),
 
     Release : new Schema({
-      artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
-      title      : { type : String, required : true },
-      desc       : { type : String, default : '' },
-      cover      : { type : String, default : '' }, // url
-      songs      : [{ type : ObjectId, ref : 'Song' }],
-      created_at : { type : Number, default : Date.now },
-      updated_at : { type : Number }
+      artists      : [{ type : ObjectId, ref : 'Artist', index : true }],
+      name         : { type : String, required : true },
+      desc         : { type : String, default : '' },
+      release_date : { type : String, default : '' },
+      cover        : { type : String, default : '' }, // url
+      songs        : [{ type : ObjectId, ref : 'Song' }],
+      created_at   : { type : Number, default : Date.now },
+      updated_at   : { type : Number }
     }),
 
     Song : new Schema({
