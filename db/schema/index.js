@@ -18,7 +18,6 @@ var Schema = function ( Schema ){
 
     Artist : new Schema({
       name       : { type : String, required : true },
-      brief      : { type : String, default  : '' },
       desc       : { type : String, default  : '' },
       cover      : { type : String, default  : '' }, // url ( bg )
       links      : [{ type : ObjectId, ref : 'Link' }],
