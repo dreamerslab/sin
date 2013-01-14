@@ -1,4 +1,4 @@
-var Application = require( CONTROLLER_DIR + 'application' );
+var Application = require( '../application' );
 
 module.exports = Application.extend({
 
