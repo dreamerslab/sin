@@ -1,6 +1,6 @@
 var form  = require( 'express-form2' );
 var field = form.field;
-var lang  = require( LANG_DIR + 'zh_tw/validations' );
+var lang  = require( LANG_DIR + 'zh_tw/validations/artists' );
 var r     = require( './regex' );
 
 form.configure({
