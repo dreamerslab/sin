@@ -1,6 +1,4 @@
 module.exports = {
-  _404 : '404',
-
   invalid : {
     title    : '請將標題縮短到 25 字以內',
     date     : '請將舉辦日期縮短到 500 字以內',

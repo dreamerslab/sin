@@ -10,7 +10,7 @@ form.configure({
 module.exports = {
 
   validate_show : form(
-    field( 'id' ).is( r.id, lang._404 )
+    field( 'id' ).required( '', lang._404 ).is( r.id, lang._404 )
   ),
 
   validate_create_n_update : form(

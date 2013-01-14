@@ -9,9 +9,13 @@ form.configure({
 
 module.exports = {
 
+  validate_index : form(
+    field( 'id' ).required( '', lang._404 ).is( r.id, lang._404 )
+  ),
+
   validate_show : form(
-    field( 'release_id' ).is( r.id, lang._404 ),
-    field( 'id'         ).is( r.id, lang._404 )
+    field( 'release_id' ).required( '', lang._404 ).is( r.id, lang._404 ),
+    field( 'id'         ).required( '', lang._404 ).is( r.id, lang._404 )
   ),
 
   validate_create_n_update : form(

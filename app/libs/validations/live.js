@@ -9,10 +9,6 @@ form.configure({
 
 module.exports = {
 
-  validate_show : form(
-    field( 'id' ).is( r.id, lang._404 )
-  ),
-
   validate_create_n_update : form(
     field( 'title'    ).required( '', lang.required.title    ).maxLength( 50, lang.invalid.title ),
     field( 'date'     ).required( '', lang.required.date     ).maxLength( 10, lang.invalid.date ),
