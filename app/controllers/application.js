@@ -2,6 +2,12 @@ var Class = require( 'node.class' );
 
 module.exports = Class.extend({
 
+  namespace : function ( req, res, next ){
+    res.local( 'namespace', '' );
+
+    next();
+  },
+
   no_content : function ( err, req, res, next ){
     err && LOG.error( 500, res, err );
 

@@ -3,6 +3,10 @@ var request = require( 'request' );
 
 module.exports = Class.extend({
 
+  init : function ( before, after ){
+    before( this.namespace );
+  },
+
   index : function ( req, res, next ){
     var _regex    = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
     var video_url = 'http://www.youtube.com/watch?v=D1GmL_mvmwY&feature=g-high-u';
