@@ -80,8 +80,10 @@ var Schema = function ( Schema ){
 
     Live : new Schema({
       artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
+      title      : { type : String, required : true },
       date       : { type : String, required : true },
-      place      : { type : String, required : true },
+      location   : { type : String, required : true },
+      url        : { type : String, default : '' },
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     })
