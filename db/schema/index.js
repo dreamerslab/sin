@@ -8,30 +8,19 @@ var Schema = function ( Schema ){
 
   var Models = {
 
-    Home : new Schema({
-      soundcloud : { type : String },
-      facebook   : { type : String },
-      created_at : { type : Number, default : Date.now },
-      updated_at : { type : Number }
-    }),
-
-    Banner : new Schema({
-      home       : { type : String },
-      news       : { type : String },
-      artists    : { type : String },
-      releases   : { type : String },
-      live       : { type : String },
-      videos     : { type : String },
-      contact    : { type : String },
+    // banner, home sound cloud & fb links ... etc.
+    Url : new Schema({
+      type       : { type : String, required : true },
+      url        : { type : String, default : '/img/common/default-banner.jpg' },
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
 
     Artist : new Schema({
       name       : { type : String, required : true },
-      brief      : { type : String },
-      desc       : { type : String },
-      cover      : { type : String }, // url ( bg )
+      brief      : { type : String, default  : '' },
+      desc       : { type : String, default  : '' },
+      cover      : { type : String, default  : '' }, // url ( bg )
       links      : [{ type : ObjectId, ref : 'Link' }],
       posts      : [{ type : ObjectId, ref : 'Post' }],
       releases   : [{ type : ObjectId, ref : 'Release' }],
@@ -41,8 +30,9 @@ var Schema = function ( Schema ){
       updated_at : { type : Number }
     }),
 
+    // artist links, blog, fb, twitter ...
     Link : new Schema({
-      artists    : { type : ObjectId, ref : 'Artist', required : true, index : true },
+      artist     : { type : ObjectId, ref : 'Artist', required : true, index : true },
       title      : { type : String, required : true },
       url        : { type : String, required : true },
       created_at : { type : Number, default : Date.now },
@@ -53,7 +43,7 @@ var Schema = function ( Schema ){
       artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
       title      : { type : String, required : true },
       content    : { type : String, required : true },
-      cover      : { type : String }, // url
+      cover      : { type : String, default : '' }, // url
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
@@ -61,8 +51,8 @@ var Schema = function ( Schema ){
     Release : new Schema({
       artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
       title      : { type : String, required : true },
-      desc       : { type : String },
-      cover      : { type : String }, // url
+      desc       : { type : String, default : '' },
+      cover      : { type : String, default : '' }, // url
       songs      : [{ type : ObjectId, ref : 'Song' }],
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
@@ -71,11 +61,11 @@ var Schema = function ( Schema ){
     Song : new Schema({
       artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
       release    : { type : ObjectId, ref : 'Release', required : true, index : true },
-      number     : { type : String },
+      number     : { type : String, required : true },
       title      : { type : String, required : true },
-      len        : { type : String }, // music length
+      len        : { type : String, default : '' }, // music length
       url        : { type : String, required : true },
-      itunes_url : { type : String },
+      itunes_url : { type : String, default : '' },
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
@@ -101,7 +91,7 @@ var Schema = function ( Schema ){
   Object.keys( Models ).forEach( function ( model ){
     if( Models[ model ].tree.updated_at !== undefined ){
       Models[ model ].pre( 'save', function ( next ){
-        this.updated_at = this.isNew?
+        this.updated_at = this.isNew ?
           this.created_at :
           Date.now();
 
