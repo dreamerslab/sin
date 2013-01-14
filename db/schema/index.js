@@ -73,7 +73,9 @@ var Schema = function ( Schema ){
     Video : new Schema({
       artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
       title      : { type : String, required : true },
-      url        : { type : String, required : true },
+      thumb      : { type : String, required : true },
+      date       : { type : String, required : true },
+      url        : { type : String, required : true }, // youtube link
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
