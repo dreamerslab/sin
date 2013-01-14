@@ -61,11 +61,11 @@ var Schema = function ( Schema ){
     Song : new Schema({
       artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
       release    : { type : ObjectId, ref : 'Release', required : true, index : true },
-      number     : { type : String, required : true },
-      title      : { type : String, required : true },
-      len        : { type : String, default : '' }, // music length
-      url        : { type : String, required : true },
-      itunes_url : { type : String, default : '' },
+      order      : { type : String, required : true },
+      name       : { type : String, required : true },
+      duration   : { type : String, default : '' }, // music length
+      soundcloud : { type : String, default : '' },
+      itunes     : { type : String, default : '' },
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
