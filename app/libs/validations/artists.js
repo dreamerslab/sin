@@ -14,7 +14,7 @@ module.exports = {
   ),
 
   validate_create_n_update : form(
-    field( 'name' ).required( '', lang.required.name ).maxLength( 50, lang.invalid.name ),
+    field( 'name' ).required( '', lang.required.name ).maxLength( 50,   lang.invalid.name ),
     field( 'desc' ).required( '', lang.required.desc ).maxLength( 1000, lang.invalid.desc )
   )
 };
