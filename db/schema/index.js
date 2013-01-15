@@ -76,6 +76,7 @@ var Schema = function ( Schema ){
       thumb      : { type : String, required : true },
       date       : { type : String, required : true },
       url        : { type : String, required : true }, // youtube link
+      youtube_id : { type : String, required : true },
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
