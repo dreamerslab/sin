@@ -1,8 +1,9 @@
-var Application = require( '../application' );
+var Application = require( './application' );
 
 module.exports = Application.extend({
 
   new : function ( req, res, next ){
+    // redirect to admin homepage if is_authenticated is true
     res.render( 'sessions/new', {
       layout : false
     });

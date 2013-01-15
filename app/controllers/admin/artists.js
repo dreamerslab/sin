@@ -1,6 +1,21 @@
-var Application = require( '../application' );
+var Application = require( './application' );
+var validations = require( LIB_DIR + 'validations/artists' );
 
-module.exports = Application.extend({
+module.exports = Application.extend( validations, {
+
+  init : function ( before, after ){
+    before( this.is_authenticated );
+
+    before( this.validate_show_n_edit,     { only : [ 'show', 'edit' ]});
+    before( this.validate_create_n_update, { only : [ 'create', 'update' ]});
+    before( this.is_validate,              { only : [ 'show', 'edit', 'create', 'update' ]});
+
+    before( this.namespace );
+    before( this.current_artist,  { only : [ 'index' ]});
+    before( this.recent_news,     { only : [ 'show' ]});
+    before( this.recent_videos,   { only : [ 'show' ]});
+    before( this.recent_releases, { only : [ 'show' ]});
+  },
 
   new : function ( req, res, next ){
     res.render( 'admin/artists/new' );
@@ -12,15 +27,13 @@ module.exports = Application.extend({
 
   index : function ( req, res, next ){
     res.render( 'artists/index', {
-      _assets          : 'admin/artists/assets/_index',
-      is_authenticated : req.session.is_authenticated
+      _assets : 'admin/artists/assets/_index'
     });
   },
 
   show : function ( req, res, next ){
     res.render( 'artists/show', {
-      _assets          : 'admin/artists/assets/_show',
-      is_authenticated : req.session.is_authenticated
+      _assets : 'admin/artists/assets/_show'
     });
   },
 

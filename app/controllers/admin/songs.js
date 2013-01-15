@@ -1,38 +1,61 @@
-var Application = require( '../application' );
+var Application = require( './application' );
+var validations = require( LIB_DIR + 'validations/songs' );
 
-module.exports = Application.extend({
+module.exports = Application.extend( validations, {
+
+  init : function ( before, after ){
+    before( this.is_authenticated );
+
+    before( this.validate_index,           { only : [ 'index' ]});
+    before( this.validate_show_n_edit,     { only : [ 'show', 'edit' ]});
+    before( this.validate_create_n_update, { only : [ 'create', 'update' ]});
+    before( this.is_validate,              { only : [ 'index', 'show', 'edit', 'create', 'update' ]});
+
+    before( this.namespace );
+    before( this.current_songs,  { only : [ 'index', 'show', 'new', 'edit' ]});
+  },
 
   new : function ( req, res, next ){
-    res.render( 'admin/news/new' );
+    res.render( 'releases/show', {
+      _assets          : 'admin/releases/assets/_show',
+      admin_view       : 'new'
+    });
   },
 
   create : function ( req, res, next ){
-    res.render( 'admin/news/create' );
+    res.render( 'releases/show', {
+      _assets : 'admin/releases/assets/_show'
+    });
   },
 
   index : function ( req, res, next ){
-    res.render( 'news/index', {
-      _assets          : 'admin/news/assets/_index',
-      is_authenticated : req.session.is_authenticated
+    res.render( 'releases/show', {
+      _assets : 'admin/releases/assets/_show'
     });
   },
 
   show : function ( req, res, next ){
-    res.render( 'news/show', {
-      _assets          : 'admin/news/assets/_show',
-      is_authenticated : req.session.is_authenticated
+    res.render( 'releases/show', {
+      _assets : 'admin/releases/assets/_show'
     });
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/news/edit' );
+    res.render( 'releases/show', {
+      _assets    : 'admin/releases/assets/_show',
+      admin_view : 'edit'
+    });
   },
 
   update : function ( req, res, next ){
-    res.render( 'admin/news/update' );
+    res.render( 'releases/show', {
+      _assets : 'admin/releases/assets/_show'
+    });
   },
 
   destory : function ( req, res, next ){
-    res.render( 'admin/news/destory' );
+    res.render( 'releases/show', {
+      _assets : 'admin/releases/assets/_show'
+    });
   }
 });
