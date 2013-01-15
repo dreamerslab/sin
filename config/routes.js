@@ -26,6 +26,7 @@ module.exports = function ( map ){
     map.put(   'admin', 'home#update' );
 
     admin.get( 'banners/edit/:type', 'banners#edit' );
+    admin.put( 'banners/edit/:type', 'banners#update' );
 
     admin.resources( 'news' );
     admin.resources( 'artists' );
