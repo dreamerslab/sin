@@ -9,7 +9,7 @@ module.exports = Application.extend( validations, {
     before( this.is_validate );
 
     before( this.namespace );
-    before( this.current_artist, { only : [ 'index' ]});
+    before( this.current_songs );
   },
 
   index : function ( req, res, next ){

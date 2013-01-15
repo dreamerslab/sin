@@ -1,9 +1,14 @@
-var Class   = require( 'node.class' );
-var request = require( 'request' );
+var Application = require( CONTROLLER_DIR + 'application' );
+var request     = require( 'request' );
 
-module.exports = Class.extend({
+module.exports = Application.extend({
 
   init : function ( before, after ){
+    before( this.recent_news );
+    before( this.recent_releases );
+    before( this.recent_videos );
+    before( this.recent_live );
+
     before( this.namespace );
   },
 
@@ -35,6 +40,7 @@ module.exports = Class.extend({
           // console.log( body.entry.link[ 0 ].href );
           // console.log( body.entry.media$group.media$thumbnail );
 
+          // model home show
           res.render( 'home/index', {
             title   : '三十而立 sincerely music',
             _assets : 'home/assets/_index'

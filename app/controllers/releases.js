@@ -4,11 +4,12 @@ var validations = require( LIB_DIR + 'validations/releases' );
 module.exports = Application.extend( validations, {
 
   init : function ( before, after ){
-    before( this.validate_show, { only : [ 'show' ]});
-    before( this.is_validate,   { only : [ 'show' ]});
+    before( this.validate_show_n_edit, { only : [ 'show' ]});
+    before( this.is_validate,          { only : [ 'show' ]});
 
     before( this.namespace );
     before( this.current_artist, { only : [ 'index' ]});
+    before( this.current_songs,  { only : [ 'show' ]});
   },
 
   index : function ( req, res, next ){

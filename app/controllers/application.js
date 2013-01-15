@@ -2,57 +2,60 @@ var Class = require( 'node.class' );
 
 module.exports = Class.extend({
 
+  no_content : function ( req, res, next ){
+    res.render( 'error/404', {
+      layout : false
+    });
+  },
+
   namespace : function ( req, res, next ){
     res.local( 'namespace', '' );
 
     next();
   },
 
-  no_content : function ( err, req, res, next ){
-    err && LOG.error( 500, res, err );
-
-    req.flash( 'flash-error', req.msg + ' not found' );
-    res.redirect( 'back' );
+  is_validate : function ( req, res, next ){
+    next();
   },
 
-  validation : function ( err, req, res, next ){
-    if( err.name && err.name == 'ValidationError' ){
-      var error;
-      for( error in err.errors ){
-        req.flash( 'flash-error', err.errors[ error ].message );
-      }
-
-      res.redirect( 'back' );
-      LOG.error( 500, res, err );
-
-      return;
-    }
-
-    next( err );
+  current_artist : function ( req, res, next ){
+    // assign query cond about artist to req.cond
+    next();
   },
 
-  unique : function ( err, req, res, next ){
-    if( err.name && err.name == 'MongoError' ){
-      // respond with html page
-      if( req.accepts( 'html' )){
-        req.flash( 'flash-error', err.err );
-        res.redirect( 'back' );
-        LOG.error( 46, res, err );
+  current_songs : function ( req, res, next ){
+    next();
+  },
 
-        return;
-      }
+  recent_news : function ( req, res, next ){
+    next();
+  },
 
-      // respond with json
-      if( req.accepts( 'json' )){
-        res.json({
-          status : 46,
-          body : 'The given field has been taken'
-        });
+  recent_releases : function ( req, res, next ){
+    next();
+  },
 
-        return;
-      }
-    }
+  recent_videos : function ( req, res, next ){
+    next();
+  },
 
-    next( err );
+  recent_live : function ( req, res, next ){
+    next();
   }
+
+  // validation : function ( err, req, res, next ){
+  //   if( err.name && err.name == 'ValidationError' ){
+  //     var error;
+  //     for( error in err.errors ){
+  //       req.flash( 'flash-error', err.errors[ error ].message );
+  //     }
+
+  //     res.redirect( 'back' );
+  //     LOG.error( 500, res, err );
+
+  //     return;
+  //   }
+
+  //   next( err );
+  // }
 });
