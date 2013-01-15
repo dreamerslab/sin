@@ -9,6 +9,10 @@ form.configure({
 
 module.exports = {
 
+  validate_edit : form(
+    field( 'id' ).required( '', lang._404 ).is( r.id, lang._404 )
+  ),
+
   validate_create_n_update : form(
     field( 'url' ).required( '', lang.required.url ).is( r.youtube, lang.invalid.url )
   )
