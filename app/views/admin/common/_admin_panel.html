@@ -1,9 +1,18 @@
 <div id="admin-panel">
-  <a id="panel-link-edit" href="/admin/header/edit">EDIT HEADER</a>
+  <a id="panel-link-edit" href="/admin/banners/edit/<?= it.nav_selected || 'home' ?>">EDIT HEADER</a>
 
   <form id="panel-logout-form" action="/admin/sessions" method="POST" accept-charset="UTF-8" >
     <input type="hidden" name="_method" value="delete" />
     <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
     <input id="btn-logout" type="submit" value="LOG OUT" />
   </form>
+
+  <? if( it.header_admin_view == 'edit' ){ ?>
+    <form id="header-form" action="">
+      <input id="header-input" type="text" name="url" placeholder="size: 912x400 px">
+      <p class="error-msg">error message goes here</p>
+      <input id="btn-confirm" type="submit" value="Submit" />
+      <a id="link-cancel" href="/admin" title="Back to previous page">Cancel</a>
+    </form>
+  <? } ?>
 </div>
