@@ -4,12 +4,12 @@ var request     = require( 'request' );
 module.exports = Application.extend({
 
   init : function ( before, after ){
+    before( this.namespace );
+
     before( this.recent_news );
     before( this.recent_releases );
     before( this.recent_videos );
-    before( this.recent_live );
-
-    before( this.namespace );
+    before( this.recent_lives );
   },
 
   index : function ( req, res, next ){
