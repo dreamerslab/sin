@@ -11,8 +11,8 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'create', 'edit', 'update' ]});
 
     before( this.namespace );
-    before( this.current_artist { only : [ 'index' ]});
-    before( this.current_live,  { only : [ 'index' ]});
+    before( this.current_artist, { only : [ 'index' ]});
+    before( this.current_live,   { only : [ 'index' ]});
   },
 
   new : function ( req, res, next ){
