@@ -22,8 +22,11 @@ module.exports = function ( map ){
     admin.post(   'sessions', 'sessions#create' );
     admin.delete( 'sessions', 'sessions#destroy' );
 
-    admin.get( 'edit',  'home#edit' );
-    map.put(   'admin', 'home#update' );
+    admin.get( 'home/soundcloud/edit', 'home#soundcloud_edit' );
+    admin.put( 'home/soundcloud',      'home#soundcloud_udpate' );
+
+    admin.get( 'home/facebook/edit', 'home#facebook_edit' );
+    admin.put( 'home/facebook',      'home#facebook_udpate' );
 
     admin.get( 'banners/edit/:type', 'banners#edit' );
     admin.put( 'banners/edit/:type', 'banners#update' );
