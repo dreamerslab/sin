@@ -44,7 +44,7 @@
 }
 
 /* line 34, ../../../../app/sass/admin/news/new.sass */
-#input-title, #input-thumb {
+#input-title, #input-artists, #input-thumb {
   display: block;
   width: 100%;
   border: none;
