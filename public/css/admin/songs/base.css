@@ -126,7 +126,7 @@
   border-radius: 0;
   opacity: 0.8;
 }
-/* line 120, ../../../../app/sass/common/lib.sass */
+/* line 120, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 .songs-btn-delete:hover {
   cursor: pointer;
   opacity: 1;
@@ -171,7 +171,7 @@
   width: 48px;
   border-radius: 0;
 }
-/* line 105, ../../../../app/sass/common/lib.sass */
+/* line 105, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 #btn-submit:hover {
   cursor: pointer;
 }

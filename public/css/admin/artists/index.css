@@ -19,7 +19,7 @@
   top: -24px;
   right: 32px;
 }
-/* line 54, ../../../../app/sass/common/lib.sass */
+/* line 54, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 #btn-add:hover {
   text-decoration: none;
   opacity: 1;
@@ -46,7 +46,7 @@
   border-radius: 0;
   opacity: 0.8;
 }
-/* line 120, ../../../../app/sass/common/lib.sass */
+/* line 120, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 .btn-delete:hover {
   cursor: pointer;
   opacity: 1;

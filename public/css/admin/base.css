@@ -24,7 +24,7 @@
   z-index: 1;
   opacity: 1;
 }
-/* line 69, ../../../app/sass/common/lib.sass */
+/* line 69, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 #panel-link-edit:hover {
   opacity: 1;
 }
@@ -73,7 +73,7 @@
   top: 82px;
   right: 0;
 }
-/* line 105, ../../../app/sass/common/lib.sass */
+/* line 105, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 #btn-confirm:hover {
   cursor: pointer;
 }
@@ -112,7 +112,7 @@
   font-size: 12px;
   border-radius: 0;
 }
-/* line 149, ../../../app/sass/common/lib.sass */
+/* line 149, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 #btn-logout:hover {
   cursor: pointer;
 }

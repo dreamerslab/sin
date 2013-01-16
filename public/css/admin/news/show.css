@@ -14,7 +14,7 @@
   top: -55px;
   right: 128px;
 }
-/* line 69, ../../../../app/sass/common/lib.sass */
+/* line 69, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 #link-edit:hover {
   opacity: 1;
 }
@@ -40,7 +40,7 @@
   border-radius: 0;
   opacity: 0.8;
 }
-/* line 120, ../../../../app/sass/common/lib.sass */
+/* line 120, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
 .btn-delete:hover {
   cursor: pointer;
   opacity: 1;

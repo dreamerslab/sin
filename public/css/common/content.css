@@ -36,17 +36,14 @@
 
 /* line 41, ../../../app/sass/common/content.sass */
 .title {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   font-size: 21px;
   color: black;
-}
-/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.title {
-  *display: inline;
 }
 
 /* line 46, ../../../app/sass/common/content.sass */
@@ -133,17 +130,14 @@
 
 /* line 104, ../../../app/sass/common/content.sass */
 .release-thumb {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   width: 160px;
   height: 160px;
-}
-/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.release-thumb {
-  *display: inline;
 }
 
 /* line 109, ../../../app/sass/common/content.sass */
@@ -273,19 +267,16 @@
 
 /* line 192, ../../../app/sass/common/content.sass */
 #btn-prev, #btn-next {
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   color: #6da4b2;
   font-family: Helvetica, sans-serif;
   text-decoration: none;
   opacity: 0.7;
-}
-/* line 7, ../../../../../../Users/fred/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-#btn-prev, #btn-next {
-  *display: inline;
 }
 /* line 198, ../../../app/sass/common/content.sass */
 #btn-prev:hover, #btn-next:hover {
