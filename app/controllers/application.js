@@ -43,11 +43,14 @@ module.exports = Class.extend({
         next();
       },
       function ( songs ){
+        // this function is not finished yet, continued tomorrow
         req.songs = songs;
 
+        var current_song_id = req.params.id || songs[ 0 ]._id;
+
         songs.forEach( function ( song ){
-          if( song._id == req.params.id ){
-            req.current_song_id = song._id;
+          if( song._id == current_song_id ){
+            req.current_song = song;
           }
         });
 
