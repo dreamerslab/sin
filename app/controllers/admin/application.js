@@ -20,7 +20,7 @@ module.exports = Application.extend({
 
   is_authenticated : function ( req, res, next ){
     if( !req.session.is_authenticated ){
-      return res.redirect( 'admin/login' );
+      return res.redirect( '/admin/login' );
     };
 
     res.local( 'is_authenticated', true );
