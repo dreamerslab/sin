@@ -11,20 +11,17 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,     { only : [ 'edit', 'update' ]});
 
     // use indexOf, after checking resources, put currnet resoucre into req.resource
+    // if resouces == home, assign req.resource to '', see update action
     before( this.check_resources );
 
     before( this.namespace );
   },
 
   edit : function ( req, res, next ){
-    res.render( req.resource + '/index', {
-      _assets : 'admin/' + req.resource + '/assets/_index'
-    });
+    res.render( 'admin/banners/edit' );
   },
 
   update : function ( req, res, next ){
-    res.render( req.resource + '/index', {
-      _assets : 'admin/' + req.resource + '/assets/_index'
-    });
+    res.redirect( '/admin/' + req.resource );
   }
 });
