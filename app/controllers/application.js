@@ -43,22 +43,29 @@ module.exports = Class.extend({
         next();
       },
       function ( songs ){
-        // this function is not finished yet, continued tomorrow
         req.songs = songs;
-
-        var current_song_id = req.params.id || songs[ 0 ]._id;
-
-        songs.forEach( function ( song ){
-          if( song._id == current_song_id ){
-            req.current_song = song;
-          }
-        });
 
         next();
       }
     );
 
     next(); // for temp
+  },
+
+  // must go after current_songs
+  current_song : function ( req, res, next ){
+    if( !req.songs.length ) return next();
+
+    var current_song_id = req.params.id || req.songs[ 0 ]._id;
+
+    // 很有可能還沒跑完 forEach 就跑了 next，事後需要檢查，會發生這樣的情況的話再用 Flow
+    req.songs.forEach( function ( song ){
+      if( song._id == current_song_id ){
+        req.current_song = song;
+      }
+    });
+
+    next();
   },
 
   recent_news : function ( req, res, next ){

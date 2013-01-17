@@ -10,6 +10,7 @@ module.exports = Application.extend( validations, {
 
     before( this.namespace );
     before( this.current_songs );
+    before( this.current_song );
   },
 
   index : function ( req, res, next ){
