@@ -9,7 +9,7 @@ form.configure({
 
 module.exports = {
 
-  validate_index : form(
+  validate_index_n_new : form(
     field( 'id' ).required( '', lang._404 ).is( r.id, lang._404 )
   ),
 

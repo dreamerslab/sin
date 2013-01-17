@@ -33,18 +33,18 @@ module.exports = Class.extend({
 
   current_songs : function ( req, res, next ){
     var args = {
-      cond : { release : req.params.release_id }
+      cond : {
+        release : req.params.release_id || req.params.id
+      }
     };
 
     Song.index( args, next,
       function (){
         req.songs = [];
-
         next();
       },
       function ( songs ){
         req.songs = songs;
-
         next();
       }
     );
@@ -77,12 +77,10 @@ module.exports = Class.extend({
     Post.index( args, next,
       function (){
         req.posts = [];
-
         next();
       },
       function ( posts ){
         req.posts = posts;
-
         next();
       }
     );
@@ -99,12 +97,10 @@ module.exports = Class.extend({
     Release.index( args, next,
       function (){
         req.releases = [];
-
         next();
       },
       function ( releases ){
         req.releases = releases;
-
         next();
       }
     );
@@ -121,12 +117,10 @@ module.exports = Class.extend({
     Video.index( args, next,
       function (){
         req.videos = [];
-
         next();
       },
       function ( videos ){
         req.videos = videos;
-
         next();
       }
     );
@@ -143,12 +137,10 @@ module.exports = Class.extend({
     Live.index( args, next,
       function (){
         req.lives = [];
-
         next();
       },
       function ( lives ){
         req.lives = lives;
-
         next();
       }
     );

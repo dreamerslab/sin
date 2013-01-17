@@ -8,11 +8,20 @@ module.exports = Application.extend( validations, {
 
     before( this.validate_show_n_edit,     { only : [ 'show', 'edit' ]});
     before( this.validate_create_n_update, { only : [ 'create', 'update' ]});
-    before( this.is_validate,              { only : [ 'show', 'edit', 'create', 'update' ]});
+    before( this.is_validate,              { only : [ 'show', 'edit' ]});
 
     before( this.namespace );
     before( this.current_artist, { only : [ 'index' ]});
     before( this.current_songs,  { only : [ 'show' ]});
+    before( this.current_song,   { only : [ 'show' ]});
+  },
+
+  current_song : function ( req, res, next ){
+    if( !req.songs.length ) return next();
+
+    req.current_song = song[ 0 ];
+
+    next();
   },
 
   new : function ( req, res, next ){
@@ -20,6 +29,10 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    if( !req.form.isValid ){
+      return res.render( 'admin/releases/new' );
+    }
+
     res.render( 'admin/releases/create' );
   },
 
@@ -40,6 +53,10 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    if( !req.form.isValid ){
+      return res.render( 'admin/releases/edit' );
+    }
+
     res.render( 'admin/releases/update' );
   },
 
