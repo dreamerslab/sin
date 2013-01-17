@@ -7,6 +7,24 @@ var Song    = Model( 'Song' );
 
 module.exports = Class.extend({
 
+  current_banner : function ( req, res, next ){
+    var self = this;
+    var args = {
+      cond : {
+        type : req.banner_type
+      }
+    };
+
+    Url.show( args, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function ( banner ){
+        req.banner = banner;
+      }
+    );
+  },
+
   no_content : function ( req, res ){
     res.render( 'error/404', {
       layout : false
@@ -20,7 +38,7 @@ module.exports = Class.extend({
   },
 
   is_validate : function ( req, res, next ){
-    // return next(); // for temp, removed after have data
+    return next(); // for temp, removed after have data
 
     if( req.form.isValid ) return next();
 
@@ -149,20 +167,4 @@ module.exports = Class.extend({
 
     next(); // for temp
   }
-
-  // validation : function ( err, req, res, next ){
-  //   if( err.name && err.name == 'ValidationError' ){
-  //     var error;
-  //     for( error in err.errors ){
-  //       req.flash( 'flash-error', err.errors[ error ].message );
-  //     }
-
-  //     res.redirect( 'back' );
-  //     LOG.error( 500, res, err );
-
-  //     return;
-  //   }
-
-  //   next( err );
-  // }
 });
