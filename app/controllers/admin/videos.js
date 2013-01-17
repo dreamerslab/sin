@@ -8,7 +8,7 @@ module.exports = Application.extend( validations, {
 
     before( this.validate_edit,            { only : [ 'edit' ]});
     before( this.validate_create_n_update, { only : [ 'create', 'update' ]});
-    before( this.is_validate,              { only : [ 'create', 'edit', 'update' ]});
+    before( this.is_validate,              { only : [ 'edit' ]});
 
     before( this.namespace );
     before( this.current_artist, { only : [ 'index' ]});
@@ -19,7 +19,11 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
-    res.render( 'admin/videos/create' );
+    if( !req.form.isValid ){
+      return res.render( 'admin/videos/new' );
+    }
+
+    res.redirect( 'admin/videos' );
   },
 
   index : function ( req, res, next ){
@@ -33,7 +37,11 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
-    res.render( 'admin/videos/update' );
+    if( !req.form.isValid ){
+      return res.render( 'admin/videos/edit' );
+    }
+
+    res.redirect( 'admin/videos' );
   },
 
   destory : function ( req, res, next ){
