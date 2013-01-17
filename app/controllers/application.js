@@ -7,7 +7,7 @@ var Song    = Model( 'Song' );
 
 module.exports = Class.extend({
 
-  no_content : function ( req, res, next ){
+  no_content : function ( req, res ){
     res.render( 'error/404', {
       layout : false
     });
@@ -20,9 +20,11 @@ module.exports = Class.extend({
   },
 
   is_validate : function ( req, res, next ){
+    // return next(); // for temp, removed after have data
+
     if( req.form.isValid ) return next();
 
-    this.no_content( req, res, next );
+    this.no_content( req, res );
   },
 
   current_artist : function ( req, res, next ){
