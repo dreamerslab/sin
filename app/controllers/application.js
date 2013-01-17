@@ -104,8 +104,6 @@ module.exports = Class.extend({
         next();
       }
     );
-
-    next(); // for temp
   },
 
   recent_releases : function ( req, res, next ){
@@ -124,8 +122,6 @@ module.exports = Class.extend({
         next();
       }
     );
-
-    next(); // for temp
   },
 
   recent_videos : function ( req, res, next ){
@@ -144,8 +140,6 @@ module.exports = Class.extend({
         next();
       }
     );
-
-    next(); // for temp
   },
 
   recent_lives : function ( req, res, next ){
@@ -164,7 +158,5 @@ module.exports = Class.extend({
         next();
       }
     );
-
-    next(); // for temp
   }
 });
