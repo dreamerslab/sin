@@ -7,7 +7,6 @@ module.exports = Application.extend( validations, {
     before( this.is_authenticated );
 
     before( this.validate_update, { only : [ 'soundcloud_udpate', 'facebook_udpate' ]});
-    before( this.is_validate,     { only : [ 'soundcloud_udpate', 'facebook_udpate' ]});
 
     before( this.namespace );
   },
@@ -20,20 +19,34 @@ module.exports = Application.extend( validations, {
   },
 
   soundcloud_edit : function ( req, res, next ){
-    // 送 hidden input, type 'home_soundcloud'
-    res.render( 'admin/home/edit' );
+    res.render( 'admin/home/edit', {
+      type : 'home_soundcloud'
+    });
   },
 
   soundcloud_udpate : function ( req, res, next ){
+    if( !req.form.isValid ){
+      return res.render( 'admin/home/edit', {
+        type : 'home_soundcloud'
+      });
+    }
+
     res.redirect( '/admin' );
   },
 
   facebook_edit : function ( req, res, next ){
-    // 送 hidden input, type 'home_facebook'
-    res.render( 'admin/home/edit' );
+    res.render( 'admin/home/edit', {
+      type : 'home_facebook'
+    });
   },
 
   facebook_udpate : function ( req, res, next ){
+    if( !req.form.isValid ){
+      return res.render( 'admin/home/edit', {
+        type : 'home_facebook'
+      });
+    }
+
     res.redirect( '/admin' );
   }
 });
