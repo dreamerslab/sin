@@ -2,12 +2,6 @@ var Application = require( '../application' );
 
 module.exports = Application.extend({
 
-  check_resources : function ( req, res, next ){
-    res.local( 'header_admin_view', 'edit' );
-
-    next();
-  },
-
   current_live : function ( req, res, next ){
     next();
   },

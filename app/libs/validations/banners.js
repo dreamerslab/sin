@@ -9,7 +9,7 @@ form.configure({
 module.exports = {
 
   validate_edit : form(
-    field( 'id' ).required()
+    field( 'type' ).required().isIn([ 'home', 'news', 'artists', 'releases', 'live', 'videos', 'contact' ])
   ),
 
   validate_update : form(

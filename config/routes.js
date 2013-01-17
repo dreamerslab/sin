@@ -16,7 +16,8 @@ module.exports = function ( map ){
   map.get( 'live',    'live#index' );
   map.get( 'contact', 'contact#index' );
 
-  map.get( 'admin', 'admin/home#index' );
+  map.get( 'admin',      'admin/home#index' );
+  map.get( 'admin/home', 'admin/home#index' );
   map.namespace( 'admin', function ( admin ){
     admin.get(    'login',    'sessions#new' );
     admin.post(   'sessions', 'sessions#create' );

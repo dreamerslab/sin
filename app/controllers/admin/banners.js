@@ -8,20 +8,25 @@ module.exports = Application.extend( validations, {
 
     before( this.validate_edit,   { only : [ 'edit' ]});
     before( this.validate_update, { only : [ 'update' ]});
-    before( this.is_validate,     { only : [ 'edit', 'update' ]});
-
-    // use indexOf, after checking resources, put currnet resoucre into req.resource
-    // if resouces == home, assign req.resource to '', see update action
-    before( this.check_resources );
+    before( this.is_validate,     { only : [ 'edit' ]});
 
     before( this.namespace );
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/banners/edit' );
+    res.render( 'admin/banners/edit', {
+      header_admin_view : 'edit'
+    });
   },
 
   update : function ( req, res, next ){
-    res.redirect( '/admin/' + req.resource );
+    if( !req.form.isValid ){
+      return res.render( 'admin/banners/edit', {
+        header_admin_view : 'edit',
+        url               : req.form.url
+      });
+    }
+
+    res.redirect( '/admin/' + req.params.type );
   }
 });
