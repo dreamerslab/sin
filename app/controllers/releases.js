@@ -11,7 +11,6 @@ module.exports = Application.extend( validations, {
     before( this.current_artist, { only : [ 'index' ]});
     before( this.current_songs,  { only : [ 'show' ]});
     before( this.current_song,   { only : [ 'show' ]});
-
   },
 
   current_song : function ( req, res, next ){
