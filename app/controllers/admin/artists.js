@@ -1,5 +1,6 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/artists' );
+var Artist      = Model( 'Artist' );
 
 module.exports = Application.extend( validations, {
 
@@ -22,23 +23,69 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/artists/new' );
+      return res.render( 'admin/artists/new', {
+        body : args.body
+      });
     }
 
-    res.redirect( '/admin/artists' );
+    Artist.insert( args, next,
+      function ( artist ){
+        res.redirect( '/admin/artists/' + artist._id );
+      }
+    );
   },
 
   index : function ( req, res, next ){
-    res.render( 'artists/index', {
-      _assets : 'admin/artists/assets/_index'
-    });
+    var page = req.query.page ? parseInt( req.query.page ) : 0;
+    var args = {
+      cond  : req.query_cond,
+      limit : 3,
+      skip  : page
+    };
+
+    Artist.index( args, next,
+      function (){
+        res.render( 'artists/index', {
+          _assets : 'admin/artists/assets/_index',
+          artists : []
+        });
+      },
+      function ( artists ){
+        res.render( 'artists/index', {
+          _assets : 'admin/artists/assets/_index',
+          artists : artists
+        });
+      }
+    );
   },
 
   show : function ( req, res, next ){
-    res.render( 'artists/show', {
-      _assets : 'admin/artists/assets/_show'
-    });
+    var self = this;
+    var args = {
+      cond : {
+        id : req.params.id
+      }
+    };
+
+    Artist.show( args, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function ( artist ){
+        res.render( 'artists/show', {
+          _assets  : 'admin/artists/assets/_show',
+          artists  : artist,
+          posts    : req.posts,
+          videos   : req.videos,
+          releases : req.releases
+        });
+      }
+    );
   },
 
   edit : function ( req, res, next ){
@@ -46,14 +93,28 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/artists/edit' );
+      return res.render( 'admin/artists/edit', {
+        body : args.body
+      });
     }
 
-    res.render( 'admin/artists/update' );
+    Artist.update( args, next,
+      function ( artist ){
+        res.redirect( '/admin/artists/' + artist._id );
+      }
+    );
   },
 
-  destory : function ( req, res, next ){
-    res.render( 'admin/artists/destory' );
+  destroy : function ( req, res, next ){
+    Artist.destroy( req.params.id, next,
+      function (){
+        res.redirect( '/admin/artists' );
+      }
+    );
   }
 });
