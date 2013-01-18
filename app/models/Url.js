@@ -7,6 +7,10 @@ module.exports = {
 
     show : function ( args, next, no_content, ok ){
       ok();
+    },
+
+    update : function ( args, next, updated ){
+      updated();
     }
   }
 };
