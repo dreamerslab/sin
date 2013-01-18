@@ -21,6 +21,10 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
       return res.render( 'admin/banners/edit', {
         header_admin_view : 'edit',
