@@ -18,7 +18,7 @@ module.exports = {
       updated();
     },
 
-    destroy : function ( args, next, deleted ){
+    destroy : function ( id, next, deleted ){
       deleted();
     }
   }
