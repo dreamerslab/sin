@@ -44,7 +44,9 @@ module.exports = Application.extend( validations, {
   show : function ( req, res, next ){
     var self = this;
     var args = {
-      cond : req.query_cond
+      cond : {
+        id : req.params.id
+      }
     };
 
     Artist.show( args, next,

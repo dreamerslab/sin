@@ -33,10 +33,47 @@ module.exports = function ( app ){
 
     date : function ( date, format ){
       return moment( date ).format( format || 'MMM Do YYYY, h:m:s' );
+    },
+
+    show_err : function ( err ){
+      return err ?
+        '<label class="error">' + err + '</label>' : '';
+    },
+
+    show_form_err : function ( field, tip ){
+      if( UTILS.is( field ) === 'array' ){
+        var i = 0;
+        var j = field.length;
+        var msg;
+
+        for(; i < j; i++ ){
+          if( this.get_form_err()[ field[ i ]]){
+            msg = this.get_form_err()[ field[ i ]][ 0 ];
+
+            break;
+          }
+        }
+
+        return msg ?
+          '<p class="error">' + msg + '</p>' :
+          ( tip || '' );
+      }
+
+      return this.get_form_err()[ field ] ?
+        '<p class="error">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
+        ( tip || '' );
     }
   });
 
   app.dynamicHelpers({
+
+    get_form_err : function ( req, res ){
+      return function (){
+        return req.form ?
+          req.form.getErrors() : {};
+      }
+    },
+
     messages : require( 'express-messages' )
   });
 };

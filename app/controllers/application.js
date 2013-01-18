@@ -78,7 +78,13 @@ module.exports = Class.extend({
   current_song : function ( req, res, next ){
     if( !req.songs.length ) return next();
 
-    var current_song_id = req.params.id || req.songs[ 0 ]._id;
+    // songs index, no id in route
+    if( !req.params.id ){
+      req.current_song = song[ 0 ];
+      return;
+    };
+
+    var current_song_id = req.songs[ 0 ]._id;
 
     // 很有可能還沒跑完 forEach 就跑了 next，事後需要檢查，會發生這樣的情況的話再用 Flow
     req.songs.forEach( function ( song ){
