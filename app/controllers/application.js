@@ -4,6 +4,7 @@ var Video   = Model( 'Video' );
 var Release = Model( 'Release' );
 var Live    = Model( 'Live' );
 var Song    = Model( 'Song' );
+var Url     = Model( 'Url' );
 
 module.exports = Class.extend({
 
@@ -21,6 +22,7 @@ module.exports = Class.extend({
       },
       function ( banner ){
         req.banner = banner;
+        next();
       }
     );
   },

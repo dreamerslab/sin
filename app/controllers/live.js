@@ -1,4 +1,5 @@
 var Application = require( CONTROLLER_DIR + 'application' );
+var Live        = Model( 'Live' );
 
 module.exports = Application.extend({
 
@@ -8,8 +9,26 @@ module.exports = Application.extend({
   },
 
   index : function ( req, res, next ){
-    res.render( 'live/index', {
-      _assets : 'admin/live/assets/_index'
-    });
+    var page = req.query.page ? parseInt( req.query.page ) : 0;
+    var args = {
+      cond  : req.query_cond,
+      limit : 10,
+      skip  : page
+    };
+
+    Live.index( args, next,
+      function (){
+        res.render( 'live/index', {
+          _assets : 'live/assets/_index',
+          lives   : []
+        });
+      },
+      function ( lives ){
+        res.render( 'live/index', {
+          _assets : 'live/assets/_index',
+          lives   : lives
+        });
+      }
+    );
   }
 });
