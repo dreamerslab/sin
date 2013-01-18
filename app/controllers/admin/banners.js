@@ -1,5 +1,6 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/banners' );
+var Url         = Model( 'Url' );
 
 module.exports = Application.extend( validations, {
 
@@ -27,6 +28,8 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    res.redirect( '/admin/' + req.params.type );
+    Url.update( args, next, function (){
+      res.redirect( '/admin/' + req.params.type );
+    });
   }
 });
