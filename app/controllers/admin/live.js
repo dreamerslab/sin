@@ -44,11 +44,20 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/live/new' );
+      return res.render( 'admin/live/new', {
+        body : args.body
+      });
     }
 
-    res.redirect( '/admin/live' );
+    Live.insert( args, next, function ( live ){
+        res.redirect( '/admin/live' );
+      }
+    );
   },
 
   edit : function ( req, res, next ){
@@ -56,14 +65,27 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var args = {
+      id   : req.params.id,
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/live/edit' );
+      return res.render( 'admin/live/edit', {
+        body : args.body
+      });
     }
 
-    res.redirect( '/admin/live' );
+    Live.update( args, next,
+      function ( live ){
+        res.redirect( '/admin/live/' + live._id );
+      }
+    );
   },
 
   destroy : function ( req, res, next ){
-    res.render( 'admin/live/destroy' );
+    Live.destroy( req.params.id, next, function (){
+      res.redirect( '/admin/live' );
+    });
   }
 });

@@ -30,11 +30,19 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/releases/new' );
+      return res.render( 'admin/releases/new', {
+        body : args.body
+      });
     }
 
-    res.render( 'admin/releases/create' );
+    Release.insert( args, next, function ( release ){
+      res.redirect( '/admin/releases/' + release._id );
+    });
   },
 
   index : function ( req, res, next ){
@@ -89,14 +97,27 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var args = {
+      id   : req.params.id,
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/releases/edit' );
+      return res.render( 'admin/releases/edit', {
+        body : args.body
+      });
     }
 
-    res.render( 'admin/releases/update' );
+    Release.update( args, next,
+      function ( release ){
+        res.redirect( '/admin/releases/' + release._id );
+      }
+    );
   },
 
   destroy : function ( req, res, next ){
-    res.render( 'admin/releases/destroy' );
+    Release.destroy( req.params.id, next, function (){
+      res.redirect( '/admin/releases' );
+    });
   }
 });

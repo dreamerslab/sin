@@ -20,7 +20,20 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
-    res.render( 'admin/news/create' );
+    var args = {
+      body : req.body
+    };
+
+    if( !req.form.isValid ){
+      return res.render( 'admin/news/new', {
+        body : args.body
+      });
+    }
+
+    Post.insert( args, next, function ( post ){
+        res.redirect( '/admin/news/' + post._id );
+      }
+    );
   },
 
   index : function ( req, res, next ){
@@ -73,10 +86,27 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
-    res.render( 'admin/news/update' );
+    var args = {
+      id   : req.params.id,
+      body : req.body
+    };
+
+    if( !req.form.isValid ){
+      return res.render( 'admin/artists/edit', {
+        body : args.body
+      });
+    }
+
+    Post.update( args, next,
+      function ( post ){
+        res.redirect( '/admin/news/' + post._id );
+      }
+    );
   },
 
   destroy : function ( req, res, next ){
-    res.render( 'admin/news/destroy' );
+    Post.destroy( req.params.id, next, function (){
+      res.redirect( '/admin/news' );
+    });
   }
 });
