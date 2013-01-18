@@ -1,5 +1,6 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/home' );
+var Url         = Model( 'Url' );
 
 module.exports = Application.extend( validations, {
 
@@ -45,13 +46,20 @@ module.exports = Application.extend( validations, {
   },
 
   soundcloud_udpate : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
-        type : 'home_soundcloud'
+        type : 'home_soundcloud',
+        body : args.body
       });
     }
 
-    res.redirect( '/admin' );
+    Url.update( args, next, function (){
+      res.redirect( '/admin' );
+    });
   },
 
   facebook_edit : function ( req, res, next ){
@@ -61,12 +69,18 @@ module.exports = Application.extend( validations, {
   },
 
   facebook_udpate : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
         type : 'home_facebook'
       });
     }
 
-    res.redirect( '/admin' );
+    Url.update( args, next, function (){
+      res.redirect( '/admin' );
+    });
   }
 });
