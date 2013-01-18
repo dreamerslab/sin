@@ -22,6 +22,7 @@ module.exports = Application.extend( validations, {
 
   update : function ( req, res, next ){
     var args = {
+      id   : req.params.id,
       body : req.body
     };
 

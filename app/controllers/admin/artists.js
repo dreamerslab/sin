@@ -33,8 +33,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Artist.insert( args, next,
-      function ( artist ){
+    Artist.insert( args, next, function ( artist ){
         res.redirect( '/admin/artists/' + artist._id );
       }
     );
@@ -94,6 +93,7 @@ module.exports = Application.extend( validations, {
 
   update : function ( req, res, next ){
     var args = {
+      id   : req.params.id,
       body : req.body
     };
 
@@ -111,10 +111,8 @@ module.exports = Application.extend( validations, {
   },
 
   destroy : function ( req, res, next ){
-    Artist.destroy( req.params.id, next,
-      function (){
-        res.redirect( '/admin/artists' );
-      }
-    );
+    Artist.destroy( req.params.id, next, function (){
+      res.redirect( '/admin/artists' );
+    });
   }
 });
