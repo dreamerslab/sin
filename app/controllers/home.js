@@ -1,12 +1,10 @@
 var Application = require( CONTROLLER_DIR + 'application' );
 var request     = require( 'request' );
-var Url         = Model( 'Url' );
 
 module.exports = Application.extend({
 
   init : function ( before, after ){
     before( this.namespace );
-
     before( this.banner_type );
     before( this.current_banner );
     before( this.soundcloud );
@@ -21,42 +19,6 @@ module.exports = Application.extend({
   banner_type : function ( req, res, next ){
     req.banner_type = 'home';
     next();
-  },
-
-  soundcloud : function ( req, res, next ){
-    var self = this;
-    var args = {
-      cond : {
-        type : 'home_soundcloud'
-      }
-    };
-
-    Url.show( args, next,
-      function (){
-        req.soundcloud = '';
-      },
-      function ( soundcloud ){
-        req.soundcloud = soundcloud;
-      }
-    );
-  },
-
-  facebook : function ( req, res, next ){
-    var self = this;
-    var args = {
-      cond : {
-        type : 'home_facebook'
-      }
-    };
-
-    Url.show( args, next,
-      function (){
-        req.soundcloud = '';
-      },
-      function ( facebook ){
-        req.facebook = facebook;
-      }
-    );
   },
 
   index : function ( req, res, next ){

@@ -1,5 +1,6 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/songs' );
+var Release     = Model( 'Release' );
 
 module.exports = Application.extend( validations, {
 
@@ -39,15 +40,30 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    res.render( 'releases/show', {
-      _assets : 'admin/releases/assets/_show'
-    });
+    var self = this;
+    var args = {
+      cond : {
+        id : req.params.release_id
+      }
+    };
+
+    Release.show( args, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function ( release ){
+        res.render( 'releases/show', {
+          _assets      : 'admin/releases/assets/_show',
+          release      : release,
+          songs        : req.songs,
+          current_song : req.current_song
+        });
+      }
+    );
   },
 
   show : function ( req, res, next ){
-    res.render( 'releases/show', {
-      _assets : 'admin/releases/assets/_show'
-    });
+    this.index( req, res, next );
   },
 
   edit : function ( req, res, next ){
@@ -72,7 +88,7 @@ module.exports = Application.extend( validations, {
     });
   },
 
-  destory : function ( req, res, next ){
+  destroy : function ( req, res, next ){
     res.render( 'releases/show', {
       _assets : 'admin/releases/assets/_show'
     });

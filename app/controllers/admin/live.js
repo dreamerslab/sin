@@ -1,5 +1,6 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/live' );
+var Live        = Model( 'Live' );
 
 module.exports = Application.extend( validations, {
 
@@ -12,13 +13,30 @@ module.exports = Application.extend( validations, {
 
     before( this.namespace );
     before( this.current_artist, { only : [ 'index' ]});
-    before( this.current_lives,  { only : [ 'index' ]});
   },
 
   index : function ( req, res, next ){
-    res.render( 'live/index', {
-      _assets : 'admin/live/assets/_index'
-    });
+    var page = req.query.page ? parseInt( req.query.page ) : 0;
+    var args = {
+      cond  : req.query_cond,
+      limit : 10,
+      skip  : page
+    };
+
+    Live.index( args, next,
+      function (){
+        res.render( 'live/index', {
+          _assets : 'admin/live/assets/_index',
+          lives   : []
+        });
+      },
+      function ( lives ){
+        res.render( 'live/index', {
+          _assets : 'admin/live/assets/_index',
+          lives   : lives
+        });
+      }
+    );
   },
 
   new : function ( req, res, next ){
@@ -45,7 +63,7 @@ module.exports = Application.extend( validations, {
     res.redirect( '/admin/live' );
   },
 
-  destory : function ( req, res, next ){
-    res.render( 'admin/live/destory' );
+  destroy : function ( req, res, next ){
+    res.render( 'admin/live/destroy' );
   }
 });

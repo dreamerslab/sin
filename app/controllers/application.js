@@ -166,5 +166,45 @@ module.exports = Class.extend({
         next();
       }
     );
+  },
+
+  soundcloud : function ( req, res, next ){
+    var self = this;
+    var args = {
+      cond : {
+        type : 'home_soundcloud'
+      }
+    };
+
+    Url.show( args, next,
+      function (){
+        req.soundcloud = '';
+        next();
+      },
+      function ( soundcloud ){
+        req.soundcloud = soundcloud;
+        next();
+      }
+    );
+  },
+
+  facebook : function ( req, res, next ){
+    var self = this;
+    var args = {
+      cond : {
+        type : 'home_facebook'
+      }
+    };
+
+    Url.show( args, next,
+      function (){
+        req.soundcloud = '';
+        next();
+      },
+      function ( facebook ){
+        req.facebook = facebook;
+        next();
+      }
+    );
   }
 });

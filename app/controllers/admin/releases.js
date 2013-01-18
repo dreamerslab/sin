@@ -1,5 +1,6 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/releases' );
+var Release     = Model( 'Release' );
 
 module.exports = Application.extend( validations, {
 
@@ -37,15 +38,50 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    res.render( 'releases/index', {
-      _assets : 'admin/releases/assets/_index'
-    });
+    var page = req.query.page ? parseInt( req.query.page ) : 0;
+    var args = {
+      cond  : req.query_cond,
+      limit : 6,
+      skip  : page
+    };
+
+    Release.index( args, next,
+      function (){
+        res.render( 'releases/index', {
+          _assets  : 'admin/releases/assets/_index',
+          releases : []
+        });
+      },
+      function ( releases ){
+        res.render( 'releases/index', {
+          _assets  : 'admin/releases/assets/_index',
+          releases : releases
+        });
+      }
+    );
   },
 
   show : function ( req, res, next ){
-    res.render( 'releases/show', {
-      _assets : 'admin/releases/assets/_show'
-    });
+    var self = this;
+    var args = {
+      cond : {
+        id : req.params.id
+      }
+    };
+
+    Release.show( args, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function ( release ){
+        res.render( 'releases/show', {
+          _assets      : 'admin/releases/assets/_show',
+          release      : release,
+          songs        : req.songs,
+          current_song : req.current_song
+        });
+      }
+    );
   },
 
   edit : function ( req, res, next ){
@@ -60,7 +96,7 @@ module.exports = Application.extend( validations, {
     res.render( 'admin/releases/update' );
   },
 
-  destory : function ( req, res, next ){
-    res.render( 'admin/releases/destory' );
+  destroy : function ( req, res, next ){
+    res.render( 'admin/releases/destroy' );
   }
 });

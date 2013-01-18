@@ -1,5 +1,6 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/videos' );
+var Video       = Model( 'Video' );
 
 module.exports = Application.extend( validations, {
 
@@ -27,9 +28,27 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    res.render( 'videos/index', {
-      _assets : 'admin/videos/assets/_index'
-    });
+    var page = req.query.page ? parseInt( req.query.page ) : 0;
+    var args = {
+      cond  : req.query_cond,
+      limit : 5,
+      skip  : page
+    };
+
+    Video.index( args, next,
+      function (){
+        res.render( 'videos/index', {
+          _assets : 'admin/videos/assets/_index',
+          videos  : []
+        });
+      },
+      function ( videos ){
+        res.render( 'videos/index', {
+          _assets : 'admin/videos/assets/_index',
+          videos  : videos
+        });
+      }
+    );
   },
 
   edit : function ( req, res, next ){
@@ -44,7 +63,7 @@ module.exports = Application.extend( validations, {
     res.redirect( 'admin/videos' );
   },
 
-  destory : function ( req, res, next ){
-    res.render( 'admin/videos/destory' );
+  destroy : function ( req, res, next ){
+    res.render( 'admin/videos/destroy' );
   }
 });
