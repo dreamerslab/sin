@@ -30,7 +30,14 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Post.insert( args, next, function ( post ){
+    Post.insert( args, next,
+      function (){
+        res.render( 'admin/news/new', {
+          body            : args.body,
+          is_artist_found : false
+        });
+      },
+      function ( post ){
         res.redirect( '/admin/news/' + post._id );
       }
     );
@@ -82,7 +89,16 @@ module.exports = Application.extend( validations, {
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/news/edit' );
+    Post.show( args, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function ( post ){
+        res.render( 'admin/news/edit', {
+          ori_post : post
+        });
+      }
+    );
   },
 
   update : function ( req, res, next ){
@@ -98,6 +114,12 @@ module.exports = Application.extend( validations, {
     }
 
     Post.update( args, next,
+      function (){
+        res.render( 'admin/news/edit', {
+          body            : args.body,
+          is_artist_found : false
+        });
+      },
       function ( post ){
         res.redirect( '/admin/news/' + post._id );
       }
