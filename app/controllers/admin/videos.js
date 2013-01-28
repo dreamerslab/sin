@@ -20,11 +20,19 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/videos/new' );
+      return res.render( 'admin/videos/new', {
+        body : args.body
+      });
     }
 
-    res.redirect( 'admin/videos' );
+    Video.insert( args, next, function (){
+      res.redirect( 'admin/videos' );
+    });
   },
 
   index : function ( req, res, next ){
@@ -56,14 +64,26 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
-      return res.render( 'admin/videos/edit' );
+      return res.render( 'admin/videos/edit', {
+        body : args.body
+      });
     }
 
-    res.redirect( 'admin/videos' );
+    Video.update( args, next,
+      function (){
+        res.redirect( '/admin/videos' );
+      }
+    );
   },
 
   destroy : function ( req, res, next ){
-    res.render( 'admin/videos/destroy' );
+    Release.destroy( req.params.id, next, function (){
+      res.redirect( '/admin/videos' );
+    });
   }
 });

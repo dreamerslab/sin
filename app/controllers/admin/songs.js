@@ -1,6 +1,7 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/songs' );
 var Release     = Model( 'Release' );
+var Song        = Model( 'Song' );
 
 module.exports = Application.extend( validations, {
 
@@ -25,17 +26,22 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = {
+      body : req.body
+    };
+
     if( !req.form.isValid ){
       res.render( 'releases/show', {
         _assets    : 'admin/releases/assets/_show',
-        admin_view : 'new'
+        admin_view : 'new',
+        body       : args.body
       });
 
       return;
     }
 
-    res.render( 'releases/show', {
-      _assets : 'admin/releases/assets/_show'
+    Song.insert( args, next, function ( song ){
+      res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
     });
   },
 
@@ -74,6 +80,11 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var args = {
+      id   : req.params.id,
+      body : req.body
+    };
+
     if( !req.form.isValid ){
       res.render( 'releases/show', {
         _assets    : 'admin/releases/assets/_show',
@@ -83,14 +94,16 @@ module.exports = Application.extend( validations, {
       return;
     }
 
-    res.render( 'releases/show', {
-      _assets : 'admin/releases/assets/_show'
-    });
+    Song.update( args, next,
+      function ( song ){
+        res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
+      }
+    );
   },
 
   destroy : function ( req, res, next ){
-    res.render( 'releases/show', {
-      _assets : 'admin/releases/assets/_show'
+    Song.destroy( req.params.id, next, function (){
+      res.redirect( '/admin/releases' + req.params.release_id );
     });
   }
 });
