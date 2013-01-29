@@ -24,6 +24,7 @@ var Schema = function ( Schema ){
       posts      : [{ type : ObjectId, ref : 'Post' }],
       releases   : [{ type : ObjectId, ref : 'Release' }],
       songs      : [{ type : ObjectId, ref : 'Song' }],
+      lives      : [{ type : ObjectId, ref : 'Live' }],
       videos     : [{ type : ObjectId, ref : 'Video' }],
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
