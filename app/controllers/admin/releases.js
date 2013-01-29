@@ -40,9 +40,17 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Release.insert( args, next, function ( release ){
-      res.redirect( '/admin/releases/' + release._id );
-    });
+    Post.insert( args, next,
+      function (){
+        res.render( 'admin/releases/new', {
+          body            : args.body,
+          is_artist_found : false
+        });
+      },
+      function ( release ){
+        res.redirect( '/admin/releases/' + release._id );
+      }
+    );
   },
 
   index : function ( req, res, next ){
@@ -93,10 +101,22 @@ module.exports = Application.extend( validations, {
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/releases/edit' );
+    var self = this;
+
+    Release.show( args, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function ( release ){
+        res.render( 'admin/releases/edit', {
+          ori_release : release
+        });
+      }
+    );
   },
 
   update : function ( req, res, next ){
+    var self = this;
     var args = {
       id   : req.params.id,
       body : req.body
@@ -109,6 +129,15 @@ module.exports = Application.extend( validations, {
     }
 
     Release.update( args, next,
+      function (){
+        res.render( 'admin/releases/edit', {
+          body            : args.body,
+          is_artist_found : false
+        });
+      },
+      function (){
+        self.no_content( req, res );
+      },
       function ( release ){
         res.redirect( '/admin/releases/' + release._id );
       }
@@ -116,8 +145,15 @@ module.exports = Application.extend( validations, {
   },
 
   destroy : function ( req, res, next ){
-    Release.destroy( req.params.id, next, function (){
-      res.redirect( '/admin/releases' );
-    });
+    var self = this;
+
+    Release.destroy( req.params.id, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function (){
+        res.redirect( '/admin/releases' );
+      }
+    );
   }
 });
