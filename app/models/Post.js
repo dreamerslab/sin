@@ -1,7 +1,16 @@
+var common = require( MODEL_DIR + 'hooks/common' );
 var Flow   = require( 'node.flow' );
 var Artist = Model( 'Artist' );
 
 module.exports = {
+  hooks : {
+    post : {
+      remove : [
+        common.remove_from_artists( 'posts' )
+      ]
+    }
+  },
+
   statics : {
 
     insert : function ( args, next, artist_not_found, created ){
@@ -40,6 +49,8 @@ module.exports = {
           cover      : body.cover
         }).save( function ( err, post ){
           if( err ) return next( err );
+
+          common.insert_to_artists( 'posts', post );
 
           created( post );
         });
@@ -81,21 +92,7 @@ module.exports = {
       );
     },
 
-    artists_to_string : function ( post ){
-      var o_post = post.toObject();
-
-      o_post.artists_str = '';
-
-      o_post.artists.forEach( function ( artist ){
-        o_post.artists_str += artist.name + ', ';
-      });
-
-      o_post.artists_str = o_post.artists_str.substr( 0, o_post.artists_str - 2 );
-
-      return o_post;
-    },
-
-    update : function ( args, next, artist_not_found, updated ){
+    update : function ( args, next, artist_not_found, no_content, updated ){
       var self            = this;
       var flow            = new Flow();
       var body            = args.body;
@@ -124,28 +121,75 @@ module.exports = {
       flow.end( function (){
         if( !is_artist_found ) return artist_not_found();
 
-        self.findByIdAndUpdate(
-          args.id,
-          {
-            artists    : artists,
-            title      : body.title,
-            content    : body.content,
-            cover      : body.cover
-          },
-          function ( err, post ){
+        var new_props = {
+          artists    : artists,
+          title      : body.title,
+          content    : body.content,
+          cover      : body.cover
+        };
+
+        self.findById( args.id ).exec( function ( err, post ){
+          if( err )   return next( err );
+          if( !post ) return no_content();
+
+          var artists_to_insert = artists_diff( artists, post.artists );
+          var artists_to_remove = artists_diff( post.artists, artists );
+
+          post.artists = artists;
+          post.title   = body.title;
+          post.content = body.content;
+          post.cover   = body.cover;
+
+          post.save( function ( err, post ){
             if( err ) return next( err );
 
+            common.update_artists( artists_to_insert, artists_to_remove, 'posts', post );
+
             updated( post );
+          });
         });
       });
     },
 
-    destroy : function ( id, next, deleted ){
-      this.findByIdAndRemove( id, function ( err, post ){
-        if( err ) return next( err );
+    destroy : function ( id, next, no_content, deleted ){
+      this.findById( id ).exec( function ( err, post ){
+        if( err )   return next( err );
+        if( !post ) return no_content( err );
 
-        deleted();
+        post.remove( function ( err ){
+          if( err ) return next( err );
+
+          deleted();
+        });
       });
+    },
+
+    artists_to_string : function ( post ){
+      var o_post = post.toObject();
+
+      o_post.artists_str = '';
+
+      o_post.artists.forEach( function ( artist ){
+        o_post.artists_str += artist.name + ', ';
+      });
+
+      o_post.artists_str = o_post.artists_str.substr( 0, o_post.artists_str - 2 );
+
+      return o_post;
+    },
+
+    artists_diff : function ( a, b ) {
+      var seen = [];
+      var diff = [];
+
+      for ( var i = 0; i < b.length; i++ ){
+        seen[ b[ i ]] = true;
+      }
+      for ( var i = 0; i < a.length; i++ ){
+        if ( !seen[ a[ i ]]) diff.push( a[ i ]);
+      }
+
+      return diff;
     }
   }
 };

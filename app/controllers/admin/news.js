@@ -102,6 +102,7 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var self = this;
     var args = {
       id   : req.params.id,
       body : req.body
@@ -120,6 +121,9 @@ module.exports = Application.extend( validations, {
           is_artist_found : false
         });
       },
+      function (){
+        self.no_content( req, res );
+      },
       function ( post ){
         res.redirect( '/admin/news/' + post._id );
       }
@@ -127,8 +131,14 @@ module.exports = Application.extend( validations, {
   },
 
   destroy : function ( req, res, next ){
-    Post.destroy( req.params.id, next, function (){
-      res.redirect( '/admin/news' );
+    var self = this;
+
+    Post.destroy( req.params.id, next,
+      function (){
+        self.no_content( req, res );
+      },
+      function (){
+        res.redirect( '/admin/news' );
     });
   }
 });
