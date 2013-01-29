@@ -1,6 +1,7 @@
-var common = require( MODEL_DIR + 'hooks/common' );
-var Flow   = require( 'node.flow' );
-var Artist = Model( 'Artist' );
+var common     = require( MODEL_DIR + 'hooks/common' );
+var Flow       = require( 'node.flow' );
+var lib_common = require( LIB_DIR + 'common' );
+var Artist     = Model( 'Artist' );
 
 module.exports = {
   hooks : {
@@ -58,8 +59,6 @@ module.exports = {
     },
 
     index : function ( args, next, no_content, ok ){
-      // 記得 sort by created_at，由新到舊
-
       this.count( function ( err, count ){
         if( err )        return next( err );
         if( count == 0 ) return no_content();
@@ -85,7 +84,7 @@ module.exports = {
           if( err )   return next( err );
           if( !post ) return no_content();
 
-          var o_post = self.artists_to_string( post );
+          var o_post = lib_common.artists_to_string( post );
 
           ok( o_post );
         }
@@ -121,19 +120,12 @@ module.exports = {
       flow.end( function (){
         if( !is_artist_found ) return artist_not_found();
 
-        var new_props = {
-          artists    : artists,
-          title      : body.title,
-          content    : body.content,
-          cover      : body.cover
-        };
-
         self.findById( args.id ).exec( function ( err, post ){
           if( err )   return next( err );
           if( !post ) return no_content();
 
-          var artists_to_insert = artists_diff( artists, post.artists );
-          var artists_to_remove = artists_diff( post.artists, artists );
+          var artists_to_insert = lib_common.artists_diff( artists, post.artists );
+          var artists_to_remove = lib_common.artists_diff( post.artists, artists );
 
           post.artists = artists;
           post.title   = body.title;
@@ -162,34 +154,6 @@ module.exports = {
           deleted();
         });
       });
-    },
-
-    artists_to_string : function ( post ){
-      var o_post = post.toObject();
-
-      o_post.artists_str = '';
-
-      o_post.artists.forEach( function ( artist ){
-        o_post.artists_str += artist.name + ', ';
-      });
-
-      o_post.artists_str = o_post.artists_str.substr( 0, o_post.artists_str - 2 );
-
-      return o_post;
-    },
-
-    artists_diff : function ( a, b ) {
-      var seen = [];
-      var diff = [];
-
-      for ( var i = 0; i < b.length; i++ ){
-        seen[ b[ i ]] = true;
-      }
-      for ( var i = 0; i < a.length; i++ ){
-        if ( !seen[ a[ i ]]) diff.push( a[ i ]);
-      }
-
-      return diff;
     }
   }
 };
