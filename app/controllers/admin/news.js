@@ -139,6 +139,7 @@ module.exports = Application.extend( validations, {
       },
       function (){
         res.redirect( '/admin/news' );
-    });
+      }
+    );
   }
 });
