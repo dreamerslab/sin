@@ -60,7 +60,6 @@ var Schema = function ( Schema ){
     }),
 
     Song : new Schema({
-      artists    : [{ type : String, index : true }],
       release    : { type : ObjectId, ref : 'Release', required : true, index : true },
       order      : { type : String, required : true },
       name       : { type : String, required : true },
