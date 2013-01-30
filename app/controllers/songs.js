@@ -11,7 +11,8 @@ module.exports = Application.extend( validations, {
 
     before( this.namespace );
     before( this.current_songs );
-    before( this.current_song );
+    before( this.current_song_for_index, { only : [ 'index' ]});
+    before( this.current_song_for_show,  { only : [ 'show' ]});
   },
 
   index : function ( req, res, next ){

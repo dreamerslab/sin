@@ -12,9 +12,9 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'show', 'edit' ]});
 
     before( this.namespace );
-    before( this.current_artist, { only : [ 'index' ]});
-    before( this.current_songs,  { only : [ 'show' ]});
-    before( this.current_song,   { only : [ 'show' ]});
+    before( this.current_artist,         { only : [ 'index' ]});
+    before( this.current_songs,          { only : [ 'show' ]});
+    before( this.current_song_for_index, { only : [ 'show' ]});
   },
 
   current_song : function ( req, res, next ){

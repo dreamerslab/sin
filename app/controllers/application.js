@@ -70,23 +70,22 @@ module.exports = Class.extend({
         next();
       }
     );
-
-    next(); // for temp
   },
 
   // must go after current_songs
-  current_song : function ( req, res, next ){
+  current_song_for_index : function ( req, res, next ){
     if( !req.songs.length ) return next();
 
-    // songs index, no id in route
-    if( !req.params.id ){
-      req.current_song = song[ 0 ];
-      return;
-    };
+    req.current_song = song[ 0 ];
+    next();
+  },
 
-    var current_song_id = req.songs[ 0 ]._id;
+  // must go after current_songs
+  current_song_for_show : function ( req, res, next ){
+    if( !req.songs.length ) return next();
 
-    // 很有可能還沒跑完 forEach 就跑了 next，事後需要檢查，會發生這樣的情況的話再用 Flow
+    var current_song_id = req.params.id;
+
     req.songs.forEach( function ( song ){
       if( song._id == current_song_id ){
         req.current_song = song;

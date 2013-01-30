@@ -14,8 +14,9 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'index', 'show', 'new', 'edit' ]});
 
     before( this.namespace );
-    before( this.current_songs, { only : [ 'index', 'show', 'new', 'edit' ]});
-    before( this.current_song,  { only : [ 'index', 'show', 'new', 'edit' ]});
+    before( this.current_songs,          { only : [ 'index', 'show', 'new', 'edit' ]});
+    before( this.current_song_for_index, { only : [ 'index', 'new' ]});
+    before( this.current_song_for_show,  { only : [ 'show', 'edit' ]});
   },
 
   new : function ( req, res, next ){
