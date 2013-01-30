@@ -1,25 +1,92 @@
+var common     = require( MODEL_DIR + 'hooks/common' );
+var Flow       = require( 'node.flow' );
+var lib_common = require( LIB_DIR + 'common' );
+var Live       = Model( 'Live' );
+
 module.exports = {
+  hooks : {
+    post : {
+      save   : [
+        common.insert_to_artists( 'lives' )
+      ],
+
+      remove : [
+        common.remove_from_artists( 'lives' )
+      ]
+    }
+  },
+
   statics : {
 
     insert : function ( args, next, created ){
-      created();
+      new this({
+        title    : args.title,
+        date     : args.date,
+        location : args.location,
+        url      : args.url
+      }).save( function ( err, live ){
+        if( err ) return next( err );
+
+        created( live );
+      });
     },
 
     index : function ( args, next, no_content, ok ){
-      // 記得 sort by updated_at，由新到舊
-      ok();
+      this.find().
+        sort( '-created_at' ).
+        skip( args.page * 10 ).
+        limit( args.limit ).
+        exec( function ( err, lives ){
+          if( err )           return next( err );
+          if( !lives.length ) return no_content();
+
+          ok( lives );
+      });
     },
 
-    show : function ( args, next, no_content, ok ){
-      ok();
+    show : function ( id, next, no_content, ok ){
+      var self = this;
+
+      this.findById( id ).
+        exec( function ( err, live ){
+          if( err )   return next( err );
+          if( !live ) return no_content();
+
+          ok( live );
+        }
+      );
     },
 
-    update : function ( args, next, updated ){
-      updated();
+    update : function ( args, next, no_content, updated ){
+      var self = this;
+      var form = args;
+
+      var update_obj = {};
+
+      if( form.title    !== undefined ) update_obj.title    = form.title;
+      if( form.date     !== undefined ) update_obj.date     = form.date;
+      if( form.location !== undefined ) update_obj.location = form.location;
+      if( form.url      !== undefined ) update_obj.url      = form.url;
+
+      self.findByIdAndUpdate( args.id , update_obj, function ( err, live ){
+        if( err )   return next( err );
+        if( !live ) return no_content();
+
+        updated();
+      });
     },
 
-    destroy : function ( id, next, deleted ){
-      deleted();
+    destroy : function ( id, next, no_content, deleted ){
+      this.findById( id ).exec( function ( err, live ){
+        if( err )   return next( err );
+        if( !live ) return no_content( err );
+
+        live.remove( function ( err ){
+          if( err ) return next( err );
+
+          deleted();
+        });
+      });
     }
   }
 };

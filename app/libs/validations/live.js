@@ -19,7 +19,6 @@ module.exports = {
     field( 'title'    ).required( '', lang.required.title    ).maxLength( 50, lang.invalid.title ),
     field( 'date'     ).required( '', lang.required.date     ).maxLength( 10, lang.invalid.date ),
     field( 'location' ).required( '', lang.required.location ).maxLength( 50, lang.invalid.location ),
-    field( 'url'      ).isUrl(        lang.invalid.url ),
-    field( 'artists'  ).custom( c.split_artists_n_trim )
+    field( 'url'      ).isUrl(        lang.invalid.url )
   )
 };

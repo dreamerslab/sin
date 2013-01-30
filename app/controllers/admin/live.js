@@ -58,26 +58,55 @@ module.exports = Application.extend( validations, {
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/live/edit' );
+    var self = this;
+
+    Live.show( req.params.id, next,
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // ok
+      function ( live ){
+        res.render( 'admin/live/edit', {
+          ori_body : live
+        });
+      }
+    );
   },
 
   update : function ( req, res, next ){
+    var self = this;
+
     if( !req.form.isValid ){
       return res.render( 'admin/live/edit', {
-        body : req.body
+        ori_body : req.body
       });
     }
 
     Live.update( req.form, next,
-      function ( live ){
-        res.redirect( '/admin/live/' + live._id );
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // updated
+      function (){
+        res.redirect( '/admin/live' );
       }
     );
   },
 
   destroy : function ( req, res, next ){
-    Live.destroy( req.params.id, next, function (){
-      res.redirect( '/admin/live' );
-    });
+    var self = this;
+
+    Live.destroy( req.params.id, next,
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // ok
+      function (){
+        res.redirect( '/admin/live' );
+      }
+    );
   }
 });
