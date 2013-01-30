@@ -61,7 +61,12 @@ module.exports = {
     },
 
     index : function ( args, next, no_content, ok ){
-      this.find( args.query ).
+      var query = args.artist ?
+        {
+          artists : { $in : [ args.artist ]}
+        } : {};
+
+      this.find( query ).
         sort( '-created_at' ).
         skip( args.page * 10 ).
         limit( args.limit ).
