@@ -12,15 +12,14 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'edit' ]});
 
     before( this.namespace );
-    before( this.current_artist, { only : [ 'index' ]});
   },
 
   index : function ( req, res, next ){
     var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
-      query : req.query_cond,
-      limit : 10,
-      skip  : page
+      artist : req.query.artist,
+      limit  : 10,
+      skip   : page
     };
 
     Live.index( args, next,

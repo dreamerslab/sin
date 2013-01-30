@@ -11,7 +11,6 @@ module.exports = Application.extend( validations, {
 
     before( this.namespace );
 
-    before( this.current_artist,  { only : [ 'index' ]});
     before( this.recent_news,     { only : [ 'show' ]});
     before( this.recent_videos,   { only : [ 'show' ]});
     before( this.recent_releases, { only : [ 'show' ]});
@@ -20,9 +19,9 @@ module.exports = Application.extend( validations, {
   index : function ( req, res, next ){
     var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
-      query : req.query_cond,
-      limit : 3,
-      skip  : page
+      artist : req.query.artist,
+      limit  : 3,
+      skip   : page
     };
 
     Artist.index( args, next,

@@ -47,12 +47,6 @@ module.exports = Class.extend({
     this.no_content( req, res );
   },
 
-  current_artist : function ( req, res, next ){
-    req.query_cond = req.query.artist ? { artist : req.query.artist } : {};
-
-    next();
-  },
-
   current_songs : function ( req, res, next ){
     var args = {
       query : {
@@ -97,8 +91,8 @@ module.exports = Class.extend({
 
   recent_news : function ( req, res, next ){
     var args = {
-      limit : 3,
-      query : req.query_cond
+      limit  : 3,
+      artist : req.query.artist
     };
 
     Post.index( args, next,
@@ -115,8 +109,8 @@ module.exports = Class.extend({
 
   recent_releases : function ( req, res, next ){
     var args = {
-      limit : 3,
-      query : req.query_cond
+      limit  : 3,
+      artist : req.query.artist
     };
 
     Release.index( args, next,
@@ -133,8 +127,8 @@ module.exports = Class.extend({
 
   recent_videos : function ( req, res, next ){
     var args = {
-      limit : 2,
-      query : req.query_cond
+      limit  : 2,
+      artist : req.query.artist
     };
 
     Video.index( args, next,
@@ -151,8 +145,8 @@ module.exports = Class.extend({
 
   recent_lives : function ( req, res, next ){
     var args = {
-      limit : 4,
-      query : req.query_cond
+      limit  : 4,
+      artist : req.query.artist
     };
 
     Live.index( args, next,

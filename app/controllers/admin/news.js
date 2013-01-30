@@ -12,7 +12,6 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'show', 'edit', 'create', 'update' ]});
 
     before( this.namespace );
-    before( this.current_artist, { only : [ 'index' ]});
   },
 
   new : function ( req, res, next ){
@@ -46,9 +45,9 @@ module.exports = Application.extend( validations, {
   index : function ( req, res, next ){
     var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
-      query : req.query_cond,
-      limit : 3,
-      skip  : page
+      artist : req.query.artist,
+      limit  : 3,
+      skip   : page
     };
 
     Post.index( args, next,
