@@ -21,11 +21,11 @@ var Schema = function ( Schema ){
       desc       : { type : String, default  : '' },
       cover      : { type : String, default  : '' }, // url ( bg )
       links      : [{ type : ObjectId, ref : 'Link' }],
-      posts      : [{ type : ObjectId, ref : 'Post' }],
-      releases   : [{ type : ObjectId, ref : 'Release' }],
-      songs      : [{ type : ObjectId, ref : 'Song' }],
-      lives      : [{ type : ObjectId, ref : 'Live' }],
-      videos     : [{ type : ObjectId, ref : 'Video' }],
+      // posts      : [{ type : ObjectId, ref : 'Post' }],
+      // releases   : [{ type : ObjectId, ref : 'Release' }],
+      // songs      : [{ type : ObjectId, ref : 'Song' }],
+      // lives      : [{ type : ObjectId, ref : 'Live' }],
+      // videos     : [{ type : ObjectId, ref : 'Video' }],
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
@@ -40,7 +40,7 @@ var Schema = function ( Schema ){
     }),
 
     Post : new Schema({
-      artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
+      artists    : [{ type : String, index : true }],
       title      : { type : String, required : true },
       content    : { type : String, required : true },
       cover      : { type : String, default : '' }, // url
@@ -49,7 +49,7 @@ var Schema = function ( Schema ){
     }),
 
     Release : new Schema({
-      artists      : [{ type : ObjectId, ref : 'Artist', index : true }],
+      artists      : [{ type : String, index : true }],
       name         : { type : String, required : true },
       desc         : { type : String, default : '' },
       release_date : { type : String, default : '' },
@@ -60,7 +60,7 @@ var Schema = function ( Schema ){
     }),
 
     Song : new Schema({
-      artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
+      artists    : [{ type : String, index : true }],
       release    : { type : ObjectId, ref : 'Release', required : true, index : true },
       order      : { type : String, required : true },
       name       : { type : String, required : true },
@@ -72,7 +72,7 @@ var Schema = function ( Schema ){
     }),
 
     Video : new Schema({
-      artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
+      artists    : [{ type : String, index : true }],
       title      : { type : String, required : true },
       thumb      : { type : String, required : true },
       date       : { type : String, required : true },
@@ -83,7 +83,7 @@ var Schema = function ( Schema ){
     }),
 
     Live : new Schema({
-      artists    : [{ type : ObjectId, ref : 'Artist', index : true }],
+      artists    : [{ type : String, index : true }],
       title      : { type : String, required : true },
       date       : { type : String, required : true },
       location   : { type : String, required : true },
