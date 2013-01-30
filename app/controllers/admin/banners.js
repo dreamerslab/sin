@@ -21,11 +21,6 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
-    var args = {
-      id   : req.params.id,
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/banners/edit', {
         header_admin_view : 'edit',
@@ -33,7 +28,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Url.update( args, next, function (){
+    Url.update( req.form, next, function (){
       res.redirect( '/admin/' + req.params.type );
     });
   }

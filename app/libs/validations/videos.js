@@ -15,6 +15,7 @@ module.exports = {
   ),
 
   validate_create_n_update : form(
+    field( 'id'      ).is( r.id, lang._404 ),
     field( 'url'     ).required( '', lang.required.url ).is( r.youtube, lang.invalid.url ),
     field( 'artists' ).custom( c.split_artists_n_trim )
   )

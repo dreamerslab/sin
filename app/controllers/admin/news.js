@@ -19,20 +19,16 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/news/new', {
-        body : args.body
+        ori_body : req.body
       });
     }
 
-    Post.insert( args, next,
+    Post.insert( req.form, next,
       function (){
         res.render( 'admin/news/new', {
-          body            : args.body,
+          ori_body        : req.body,
           is_artist_found : false
         });
       },
@@ -102,21 +98,17 @@ module.exports = Application.extend( validations, {
 
   update : function ( req, res, next ){
     var self = this;
-    var args = {
-      id   : req.params.id,
-      body : req.body
-    };
 
     if( !req.form.isValid ){
       return res.render( 'admin/artists/edit', {
-        body : args.body
+        ori_body : req.body
       });
     }
 
-    Post.update( args, next,
+    Post.update( req.form, next,
       function (){
         res.render( 'admin/news/edit', {
-          body            : args.body,
+          ori_body        : req.body,
           is_artist_found : false
         });
       },

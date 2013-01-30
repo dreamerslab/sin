@@ -19,6 +19,7 @@ module.exports = {
   ),
 
   validate_create_n_update : form(
+    field( 'id'           ).is( r.id, lang._404 ),
     field( 'target_order' ).required(  '', lang.required.target_order ).isInt( lang.invalid.target_order ),
     field( 'name'         ).required(  '', lang.required.name ).maxLength( 50, lang.invalid.name ),
     field( 'duration'     ).maxLength(  7, lang.invalid.duration ),

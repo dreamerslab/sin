@@ -43,17 +43,13 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/live/new', {
-        body : args.body
+        ori_body : req.body
       });
     }
 
-    Live.insert( args, next, function ( live ){
+    Live.insert( req.form, next, function ( live ){
         res.redirect( '/admin/live' );
       }
     );
@@ -64,18 +60,13 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
-    var args = {
-      id   : req.params.id,
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/live/edit', {
-        body : args.body
+        body : req.body
       });
     }
 
-    Live.update( args, next,
+    Live.update( req.form, next,
       function ( live ){
         res.redirect( '/admin/live/' + live._id );
       }

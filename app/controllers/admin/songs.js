@@ -27,21 +27,17 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       res.render( 'releases/show', {
         _assets    : 'admin/releases/assets/_show',
         admin_view : 'new',
-        body       : args.body
+        ori_body   : req.body
       });
 
       return;
     }
 
-    Song.insert( args, next, function ( song ){
+    Song.insert( req.form, next, function ( song ){
       res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
     });
   },
@@ -81,21 +77,17 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
-    var args = {
-      id   : req.params.id,
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       res.render( 'releases/show', {
         _assets    : 'admin/releases/assets/_show',
-        admin_view : 'edit'
+        admin_view : 'edit',
+        ori_body   : req.body
       });
 
       return;
     }
 
-    Song.update( args, next,
+    Song.update( req.form, next,
       function ( song ){
         res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
       }

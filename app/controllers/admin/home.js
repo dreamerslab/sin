@@ -46,18 +46,14 @@ module.exports = Application.extend( validations, {
   },
 
   soundcloud_udpate : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
-        type : 'home_soundcloud',
-        body : args.body
+        type     : 'home_soundcloud',
+        ori_body : req.body
       });
     }
 
-    Url.update( args, next, function (){
+    Url.update( req.form, next, function (){
       res.redirect( '/admin' );
     });
   },
@@ -69,17 +65,14 @@ module.exports = Application.extend( validations, {
   },
 
   facebook_udpate : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
-        type : 'home_facebook'
+        type     : 'home_facebook',
+        ori_body : req.body
       });
     }
 
-    Url.update( args, next, function (){
+    Url.update( req.form, next, function (){
       res.redirect( '/admin' );
     });
   }

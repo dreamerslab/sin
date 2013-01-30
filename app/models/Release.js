@@ -17,15 +17,9 @@ module.exports = {
     insert : function ( args, next, artist_not_found, created ){
       var self            = this;
       var flow            = new Flow();
-      var body            = args.body;
-      var artists         = body.artists.split( ',' );
+      var form            = args;
+      var artists         = args.artists;
       var is_artist_found = true;
-
-      artists.forEach( function ( artist_name, index ){
-        flow.series( function (){
-          artists[ index ] = artist_name.trim();
-        });
-      });
 
       artists.forEach( function ( artist_name, index ){
         flow.series( function (){
@@ -34,8 +28,6 @@ module.exports = {
             if( !artist ){
               is_artist_found = false;
             }
-
-            artists[ index ] = artist._id;
           });
         });
       });
@@ -45,10 +37,10 @@ module.exports = {
 
         new self({
           artists      : artists,
-          name         : body.name,
-          desc         : body.desc,
-          release_date : body.release_date,
-          cover        : body.cover,
+          name         : form.name,
+          desc         : form.desc,
+          release_date : form.release_date,
+          cover        : form.cover,
           songs        : []
         }).save( function ( err, release ){
           if( err ) return next( err );
@@ -96,15 +88,9 @@ module.exports = {
     update : function ( args, next, artist_not_found, no_content, updated ){
       var self            = this;
       var flow            = new Flow();
-      var body            = args.body;
-      var artists         = body.artists.split( ',' );
+      var form            = args;
+      var artists         = args.artists;
       var is_artist_found = true;
-
-      artists.forEach( function ( artist_name, index ){
-        flow.series( function (){
-          artists[ index ] = artist_name.trim();
-        });
-      });
 
       artists.forEach( function ( artist_name, index ){
         flow.series( function (){
@@ -113,8 +99,6 @@ module.exports = {
             if( !artist ){
               is_artist_found = false;
             }
-
-            artists[ index ] = artist._id;
           });
         });
       });
@@ -130,10 +114,10 @@ module.exports = {
           var artists_to_remove = lib_common.artists_diff( release.artists, artists );
 
           release.artists      = artists;
-          release.name         = body.name;
-          release.desc         = body.desc;
-          release.release_date = body.release_date;
-          release.cover        = body.cover;
+          release.name         = form.name;
+          release.desc         = form.desc;
+          release.release_date = form.release_date;
+          release.cover        = form.cover;
 
           release.save( function ( err, release ){
             if( err ) return next( err );

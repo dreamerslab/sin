@@ -9,6 +9,7 @@ form.configure({
 module.exports = {
 
   validate_update : form(
+    field( 'type' ).required(),
     field( 'url' ).required( '', lang.required.url )
   )
 };

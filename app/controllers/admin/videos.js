@@ -19,17 +19,13 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/videos/new', {
-        body : args.body
+        ori_body : req.body
       });
     }
 
-    Video.insert( args, next, function (){
+    Video.insert( req.form, next, function (){
       res.redirect( 'admin/videos' );
     });
   },
@@ -63,17 +59,13 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/videos/edit', {
-        body : args.body
+        ori_body : req.body
       });
     }
 
-    Video.update( args, next,
+    Video.update( req.form, next,
       function (){
         res.redirect( '/admin/videos' );
       }

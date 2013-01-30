@@ -22,17 +22,13 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
-    var args = {
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/artists/new', {
-        body : args.body
+        ori_body : req.body
       });
     }
 
-    Artist.insert( args, next, function ( artist ){
+    Artist.insert( req.form, next, function ( artist ){
         res.redirect( '/admin/artists/' + artist._id );
       }
     );
@@ -91,18 +87,13 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
-    var args = {
-      id   : req.params.id,
-      body : req.body
-    };
-
     if( !req.form.isValid ){
       return res.render( 'admin/artists/edit', {
-        body : args.body
+        ori_body : req.body
       });
     }
 
-    Artist.update( args, next,
+    Artist.update( req.form, next,
       function ( artist ){
         res.redirect( '/admin/artists/' + artist._id );
       }

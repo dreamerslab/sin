@@ -15,6 +15,7 @@ module.exports = {
   ),
 
   validate_create_n_update : form(
+    field( 'id'      ).is( r.id, lang._404 ),
     field( 'title'   ).required( '', lang.required.title   ).maxLength( 50,   lang.invalid.title ),
     field( 'content' ).required( '', lang.required.content ).maxLength( 1000, lang.invalid.content ),
     field( 'artists' ).custom( c.split_artists_n_trim )
