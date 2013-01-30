@@ -18,12 +18,12 @@ module.exports = {
 
   statics : {
 
-    insert : function ( args, next, created ){
+    insert : function ( form, next, created ){
       new this({
-        title    : args.title,
-        date     : args.date,
-        location : args.location,
-        url      : args.url
+        title    : form.title,
+        date     : form.date,
+        location : form.location,
+        url      : form.url
       }).save( function ( err, live ){
         if( err ) return next( err );
 
@@ -57,9 +57,8 @@ module.exports = {
       );
     },
 
-    update : function ( args, next, no_content, updated ){
+    update : function ( form, next, no_content, updated ){
       var self = this;
-      var form = args;
 
       var update_obj = {};
 
@@ -68,7 +67,7 @@ module.exports = {
       if( form.location !== undefined ) update_obj.location = form.location;
       if( form.url      !== undefined ) update_obj.url      = form.url;
 
-      self.findByIdAndUpdate( args.id , update_obj, function ( err, live ){
+      self.findByIdAndUpdate( form.id , update_obj, function ( err, live ){
         if( err )   return next( err );
         if( !live ) return no_content();
 

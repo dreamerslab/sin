@@ -18,10 +18,10 @@ module.exports = {
 
   statics : {
 
-    insert : function ( args, next, artist_not_found, created ){
+    insert : function ( form, next, artist_not_found, created ){
       var self            = this;
       var flow            = new Flow();
-      var artists         = args.artists;
+      var artists         = form.artists;
       var is_artist_found = true;
 
       artists.forEach( function ( artist_name, index ){
@@ -40,9 +40,9 @@ module.exports = {
 
         new self({
           artists : artists,
-          title   : args.title,
-          content : args.content,
-          cover   : args.cover
+          title   : form.title,
+          content : form.content,
+          cover   : form.cover
         }).save( function ( err, post ){
           if( err ) return next( err );
 
@@ -84,11 +84,10 @@ module.exports = {
       );
     },
 
-    update : function ( args, next, artist_not_found, no_content, updated ){
+    update : function ( form, next, artist_not_found, no_content, updated ){
       var self            = this;
       var flow            = new Flow();
-      var form            = args;
-      var artists         = args.artists;
+      var artists         = form.artists;
       var is_artist_found = true;
 
       artists.forEach( function ( artist_name, index ){
@@ -112,7 +111,7 @@ module.exports = {
         if( form.content !== undefined ) update_obj.content = form.content;
         if( form.cover   !== undefined ) update_obj.cover   = form.cover;
 
-        self.findByIdAndUpdate( args.id , update_obj, function ( err, post ){
+        self.findByIdAndUpdate( form.id , update_obj, function ( err, post ){
           if( err )   return next( err );
           if( !post ) return no_content();
 
