@@ -1,7 +1,6 @@
 var common     = require( MODEL_DIR + 'hooks/common' );
 var Flow       = require( 'node.flow' );
 var lib_common = require( LIB_DIR + 'common' );
-var Live       = Model( 'Live' );
 
 module.exports = {
   hooks : {
