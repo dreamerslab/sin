@@ -2,18 +2,32 @@ var Artist = Model( 'Artist' );
 var Flow   = require( 'node.flow' );
 
 module.exports = {
-  insert_to_artists : function ( children, child ){
-    child.artists.forEach( function ( artist_id ){
-      Artist.findById( artist_id, function ( err, artist ){
-        artist[ children ].push( child._id ).
-          save( function ( err, artist ){
-            if( err ) return LOG.error( 500, '[hooks][common][insert_to_artists( ' + artist.name + ' )] ' + 'fail', err );
+  insert_to_artists : function ( child ){
+    var flow = new Flow();
 
-            LOG.debug( '[hooks][common][update_artists( ' + artist.name + ' )][remove ' + children + ' from '  + artist.name + '] done', artist );
+    return function ( next ){
+      var self = this;
+
+      this.artists.forEach( function ( artist_id ){
+        flow.parallel( function ( ready ){
+          Artist.findById( artist_id, function ( err, artist ){
+            artist[ child ].push( self._id ).
+              save( function ( err, artist ){
+                if( err ) return LOG.error( 500, '[hooks][common][insert_to_artists( ' + artist.name + ' )] ' + 'fail', err );
+
+                LOG.debug( '[hooks][common][update_artists( ' + artist.name + ' )][remove ' + child + ' from '  + artist.name + '] done', artist );
+                ready();
+              });
           });
+        });
       });
-    });
+
+      flow.join().end( function (){
+        next();
+      });
+    };
   },
+
   update_artists : function ( artists_to_insert, artists_to_remove, children, child, next ){
     // remove child from artists
     artists_to_insert.forEach( function ( artist_id ){
@@ -42,14 +56,17 @@ module.exports = {
       });
     });
   },
+
   remove_from_artists : function ( child ){
     var flow = new Flow();
 
     return function ( next ){
+      var self = this;
+
       this.artists.forEach( function ( artist_id ){
         flow.parallel( function ( ready ){
           Artist.findById( artist_id, function ( err, artist ){
-            var position = artist[ child ].indexOf( this._id );
+            var position = artist[ child ].indexOf( self._id );
 
             if( position ) artist[ child ].splice( position, 1 );
 

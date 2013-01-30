@@ -6,8 +6,12 @@ var Release    = Model( 'Release' );
 module.exports = {
   hooks : {
     post : {
+      save   : [
+        common.insert_to_artists( 'releases' )
+      ],
+
       remove : [
-        common.remove_from_artists( 'posts' )
+        common.remove_from_artists( 'releases' )
       ]
     }
   },
@@ -106,26 +110,24 @@ module.exports = {
       flow.end( function (){
         if( !is_artist_found ) return artist_not_found();
 
-        self.findById( args.id ).exec( function ( err, release ){
-          if( err )   return next( err );
+        var update_obj = {};
+
+        if( artists           !== undefined ) update_obj.artists      = artists;
+        if( form.name         !== undefined ) update_obj.name         = form.name;
+        if( form.desc         !== undefined ) update_obj.desc         = form.desc;
+        if( form.release_date !== undefined ) update_obj.release_date = form.release_date;
+        if( form.cover        !== undefined ) update_obj.cover        = form.cover;
+
+        self.findByIdAndUpdate( args.id , update_obj, function ( err, release ){
+          if( err )      return next( err );
           if( !release ) return no_content();
 
           var artists_to_insert = lib_common.artists_diff( artists, release.artists );
           var artists_to_remove = lib_common.artists_diff( release.artists, artists );
 
-          release.artists      = artists;
-          release.name         = form.name;
-          release.desc         = form.desc;
-          release.release_date = form.release_date;
-          release.cover        = form.cover;
+          common.update_artists( artists_to_insert, artists_to_remove, 'releases', release );
 
-          release.save( function ( err, release ){
-            if( err ) return next( err );
-
-            common.update_artists( artists_to_insert, artists_to_remove, 'releases', release );
-
-            updated( release );
-          });
+          updated( release );
         });
       });
     },
