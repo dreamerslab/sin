@@ -70,7 +70,7 @@ module.exports = Class.extend({
   current_song_for_index : function ( req, res, next ){
     if( !req.songs.length ) return next();
 
-    req.current_song = song[ 0 ];
+    req.current_song = req.songs[ 0 ];
     next();
   },
 
