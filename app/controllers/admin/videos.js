@@ -39,12 +39,14 @@ module.exports = Application.extend( validations, {
     };
 
     Video.index( args, next,
+      // no content
       function (){
         res.render( 'videos/index', {
           _assets : 'admin/videos/assets/_index',
           videos  : []
         });
       },
+      // ok
       function ( videos ){
         res.render( 'videos/index', {
           _assets : 'admin/videos/assets/_index',

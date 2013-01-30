@@ -17,9 +17,11 @@ module.exports = Class.extend({
     };
 
     Url.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( banner ){
         req.banner = banner;
         next();
@@ -55,10 +57,12 @@ module.exports = Class.extend({
     };
 
     Song.index( args, next,
+      // no content
       function (){
         req.songs = [];
         next();
       },
+      // ok
       function ( songs ){
         req.songs = songs;
         next();
@@ -96,10 +100,12 @@ module.exports = Class.extend({
     };
 
     Post.index( args, next,
+      // no content
       function (){
         req.posts = [];
         next();
       },
+      // ok
       function ( posts ){
         req.posts = posts;
         next();
@@ -114,10 +120,12 @@ module.exports = Class.extend({
     };
 
     Release.index( args, next,
+      // no content
       function (){
         req.releases = [];
         next();
       },
+      // ok
       function ( releases ){
         req.releases = releases;
         next();
@@ -132,10 +140,12 @@ module.exports = Class.extend({
     };
 
     Video.index( args, next,
+      // no content
       function (){
         req.videos = [];
         next();
       },
+      // ok
       function ( videos ){
         req.videos = videos;
         next();
@@ -150,10 +160,12 @@ module.exports = Class.extend({
     };
 
     Live.index( args, next,
+      // no content
       function (){
         req.lives = [];
         next();
       },
+      // ok
       function ( lives ){
         req.lives = lives;
         next();
@@ -170,10 +182,12 @@ module.exports = Class.extend({
     };
 
     Url.show( args, next,
+      // no content
       function (){
         req.soundcloud = '';
         next();
       },
+      // ok
       function ( soundcloud ){
         req.soundcloud = soundcloud;
         next();
@@ -190,10 +204,12 @@ module.exports = Class.extend({
     };
 
     Url.show( args, next,
+      // no content
       function (){
         req.soundcloud = '';
         next();
       },
+      // ok
       function ( facebook ){
         req.facebook = facebook;
         next();

@@ -20,12 +20,14 @@ module.exports = Application.extend( validations, {
     };
 
     Post.index( args, next,
+      // no content
       function (){
         res.render( 'news/index', {
           _assets : 'news/assets/_index',
           posts   : []
         });
       },
+      // ok
       function ( posts ){
         res.render( 'news/index', {
           _assets : 'news/assets/_index',
@@ -44,9 +46,11 @@ module.exports = Application.extend( validations, {
     };
 
     Post.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( post ){
         res.render( 'news/show', {
           _assets : 'news/assets/_show',

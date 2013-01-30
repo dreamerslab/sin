@@ -36,12 +36,14 @@ module.exports = Application.extend( validations, {
     }
 
     Post.insert( req.form, next,
+      // artist not found
       function (){
         res.render( 'admin/releases/new', {
           ori_body        : req.body,
           is_artist_found : false
         });
       },
+      // created
       function ( release ){
         res.redirect( '/admin/releases/' + release._id );
       }
@@ -57,12 +59,14 @@ module.exports = Application.extend( validations, {
     };
 
     Release.index( args, next,
+      // no content
       function (){
         res.render( 'releases/index', {
           _assets  : 'admin/releases/assets/_index',
           releases : []
         });
       },
+      // ok
       function ( releases ){
         res.render( 'releases/index', {
           _assets  : 'admin/releases/assets/_index',
@@ -81,9 +85,11 @@ module.exports = Application.extend( validations, {
     };
 
     Release.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( release ){
         res.render( 'releases/show', {
           _assets      : 'admin/releases/assets/_show',
@@ -99,9 +105,11 @@ module.exports = Application.extend( validations, {
     var self = this;
 
     Release.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( release ){
         res.render( 'admin/releases/edit', {
           ori_release : release
@@ -120,15 +128,18 @@ module.exports = Application.extend( validations, {
     }
 
     Release.update( req.form, next,
+      // artist not found
       function (){
         res.render( 'admin/releases/edit', {
           ori_body        : req.body,
           is_artist_found : false
         });
       },
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // updated
       function ( release ){
         res.redirect( '/admin/releases/' + release._id );
       }
@@ -139,9 +150,11 @@ module.exports = Application.extend( validations, {
     var self = this;
 
     Release.destroy( req.params.id, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // deleted
       function (){
         res.redirect( '/admin/releases' );
       }

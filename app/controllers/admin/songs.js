@@ -51,9 +51,11 @@ module.exports = Application.extend( validations, {
     };
 
     Release.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( release ){
         res.render( 'releases/show', {
           _assets      : 'admin/releases/assets/_show',

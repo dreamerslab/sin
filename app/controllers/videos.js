@@ -16,12 +16,14 @@ module.exports = Application.extend({
     };
 
     Video.index( args, next,
+      // no content
       function (){
         res.render( 'videos/index', {
           _assets : 'videos/assets/_index',
           videos  : []
         });
       },
+      // ok
       function ( videos ){
         res.render( 'videos/index', {
           _assets : 'videos/assets/_index',

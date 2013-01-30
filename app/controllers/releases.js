@@ -30,12 +30,14 @@ module.exports = Application.extend( validations, {
     };
 
     Release.index( args, next,
+      // no content
       function (){
         res.render( 'releases/index', {
           _assets  : 'releases/assets/_index',
           releases : []
         });
       },
+      // ok
       function ( releases ){
         res.render( 'releases/index', {
           _assets  : 'releases/assets/_index',
@@ -54,9 +56,11 @@ module.exports = Application.extend( validations, {
     };
 
     Release.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( release ){
         res.render( 'releases/show', {
           _assets      : 'releases/assets/_show',

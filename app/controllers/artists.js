@@ -25,12 +25,14 @@ module.exports = Application.extend( validations, {
     };
 
     Artist.index( args, next,
+      // no content
       function (){
         res.render( 'artists/index', {
           _assets : 'artists/assets/_index',
           artists : []
         });
       },
+      // ok
       function ( artists ){
         res.render( 'artists/index', {
           _assets : 'artists/assets/_index',
@@ -49,9 +51,11 @@ module.exports = Application.extend( validations, {
     };
 
     Artist.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( artist ){
         res.render( 'artists/show', {
           _assets  : 'artists/assets/_show',

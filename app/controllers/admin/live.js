@@ -23,12 +23,14 @@ module.exports = Application.extend( validations, {
     };
 
     Live.index( args, next,
+      // no content
       function (){
         res.render( 'live/index', {
           _assets : 'admin/live/assets/_index',
           lives   : []
         });
       },
+      // ok
       function ( lives ){
         res.render( 'live/index', {
           _assets : 'admin/live/assets/_index',

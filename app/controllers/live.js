@@ -16,12 +16,14 @@ module.exports = Application.extend({
     };
 
     Live.index( args, next,
+      // no content
       function (){
         res.render( 'live/index', {
           _assets : 'live/assets/_index',
           lives   : []
         });
       },
+      // ok
       function ( lives ){
         res.render( 'live/index', {
           _assets : 'live/assets/_index',

@@ -26,12 +26,14 @@ module.exports = Application.extend( validations, {
     }
 
     Post.insert( req.form, next,
+      // artist not found
       function (){
         res.render( 'admin/news/new', {
           ori_body        : req.body,
           is_artist_found : false
         });
       },
+      // created
       function ( post ){
         res.redirect( '/admin/news/' + post._id );
       }
@@ -47,12 +49,14 @@ module.exports = Application.extend( validations, {
     };
 
     Post.index( args, next,
+      // no content
       function (){
         res.render( 'news/index', {
           _assets : 'admin/news/assets/_index',
           posts   : []
         });
       },
+      // ok
       function ( posts ){
         res.render( 'news/index', {
           _assets : 'admin/news/assets/_index',
@@ -71,9 +75,11 @@ module.exports = Application.extend( validations, {
     };
 
     Post.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( post ){
         res.render( 'news/show', {
           _assets : 'admin/news/assets/_show',
@@ -85,9 +91,11 @@ module.exports = Application.extend( validations, {
 
   edit : function ( req, res, next ){
     Post.show( args, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // ok
       function ( post ){
         res.render( 'admin/news/edit', {
           ori_post : post
@@ -106,15 +114,18 @@ module.exports = Application.extend( validations, {
     }
 
     Post.update( req.form, next,
+      // artist not found
       function (){
         res.render( 'admin/news/edit', {
           ori_body        : req.body,
           is_artist_found : false
         });
       },
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // updated
       function ( post ){
         res.redirect( '/admin/news/' + post._id );
       }
@@ -125,9 +136,11 @@ module.exports = Application.extend( validations, {
     var self = this;
 
     Post.destroy( req.params.id, next,
+      // no content
       function (){
         self.no_content( req, res );
       },
+      // deleted
       function (){
         res.redirect( '/admin/news' );
       }
