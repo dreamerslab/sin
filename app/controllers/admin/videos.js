@@ -38,7 +38,7 @@ module.exports = Application.extend( validations, {
   index : function ( req, res, next ){
     var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
-      cond  : req.query_cond,
+      query : req.query_cond,
       limit : 5,
       skip  : page
     };

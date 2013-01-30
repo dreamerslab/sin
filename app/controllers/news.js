@@ -15,7 +15,7 @@ module.exports = Application.extend( validations, {
   index : function ( req, res, next ){
     var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
-      cond  : req.query_cond,
+      query : req.query_cond,
       limit : 3,
       skip  : page
     };
@@ -39,7 +39,7 @@ module.exports = Application.extend( validations, {
   show : function ( req, res, next ){
     var self = this;
     var args = {
-      cond : {
+      query : {
         id : req.params.id
       }
     };

@@ -11,7 +11,7 @@ module.exports = Class.extend({
   current_banner : function ( req, res, next ){
     var self = this;
     var args = {
-      cond : {
+      query : {
         type : req.banner_type
       }
     };
@@ -55,7 +55,7 @@ module.exports = Class.extend({
 
   current_songs : function ( req, res, next ){
     var args = {
-      cond : {
+      query : {
         release : req.params.release_id || req.params.id
       }
     };
@@ -98,7 +98,7 @@ module.exports = Class.extend({
   recent_news : function ( req, res, next ){
     var args = {
       limit : 3,
-      cond  : req.query_cond
+      query : req.query_cond
     };
 
     Post.index( args, next,
@@ -116,7 +116,7 @@ module.exports = Class.extend({
   recent_releases : function ( req, res, next ){
     var args = {
       limit : 3,
-      cond  : req.query_cond
+      query : req.query_cond
     };
 
     Release.index( args, next,
@@ -134,7 +134,7 @@ module.exports = Class.extend({
   recent_videos : function ( req, res, next ){
     var args = {
       limit : 2,
-      cond  : req.query_cond
+      query : req.query_cond
     };
 
     Video.index( args, next,
@@ -152,7 +152,7 @@ module.exports = Class.extend({
   recent_lives : function ( req, res, next ){
     var args = {
       limit : 4,
-      cond  : req.query_cond
+      query : req.query_cond
     };
 
     Live.index( args, next,
@@ -170,7 +170,7 @@ module.exports = Class.extend({
   soundcloud : function ( req, res, next ){
     var self = this;
     var args = {
-      cond : {
+      query : {
         type : 'home_soundcloud'
       }
     };
@@ -190,7 +190,7 @@ module.exports = Class.extend({
   facebook : function ( req, res, next ){
     var self = this;
     var args = {
-      cond : {
+      query : {
         type : 'home_facebook'
       }
     };

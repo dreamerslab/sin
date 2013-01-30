@@ -18,7 +18,7 @@ module.exports = Application.extend( validations, {
   index : function ( req, res, next ){
     var self = this;
     var args = {
-      cond : {
+      query : {
         id : req.params.release_id
       }
     };

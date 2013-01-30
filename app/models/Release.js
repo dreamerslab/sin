@@ -65,8 +65,8 @@ module.exports = {
         if( err )        return next( err );
         if( count == 0 ) return no_content();
 
-        this.find( args.cond ).
-          sort({ created_at : - 1 }).
+        this.find( args.query ).
+          sort( '-created_at' ).
           skip( args.page * 10 ).
           limit( args.limit ).
           exec( function ( err, releases ){
@@ -80,7 +80,7 @@ module.exports = {
     show : function ( args, next, no_content, ok ){
       var self = this;
 
-      this.findById( args.cond.id ).
+      this.findById( args.query.id ).
         populate( 'artists' ).
         exec( function ( err, release ){
           if( err )      return next( err );
