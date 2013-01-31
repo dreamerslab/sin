@@ -6,11 +6,11 @@ module.exports = {
   hooks : {
     post : {
       save   : [
-        common.insert_to_artists( 'lives' )
+        common.push_to_artists( 'lives' )
       ],
 
       remove : [
-        common.remove_from_artists( 'lives' )
+        common.pull_from_artists( 'lives' )
       ]
     }
   },

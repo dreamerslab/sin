@@ -2,7 +2,7 @@ var Artist = Model( 'Artist' );
 var Flow   = require( 'node.flow' );
 
 module.exports = {
-  insert_to_artists : function ( child ){
+  push_to_artists : function ( child ){
     var flow = new Flow();
 
     return function ( next ){
@@ -57,7 +57,7 @@ module.exports = {
     });
   },
 
-  remove_from_artists : function ( child ){
+  pull_from_artists : function ( child ){
     var flow = new Flow();
 
     return function ( next ){
@@ -87,5 +87,13 @@ module.exports = {
         next();
       });
     };
+  },
+
+  push_to_release : function ( next ){
+    next();
+  },
+
+  pull_from_release : function ( next ){
+    next();
   }
 };
