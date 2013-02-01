@@ -102,7 +102,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Video.update( args, next,
+    Video.update_props( args, next,
       // not found
       function (){
         res.render( 'admin/videos/edit', {

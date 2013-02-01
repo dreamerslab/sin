@@ -9,7 +9,7 @@ module.exports = {
       ok();
     },
 
-    update : function ( args, next, updated ){
+    update_props : function ( args, next, updated ){
       updated();
     }
   }

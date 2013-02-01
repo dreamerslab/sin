@@ -53,7 +53,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Url.update( req.form, next, function (){
+    Url.update_props( req.form, next, function (){
       res.redirect( '/admin' );
     });
   },
@@ -72,7 +72,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Url.update( req.form, next, function (){
+    Url.update_props( req.form, next, function (){
       res.redirect( '/admin' );
     });
   }

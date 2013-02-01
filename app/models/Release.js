@@ -53,7 +53,7 @@ module.exports = {
       );
     },
 
-    update : function ( args, next, not_found, no_content, updated ){
+    update_props : function ( args, next, not_found, no_content, updated ){
       if( !args.is_artists_found ) return not_found();
 
       var update_obj = {};

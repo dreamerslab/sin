@@ -86,7 +86,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Live.update( args, next,
+    Live.update_props( args, next,
       // no content
       function (){
         self.no_content( req, res );

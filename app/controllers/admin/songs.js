@@ -91,7 +91,7 @@ module.exports = Application.extend( validations, {
       return;
     }
 
-    Song.update( args, next,
+    Song.update_props( args, next,
       function ( song ){
         res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
       }

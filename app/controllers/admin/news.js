@@ -121,7 +121,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Post.update( args, next,
+    Post.update_props( args, next,
       // not found
       function (){
         res.render( 'admin/news/edit', {

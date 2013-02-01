@@ -22,7 +22,7 @@ module.exports = {
       });
     },
 
-    update : function ( args, next, no_content, updated ){
+    update_props : function ( args, next, no_content, updated ){
       var update_obj      = {};
       var current_release = args.release;
 

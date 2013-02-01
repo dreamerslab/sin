@@ -128,7 +128,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Release.update( args, next,
+    Release.update_props( args, next,
       // not found
       function (){
         res.render( 'admin/releases/edit', {
