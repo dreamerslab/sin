@@ -60,7 +60,7 @@ module.exports = {
       if( args.content !== undefined ) update_obj.content = args.content;
       if( args.cover   !== undefined ) update_obj.cover   = args.cover;
 
-      this.findByIdAndUpdate( args.id , update_obj, function ( err, post ){
+      this.findByIdAndUpdate( args.id, update_obj, function ( err, post ){
         if( err )   return next( err );
         if( !post ) return no_content();
 

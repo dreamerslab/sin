@@ -62,7 +62,7 @@ module.exports = {
       if( args.date    !== undefined ) update_obj.date    = args.date;
       if( args.url     !== undefined ) update_obj.url     = args.url;
 
-      this.findByIdAndUpdate( args.id , update_obj, function ( err, video ){
+      this.findByIdAndUpdate( args.id, update_obj, function ( err, video ){
         if( err )    return next( err );
         if( !video ) return no_content();
 

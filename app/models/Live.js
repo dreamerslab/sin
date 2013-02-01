@@ -50,7 +50,7 @@ module.exports = {
       if( args.location !== undefined ) update_obj.location = args.location;
       if( args.url      !== undefined ) update_obj.url      = args.url;
 
-      self.findByIdAndUpdate( args.id , update_obj, function ( err, live ){
+      self.findByIdAndUpdate( args.id, update_obj, function ( err, live ){
         if( err )   return next( err );
         if( !live ) return no_content();
 
