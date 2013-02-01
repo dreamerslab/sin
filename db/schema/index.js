@@ -19,6 +19,7 @@ var Schema = function ( Schema ){
     Artist : new Schema({
       name       : { type : String, required : true, index : true },
       desc       : { type : String, default  : '' },
+      thumb      : { type : String, default  : '' }, // url ( bg )
       cover      : { type : String, default  : '' }, // url ( bg )
       links      : [{ type : ObjectId, ref : 'Link' }],
       created_at : { type : Number, default : Date.now },
@@ -27,7 +28,6 @@ var Schema = function ( Schema ){
 
     // artist links, blog, fb, twitter ...
     Link : new Schema({
-      artist     : { type : ObjectId, ref : 'Artist', required : true, index : true },
       title      : { type : String, required : true },
       url        : { type : String, required : true },
       created_at : { type : Number, default : Date.now },

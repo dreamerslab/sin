@@ -22,16 +22,26 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = req.form;
+
     if( !req.form.isValid ){
       return res.render( 'admin/artists/new', {
         ori_body : req.body
       });
     }
 
-    Artist.insert( req.form, next, function ( artist ){
+    Artist.insert( args, next,
+      // exist
+      function (){
+        res.render( 'admin/artists/new', {
+          ori_body      : req.body,
+          exist_err_msg : '此名字已被使用'
+        });
+      },
+      // created
+      function ( artist ){
         res.redirect( '/admin/artists/' + artist._id );
-      }
-    );
+      });
   },
 
   index : function ( req, res, next ){
@@ -63,9 +73,7 @@ module.exports = Application.extend( validations, {
   show : function ( req, res, next ){
     var self = this;
     var args = {
-      query : {
-        id : req.params.id
-      }
+      id : req.params.id
     };
 
     Artist.show( args, next,
@@ -91,13 +99,15 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var args = req.form;
+
     if( !req.form.isValid ){
       return res.render( 'admin/artists/edit', {
         ori_body : req.body
       });
     }
 
-    Artist.update( req.form, next,
+    Artist.update_props( args, next,
       function ( artist ){
         res.redirect( '/admin/artists/' + artist._id );
       }
@@ -105,7 +115,11 @@ module.exports = Application.extend( validations, {
   },
 
   destroy : function ( req, res, next ){
-    Artist.destroy( req.params.id, next, function (){
+    var args = {
+      id : req.params.id
+    };
+
+    Artist.destroy( args, next, function (){
       res.redirect( '/admin/artists' );
     });
   }
