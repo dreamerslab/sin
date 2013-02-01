@@ -10,7 +10,7 @@ module.exports = Application.extend( validations, {
     before( this.is_validate );
 
     before( this.namespace );
-    before( this.current_songs );
+    before( this.current_release );
     before( this.current_song_for_index, { only : [ 'index' ]});
     before( this.current_song_for_show,  { only : [ 'show' ]});
   },
@@ -18,10 +18,9 @@ module.exports = Application.extend( validations, {
   index : function ( req, res, next ){
     var self = this;
     var args = {
-      query : {
-        id : req.params.release_id
-      }
+      id : req.params.release_id
     };
+
 
     Release.show( args, next,
       // no content

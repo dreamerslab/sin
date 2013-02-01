@@ -1,4 +1,5 @@
 var Class   = require( 'node.class' );
+var Flow    = require( 'node.flow' );
 var Post    = Model( 'Post' );
 var Video   = Model( 'Video' );
 var Release = Model( 'Release' );
@@ -49,42 +50,40 @@ module.exports = Class.extend({
     this.no_content( req, res );
   },
 
-  current_songs : function ( req, res, next ){
+  current_release : function ( req, res, next ){
+    var self = this;
     var args = {
-      query : {
-        release : req.params.release_id || req.params.id
-      }
+      id : req.params.release_id || req.params.id
     };
 
-    Song.index( args, next,
+    Release.show( args, next,
       // no content
       function (){
-        req.songs = [];
-        next();
+        self.no_content( req, res );
       },
       // ok
-      function ( songs ){
-        req.songs = songs;
+      function ( release ){
+        req.release = release;
         next();
       }
     );
   },
 
-  // must go after current_songs
+  // must go after current_release
   current_song_for_index : function ( req, res, next ){
-    if( !req.songs.length ) return next();
+    if( !req.release.songs.length ) return next();
 
-    req.current_song = req.songs[ 0 ];
+    req.current_song = req.release.songs[ 0 ];
     next();
   },
 
-  // must go after current_songs
+  // must go after current_release
   current_song_for_show : function ( req, res, next ){
-    if( !req.songs.length ) return next();
+    if( !req.release.songs.length ) return next();
 
     var current_song_id = req.params.id;
 
-    req.songs.forEach( function ( song ){
+    req.release.songs.forEach( function ( song ){
       if( song._id == current_song_id ){
         req.current_song = song;
       }

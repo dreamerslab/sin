@@ -12,16 +12,9 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'show', 'edit' ]});
 
     before( this.namespace );
-    before( this.current_songs,          { only : [ 'show' ]});
+    before( this.is_artists_found,       { only : [ 'create', 'update' ]});
+    before( this.current_release,        { only : [ 'show' ]});
     before( this.current_song_for_index, { only : [ 'show' ]});
-  },
-
-  current_song : function ( req, res, next ){
-    if( !req.songs.length ) return next();
-
-    req.current_song = song[ 0 ];
-
-    next();
   },
 
   new : function ( req, res, next ){
@@ -29,18 +22,22 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = req.form;
+
+    args.is_artists_found = req.is_artists_found;
+
     if( !req.form.isValid ){
       return res.render( 'admin/releases/new', {
         ori_body : req.body
       });
     }
 
-    Post.insert( req.form, next,
-      // artist not found
+    Post.insert( args, next,
+      // not found
       function (){
         res.render( 'admin/releases/new', {
-          ori_body        : req.body,
-          is_artist_found : false
+          ori_body         : req.body,
+          is_artists_found : false
         });
       },
       // created
@@ -79,9 +76,7 @@ module.exports = Application.extend( validations, {
   show : function ( req, res, next ){
     var self = this;
     var args = {
-      query : {
-        id : req.params.id
-      }
+      id : req.params.id
     };
 
     Release.show( args, next,
@@ -103,6 +98,9 @@ module.exports = Application.extend( validations, {
 
   edit : function ( req, res, next ){
     var self = this;
+    var args = {
+      id : req.params.id
+    };
 
     Release.show( args, next,
       // no content
@@ -120,6 +118,9 @@ module.exports = Application.extend( validations, {
 
   update : function ( req, res, next ){
     var self = this;
+    var args = req.form;
+
+    args.is_artists_found = req.is_artists_found;
 
     if( !req.form.isValid ){
       return res.render( 'admin/releases/edit', {
@@ -127,12 +128,12 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Release.update( req.form, next,
-      // artist not found
+    Release.update( args, next,
+      // not found
       function (){
         res.render( 'admin/releases/edit', {
-          ori_body        : req.body,
-          is_artist_found : false
+          ori_body         : req.body,
+          is_artists_found : false
         });
       },
       // no content
@@ -148,8 +149,11 @@ module.exports = Application.extend( validations, {
 
   destroy : function ( req, res, next ){
     var self = this;
+    var args = {
+      id : req.params.id
+    };
 
-    Release.destroy( req.params.id, next,
+    Release.destroy( args, next,
       // no content
       function (){
         self.no_content( req, res );

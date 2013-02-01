@@ -9,16 +9,8 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,          { only : [ 'show' ]});
 
     before( this.namespace );
-    before( this.current_songs,          { only : [ 'show' ]});
+    before( this.current_release,        { only : [ 'show' ]});
     before( this.current_song_for_index, { only : [ 'show' ]});
-  },
-
-  current_song : function ( req, res, next ){
-    if( !req.songs.length ) return next();
-
-    req.current_song = song[ 0 ];
-
-    next();
   },
 
   index : function ( req, res, next ){
@@ -50,9 +42,7 @@ module.exports = Application.extend( validations, {
   show : function ( req, res, next ){
     var self = this;
     var args = {
-      query : {
-        id : req.params.id
-      }
+      id : req.params.id
     };
 
     Release.show( args, next,

@@ -17,15 +17,14 @@ var Schema = function ( Schema ){
     }),
 
     Artist : new Schema({
-      name       : { type : String, required : true },
+      name       : { type : String, required : true, index : true },
       desc       : { type : String, default  : '' },
       cover      : { type : String, default  : '' }, // url ( bg )
       links      : [{ type : ObjectId, ref : 'Link' }],
-      posts      : [{ type : ObjectId, ref : 'Post' }],
-      releases   : [{ type : ObjectId, ref : 'Release' }],
-      songs      : [{ type : ObjectId, ref : 'Song' }],
-      lives      : [{ type : ObjectId, ref : 'Live' }],
-      videos     : [{ type : ObjectId, ref : 'Video' }],
+      // posts      : [{ type : ObjectId, ref : 'Post' }],
+      // releases   : [{ type : ObjectId, ref : 'Release' }],
+      // lives      : [{ type : ObjectId, ref : 'Live' }],
+      // videos     : [{ type : ObjectId, ref : 'Video' }],
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),
@@ -60,9 +59,7 @@ var Schema = function ( Schema ){
     }),
 
     Song : new Schema({
-      release    : { type : ObjectId, ref : 'Release', required : true, index : true },
-      order      : { type : String, required : true },
-      name       : { type : String, required : true },
+      title      : { type : String, required : true },
       duration   : { type : String, default : '' }, // music length
       soundcloud : { type : String, default : '' },
       itunes     : { type : String, default : '' },
