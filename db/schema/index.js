@@ -21,10 +21,6 @@ var Schema = function ( Schema ){
       desc       : { type : String, default  : '' },
       cover      : { type : String, default  : '' }, // url ( bg )
       links      : [{ type : ObjectId, ref : 'Link' }],
-      // posts      : [{ type : ObjectId, ref : 'Post' }],
-      // releases   : [{ type : ObjectId, ref : 'Release' }],
-      // lives      : [{ type : ObjectId, ref : 'Live' }],
-      // videos     : [{ type : ObjectId, ref : 'Video' }],
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     }),

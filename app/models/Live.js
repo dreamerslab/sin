@@ -1,21 +1,4 @@
-// var common     = require( MODEL_DIR + 'hooks/common' );
-var Flow       = require( 'node.flow' );
-var lib_common = require( LIB_DIR + 'common' );
-
 module.exports = {
-  // hooks : {
-  //   pre : {
-  //     remove : [
-  //       common.remove_from_artists( 'lives' )
-  //     ]
-  //   },
-  //   post : {
-  //     save   : [
-  //       common.add_to_artists( 'lives' )
-  //     ]
-  //   }
-  // },
-
   statics : {
 
     insert : function ( args, next, created ){

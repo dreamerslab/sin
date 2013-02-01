@@ -1,22 +1,4 @@
-// var common     = require( MODEL_DIR + 'hooks/common' );
-var Flow       = require( 'node.flow' );
-var lib_common = require( LIB_DIR + 'common' );
-var Artist     = Model( 'Artist' );
-
 module.exports = {
-  // hooks : {
-  //   pre : {
-  //     remove : [
-  //       common.remove_from_artists( 'posts' )
-  //     ]
-  //   },
-  //   post : {
-  //     save   : [
-  //       common.add_to_artists( 'posts' )
-  //     ]
-  //   }
-  // },
-
   statics : {
 
     insert : function ( args, next, not_found, created ){
@@ -81,11 +63,6 @@ module.exports = {
       this.findByIdAndUpdate( args.id , update_obj, function ( err, post ){
         if( err )   return next( err );
         if( !post ) return no_content();
-
-        // var artists_to_insert = lib_common.artists_diff( args.artists, post.artists );
-        // var artists_to_remove = lib_common.artists_diff( post.artists, args.artists );
-
-        // common.update_artists( artists_to_insert, artists_to_remove, 'posts', post );
 
         updated( post );
       });
