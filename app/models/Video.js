@@ -1,54 +1,37 @@
-var common     = require( MODEL_DIR + 'hooks/common' );
+// var common     = require( MODEL_DIR + 'hooks/common' );
 var Flow       = require( 'node.flow' );
 var lib_common = require( LIB_DIR + 'common' );
 var Artist     = Model( 'Artist' );
 
 module.exports = {
-  hooks : {
-    post : {
-      save   : [
-        common.push_to_artists( 'videos' )
-      ],
-
-      remove : [
-        common.pull_from_artists( 'videos' )
-      ]
-    }
-  },
+  // hooks : {
+  //   pre : {
+  //     remove : [
+  //       common.remove_from_artists( 'videos' )
+  //     ]
+  //   },
+  //   post : {
+  //     save   : [
+  //       common.add_to_artists( 'videos' )
+  //     ]
+  //   }
+  // },
 
   statics : {
 
-    insert : function ( form, next, artist_not_found, created ){
-      var self            = this;
-      var flow            = new Flow();
-      var artists         = form.artists;
-      var is_artist_found = true;
+    insert : function ( args, next, not_found, created ){
+      if( !args.is_artists_found ) return not_found();
 
-      artists.forEach( function ( artist_name, index ){
-        flow.series( function (){
-          Artist.findOne({ name : artist_name }, function ( err, artist ){
-            if( err ) return next( err );
-            if( !artist ){
-              is_artist_found = false;
-            }
-          });
-        });
-      });
+      new this({
+        artists : args.artists,
+        title   : args.title,
+        thumb   : args.thumb,
+        date    : args.date,
+        url     : args.url
+      }).save( function ( err, video ){
+        if( err ) return next( err );
 
-      flow.end( function (){
-        if( !is_artist_found ) return artist_not_found();
-
-        new self({
-          artists : artists,
-          title   : form.title,
-          thumb   : form.thumb,
-          date    : form.date,
-          url     : form.url
-        }).save( function ( err, video ){
-          if( err ) return next( err );
-
-          created();
-        });
+        created();
       });
     },
 
@@ -61,6 +44,7 @@ module.exports = {
       this.find( args.query ).
         sort( '-created_at' ).
         skip( args.page * 10 ).
+        batchSize( args.limit ).
         limit( args.limit ).
         exec( function ( err, videos ){
           if( err )            return next( err );
@@ -78,61 +62,43 @@ module.exports = {
           if( err )    return next( err );
           if( !video ) return no_content();
 
-          var o_video = lib_common.artists_to_string( video );
+          video.artists_str = video.artists.join( ', ' );
 
-          ok( o_video );
+          ok( video );
         }
       );
     },
 
-    update : function ( form, next, artist_not_found, no_content, updated ){
-      var self            = this;
-      var flow            = new Flow();
-      var artists         = form.artists;
-      var is_artist_found = true;
+    update : function ( args, next, not_found, no_content, updated ){
+      if( !args.is_artists_found ) return not_found();
 
-      artists.forEach( function ( artist_name, index ){
-        flow.series( function (){
-          Artist.findOne({ name : artist_name }, function ( err, artist ){
-            if( err ) return next( err );
-            if( !artist ){
-              is_artist_found = false;
-            }
-          });
-        });
-      });
+      var update_obj = {};
 
-      flow.end( function (){
-        if( !is_artist_found ) return artist_not_found();
+      if( args.artists !== undefined ) update_obj.artists = args.artists;
+      if( args.title   !== undefined ) update_obj.title   = args.title;
+      if( args.thumb   !== undefined ) update_obj.thumb   = args.thumb;
+      if( args.date    !== undefined ) update_obj.date    = args.date;
+      if( args.url     !== undefined ) update_obj.url     = args.url;
 
-        var update_obj = {};
+      this.findByIdAndUpdate( args.id , update_obj, function ( err, video ){
+        if( err )    return next( err );
+        if( !video ) return no_content();
 
-        if( artists    !== undefined ) update_obj.artists = artists;
-        if( form.title !== undefined ) update_obj.title   = form.title;
-        if( form.thumb !== undefined ) update_obj.thumb   = form.thumb;
-        if( form.date  !== undefined ) update_obj.date    = form.date;
-        if( form.url   !== undefined ) update_obj.url     = form.url;
+        // var artists_to_insert = lib_common.artists_diff( args.artists, video.artists );
+        // var artists_to_remove = lib_common.artists_diff( video.artists, args.artists );
 
-        self.findByIdAndUpdate( form.id , update_obj, function ( err, video ){
-          if( err )    return next( err );
-          if( !video ) return no_content();
+        // common.update_artists( artists_to_insert, artists_to_remove, 'videos', video );
 
-          var artists_to_insert = lib_common.artists_diff( artists, video.artists );
-          var artists_to_remove = lib_common.artists_diff( video.artists, artists );
-
-          common.update_artists( artists_to_insert, artists_to_remove, 'videos', video );
-
-          updated( video );
-        });
+        updated( video );
       });
     },
 
-    destroy : function ( id, next, no_content, deleted ){
-      this.findById( id ).exec( function ( err, post ){
-        if( err )   return next( err );
-        if( !post ) return no_content( err );
+    destroy : function ( args, next, no_content, deleted ){
+      this.findById( args.id ).exec( function ( err, video ){
+        if( err )    return next( err );
+        if( !video ) return no_content( err );
 
-        post.remove( function ( err ){
+        video.remove( function ( err ){
           if( err ) return next( err );
 
           deleted();

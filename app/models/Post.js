@@ -1,53 +1,36 @@
-var common     = require( MODEL_DIR + 'hooks/common' );
+// var common     = require( MODEL_DIR + 'hooks/common' );
 var Flow       = require( 'node.flow' );
 var lib_common = require( LIB_DIR + 'common' );
 var Artist     = Model( 'Artist' );
 
 module.exports = {
-  hooks : {
-    post : {
-      save   : [
-        common.push_to_artists( 'posts' )
-      ],
-
-      remove : [
-        common.pull_from_artists( 'posts' )
-      ]
-    }
-  },
+  // hooks : {
+  //   pre : {
+  //     remove : [
+  //       common.remove_from_artists( 'posts' )
+  //     ]
+  //   },
+  //   post : {
+  //     save   : [
+  //       common.add_to_artists( 'posts' )
+  //     ]
+  //   }
+  // },
 
   statics : {
 
-    insert : function ( form, next, artist_not_found, created ){
-      var self            = this;
-      var flow            = new Flow();
-      var artists         = form.artists;
-      var is_artist_found = true;
+    insert : function ( args, next, not_found, created ){
+      if( !args.is_artists_found ) return not_found();
 
-      artists.forEach( function ( artist_name, index ){
-        flow.series( function (){
-          Artist.findOne({ name : artist_name }, function ( err, artist ){
-            if( err ) return next( err );
-            if( !artist ){
-              is_artist_found = false;
-            }
-          });
-        });
-      });
+      new this({
+        artists : args.artists,
+        title   : args.title,
+        content : args.content,
+        cover   : args.cover
+      }).save( function ( err, post ){
+        if( err ) return next( err );
 
-      flow.end( function (){
-        if( !is_artist_found ) return artist_not_found();
-
-        new self({
-          artists : artists,
-          title   : form.title,
-          content : form.content,
-          cover   : form.cover
-        }).save( function ( err, post ){
-          if( err ) return next( err );
-
-          created( post );
-        });
+        created( post );
       });
     },
 
@@ -60,6 +43,7 @@ module.exports = {
       this.find( args.query ).
         sort( '-created_at' ).
         skip( args.page * 10 ).
+        batchSize( args.limit ).
         limit( args.limit ).
         exec( function ( err, posts ){
           if( err )           return next( err );
@@ -77,56 +61,38 @@ module.exports = {
           if( err )   return next( err );
           if( !post ) return no_content();
 
-          var o_post = lib_common.artists_to_string( post );
+          post.artists_str = post.artists.join( ', ' );
 
-          ok( o_post );
+          ok( post );
         }
       );
     },
 
-    update : function ( form, next, artist_not_found, no_content, updated ){
-      var self            = this;
-      var flow            = new Flow();
-      var artists         = form.artists;
-      var is_artist_found = true;
+    update : function ( args, next, not_found, no_content, updated ){
+      if( !args.is_artists_found ) return not_found();
 
-      artists.forEach( function ( artist_name, index ){
-        flow.series( function (){
-          Artist.findOne({ name : artist_name }, function ( err, artist ){
-            if( err ) return next( err );
-            if( !artist ){
-              is_artist_found = false;
-            }
-          });
-        });
-      });
+      var update_obj = {};
 
-      flow.end( function (){
-        if( !is_artist_found ) return artist_not_found();
+      if( args.artists !== undefined ) update_obj.artists = args.artists;
+      if( args.title   !== undefined ) update_obj.title   = args.title;
+      if( args.content !== undefined ) update_obj.content = args.content;
+      if( args.cover   !== undefined ) update_obj.cover   = args.cover;
 
-        var update_obj = {};
+      this.findByIdAndUpdate( args.id , update_obj, function ( err, post ){
+        if( err )   return next( err );
+        if( !post ) return no_content();
 
-        if( artists      !== undefined ) update_obj.artists = artists;
-        if( form.title   !== undefined ) update_obj.title   = form.title;
-        if( form.content !== undefined ) update_obj.content = form.content;
-        if( form.cover   !== undefined ) update_obj.cover   = form.cover;
+        // var artists_to_insert = lib_common.artists_diff( args.artists, post.artists );
+        // var artists_to_remove = lib_common.artists_diff( post.artists, args.artists );
 
-        self.findByIdAndUpdate( form.id , update_obj, function ( err, post ){
-          if( err )   return next( err );
-          if( !post ) return no_content();
+        // common.update_artists( artists_to_insert, artists_to_remove, 'posts', post );
 
-          var artists_to_insert = lib_common.artists_diff( artists, post.artists );
-          var artists_to_remove = lib_common.artists_diff( post.artists, artists );
-
-          common.update_artists( artists_to_insert, artists_to_remove, 'posts', post );
-
-          updated( post );
-        });
+        updated( post );
       });
     },
 
-    destroy : function ( id, next, no_content, deleted ){
-      this.findById( id ).exec( function ( err, post ){
+    destroy : function ( args, next, no_content, deleted ){
+      this.findById( args.id ).exec( function ( err, post ){
         if( err )   return next( err );
         if( !post ) return no_content( err );
 

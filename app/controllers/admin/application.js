@@ -20,6 +20,33 @@ module.exports = Application.extend({
     next();
   },
 
+  is_artists_found : function ( req, res, next ){
+    var flow    = new Flow();
+    var artists = req.form.artists;
+
+    req.is_artists_found = true;
+
+    artists.forEach( function ( artist_name ){
+      flow.parallel( function ( ready ){
+        Artist.findOne({ name : new RegExp( artist_name, 'i' )}, function ( err, artist ){
+          if( err )     return ready( err );
+          if( !artist ) req.is_artists_found = false;
+
+          ready();
+        });
+      });
+    });
+
+    flow.join().error( function ( err ){
+      if( err ){
+        next( err );
+      }
+    }).
+    end( function (){
+      next();
+    });
+  },
+
   get_info_from_youtube : function ( req, res, next ){
     req.youtube_info = req.form;
 

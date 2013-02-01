@@ -36,8 +36,7 @@ module.exports = Application.extend( validations, {
           _assets : 'admin/live/assets/_index',
           lives   : lives
         });
-      }
-    );
+      });
   },
 
   new : function ( req, res, next ){
@@ -45,22 +44,26 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = req.form;
+
     if( !req.form.isValid ){
       return res.render( 'admin/live/new', {
         ori_body : req.body
       });
     }
 
-    Live.insert( req.form, next, function ( live ){
-        res.redirect( '/admin/live' );
-      }
-    );
+    Live.insert( args, next, function ( live ){
+      res.redirect( '/admin/live' );
+    });
   },
 
   edit : function ( req, res, next ){
     var self = this;
+    var args = {
+      id : req.params.id
+    };
 
-    Live.show( req.params.id, next,
+    Live.show( args, next,
       // no content
       function (){
         self.no_content( req, res );
@@ -70,12 +73,12 @@ module.exports = Application.extend( validations, {
         res.render( 'admin/live/edit', {
           ori_body : live
         });
-      }
-    );
+      });
   },
 
   update : function ( req, res, next ){
     var self = this;
+    var args = req.form;
 
     if( !req.form.isValid ){
       return res.render( 'admin/live/edit', {
@@ -83,7 +86,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Live.update( req.form, next,
+    Live.update( args, next,
       // no content
       function (){
         self.no_content( req, res );
@@ -91,14 +94,16 @@ module.exports = Application.extend( validations, {
       // updated
       function (){
         res.redirect( '/admin/live' );
-      }
-    );
+      });
   },
 
   destroy : function ( req, res, next ){
     var self = this;
+    var args = {
+      id : req.params.id
+    };
 
-    Live.destroy( req.params.id, next,
+    Live.destroy( args, next,
       // no content
       function (){
         self.no_content( req, res );
@@ -106,7 +111,6 @@ module.exports = Application.extend( validations, {
       // ok
       function (){
         res.redirect( '/admin/live' );
-      }
-    );
+      });
   }
 });

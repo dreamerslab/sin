@@ -13,6 +13,7 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'edit' ]});
 
     before( this.namespace );
+    before( this.is_artists_found,      { only : [ 'create', 'update' ]});
     before( this.get_info_from_youtube, { only : [ 'create', 'update' ]});
   },
 
@@ -21,18 +22,22 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = req.youtube_info;
+
+    args.is_artists_found = req.is_artists_found;
+
     if( !req.form.isValid ){
       return res.render( 'admin/videos/new', {
         ori_body : req.body
       });
     }
 
-    Video.insert( req.youtube_info, next,
-      // artist not found
+    Video.insert( args, next,
+      // not found
       function (){
         res.render( 'admin/videos/new', {
-          ori_body        : req.body,
-          is_artist_found : false
+          ori_body         : req.body,
+          is_artists_found : false
         });
       },
       // created
@@ -87,6 +92,9 @@ module.exports = Application.extend( validations, {
 
   update : function ( req, res, next ){
     var self = this;
+    var args = req.youtube_info;
+
+    args.is_artists_found = req.is_artists_found;
 
     if( !req.form.isValid ){
       return res.render( 'admin/videos/edit', {
@@ -94,12 +102,12 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Video.update( req.youtube_info, next,
-      // artist not found
+    Video.update( args, next,
+      // not found
       function (){
         res.render( 'admin/videos/edit', {
-          ori_body        : req.body,
-          is_artist_found : false
+          ori_body         : req.body,
+          is_artists_found : false
         });
       },
       // no content
@@ -113,7 +121,11 @@ module.exports = Application.extend( validations, {
   },
 
   destroy : function ( req, res, next ){
-    Video.destroy( req.params.id, next,
+    var args = {
+      id : req.params.id
+    };
+
+    Video.destroy( args, next,
       // no content
       function (){
         self.no_content( req, res );

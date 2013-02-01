@@ -1,28 +1,29 @@
-var common     = require( MODEL_DIR + 'hooks/common' );
+// var common     = require( MODEL_DIR + 'hooks/common' );
 var Flow       = require( 'node.flow' );
 var lib_common = require( LIB_DIR + 'common' );
 
 module.exports = {
-  hooks : {
-    post : {
-      save   : [
-        common.push_to_artists( 'lives' )
-      ],
-
-      remove : [
-        common.pull_from_artists( 'lives' )
-      ]
-    }
-  },
+  // hooks : {
+  //   pre : {
+  //     remove : [
+  //       common.remove_from_artists( 'lives' )
+  //     ]
+  //   },
+  //   post : {
+  //     save   : [
+  //       common.add_to_artists( 'lives' )
+  //     ]
+  //   }
+  // },
 
   statics : {
 
-    insert : function ( form, next, created ){
+    insert : function ( args, next, created ){
       new this({
-        title    : form.title,
-        date     : form.date,
-        location : form.location,
-        url      : form.url
+        title    : args.title,
+        date     : args.date,
+        location : args.location,
+        url      : args.url
       }).save( function ( err, live ){
         if( err ) return next( err );
 
@@ -34,39 +35,39 @@ module.exports = {
       this.find().
         sort( '-created_at' ).
         skip( args.page * 10 ).
+        batchSize( args.limit ).
         limit( args.limit ).
         exec( function ( err, lives ){
           if( err )           return next( err );
           if( !lives.length ) return no_content();
 
           ok( lives );
-      });
+        });
     },
 
-    show : function ( id, next, no_content, ok ){
+    show : function ( args, next, no_content, ok ){
       var self = this;
 
-      this.findById( id ).
+      this.findById( args.id ).
         exec( function ( err, live ){
           if( err )   return next( err );
           if( !live ) return no_content();
 
           ok( live );
-        }
-      );
+        });
     },
 
-    update : function ( form, next, no_content, updated ){
+    update : function ( args, next, no_content, updated ){
       var self = this;
 
       var update_obj = {};
 
-      if( form.title    !== undefined ) update_obj.title    = form.title;
-      if( form.date     !== undefined ) update_obj.date     = form.date;
-      if( form.location !== undefined ) update_obj.location = form.location;
-      if( form.url      !== undefined ) update_obj.url      = form.url;
+      if( args.title    !== undefined ) update_obj.title    = args.title;
+      if( args.date     !== undefined ) update_obj.date     = args.date;
+      if( args.location !== undefined ) update_obj.location = args.location;
+      if( args.url      !== undefined ) update_obj.url      = args.url;
 
-      self.findByIdAndUpdate( form.id , update_obj, function ( err, live ){
+      self.findByIdAndUpdate( args.id , update_obj, function ( err, live ){
         if( err )   return next( err );
         if( !live ) return no_content();
 
@@ -74,8 +75,8 @@ module.exports = {
       });
     },
 
-    destroy : function ( id, next, no_content, deleted ){
-      this.findById( id ).exec( function ( err, live ){
+    destroy : function ( args, next, no_content, deleted ){
+      this.findById( args.id ).exec( function ( err, live ){
         if( err )   return next( err );
         if( !live ) return no_content( err );
 

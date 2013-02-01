@@ -12,6 +12,7 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'show', 'edit', 'create', 'update' ]});
 
     before( this.namespace );
+    before( this.is_artists_found, { only : [ 'create', 'update' ]});
   },
 
   new : function ( req, res, next ){
@@ -19,18 +20,22 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var args = req.form;
+
+    args.is_artists_found = req.is_artists_found;
+
     if( !req.form.isValid ){
       return res.render( 'admin/news/new', {
         ori_body : req.body
       });
     }
 
-    Post.insert( req.form, next,
-      // artist not found
+    Post.insert( args, next,
+      // not found
       function (){
         res.render( 'admin/news/new', {
-          ori_body        : req.body,
-          is_artist_found : false
+          ori_body         : req.body,
+          is_artists_found : false
         });
       },
       // created
@@ -106,6 +111,9 @@ module.exports = Application.extend( validations, {
 
   update : function ( req, res, next ){
     var self = this;
+    var args = req.form;
+
+    args.is_artists_found = req.is_artists_found;
 
     if( !req.form.isValid ){
       return res.render( 'admin/artists/edit', {
@@ -113,12 +121,12 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Post.update( req.form, next,
-      // artist not found
+    Post.update( args, next,
+      // not found
       function (){
         res.render( 'admin/news/edit', {
-          ori_body        : req.body,
-          is_artist_found : false
+          ori_body         : req.body,
+          is_artists_found : false
         });
       },
       // no content
@@ -134,8 +142,11 @@ module.exports = Application.extend( validations, {
 
   destroy : function ( req, res, next ){
     var self = this;
+    var args = {
+      id : req.params.id
+    };
 
-    Post.destroy( req.params.id, next,
+    Post.destroy( args, next,
       // no content
       function (){
         self.no_content( req, res );
