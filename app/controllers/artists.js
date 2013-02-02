@@ -10,7 +10,7 @@ module.exports = Application.extend( validations, {
     before( this.is_validate );
 
     before( this.namespace );
-
+    before( this.current_artist,  { only : [ 'show' ]});
     before( this.recent_news,     { only : [ 'show' ]});
     before( this.recent_videos,   { only : [ 'show' ]});
     before( this.recent_releases, { only : [ 'show' ]});
@@ -43,26 +43,12 @@ module.exports = Application.extend( validations, {
   },
 
   show : function ( req, res, next ){
-    var self = this;
-    var args = {
-      id : req.params.id
-    };
-
-    Artist.show( args, next,
-      // no content
-      function (){
-        self.no_content( req, res );
-      },
-      // ok
-      function ( artist ){
-        res.render( 'artists/show', {
-          _assets  : 'artists/assets/_show',
-          artists  : artist,
-          posts    : req.posts,
-          videos   : req.videos,
-          releases : req.releases
-        });
-      }
-    );
+    res.render( 'artists/show', {
+      _assets  : 'artists/assets/_show',
+      artists  : req.artist,
+      posts    : req.posts,
+      videos   : req.videos,
+      releases : req.releases
+    });
   }
 });

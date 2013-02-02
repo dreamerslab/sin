@@ -50,6 +50,26 @@ module.exports = Class.extend({
     this.no_content( req, res );
   },
 
+  current_artist : function ( req, res, next ){
+    var self = this;
+    var args = {
+      id : req.params.id
+    };
+
+    Artist.show( args, next,
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // ok
+      function ( artist ){
+        req.artist       = artist;
+        req.query.artist = artist.name;
+
+        next();
+      });
+  },
+
   current_release : function ( req, res, next ){
     var self = this;
     var args = {

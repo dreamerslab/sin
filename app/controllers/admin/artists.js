@@ -12,6 +12,7 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'show', 'edit' ]});
 
     before( this.namespace );
+    before( this.current_artist,  { only : [ 'show', 'edit' ]});
     before( this.recent_news,     { only : [ 'show' ]});
     before( this.recent_videos,   { only : [ 'show' ]});
     before( this.recent_releases, { only : [ 'show' ]});
@@ -71,31 +72,19 @@ module.exports = Application.extend( validations, {
   },
 
   show : function ( req, res, next ){
-    var self = this;
-    var args = {
-      id : req.params.id
-    };
-
-    Artist.show( args, next,
-      // no content
-      function (){
-        self.no_content( req, res );
-      },
-      // ok
-      function ( artist ){
-        res.render( 'artists/show', {
-          _assets  : 'admin/artists/assets/_show',
-          artists  : artist,
-          posts    : req.posts,
-          videos   : req.videos,
-          releases : req.releases
-        });
-      }
-    );
+    res.render( 'artists/show', {
+      _assets  : 'admin/artists/assets/_show',
+      artists  : req.artist,
+      posts    : req.posts,
+      videos   : req.videos,
+      releases : req.releases
+    });
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/artists/edit' );
+    res.render( 'admin/artists/edit', {
+      ori_body : req.artist
+    });
   },
 
   update : function ( req, res, next ){
