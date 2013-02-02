@@ -71,7 +71,6 @@ module.exports = Application.extend({
 
           next();
         }
-      }
-    );
+      });
   }
 });

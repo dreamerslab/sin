@@ -43,8 +43,7 @@ module.exports = Application.extend( validations, {
       // created
       function ( release ){
         res.redirect( '/admin/releases/' + release._id );
-      }
-    );
+      });
   },
 
   index : function ( req, res, next ){
@@ -69,8 +68,7 @@ module.exports = Application.extend( validations, {
           _assets  : 'admin/releases/assets/_index',
           releases : releases
         });
-      }
-    );
+      });
   },
 
   show : function ( req, res, next ){
@@ -92,8 +90,7 @@ module.exports = Application.extend( validations, {
           songs        : req.songs,
           current_song : req.current_song
         });
-      }
-    );
+      });
   },
 
   edit : function ( req, res, next ){
@@ -112,8 +109,7 @@ module.exports = Application.extend( validations, {
         res.render( 'admin/releases/edit', {
           ori_release : release
         });
-      }
-    );
+      });
   },
 
   update : function ( req, res, next ){
@@ -143,8 +139,7 @@ module.exports = Application.extend( validations, {
       // updated
       function ( release ){
         res.redirect( '/admin/releases/' + release._id );
-      }
-    );
+      });
   },
 
   destroy : function ( req, res, next ){
@@ -161,7 +156,6 @@ module.exports = Application.extend( validations, {
       // deleted
       function (){
         res.redirect( '/admin/releases' );
-      }
-    );
+      });
   }
 });

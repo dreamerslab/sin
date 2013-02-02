@@ -26,8 +26,7 @@ module.exports = Class.extend({
       function ( banner ){
         req.banner = banner;
         next();
-      }
-    );
+      });
   },
 
   no_content : function ( req, res ){
@@ -85,8 +84,7 @@ module.exports = Class.extend({
       function ( release ){
         req.release = release;
         next();
-      }
-    );
+      });
   },
 
   // must go after current_release
@@ -128,8 +126,7 @@ module.exports = Class.extend({
       function ( posts ){
         req.posts = posts;
         next();
-      }
-    );
+      });
   },
 
   recent_releases : function ( req, res, next ){
@@ -148,8 +145,7 @@ module.exports = Class.extend({
       function ( releases ){
         req.releases = releases;
         next();
-      }
-    );
+      });
   },
 
   recent_videos : function ( req, res, next ){
@@ -168,8 +164,7 @@ module.exports = Class.extend({
       function ( videos ){
         req.videos = videos;
         next();
-      }
-    );
+      });
   },
 
   recent_lives : function ( req, res, next ){
@@ -188,8 +183,7 @@ module.exports = Class.extend({
       function ( lives ){
         req.lives = lives;
         next();
-      }
-    );
+      });
   },
 
   soundcloud : function ( req, res, next ){
@@ -210,8 +204,7 @@ module.exports = Class.extend({
       function ( soundcloud ){
         req.soundcloud = soundcloud;
         next();
-      }
-    );
+      });
   },
 
   facebook : function ( req, res, next ){
@@ -232,7 +225,6 @@ module.exports = Class.extend({
       function ( facebook ){
         req.facebook = facebook;
         next();
-      }
-    );
+      });
   }
 });

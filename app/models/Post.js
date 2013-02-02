@@ -46,8 +46,7 @@ module.exports = {
           post.artists_str = post.artists.join( ', ' );
 
           ok( post );
-        }
-      );
+        });
     },
 
     update_props : function ( args, next, not_found, no_content, updated ){

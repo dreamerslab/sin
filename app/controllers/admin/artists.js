@@ -67,8 +67,7 @@ module.exports = Application.extend( validations, {
           _assets : 'admin/artists/assets/_index',
           artists : artists
         });
-      }
-    );
+      });
   },
 
   show : function ( req, res, next ){
@@ -99,8 +98,7 @@ module.exports = Application.extend( validations, {
     Artist.update_props( args, next,
       function ( artist ){
         res.redirect( '/admin/artists/' + artist._id );
-      }
-    );
+      });
   },
 
   destroy : function ( req, res, next ){

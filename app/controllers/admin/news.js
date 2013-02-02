@@ -41,8 +41,7 @@ module.exports = Application.extend( validations, {
       // created
       function ( post ){
         res.redirect( '/admin/news/' + post._id );
-      }
-    );
+      });
   },
 
   index : function ( req, res, next ){
@@ -67,8 +66,7 @@ module.exports = Application.extend( validations, {
           _assets : 'admin/news/assets/_index',
           posts   : posts
         });
-      }
-    );
+      });
   },
 
   show : function ( req, res, next ){
@@ -90,8 +88,7 @@ module.exports = Application.extend( validations, {
           _assets : 'admin/news/assets/_show',
           post    : post
         });
-      }
-    );
+      });
   },
 
   edit : function ( req, res, next ){
@@ -105,8 +102,7 @@ module.exports = Application.extend( validations, {
         res.render( 'admin/news/edit', {
           ori_post : post
         });
-      }
-    );
+      });
   },
 
   update : function ( req, res, next ){
@@ -136,8 +132,7 @@ module.exports = Application.extend( validations, {
       // updated
       function ( post ){
         res.redirect( '/admin/news/' + post._id );
-      }
-    );
+      });
   },
 
   destroy : function ( req, res, next ){
@@ -154,7 +149,6 @@ module.exports = Application.extend( validations, {
       // deleted
       function (){
         res.redirect( '/admin/news' );
-      }
-    );
+      });
   }
 });

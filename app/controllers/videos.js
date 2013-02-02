@@ -29,7 +29,6 @@ module.exports = Application.extend({
           _assets : 'videos/assets/_index',
           videos  : videos
         });
-      }
-    );
+      });
   }
 });

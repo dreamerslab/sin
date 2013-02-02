@@ -35,8 +35,7 @@ module.exports = Application.extend( validations, {
           songs        : req.songs,
           current_song : req.current_song
         });
-      }
-    );
+      });
   },
 
   show : function ( req, res, next ){

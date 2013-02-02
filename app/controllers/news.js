@@ -33,8 +33,7 @@ module.exports = Application.extend( validations, {
           _assets : 'news/assets/_index',
           posts   : posts
         });
-      }
-    );
+      });
   },
 
   show : function ( req, res, next ){
@@ -56,7 +55,6 @@ module.exports = Application.extend( validations, {
           _assets : 'news/assets/_show',
           post    : post
         });
-      }
-    );
+      });
   }
 });

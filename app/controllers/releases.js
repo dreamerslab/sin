@@ -35,8 +35,7 @@ module.exports = Application.extend( validations, {
           _assets  : 'releases/assets/_index',
           releases : releases
         });
-      }
-    );
+      });
   },
 
   show : function ( req, res, next ){
@@ -58,7 +57,6 @@ module.exports = Application.extend( validations, {
           songs        : req.songs,
           current_song : req.current_song
         });
-      }
-    );
+      });
   }
 });

@@ -80,8 +80,7 @@ module.exports = {
           if( !artist ) return no_content();
 
           ok( artist );
-        }
-      );
+        });
     },
 
     update_props : function ( args, next, not_found, no_content, updated ){

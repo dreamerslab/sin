@@ -29,7 +29,6 @@ module.exports = Application.extend({
           _assets : 'live/assets/_index',
           lives   : lives
         });
-      }
-    );
+      });
   }
 });

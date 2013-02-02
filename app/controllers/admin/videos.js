@@ -43,8 +43,7 @@ module.exports = Application.extend( validations, {
       // created
       function (){
         res.redirect( 'admin/videos' );
-      }
-    );
+      });
   },
 
   index : function ( req, res, next ){
@@ -69,8 +68,7 @@ module.exports = Application.extend( validations, {
           _assets : 'admin/videos/assets/_index',
           videos  : videos
         });
-      }
-    );
+      });
   },
 
   edit : function ( req, res, next ){
@@ -86,8 +84,7 @@ module.exports = Application.extend( validations, {
         res.render( 'admin/videos/edit', {
           ori_body : video
         });
-      }
-    );
+      });
   },
 
   update : function ( req, res, next ){
@@ -116,8 +113,7 @@ module.exports = Application.extend( validations, {
       },
       function (){
         res.redirect( '/admin/videos' );
-      }
-    );
+      });
   },
 
   destroy : function ( req, res, next ){
@@ -132,7 +128,6 @@ module.exports = Application.extend( validations, {
       },
       function (){
         res.redirect( '/admin/videos' );
-      }
-    );
+      });
   }
 });

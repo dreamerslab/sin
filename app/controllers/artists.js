@@ -38,8 +38,7 @@ module.exports = Application.extend( validations, {
           _assets : 'artists/assets/_index',
           artists : artists
         });
-      }
-    );
+      });
   },
 
   show : function ( req, res, next ){

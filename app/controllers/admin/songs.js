@@ -94,8 +94,7 @@ module.exports = Application.extend( validations, {
     Song.update_props( args, next,
       function ( song ){
         res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
-      }
-    );
+      });
   },
 
   destroy : function ( req, res, next ){
