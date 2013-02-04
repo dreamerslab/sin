@@ -8,15 +8,15 @@
   </form>
 
   <? if( it.header_admin_view == 'edit' ){ ?>
-    <form id="header-form" action="/banners/edit/<?= it.nav_selected ?>" method="POST" accept-charset="UTF-8">
+    <form id="header-form" action="/admin/banners/edit/<?= it.nav_selected ?>" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_method" value="put" />
       <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
       <input type="hidden" name="type" value="<?= it.nav_selected ?>" />
 
-      <input id="header-input" type="text" name="url" placeholder="size: 912x400 px">
-      <p class="error-msg">error message goes here</p>
+      <input id="header-input" type="text" name="url" placeholder="請輸入圖片網址, size: 912x400 px">
+      <?= it.show_form_err( 'url' ) ?>
       <input id="btn-confirm" type="submit" value="Submit" />
-      <a id="link-cancel" href="/admin" title="Back to previous page">Cancel</a>
+      <a id="link-cancel" href="/admin/<?= it.nav_selected ?>" title="Back to previous page">Cancel</a>
     </form>
   <? } ?>
 </div>

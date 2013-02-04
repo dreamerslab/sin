@@ -58,12 +58,12 @@ module.exports = function ( app ){
         }
 
         return msg ?
-          '<p class="error">' + msg + '</p>' :
+          '<p class="error-msg">' + msg + '</p>' :
           ( tip || '' );
       }
 
       return this.get_form_err()[ field ] ?
-        '<p class="error">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
+        '<p class="error-msg">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
         ( tip || '' );
     }
 

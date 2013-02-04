@@ -34,6 +34,7 @@ module.exports = Application.extend( validations, {
     if( !req.form.isValid ){
       return res.render( 'admin/banners/edit', {
         header_admin_view : 'edit',
+        nav_selected      : req.params.type,
         url               : req.form.url
       });
     }
