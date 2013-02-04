@@ -5,7 +5,7 @@
 
 /* line 9, ../../../../app/sass/admin/artists/show.sass */
 #link-edit {
-  background: #6da4b2 url('/img/common/admin-edit@2x.png?1356691196') no-repeat 16px 16px;
+  background: #6da4b2 url('/img/common/admin-edit@2x.png?1359778345') no-repeat 16px 16px;
   background-size: 16px auto;
   color: white;
   text-decoration: none;
@@ -19,7 +19,7 @@
   top: -55px;
   right: 160px;
 }
-/* line 69, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
+/* line 69, ../../../../app/sass/common/lib.sass */
 #link-edit:hover {
   opacity: 1;
 }
@@ -35,7 +35,7 @@
 .btn-delete {
   border: none;
   margin: 0;
-  background: #cc6666 url('/img/common/admin-delete@2x.png?1356691196') no-repeat 16px 16px;
+  background: #cc6666 url('/img/common/admin-delete@2x.png?1359778345') no-repeat 16px 16px;
   background-size: 16px auto;
   color: white;
   height: 48px;
@@ -45,7 +45,7 @@
   border-radius: 0;
   opacity: 0.8;
 }
-/* line 120, /srv/www/sin/app/sass/admin/artists/../../common/lib.sass */
+/* line 120, ../../../../app/sass/common/lib.sass */
 .btn-delete:hover {
   cursor: pointer;
   opacity: 1;
