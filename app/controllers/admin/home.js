@@ -46,6 +46,8 @@ module.exports = Application.extend( validations, {
   },
 
   soundcloud_udpate : function ( req, res, next ){
+    var args = req.form;
+
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
         type     : 'home_soundcloud',
@@ -53,7 +55,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Url.update_props( req.form, next, function (){
+    Url.update_props( args, next, function (){
       res.redirect( '/admin' );
     });
   },
@@ -65,6 +67,8 @@ module.exports = Application.extend( validations, {
   },
 
   facebook_udpate : function ( req, res, next ){
+    var args = req.form;
+
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
         type     : 'home_facebook',
@@ -72,7 +76,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Url.update_props( req.form, next, function (){
+    Url.update_props( args, next, function (){
       res.redirect( '/admin' );
     });
   }

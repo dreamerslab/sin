@@ -12,15 +12,18 @@ module.exports = Class.extend({
   current_banner : function ( req, res, next ){
     var self = this;
     var args = {
-      query : {
-        type : req.banner_type
-      }
+      type : req.banner_type
     };
 
     Url.show( args, next,
       // no content
       function (){
-        self.no_content( req, res );
+        req.banner = {
+          type : '',
+          url  : '/img/common/default-banner.jpg'
+        };
+
+        next();
       },
       // ok
       function ( banner ){
@@ -189,15 +192,17 @@ module.exports = Class.extend({
   soundcloud : function ( req, res, next ){
     var self = this;
     var args = {
-      query : {
-        type : 'home_soundcloud'
-      }
+      type : 'home_soundcloud'
     };
 
     Url.show( args, next,
       // no content
       function (){
-        req.soundcloud = '';
+        req.soundcloud = {
+          type : 'home_soundcloud',
+          url  : ''
+        };
+
         next();
       },
       // ok
@@ -210,15 +215,17 @@ module.exports = Class.extend({
   facebook : function ( req, res, next ){
     var self = this;
     var args = {
-      query : {
-        type : 'home_facebook'
-      }
+      type : 'home_facebook'
     };
 
     Url.show( args, next,
       // no content
       function (){
-        req.soundcloud = '';
+        req.facebook = {
+          type : 'home_facebook',
+          url  : ''
+        };
+
         next();
       },
       // ok
