@@ -5,14 +5,29 @@
 <form id="contact-form" action="/contact" method="POST" accept-charset="UTF-8">
   <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
 
-  <label class="form-label" for="email">郵件地址 Email</label>
-  <input id="email" class="contact-form-input" type="email" name="email" value=""/>
+  <div class="form-block-wrap">
+    <label class="form-label" for="email">郵件地址 Email</label>
+    <?= it.show_form_err( 'email' ) ?>
+    <span class="form-tip">必填</span>
+  </div>
 
-  <label class="form-label" for="subject">主旨 Subject</label>
-  <input id="subject" class="contact-form-input" name="subject" type="text" value=""/>
+  <input id="email" class="contact-form-input" type="email" name="email" value="<?= it.show_ori_body_field( it.ori_body, 'email' )?>"/>
 
-  <label class="form-label" for="msg">內容 Message </label>
-  <textarea id="msg" class="contact-form-textarea" name="msg" rows="16"></textarea>
+  <div class="form-block-wrap">
+    <label class="form-label" for="subject">主旨 Subject</label>
+    <?= it.show_form_err( 'subject' ) ?>
+    <span class="form-tip">必填</span>
+  </div>
+
+  <input id="subject" class="contact-form-input" name="subject" type="text" value="<?= it.show_ori_body_field( it.ori_body, 'subject' )?>"/>
+
+  <div class="form-block-wrap">
+    <label class="form-label" for="msg">內容 Message </label>
+    <?= it.show_form_err( 'msg' ) ?>
+    <span class="form-tip">必填</span>
+  </div>
+
+  <textarea id="msg" class="contact-form-textarea" name="msg" rows="16"><?= it.show_ori_body_field( it.ori_body, 'msg' )?></textarea>
 
   <input id="btn-submit" type="submit" class="btn-submit" value="SEND">
 </form>

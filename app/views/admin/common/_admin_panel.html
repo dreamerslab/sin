@@ -14,7 +14,7 @@
       <input type="hidden" name="type" value="<?= it.nav_selected ?>" />
 
       <input id="header-input" type="text" name="url" placeholder="請輸入圖片網址, size: 912x400 px">
-      <?= it.show_form_err( 'url' ) ?>
+      <?= it.show_form_err_banner( 'url' ) ?>
       <input id="btn-confirm" type="submit" value="Submit" />
       <a id="link-cancel" href="/admin/<?= it.nav_selected ?>" title="Back to previous page">Cancel</a>
     </form>

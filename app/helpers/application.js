@@ -38,6 +38,10 @@ module.exports = function ( app ){
       return moment( date ).format( format || 'MMM Do YYYY, h:m:s' );
     },
 
+    show_ori_body_field : function ( ori_body, field ){
+      return ori_body ? ori_body[ field ] : '';
+    },
+
     show_err : function ( err ){
       return err ?
         '<label class="error">' + err + '</label>' : '';
@@ -58,13 +62,19 @@ module.exports = function ( app ){
         }
 
         return msg ?
-          '<p class="error-msg">' + msg + '</p>' :
+          '<p class="error">' + msg + '</p>' :
           ( tip || '' );
       }
 
       return this.get_form_err()[ field ] ?
-        '<p class="error-msg">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
+        '<p class="error">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
         ( tip || '' );
+    },
+
+    show_form_err_banner : function ( field ){
+      return this.get_form_err()[ field ] ?
+        '<p class="error-msg">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
+        '';
     }
   });
 

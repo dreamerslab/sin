@@ -113,8 +113,8 @@ css:
       - admin/live/new
   contact-index:
     site:
-      - contact/index
       - admin/base
+      - contact/index
   sessions:
     site:
       - sessions/new

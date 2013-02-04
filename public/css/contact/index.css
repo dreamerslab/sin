@@ -1,4 +1,4 @@
-/* line 12, ../../../app/sass/contact/index.sass */
+/* line 16, ../../../app/sass/contact/index.sass */
 #contact-form {
   font-family: Helvetica, sans-serif;
   color: #555555;
@@ -6,15 +6,44 @@
   padding: 0 180px 0 132px;
 }
 
-/* line 18, ../../../app/sass/contact/index.sass */
+/* line 22, ../../../app/sass/contact/index.sass */
+.form-block-wrap {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 24px 0 0;
+}
+
+/* line 26, ../../../app/sass/contact/index.sass */
 .form-label {
+  display: inline;
+  float: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
   padding: 24px 0 10px;
   font-size: 14px;
   letter-spacing: 1px;
-  display: block;
+  padding: 0 16px 10px 0;
 }
 
-/* line 22, ../../../app/sass/contact/index.sass */
+/* line 32, ../../../app/sass/contact/index.sass */
+.error {
+  display: inline;
+  float: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: red;
+}
+
+/* line 37, ../../../app/sass/contact/index.sass */
+.form-tip {
+  display: inline;
+  float: right;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* line 42, ../../../app/sass/contact/index.sass */
 .contact-form-input, .contact-form-textarea {
   display: block;
   width: 100%;
@@ -27,7 +56,7 @@
   max-width: 584px;
 }
 
-/* line 25, ../../../app/sass/contact/index.sass */
+/* line 45, ../../../app/sass/contact/index.sass */
 .contact-form-textarea {
   display: block;
   width: 100%;
@@ -45,7 +74,7 @@
   max-width: 568px;
 }
 
-/* line 28, ../../../app/sass/contact/index.sass */
+/* line 48, ../../../app/sass/contact/index.sass */
 #btn-submit {
   display: block;
   background: #6da4b2;
@@ -56,7 +85,7 @@
   font-size: 14px;
   letter-spacing: 1px;
 }
-/* line 37, ../../../app/sass/contact/index.sass */
+/* line 57, ../../../app/sass/contact/index.sass */
 #btn-submit:hover {
   cursor: pointer;
   opacity: 0.7;

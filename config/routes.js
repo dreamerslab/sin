@@ -12,9 +12,10 @@ module.exports = function ( map ){
     }
   );
 
-  map.get( 'videos',  'videos#index' );
-  map.get( 'live',    'live#index' );
-  map.get( 'contact', 'contact#index' );
+  map.get(  'videos',  'videos#index' );
+  map.get(  'live',    'live#index' );
+  map.get(  'contact', 'contact#index' );
+  map.post( 'contact', 'contact#create' );
 
   map.get( 'admin',      'admin/home#index' );
   map.get( 'admin/home', 'admin/home#index' );

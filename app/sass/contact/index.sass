@@ -9,15 +9,35 @@ $form-font: serif
 $color-main: #000
 $color-link: #6da4b2
 
+@mixin default-font
+  font-family: $default-font
+  font-size: 14px
+
 #contact-form
   font-family: $default-font
   color: #555
   width: 600px
   padding: 0 180px 0 132px
 
+.form-block-wrap
+  +clearfix
+  padding: 24px 0 0
+
 .form-label
+  +float-left
+  +default-font
   +form-label
-  display: block
+  padding: 0 16px 10px 0
+
+.error
+  +float-left
+  +default-font
+  color: #f00
+
+.form-tip
+  +float-right
+  +default-font
+  color: #555
 
 .contact-form-input, .contact-form-textarea
   +default-input

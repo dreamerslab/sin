@@ -20,7 +20,10 @@ module.exports = Application.extend( validations, {
 
   index : function ( req, res, next ){
     if( req.session.is_authenticated ){
-      res.local( 'is_authenticated', true );
+      res.locals({
+        namespace        : '/admin',
+        is_authenticated : true
+      });
     };
 
     res.render( 'contact/index' );
