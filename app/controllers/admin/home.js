@@ -41,7 +41,9 @@ module.exports = Application.extend( validations, {
 
   soundcloud_edit : function ( req, res, next ){
     res.render( 'admin/home/edit', {
-      type : 'home_soundcloud'
+      action_type : 'soundcloud',
+      subtitle    : 'Soundcloud 播放器',
+      type        : 'home_soundcloud'
     });
   },
 
@@ -50,8 +52,10 @@ module.exports = Application.extend( validations, {
 
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
-        type     : 'home_soundcloud',
-        ori_body : req.body
+        action_type : 'soundcloud',
+        subtitle    : 'Soundcloud 播放器',
+        type        : 'home_soundcloud',
+        ori_body    : req.body
       });
     }
 
@@ -62,7 +66,9 @@ module.exports = Application.extend( validations, {
 
   facebook_edit : function ( req, res, next ){
     res.render( 'admin/home/edit', {
-      type : 'home_facebook'
+      action_type : 'facebook',
+      subtitle    : '臉書粉絲頁',
+      type        : 'home_facebook'
     });
   },
 
@@ -71,8 +77,10 @@ module.exports = Application.extend( validations, {
 
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
-        type     : 'home_facebook',
-        ori_body : req.body
+        action_type : 'facebook',
+        subtitle    : '臉書粉絲頁',
+        type        : 'home_facebook',
+        ori_body    : req.body
       });
     }
 

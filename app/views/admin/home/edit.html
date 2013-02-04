@@ -1,0 +1,20 @@
+<? it.title = '三十而立 sincerely music | 編輯首頁' + it.subtitle; ?>
+<? it.styles.push( 'admin-news-new' ); ?>
+
+<form id="news-form" action="/admin/<?= it.action_type ?>" method="POST" accept-charset="UTF-8" >
+  <input type="hidden" name="_method" value="put" />
+  <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+  <input type="hidden" name="type" value="<?= it.type ?>" />
+
+  <div class="form-block-wrap">
+    <label id="label-title" class="form-label" for="input-title"><?= it.subtitle ?>嵌入程式碼</label>
+    <p class="error">error message goes here</p>
+  </div>
+
+  <input id="input-title" type="text" name="url">
+
+  <div id="btns-wrap">
+    <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
+    <input id="btn-submit" type="submit" value="Submit" />
+  </div>
+</form>
