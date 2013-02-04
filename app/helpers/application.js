@@ -66,12 +66,6 @@ module.exports = function ( app ){
         '<p class="error-msg">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
         ( tip || '' );
     }
-
-    // show_form_err : function ( type ){
-    //   return this.get_form_err()[ type ] ?
-    //     '<p class="error">' + this.get_form_err()[ type ][ 0 ] + '</p>' :
-    //     '';
-    // }
   });
 
   app.dynamicHelpers({
