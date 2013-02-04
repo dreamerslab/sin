@@ -11,6 +11,7 @@
     "request"          : "2.11.4",
     "moment"           : "1.7.2",
     "mongoose"         : "3.4.0",
+    "marked"           : "0.2.8",
     "node.class"       : "1.0.1",
     "node.flow"        : "1.2.2",
     "sitemap"          : "0.6.0",

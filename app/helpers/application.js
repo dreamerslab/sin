@@ -1,4 +1,5 @@
 var moment = require( 'moment' );
+var marked = require( 'marked' );
 var covers = {
   news     : '/img/common/cover-news.png',
   artists  : '/img/common/cover-artists.png',
@@ -26,6 +27,8 @@ module.exports = function ( app ){
         '<img id="header-overlay" src="' + covers[ name ] + '" alt="Header Overlay">' :
         '';
     },
+
+    markdown : marked,
 
     val : function ( obj, prop ){
       return obj === undefined ? '' : obj[ prop ];
