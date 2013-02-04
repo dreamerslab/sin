@@ -24,7 +24,7 @@
           <img class="news-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
         </a>
         <? if( it.is_authenticated ){ ?>
-          <form class="form-delete" action="/admin/news" method="POST" accept-charset="UTF-8" >
+          <form class="form-delete" action="/admin/news" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="_method" value="delete" />
             <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
             <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />

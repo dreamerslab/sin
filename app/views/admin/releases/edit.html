@@ -2,7 +2,7 @@
 <? it.nav_selected = 'releases'; ?>
 <? it.styles.push( 'admin-releases-new' ); ?>
 
-<form id="releases-form" action="/admin/releases/update" method="POST" accept-charset="UTF-8" >
+<form id="releases-form" action="/admin/releases/update" method="POST" accept-charset="UTF-8">
   <input type="hidden" name="_method" value="put" />
   <?= it.partial( 'admin/releases/_fields' ) ?>
 </form>

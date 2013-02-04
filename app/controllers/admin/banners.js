@@ -22,8 +22,6 @@ module.exports = Application.extend( validations, {
   },
 
   edit : function ( req, res, next ){
-
-
     res.render( 'admin/banners/edit', {
       header_admin_view : 'edit',
       nav_selected      : req.params.type

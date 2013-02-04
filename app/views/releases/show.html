@@ -20,7 +20,7 @@
   ?>
 
   <? if( it.admin_view == 'new' ){ ?>
-    <form class="songs-form" action="/admin/releases/mongo_id/songs/create" method="POST" accept-charset="UTF-8" >
+    <form class="songs-form" action="/admin/releases/mongo_id/songs/create" method="POST" accept-charset="UTF-8">
       <?= it.partial( 'admin/songs/_fields' ) ?>
     </form>
   <? } ?>
@@ -40,13 +40,13 @@
 
       <!-- this if is for temp, use mongo id to check if this song is the current song -->
       <? if( it.admin_view == 'edit' ){ ?>
-        <form class="songs-form-delete" action="/admin/releases" method="POST" accept-charset="UTF-8" >
+        <form class="songs-form-delete" action="/admin/releases" method="POST" accept-charset="UTF-8">
           <input type="hidden" name="_method" value="delete" />
           <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
           <input class="songs-btn-delete" type="submit" value="DELETE THIS ENTRY" />
         </form>
 
-        <form class="songs-form-edit" action="/admin/releases/mongo_id/songs/" method="POST" accept-charset="UTF-8" >
+        <form class="songs-form-edit" action="/admin/releases/mongo_id/songs/" method="POST" accept-charset="UTF-8">
           <input type="hidden" name="_method" value="put" />
           <?= it.partial( 'admin/songs/_fields' ) ?>
         </form>
@@ -86,7 +86,7 @@
 
   <? if( it.is_authenticated ){ ?>
     <a id="link-edit" href="/admin/releases/edit">EDIT THIS ENTRY</a>
-    <form class="form-delete" action="/admin/releases" method="POST" accept-charset="UTF-8" >
+    <form class="form-delete" action="/admin/releases" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_method" value="delete" />
       <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
       <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />

@@ -1,7 +1,7 @@
 <? it.title = '三十而立 sincerely music | 編輯首頁' + it.subtitle; ?>
 <? it.styles.push( 'admin-news-new' ); ?>
 
-<form id="news-form" action="/admin/<?= it.action_type ?>" method="POST" accept-charset="UTF-8" >
+<form id="news-form" action="/admin/<?= it.action_type ?>" method="POST" accept-charset="UTF-8">
   <input type="hidden" name="_method" value="put" />
   <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
   <input type="hidden" name="type" value="<?= it.type ?>" />

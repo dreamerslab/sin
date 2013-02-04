@@ -2,7 +2,7 @@
 <? it.nav_selected = 'news'; ?>
 <? it.styles.push( 'admin-news-new' ); ?>
 
-<form id="news-form" action="/admin/news/update" method="POST" accept-charset="UTF-8" >
+<form id="news-form" action="/admin/news/update" method="POST" accept-charset="UTF-8">
   <input type="hidden" name="_method" value="put" />
   <?= it.partial( 'admin/news/_fields' ) ?>
 </form>
