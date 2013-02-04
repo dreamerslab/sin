@@ -16,16 +16,6 @@ var Schema = function ( Schema ){
       updated_at : { type : Number }
     }),
 
-    Artist : new Schema({
-      name       : { type : String, required : true, index : true },
-      desc       : { type : String, default  : '' },
-      thumb      : { type : String, default  : '' }, // url ( bg )
-      cover      : { type : String, default  : '' }, // url ( bg )
-      links      : [{ type : ObjectId, ref : 'Link' }],
-      created_at : { type : Number, default : Date.now },
-      updated_at : { type : Number }
-    }),
-
     // artist links, blog, fb, twitter ...
     Link : new Schema({
       title      : { type : String, required : true },
@@ -79,6 +69,16 @@ var Schema = function ( Schema ){
       date       : { type : String, required : true },
       location   : { type : String, required : true },
       url        : { type : String, default : '' },
+      created_at : { type : Number, default : Date.now },
+      updated_at : { type : Number }
+    }),
+
+    Artist : new Schema({
+      name       : { type : String, required : true, index : true },
+      desc       : { type : String, default  : '' },
+      thumb      : { type : String, default  : '' }, // url ( bg )
+      cover      : { type : String, default  : '' }, // url ( bg )
+      links      : [{ type : ObjectId, ref : 'Link' }],
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     })
