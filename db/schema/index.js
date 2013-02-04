@@ -8,7 +8,7 @@ var Schema = function ( Schema ){
 
   var Models = {
 
-    // banner, home sound cloud & fb links ... etc.
+    // banner, home_soundcloud & home_facebook... etc.
     Url : new Schema({
       type       : { type : String, required : true },
       url        : { type : String, default : '/img/common/default-banner.jpg' },
