@@ -114,6 +114,7 @@ css:
   contact-index:
     site:
       - contact/index
+      - admin/base
   sessions:
     site:
       - sessions/new

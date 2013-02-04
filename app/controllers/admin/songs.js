@@ -13,9 +13,16 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'index', 'show', 'new', 'edit' ]});
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
     before( this.current_release,        { only : [ 'index', 'show', 'new', 'edit', 'destroy' ]});
     before( this.current_song_for_index, { only : [ 'index', 'new' ]});
     before( this.current_song_for_show,  { only : [ 'show', 'edit' ]});
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'home';
+    next();
   },
 
   new : function ( req, res, next ){

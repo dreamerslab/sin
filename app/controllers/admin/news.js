@@ -12,7 +12,14 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'show', 'edit', 'create', 'update' ]});
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
     before( this.is_artists_found, { only : [ 'create', 'update' ]});
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'news';
+    next();
   },
 
   new : function ( req, res, next ){

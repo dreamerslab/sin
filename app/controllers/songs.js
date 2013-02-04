@@ -10,9 +10,16 @@ module.exports = Application.extend( validations, {
     before( this.is_validate );
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
     before( this.current_release );
     before( this.current_song_for_index, { only : [ 'index' ]});
     before( this.current_song_for_show,  { only : [ 'show' ]});
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'home';
+    next();
   },
 
   index : function ( req, res, next ){

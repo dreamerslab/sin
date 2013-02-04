@@ -5,6 +5,13 @@ module.exports = Application.extend({
 
   init : function ( before, after ){
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'videos';
+    next();
   },
 
   index : function ( req, res, next ){

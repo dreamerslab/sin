@@ -12,11 +12,21 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,     { only : [ 'edit' ]});
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = req.params.type;
+    next();
   },
 
   edit : function ( req, res, next ){
+
+
     res.render( 'admin/banners/edit', {
-      header_admin_view : 'edit'
+      header_admin_view : 'edit',
+      nav_selected      : req.params.type
     });
   },
 

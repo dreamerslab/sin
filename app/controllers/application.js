@@ -27,7 +27,7 @@ module.exports = Class.extend({
       },
       // ok
       function ( banner ){
-        req.banner = banner;
+        res.local( 'banner', banner );
         next();
       });
   },

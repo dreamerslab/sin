@@ -9,6 +9,13 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,   { only : [ 'show' ]});
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'news';
+    next();
   },
 
   index : function ( req, res, next ){

@@ -9,9 +9,20 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,     { only : [ 'create' ]});
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'contact';
+    next();
   },
 
   index : function ( req, res, next ){
+    if( req.session.is_authenticated ){
+      res.local( 'is_authenticated', true );
+    };
+
     res.render( 'contact/index' );
   },
 

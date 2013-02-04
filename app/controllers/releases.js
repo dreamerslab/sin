@@ -9,8 +9,15 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,          { only : [ 'show' ]});
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
     before( this.current_release,        { only : [ 'show' ]});
     before( this.current_song_for_index, { only : [ 'show' ]});
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'releases';
+    next();
   },
 
   index : function ( req, res, next ){

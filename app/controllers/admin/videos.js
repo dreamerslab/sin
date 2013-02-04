@@ -13,8 +13,15 @@ module.exports = Application.extend( validations, {
     before( this.is_validate,              { only : [ 'edit' ]});
 
     before( this.namespace );
+    before( this.banner_type );
+    before( this.current_banner );
     before( this.is_artists_found,      { only : [ 'create', 'update' ]});
     before( this.get_info_from_youtube, { only : [ 'create', 'update' ]});
+  },
+
+  banner_type : function ( req, res, next ){
+    req.banner_type = 'videos';
+    next();
   },
 
   new : function ( req, res, next ){
