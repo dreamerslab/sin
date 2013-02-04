@@ -13,7 +13,7 @@ module.exports = {
   ),
 
   validate_update : form(
-    field( 'id'  ).is( r.id, lang._404 ),
+    field( 'type' ).required().isIn([ 'home', 'news', 'artists', 'releases', 'live', 'videos', 'contact' ]),
     field( 'url' ).required( '', lang.required.url )
   )
 };
