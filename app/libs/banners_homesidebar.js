@@ -19,7 +19,7 @@ var error = function ( err ){
 };
 
 var success = function ( url ){
-  LOG.debug( msg_pf + 'Successfully created url', url );
+  LOG.debug( msg_pf + 'Successfully created or found url', url );
 };
 
 module.exports = {
