@@ -42,6 +42,10 @@ module.exports = function ( app ){
       return moment( date ).format( format || 'YYYY/MM/DD' );
     },
 
+    show_live_link : function ( live ){
+      return live.url ? 'href="' + live.url + '"' : '';
+    },
+
     show_ori_body_field : function ( ori_body, field ){
       var value = ori_body ? ori_body[ field ] : '';
 

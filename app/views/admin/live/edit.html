@@ -2,7 +2,7 @@
 <? it.nav_selected = 'live'; ?>
 <? it.styles.push( 'admin-live-new' ); ?>
 
-<form id="live-form" action="/admin/live/update" method="POST" accept-charset="UTF-8">
+<form id="live-form" action="/admin/live/<?= it.show_req_params().id ?>" method="POST" accept-charset="UTF-8">
   <input type="hidden" name="_method" value="put" />
   <?= it.partial( 'admin/live/_fields' ) ?>
 </form>

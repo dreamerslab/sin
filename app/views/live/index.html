@@ -3,23 +3,22 @@
 <? it.title = '三十而立 sincerely music | 現場'; ?>
 <? it.nav_selected = 'live'; ?>
 
-<? var lives = [ '', '', '', '', '', '', '', '', '', '' ]; ?>
-
 <div id="live-list">
   <? if ( it.is_authenticated ){ ?>
-    <a href="/" id="btn-add">ADD NEW ENTRY</a>
+    <a href="/admin/live/new" id="btn-add">ADD NEW ENTRY</a>
   <? } ?>
 
-  <? lives.forEach( function ( live ){ ?>
+  <?= it.show_no_content_err( it.lives ) ?>
+  <? it.lives.forEach( function ( live ){ ?>
     <div class="live-link-wrap">
-      <a class="live-link" href="/live/show">
-        <h3 class="live-title">熊寶貝樂團 live 耶耶！！</h3>
-        <span class="live-location">The WALL 公館</span>
-        <span class="live-date">2012.12.12</span>
+      <a class="live-link" <?= it.show_live_link( live ) ?>>
+        <h3 class="live-title"><?= live.title ?></h3>
+        <span class="live-location"><?= live.location ?></span>
+        <span class="live-date"><?= live.date ?></span>
       </a>
       <? if( it.is_authenticated ){ ?>
-        <a href="/admin/news/edit" class="link-edit">EDIT THIS ENTRY</a>
-        <form class="form-delete" action="/admin/live" method="POST" accept-charset="UTF-8">
+        <a href="/admin/live/<?= live._id ?>/edit" class="link-edit">EDIT THIS ENTRY</a>
+        <form class="form-delete" action="/admin/live/<?= live._id ?>" method="POST" accept-charset="UTF-8">
           <input type="hidden" name="_method" value="delete" />
           <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
           <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />
@@ -30,6 +29,6 @@
 </div>
 
 <div id="nav-wrap">
-  <a id="btn-prev" href="/live/prev">Prev</a>
-  <a id="btn-next" href="/live/next">Next</a>
+  <a id="btn-prev" href="<?= it.namespace ?>/live">Prev</a>
+  <a id="btn-next" href="<?= it.namespace ?>/live">Next</a>
 </div>

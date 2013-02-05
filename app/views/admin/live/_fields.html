@@ -4,40 +4,40 @@
   <div id="form-block-date-wrap">
     <div class="form-block-wrap">
       <label id="label-date" class="form-label" for="input-date">日期</label>
-      <p class="error">error message goes here</p>
+      <?= it.show_form_err( 'date' ) ?>
       <span class="form-tip">必填</span>
     </div>
 
-    <input id="input-date" type="text" name="date">
+    <input id="input-date" type="text" name="date" value="<?= it.show_ori_body_field( it.ori_body, 'date' )?>">
   </div>
 
   <div id="form-block-location-wrap">
     <div class="form-block-wrap">
       <label id="label-location" class="form-label" for="input-location">地點</label>
-      <p class="error">error message goes here</p>
+      <?= it.show_form_err( 'location' ) ?>
       <span class="form-tip">必填</span>
     </div>
 
-    <input id="input-location" type="text" name="location">
+    <input id="input-location" type="text" name="location" value="<?= it.show_ori_body_field( it.ori_body, 'location' )?>">
   </div>
 </div>
 
 <div class="form-block-wrap">
   <label id="label-title" class="form-label" for="input-title">活動內容</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'title' ) ?>
   <span class="form-tip">必填</span>
 </div>
 
-<input id="input-title" type="text" name="title">
+<input id="input-title" type="text" name="title" value="<?= it.show_ori_body_field( it.ori_body, 'title' )?>">
 
 <div class="form-block-wrap">
   <label id="label-url" class="form-label" for="input-url">活動網址</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'url' ) ?>
 </div>
 
-<input id="input-url" type="text" name="url" placeholder="http://">
+<input id="input-url" type="text" name="url" placeholder="http://" value="<?= it.show_ori_body_field( it.ori_body, 'url' )?>">
 
 <div id="btns-wrap">
-  <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
+  <a id="content-link-cancel" href="/admin/live">Cancel</a>
   <input id="btn-submit" type="submit" value="Submit" />
 </div>
