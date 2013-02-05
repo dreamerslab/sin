@@ -13,8 +13,8 @@
   <? if( it.post.artists.length ){ ?>
     <p>
       相關藝人：
-      <? it.post.artists.forEach( function ( artist_name ){ ?>
-        <a href="<?= it.namespace ?>/news?artist=<?- artist_name ?>" title="與<?= artist_name ?>相關的新聞"><?= artist_name ?></a>
+      <? it.post.artists.forEach( function ( artist_name, index ){ ?>
+        <a href="<?= it.namespace ?>/news?artist=<?- artist_name ?>" title="與<?= artist_name ?>相關的新聞"><?= artist_name ?></a><?= index == ( it.post.artists.length - 1 ) ? '' : ', ' ?>
       <? }); ?>
     </p>
   <? } ?>
