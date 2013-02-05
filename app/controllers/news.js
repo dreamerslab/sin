@@ -5,8 +5,8 @@ var Post        = Model( 'Post' );
 module.exports = Application.extend( validations, {
 
   init : function ( before, after ){
-    before( this.validate_show, { only : [ 'show' ]});
-    before( this.is_validate,   { only : [ 'show' ]});
+    before( this.validate_show_n_edit, { only : [ 'show' ]});
+    before( this.is_validate,          { only : [ 'show' ]});
 
     before( this.namespace );
     before( this.banner_type );

@@ -44,8 +44,6 @@ module.exports = {
           if( err )    return next( err );
           if( !video ) return no_content();
 
-          video.artists_str = video.artists.join( ', ' );
-
           ok( video );
         }
       );

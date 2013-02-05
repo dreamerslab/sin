@@ -29,6 +29,7 @@ module.exports = Application.extend( validations, {
   create : function ( req, res, next ){
     var args = req.form;
 
+    args.cover            = req.body.cover;
     args.is_artists_found = req.is_artists_found;
 
     if( !req.form.isValid ){
@@ -110,7 +111,7 @@ module.exports = Application.extend( validations, {
       // ok
       function ( post ){
         res.render( 'admin/news/edit', {
-          ori_post : post
+          ori_body : post
         });
       });
   },

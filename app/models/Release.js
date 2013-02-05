@@ -46,8 +46,6 @@ module.exports = {
           if( err )      return next( err );
           if( !release ) return no_content();
 
-          release.artists_str = release.artists.join( ', ' );
-
           ok( release );
         }
       );

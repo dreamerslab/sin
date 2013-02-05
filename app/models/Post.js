@@ -43,8 +43,6 @@ module.exports = {
           if( err )   return next( err );
           if( !post ) return no_content();
 
-          post.artists_str = post.artists.join( ', ' );
-
           ok( post );
         });
     },

@@ -12,6 +12,10 @@ var covers = {
 module.exports = function ( app ){
   app.helpers({
 
+    artists_to_str : function ( artists ){
+      return artists.join( ', ' );
+    },
+
     exist : function ( obj, exist, not_exist ){
       if( obj ) return exist();
 
@@ -35,11 +39,15 @@ module.exports = function ( app ){
     },
 
     date : function ( date, format ){
-      return moment( date ).format( format || 'MMM Do YYYY, h:m:s' );
+      return moment( date ).format( format || 'YYYY/MM/DD' );
     },
 
     show_ori_body_field : function ( ori_body, field ){
       return ori_body ? ori_body[ field ] : '';
+    },
+
+    show_ori_body_artists_str : function ( ori_body ){
+      return ori_body ? this.artists_to_str( ori_body.artists ) : '';
     },
 
     show_err : function ( err ){
@@ -75,6 +83,10 @@ module.exports = function ( app ){
       return this.get_form_err()[ field ] ?
         '<p class="error-msg">' + this.get_form_err()[ field ][ 0 ] + '</p>' :
         '';
+    },
+
+    show_no_content_err : function ( data_arr ){
+      return data_arr.length ? '' : '<p>沒有內容</p>';
     }
   });
 
@@ -88,7 +100,9 @@ module.exports = function ( app ){
     },
 
     show_req_params : function ( req, res ){
-      return req.params;
+      return function (){
+        return req.params;
+      };
     },
 
     messages : require( 'express-messages' )

@@ -82,6 +82,7 @@ var Schema = function ( Schema ){
       created_at : { type : Number, default : Date.now },
       updated_at : { type : Number }
     })
+
   };
 
   // auto update `updated_at` on save

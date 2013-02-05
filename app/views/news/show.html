@@ -10,23 +10,20 @@
 
   <?= it.markdown( it.post.content ) ?>
 
-  <!-- <h1>測試 h1</h1>
-  <h2>測試 h2</h2>
-  <h3>測試 h3</h3>
-  <h4>測試 h4</h4>
-  <h5>測試 h5</h5>
-  <h6>測試 h6</h6>
-
-  <p>是此參、清路他，<a href="/news">測試連結</a>市論的放市館<strong><em>在只黑聲，取舞全印面</em></strong>，旅我遠電市身年全。 <strong>氣毒一去好福那身相時樂眼遊看</strong>，西影<em>才構去</em>：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-  <img src="http://farm9.staticflickr.com/8326/8112793218_e59274b7c7_b.jpg" alt="thumb">
-  <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-  <img src="http://farm9.staticflickr.com/8477/8265949619_b75d7fa0a7_h.jpg" alt="thumb"> -->
+  <? if( it.post.artists.length ){ ?>
+    <p>
+      相關藝人：
+      <? it.post.artists.forEach( function ( artist_name ){ ?>
+        <a href="<?= it.namespace ?>/news?artist=<?- artist_name ?>" title="與<?= artist_name ?>相關的新聞"><?= artist_name ?></a>
+      <? }); ?>
+    </p>
+  <? } ?>
 
   <span class="news-date"><?= it.date( it.post.created_at )?></span>
 
   <? if( it.is_authenticated ){ ?>
-    <a href="/admin/news/edit" id="link-edit">EDIT THIS ENTRY</a>
-    <form class="form-delete" action="/admin/news" method="POST" accept-charset="UTF-8">
+    <a href="/admin/news/<?= it.post._id ?>/edit" id="link-edit">EDIT THIS ENTRY</a>
+    <form class="form-delete" action="/admin/news/<?= it.post._id ?>" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_method" value="delete" />
       <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
       <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />
@@ -34,5 +31,5 @@
   <? } ?>
 </div>
 <div id="nav-wrap">
-  <a id="btn-prev" href="/news" title="Back to news list">back</a>
+  <a id="btn-prev" href="<?= it.namespace ?>/news" title="Back to news list">back</a>
 </div>
