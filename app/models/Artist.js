@@ -16,6 +16,7 @@ module.exports = {
   statics : {
 
     insert : function ( args, next, exist, created ){
+      var self          = this;
       var args_for_link = {};
       var query         = {
         name : new RegExp( args.name, 'i' )
@@ -25,7 +26,7 @@ module.exports = {
         if( err )    return next( err );
         if( artist ) return exist( artist );
 
-        new this({
+        new self({
           name  : args.name,
           desc  : args.desc,
           thumb : args.thumb,
@@ -48,6 +49,7 @@ module.exports = {
               },
               function ( link ){
                 link.add_to_artists( artist );
+                next();
               });
           }
 

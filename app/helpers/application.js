@@ -43,11 +43,21 @@ module.exports = function ( app ){
     },
 
     show_ori_body_field : function ( ori_body, field ){
-      return ori_body ? ori_body[ field ] : '';
+      var value = ori_body ? ori_body[ field ] : '';
+
+      return value || '';
     },
 
-    show_ori_body_artists_str : function ( ori_body ){
-      return ori_body ? this.artists_to_str( ori_body.artists ) : '';
+    show_ori_link_title : function ( ori_artist, index ){
+      if( !ori_artist ) return '';
+
+      return ori_artist.links[ index ].title;
+    },
+
+    show_ori_link_url : function ( ori_artist, index ){
+      if( !ori_artist ) return '';
+
+      return ori_artist.links[ index ].url;
     },
 
     show_err : function ( err ){

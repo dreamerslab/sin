@@ -1,6 +1,7 @@
 var Flow                     = require( 'node.flow' );
 var Application              = require( '../application' );
 var Live                     = Model( 'Live' );
+var Artist                   = Model( 'Artist' );
 var regex_for_get_youtube_id = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
 
 module.exports = Application.extend({

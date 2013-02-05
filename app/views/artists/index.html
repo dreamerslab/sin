@@ -6,25 +6,26 @@
 <div id="artists">
   <div id="artists-entries">
     <? if ( it.is_authenticated ){ ?>
-      <a href="/" id="btn-add">ADD NEW ENTRY</a>
+      <a href="/admin/artists/new" id="btn-add" title="前往新增 Artist 的頁面">ADD NEW ENTRY</a>
     <? } ?>
 
-    <? var entries = [ '', '', '' ]; ?>
-
-    <? entries.forEach( function ( entry ){ ?>
+    <?= it.show_no_content_err( it.artists ) ?>
+    <? it.artists.forEach( function ( artist ){ ?>
       <div class="news-entry">
         <h3 class="news-entry-title">
-          <a href="/artists/show" class="news-entry-title-link" title="">流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前</a>
+          <a href="<?= it.namespace ?>/artists/<?= artist._id ?>" class="news-entry-title-link"><?= artist.name ?></a>
         </h3>
-        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身</p>
 
-        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身</p>
+        <?= it.markdown( artist.desc ) ?>
 
-        <a href="/news/show" class="news-thumb-link">
-          <img class="news-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
-        </a>
+        <? if( artist.thumb ){ ?>
+          <a href="<?= it.namespace ?>/artists/<?= artist._id ?>" class="news-thumb-link">
+            <img class="news-thumb" src="<?= artist.thumb ?>" alt="thumb">
+          </a>
+        <? } ?>
+
         <? if( it.is_authenticated ){ ?>
-          <form class="form-delete" action="/admin/artists" method="POST" accept-charset="UTF-8">
+          <form class="form-delete" action="/admin/artists/<?= artist._id ?>" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="_method" value="delete" />
             <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
             <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />
@@ -34,7 +35,7 @@
     <? }); ?>
   </div>
   <div id="nav-wrap">
-    <a id="btn-prev" href="/" title="Previous page">prev</a>
-    <a id="btn-next" href="/" title="Next page">next</a>
+    <a id="btn-prev" href="<?= it.namespace ?>/artists" title="Previous page">prev</a>
+    <a id="btn-next" href="<?= it.namespace ?>/artists" title="Next page">next</a>
   </div>
 </div>

@@ -9,6 +9,8 @@ module.exports = {
     var self = this;
     var flow = new Flow();
 
+    if( !this.links.length ) return next();
+
     this.links.forEach( function ( link_id, index ){
       flow.parallel( function ( ready ){
         Link.findByIdAndRemove( link_id, function ( err, link ){

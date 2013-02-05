@@ -1,6 +1,7 @@
 var Class   = require( 'node.class' );
 var Flow    = require( 'node.flow' );
 var Post    = Model( 'Post' );
+var Artist  = Model( 'Artist' );
 var Video   = Model( 'Video' );
 var Release = Model( 'Release' );
 var Live    = Model( 'Live' );
@@ -45,8 +46,6 @@ module.exports = Class.extend({
   },
 
   is_validate : function ( req, res, next ){
-    return next(); // for temp, removed after have data
-
     if( req.form.isValid ) return next();
 
     this.no_content( req, res );

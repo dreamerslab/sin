@@ -36,8 +36,10 @@
             </li>
           </ul>
         </div>
-        <img id="cover" src="<?= it.banner.url ?>" alt="cover">
-        <?= it.header_overlay( it.nav_selected ) ?>
+        <img id="cover" src="<?= it.artist ? it.artist.cover : it.banner.url ?>" alt="cover">
+        <? if( !it.artist ){ ?>
+          <?= it.header_overlay( it.nav_selected ) ?>
+        <? } ?>
 
         <? if ( it.is_authenticated ){ ?>
           <?= it.partial( 'admin/common/_admin_panel' ) ?>

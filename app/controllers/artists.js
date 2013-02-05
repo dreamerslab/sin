@@ -5,8 +5,8 @@ var Artist      = Model( 'Artist' );
 module.exports = Application.extend( validations, {
 
   init : function ( before, after ){
-    before( this.validate_index, { only : [ 'index' ]});
-    before( this.validate_show,  { only : [ 'show' ]});
+    before( this.validate_index,       { only : [ 'index' ]});
+    before( this.validate_show_n_edit, { only : [ 'show' ]});
     before( this.is_validate );
 
     before( this.namespace );

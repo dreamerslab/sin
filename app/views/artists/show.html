@@ -1,62 +1,63 @@
 <?= it.partial( it._assets ) ?>
 
-<? it.title = '三十而立 sincerely music | (藝人名稱)'; ?>
+<? it.title = '三十而立 sincerely music | ' + it.artist.name; ?>
 <? it.nav_selected = 'artists'; ?>
 
 <div id="main">
   <div id="artist-intro-wrap">
     <div class="artists-entry">
-      <h2 id="artists-entry-title">流亞定合大前</h2>
+      <h2 id="artists-entry-title"><?= it.artist.name ?></h2>
 
       <div id="artist-intro">
-        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-        <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
+        <?= it.markdown( it.artist.desc ) ?>
       </div>
     </div>
     <div id="social-links">
-      <a class="social-link" href="/">facebook</a>
-      <a class="social-link" href="/">streetvoice</a>
-      <a class="social-link" href="/">indievox</a>
-      <a class="social-link" href="/">streetvoice</a>
+      <? it.artist.links.forEach( function ( link, index ){ ?>
+        <? if( link.title && link.url ){ ?>
+          <a class="social-link" href="<?= link.url ?>"><?= link.title ?></a>
+        <? } ?>
+      <? }); ?>
     </div>
   </div>
 
   <div id="news">
     <h2 id="news-title" class="title">
-      <a id="news-title-link" class="block-title" href="/">LATEST NEWS</a>
+      <a id="news-title-link" class="block-title" href="<?= it.namespace ?>/news?artist=<?- it.artist.name ?>">LATEST NEWS</a>
     </h2>
 
-    <? var entries = [ '', '', '' ]; ?>
-
-    <? entries.forEach( function ( entry ){ ?>
+    <?= it.show_no_content_err( it.posts ) ?>
+    <? it.posts.forEach( function ( post ){ ?>
       <div class="news-entry">
         <h3 class="news-entry-title">
-          <a href="/news/show" class="news-entry-title-link" title="">流亞定合大前</a>
+          <a href="<?= it.namespace ?>/news/<?= post._id ?>" class="news-entry-title-link" title="See more about <?= post.title ?>"><?= post.title ?></a>
         </h3>
-        <p class="news-entry-p">是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-        <p class="news-date">2012.12.10</p>
+
+        <?= it.markdown( post.content ) ?>
+
+        <p class="news-date"><?= it.date( post.created_at )?></p>
       </div>
     <? }); ?>
   </div>
   <div id="videos">
     <h2 id="videos-title" class="title">
-      <a id="videos-title-link" class="block-title" href="/videos">NEW VIDEOS</a>
+      <a id="videos-title-link" class="block-title" href="<?= it.namespace ?>/videos?artist=<?- it.artist.name ?>">NEW VIDEOS</a>
     </h2>
 
     <div id="videos-list">
-      <? var entries = [ '', '' ]; ?>
-
-      <? entries.forEach( function (){ ?>
+      <?= it.show_no_content_err( it.videos ) ?>
+      <? it.videos.forEach( function (){ ?>
         <iframe class="video" width="248" height="140" src="https://www.youtube.com/embed/E6Rd7UE8jQc" frameborder="0" allowfullscreen></iframe>
       <? }); ?>
 
-      <a id="videos-more" class="btn-more" href="/">More</a>
+      <? if( it.releases.length > 3 ){ ?>
+        <a id="videos-more" class="btn-more" href="<?= it.namespace ?>/videos?artist=<?- it.artist.name ?>">More</a>
+      <? } ?>
     </div>
   </div>
   <? if( it.is_authenticated ){ ?>
-    <a href="/admin/artists/edit" id="link-edit">EDIT THIS ENTRY</a>
-    <form class="form-delete" action="/admin/artists" method="POST" accept-charset="UTF-8">
+    <a href="/admin/artists/<?= it.artist._id ?>/edit" id="link-edit">EDIT THIS ENTRY</a>
+    <form class="form-delete" action="/admin/artists/<?= it.artist._id ?>" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_method" value="delete" />
       <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
       <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />
@@ -71,9 +72,8 @@
     </h2>
 
     <div id="releases-list">
-      <? var releases = [ '', '', '' ]; ?>
-
-      <? releases.forEach( function (){ ?>
+      <?= it.show_no_content_err( it.releases ) ?>
+      <? it.releases.forEach( function ( release ){ ?>
         <a href="/releases/show" class="release-link">
           <img class="release-thumb" src="/img/home/release-thumb.jpeg" alt="thumb">
           <p class="release-date">2011</p>
@@ -82,7 +82,9 @@
         </a>
       <? }); ?>
 
-      <a id="releases-more" href="/">more</a>
+      <? if( it.releases.length > 3 ){ ?>
+        <a id="releases-more" href="<?= it.namespace ?>/releases?artist=<?- it.artist.name ?>">more</a>
+      <? } ?>
     </div>
   </div>
 </div>

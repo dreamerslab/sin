@@ -18,11 +18,13 @@
 
 <div class="form-block-wrap">
   <label id="label-artists" class="form-label" for="input-artists">相關藝人</label>
-  <?= it.show_form_err( 'artists' ) ?>
+  <? if( it.is_artists_found == false ){ ?>
+    <p class="error">有藝人沒有被找到，請確定所有藝人都已被新增</p>
+  <? } ?>
   <span class="form-tip">此欄位為多選，請用逗號作分隔</span>
 </div>
 
-<input id="input-artists" type="text" name="artists" value="<?= it.show_ori_body_artists_str( it.ori_body )?>">
+<input id="input-artists" type="text" name="artists" value="<?= it.show_ori_body_field( it.ori_body, 'artists' )?>">
 
 <div class="form-block-wrap">
   <label id="label-thumb" class="form-label" for="input-thumb">首頁縮圖網址</label>
@@ -33,6 +35,6 @@
 <input id="input-thumb" type="text" name="cover" placeholder="http://" value="<?= it.show_ori_body_field( it.ori_body, 'cover' )?>">
 
 <div id="btns-wrap">
-  <a id="content-link-cancel" href="/admin/news<?= it.show_req_params().id ? '/' + it.show_req_params().id : '' ?>">Cancel</a>
+  <a id="content-link-cancel" href="/admin/news/<?= it.show_req_params().id || '' ?>">Cancel</a>
   <input id="btn-submit" type="submit" value="Submit" />
 </div>

@@ -1,5 +1,7 @@
 <div id="admin-panel">
-  <a id="panel-link-edit" href="/admin/banners/edit/<?= it.nav_selected || 'home' ?>">EDIT HEADER</a>
+  <? if( !it.artist ){ ?>
+    <a id="panel-link-edit" href="/admin/banners/edit/<?= it.nav_selected || 'home' ?>">EDIT HEADER</a>
+  <? } ?>
 
   <form id="panel-logout-form" action="/admin/sessions" method="POST" accept-charset="UTF-8">
     <input type="hidden" name="_method" value="delete" />

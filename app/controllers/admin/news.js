@@ -9,7 +9,7 @@ module.exports = Application.extend( validations, {
 
     before( this.validate_show_n_edit,     { only : [ 'show', 'edit' ]});
     before( this.validate_create_n_update, { only : [ 'create', 'update' ]});
-    before( this.is_validate,              { only : [ 'show', 'edit', 'create', 'update' ]});
+    before( this.is_validate,              { only : [ 'show', 'edit' ]});
 
     before( this.namespace );
     before( this.banner_type );
@@ -110,8 +110,12 @@ module.exports = Application.extend( validations, {
       },
       // ok
       function ( post ){
+        var ori_body = UTILS.merge( post, {
+          artist : post.artists.join( ', ' )
+        });
+
         res.render( 'admin/news/edit', {
-          ori_body : post
+          ori_body : ori_body
         });
       });
   },
@@ -120,6 +124,7 @@ module.exports = Application.extend( validations, {
     var self = this;
     var args = req.form;
 
+    args.cover            = req.body.cover;
     args.is_artists_found = req.is_artists_found;
 
     if( !req.form.isValid ){
