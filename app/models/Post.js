@@ -38,7 +38,7 @@ module.exports = {
     show : function ( args, next, no_content, ok ){
       var self = this;
 
-      this.findById( args.query.id ).
+      this.findById( args.id ).
         exec( function ( err, post ){
           if( err )   return next( err );
           if( !post ) return no_content();

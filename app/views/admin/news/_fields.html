@@ -2,23 +2,23 @@
 
 <div class="form-block-wrap">
   <label id="label-title" class="form-label" for="input-title">標題</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'title' ) ?>
   <span class="form-tip">必填</span>
 </div>
 
-<input id="input-title" type="text" name="title">
+<input id="input-title" type="text" name="title" value="<?= it.show_ori_body_field( it.ori_body, 'title' )?>">
 
 <div class="form-block-wrap">
   <label id="label-content" class="form-label" for="input-content">內文</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'content' ) ?>
   <span class="form-tip">必填</span>
 </div>
 
-<textarea id="input-content" type="text" name="content" rows="16"></textarea>
+<textarea id="input-content" type="text" name="content" rows="16"><?= it.show_ori_body_field( it.ori_body, 'content' )?></textarea>
 
 <div class="form-block-wrap">
   <label id="label-artists" class="form-label" for="input-artists">相關藝人</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'artists' ) ?>
   <span class="form-tip">此欄位為多選，請用逗號作分隔</span>
 </div>
 
@@ -26,7 +26,7 @@
 
 <div class="form-block-wrap">
   <label id="label-thumb" class="form-label" for="input-thumb">首頁縮圖網址</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'cover' ) ?>
   <span class="form-tip">最小尺寸需為 280x280 px</span>
 </div>
 

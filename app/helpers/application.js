@@ -87,6 +87,10 @@ module.exports = function ( app ){
       }
     },
 
+    show_req_params : function ( req, res ){
+      return req.params;
+    },
+
     messages : require( 'express-messages' )
   });
 };

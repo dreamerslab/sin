@@ -27,6 +27,8 @@ module.exports = Application.extend({
 
     req.is_artists_found = true;
 
+    if( !artists.length ) return next();
+
     artists.forEach( function ( artist_name ){
       flow.parallel( function ( ready ){
         Artist.findOne({ name : new RegExp( artist_name, 'i' )}, function ( err, artist ){
