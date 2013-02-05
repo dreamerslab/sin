@@ -34,7 +34,7 @@ module.exports = {
   },
 
   remove_from_posts : function ( next ){
-    var query =  { artists : { $in : [ new RegExp( this.name, 'i' )]}};
+    var query  = { artists : { $in : [ new RegExp( this.name, 'i' )]}};
     var update = { $pull : { posts : new RegExp( this.name, 'i' )}};
 
     Post.update( query, update, function ( err, posts ){
@@ -46,7 +46,7 @@ module.exports = {
   },
 
   remove_from_releases : function ( next ){
-    var query =  { artists : { $in : [ new RegExp( this.name, 'i' )]}};
+    var query  = { artists : { $in : [ new RegExp( this.name, 'i' )]}};
     var update = { $pull : { posts : new RegExp( this.name, 'i' )}};
 
     Release.update( query, update, function ( err, releases ){
@@ -58,7 +58,7 @@ module.exports = {
   },
 
   remove_from_videos : function ( next ){
-    var query =  { artists : { $in : [ new RegExp( this.name, 'i' )]}};
+    var query  = { artists : { $in : [ new RegExp( this.name, 'i' )]}};
     var update = { $pull : { posts : new RegExp( this.name, 'i' )}};
 
     Video.update( query, update, function ( err, videos ){

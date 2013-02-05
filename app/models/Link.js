@@ -30,7 +30,7 @@ module.exports = {
     add_to_artists : function ( artist ){
       var self   = this;
       var Artist = Model( 'Artist' );
-      var query  =  { _id : artist._id };
+      var query  = { _id : artist._id };
       var update = { $push : { links : this._id }};
 
       Artist.update( query, update, function ( err, artist ){
