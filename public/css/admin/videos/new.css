@@ -44,7 +44,7 @@
 }
 
 /* line 34, ../../../../app/sass/admin/videos/new.sass */
-#input-link {
+#input-link, #input-artists {
   display: block;
   width: 100%;
   border: none;

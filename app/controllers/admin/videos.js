@@ -16,7 +16,17 @@ module.exports = Application.extend( validations, {
     before( this.banner_type );
     before( this.current_banner );
     before( this.is_artists_found,      { only : [ 'create', 'update' ]});
+
+    before( this.is_validate_create,    { only : [ 'create' ]});
     before( this.get_info_from_youtube, { only : [ 'create', 'update' ]});
+  },
+
+  is_validate_create : function ( req, res, next ){
+    if( req.form.isValid ) return next();
+
+    res.render( 'admin/videos/new', {
+      ori_body : req.body
+    });
   },
 
   banner_type : function ( req, res, next ){
@@ -33,12 +43,6 @@ module.exports = Application.extend( validations, {
 
     args.is_artists_found = req.is_artists_found;
 
-    if( !req.form.isValid ){
-      return res.render( 'admin/videos/new', {
-        ori_body : req.body
-      });
-    }
-
     Video.insert( args, next,
       // not found
       function (){
@@ -49,7 +53,7 @@ module.exports = Application.extend( validations, {
       },
       // created
       function (){
-        res.redirect( 'admin/videos' );
+        res.redirect( '/admin/videos' );
       });
   },
 

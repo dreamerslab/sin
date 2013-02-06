@@ -5,11 +5,12 @@ module.exports = {
       if( !args.is_artists_found ) return not_found();
 
       new this({
-        artists : args.artists,
-        title   : args.title,
-        thumb   : args.thumb,
-        date    : args.date,
-        url     : args.url
+        artists    : args.artists,
+        title      : args.title,
+        thumb      : args.thumb,
+        date       : args.date,
+        url        : args.url,
+        youtube_id : args.youtube_id
       }).save( function ( err, video ){
         if( err ) return next( err );
 

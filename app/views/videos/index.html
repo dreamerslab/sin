@@ -3,26 +3,25 @@
 <? it.title = '三十而立 sincerely music | 影音'; ?>
 <? it.nav_selected = 'videos'; ?>
 
-<? var videos = [ '', '', '', '', '' ]; ?>
-
 <div id="videos">
   <? if ( it.is_authenticated ){ ?>
-    <a href="/" id="btn-add">ADD NEW ENTRY</a>
+    <a href="/admin/videos/new" id="btn-add">ADD NEW ENTRY</a>
   <? } ?>
 
-  <? videos.forEach( function ( video ){ ?>
+  <?= it.show_no_content_err( it.videos ) ?>
+  <? it.videos.forEach( function ( video ){ ?>
     <div class="video">
       <div class="video-wrap">
-        <iframe width="600" height="337" src="https://www.youtube.com/embed/E6Rd7UE8jQc" frameborder="0" allowfullscreen></iframe>
+        <iframe width="600" height="337" src="https://www.youtube.com/embed/<?= video.youtube_id ?>" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="video-intro">
         <h3 class="video-title">
-          <a class="video-link" href="/youtube-link">偷摸大雞 樂團 我也想變成比基尼辣妹 official MV / 偷摸大雞</a>
+          <a class="video-link" href="<?= video.url ?>"><?= video.title ?></a>
         </h3>
-        <span class="video-date">2012.01.22</span>
+        <span class="video-date"><?= video.date ?></span>
       </div>
       <? if( it.is_authenticated ){ ?>
-        <form class="form-delete" action="/admin/videos" method="POST" accept-charset="UTF-8">
+        <form class="form-delete" action="/admin/videos/<?= video._id ?>" method="POST" accept-charset="UTF-8">
           <input type="hidden" name="_method" value="delete" />
           <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
           <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />

@@ -2,15 +2,17 @@
 
 <div class="form-block-wrap">
   <label id="label-link" class="form-label" for="input-link">影片網址</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'url' ) ?>
   <span class="form-tip">最小尺寸需為 280x280 px</span>
 </div>
 
-<input id="input-link" type="text" name="link" placeholder="http://">
+<input id="input-link" type="text" name="url" placeholder="http://">
 
 <div class="form-block-wrap">
   <label id="label-artists" class="form-label" for="input-artists">相關藝人</label>
-  <p class="error">error message goes here</p>
+  <? if( it.is_artists_found == false ){ ?>
+    <p class="error">有藝人沒有被找到，請確定所有藝人都已被新增</p>
+  <? } ?>
   <span class="form-tip">此欄位為多選，請用逗號作分隔</span>
 </div>
 

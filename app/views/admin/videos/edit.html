@@ -2,7 +2,7 @@
 <? it.nav_selected = 'videos'; ?>
 <? it.styles.push( 'admin-videos-new' ); ?>
 
-<form id="videos-form" action="/admin/videos/create" method="POST" accept-charset="UTF-8">
+<form id="videos-form" action="/admin/videos/<?= it.show_req_params().id ?>" method="POST" accept-charset="UTF-8">
   <input type="hidden" name="_method" value="put" />
   <?= it.partial( 'admin/videos/_fields' ) ?>
 </form>

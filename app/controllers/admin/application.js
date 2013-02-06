@@ -2,6 +2,7 @@ var Flow                     = require( 'node.flow' );
 var Application              = require( '../application' );
 var Live                     = Model( 'Live' );
 var Artist                   = Model( 'Artist' );
+var request                  = require( 'request' );
 var regex_for_get_youtube_id = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
 
 module.exports = Application.extend({
@@ -54,9 +55,10 @@ module.exports = Application.extend({
   get_info_from_youtube : function ( req, res, next ){
     req.youtube_info = req.form;
 
-    var cond = [
+    var youtube_id = req.form.url.match( regex_for_get_youtube_id )[ 7 ];
+    var cond       = [
       'https://gdata.youtube.com/feeds/api/videos/',
-      req.form.link.match( regex_for_get_youtube_id )[ 7 ],
+      youtube_id,
       '?v=',   '2',
       '&alt=', 'json'
     ].join( '' );
@@ -67,10 +69,11 @@ module.exports = Application.extend({
         if( response.statusCode == 200 ){
           var entry = JSON.parse( body ).entry;
 
-          req.youtube_info.title = entry.title.$t;
-          req.youtube_info.url   = entry.link[ 0 ].href;
-          req.youtube_info.thumb = entry.media$group.media$thumbnail[ 3 ].url;
-          req.youtube_info.date  = entry.published.$t.substring( 0, 10 );
+          req.youtube_info.title      = entry.title.$t;
+          req.youtube_info.url        = entry.link[ 0 ].href;
+          req.youtube_info.thumb      = entry.media$group.media$thumbnail[ 3 ].url;
+          req.youtube_info.date       = entry.published.$t.substring( 0, 10 );
+          req.youtube_info.youtube_id = youtube_id;
 
           next();
         }

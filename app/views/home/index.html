@@ -6,6 +6,7 @@
       <a id="news-title-link" class="block-title" href="<?= it.namespace ?>/news">news 新聞</a>
     </h2>
     <? var entries = [ '', '', '' ]; ?>
+    <?= it.show_no_content_err( entries ) ?>
     <? entries.forEach( function (){ ?>
       <div class="news-entry">
         <h3 class="news-entry-title">
@@ -26,6 +27,7 @@
     <div id="releases-list">
       <? var releases = [ '', '', '' ]; ?>
 
+      <?= it.show_no_content_err( releases ) ?>
       <? releases.forEach( function (){ ?>
         <a href="<?= it.namespace ?>/releases/show" class="release-link">
           <img class="release-thumb" src="/img/home/release-thumb.jpeg" alt="thumb">
@@ -34,7 +36,10 @@
           <h3 class="release-title">同名EP</h3>
         </a>
       <? }); ?>
-      <a id="releases-more" class="btn-more" href="<?= it.namespace ?>/">More</a>
+
+      <? if( releases.length >= 3 ){ ?>
+        <a id="releases-more" class="btn-more" href="<?= it.namespace ?>/releases">More</a>
+      <? } ?>
     </div>
   </div>
   <div id="videos">
@@ -43,13 +48,16 @@
     </h2>
 
     <div id="videos-list">
-      <? var entries = [ '', '' ]; ?>
-
-      <? entries.forEach( function (){ ?>
-        <iframe class="video" width="248" height="140" src="https://www.youtube.com/embed/E6Rd7UE8jQc" frameborder="0" allowfullscreen></iframe>
+      <?= it.show_no_content_err( it.videos ) ?>
+      <? it.videos.forEach( function ( video ){ ?>
+        <a class="video" href="<?= video.url ?>" title="前往 YouTube 觀看 '<?= video.title ?>'">
+          <img class="video-thumb" src="<?= video.thumb ?>" alt="影片縮圖">
+        </a>
       <? }); ?>
 
-      <a id="videos-more" class="btn-more" href="<?= it.namespace ?>/">More</a>
+      <? if( it.videos.length >= 2 ){ ?>
+        <a id="videos-more" class="btn-more" href="<?= it.namespace ?>/videos">More</a>
+      <? } ?>
     </div>
   </div>
 </div>
@@ -71,6 +79,7 @@
     <div id="live-list">
       <? var lives = [ '', '', '', '' ]; ?>
 
+      <?= it.show_no_content_err( lives ) ?>
       <? lives.forEach( function ( live ){ ?>
         <!-- remember truncate artist, prevent layout crash -->
         <a href="<?= it.namespace ?>/live/show" class="live-link">

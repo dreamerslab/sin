@@ -46,8 +46,10 @@
 
     <div id="videos-list">
       <?= it.show_no_content_err( it.videos ) ?>
-      <? it.videos.forEach( function (){ ?>
-        <iframe class="video" width="248" height="140" src="https://www.youtube.com/embed/E6Rd7UE8jQc" frameborder="0" allowfullscreen></iframe>
+      <? it.videos.forEach( function ( video ){ ?>
+        <a class="video-link" href="<?= video.url ?>" title="前往 YouTube 觀看 '<?= video.title ?>'">
+          <img class="video-thumb" src="<?= video.thumb ?>" alt="影片縮圖">
+        </a>
       <? }); ?>
 
       <? if( it.releases.length > 3 ){ ?>
