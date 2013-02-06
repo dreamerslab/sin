@@ -37,7 +37,7 @@
     <? }); ?>
   </div>
   <div id="nav-wrap">
-    <a id="btn-prev" href="/" title="Previous page">prev</a>
-    <a id="btn-next" href="/" title="Next page">next</a>
+    <a id="btn-prev" href="/news<?= it.qsPrev ? '?' + it.qsPrev : '' ?>" title="Previous page">prev</a>
+    <a id="btn-next" href="/news<?= it.qsNext ? '?' + it.qsNext : '' ?>" title="Next page">next</a>
   </div>
 </div>

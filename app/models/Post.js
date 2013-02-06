@@ -24,14 +24,18 @@ module.exports = {
 
       this.find( args.query ).
         sort( '-created_at' ).
-        skip( args.page * 10 ).
-        batchSize( args.limit ).
-        limit( args.limit ).
+        skip( ( args.page - 1 ) * args.limit ).
+        batchSize( args.limit + 1 ).
+        limit( args.limit + 1 ).
         exec( function ( err, posts ){
           if( err )           return next( err );
           if( !posts.length ) return no_content();
 
-          ok( posts );
+          var more = posts.length > args.limit;
+          if ( more ) {
+            posts.pop();
+          }
+          ok( posts, more );
       });
     },
 
