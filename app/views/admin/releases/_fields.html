@@ -1,46 +1,46 @@
 <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
 
 <div class="form-block-wrap">
-  <label id="label-artist" class="form-label" for="input-artist">相關藝人</label>
-  <p class="error">error message goes here</p>
-  <span class="form-tip">必填</span>
-</div>
-
-<input id="input-artist" type="text" name="artists">
-
-<div class="form-block-wrap">
   <label id="label-name" class="form-label" for="input-name">專輯名稱</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'name' ) ?>
   <span class="form-tip">必填</span>
 </div>
 
-<input id="input-name" type="text" name="name">
+<input id="input-name" type="text" name="name" value="<?= it.show_ori_body_field( it.ori_body, 'name' )?>">
 
 <div class="form-block-wrap">
   <label id="label-date" class="form-label" for="input-date">發行日期</label>
-  <p class="error">error message goes here</p>
-  <span class="form-tip">必填</span>
+  <?= it.show_form_err( 'release_date' ) ?>
 </div>
 
-<input id="input-date" type="text" name="release_date">
+<input id="input-date" type="text" name="release_date" value="<?= it.show_ori_body_field( it.ori_body, 'release_date' )?>">
 
 <div class="form-block-wrap">
   <label id="label-intro" class="form-label" for="input-intro">內文介紹</label>
-  <p class="error">error message goes here</p>
-  <span class="form-tip">可換行，不建議加入圖片</span>
+  <?= it.show_form_err( 'desc' ) ?>
+  <span class="form-tip">必填，可換行，不建議加入圖片</span>
 </div>
 
-<textarea id="input-intro" type="text" name="desc" rows="16"></textarea>
+<textarea id="input-intro" type="text" name="desc" rows="16"><?= it.show_ori_body_field( it.ori_body, 'desc' )?></textarea>
 
 <div class="form-block-wrap">
   <label id="label-cover" class="form-label" for="input-cover">專輯封面網址</label>
-  <p class="error">error message goes here</p>
+  <?= it.show_form_err( 'cover' ) ?>
   <span class="form-tip">必填，最小尺寸需為 272x272 px</span>
 </div>
 
-<input id="input-cover" type="text" name="cover" placeholder="http://">
+<input id="input-cover" type="text" name="cover" placeholder="http://" value="<?= it.show_ori_body_field( it.ori_body, 'cover' )?>">
+
+<div class="form-block-wrap">
+  <label id="label-artist" class="form-label" for="input-artist">相關藝人</label>
+  <? if( it.is_artists_found == false ){ ?>
+    <p class="error">有藝人沒有被找到，請確定所有藝人都已被新增</p>
+  <? } ?>
+</div>
+
+<input id="input-artist" type="text" name="artists" value="<?= it.show_ori_body_field( it.ori_body, 'artists' )?>">
 
 <div id="btns-wrap">
-  <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
+  <a id="content-link-cancel" href="/admin/releases/<?= it.show_req_params().id || '' ?>">Cancel</a>
   <input id="btn-submit" type="submit" value="Submit" />
 </div>

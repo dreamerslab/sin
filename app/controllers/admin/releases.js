@@ -31,6 +31,8 @@ module.exports = Application.extend( validations, {
   create : function ( req, res, next ){
     var args = req.form;
 
+    if( req.body.cover ) args.cover = req.body.cover;
+
     args.is_artists_found = req.is_artists_found;
 
     if( !req.form.isValid ){
@@ -39,7 +41,7 @@ module.exports = Application.extend( validations, {
       });
     }
 
-    Post.insert( args, next,
+    Release.insert( args, next,
       // not found
       function (){
         res.render( 'admin/releases/new', {
@@ -114,7 +116,7 @@ module.exports = Application.extend( validations, {
       // ok
       function ( release ){
         res.render( 'admin/releases/edit', {
-          ori_release : release
+          ori_body : release
         });
       });
   },
@@ -122,6 +124,8 @@ module.exports = Application.extend( validations, {
   update : function ( req, res, next ){
     var self = this;
     var args = req.form;
+
+    if( req.body.cover ) args.cover = req.body.cover;
 
     args.is_artists_found = req.is_artists_found;
 

@@ -40,7 +40,7 @@ module.exports = {
     show : function ( args, next, no_content, ok ){
       var self = this;
 
-      this.findById( args.release_id ).
+      this.findById( args.id ).
         populate( 'songs' ).
         exec( function ( err, release ){
           if( err )      return next( err );

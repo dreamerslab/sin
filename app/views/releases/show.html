@@ -5,13 +5,19 @@
 <? it.admin_view = 'edit'; ?>
 
 <div id="main">
-  <h2 id="artist">偷摸大雞</h2>
-  <h3 id="release-name">偷摸大雞同名EP</h3>
-  <span id="release-date">2012.12.21</span>
+  <h3 id="release-name"><?= it.release.name ?></h3>
+  <span id="release-date"><?= it.release.release_date ?></span>
   <div id="release-intro">
-    <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面。</p>
+    <?= it.markdown( it.release.desc ) ?>
 
-    <p>是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面，旅我遠電市身年全。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車，是此參、清路他，市論的放市館在只黑聲，取舞全印面。</p>
+    <? if( it.release.artists.length ){ ?>
+      <p id="related-artists">
+        相關藝人：
+        <? it.release.artists.forEach( function ( artist_name, index ){ ?>
+          <a href="<?= it.namespace ?>/news?artist=<?- artist_name ?>" title="與<?= artist_name ?>相關的新聞"><?= artist_name ?></a><?= index == ( it.release.artists.length - 1 ) ? '' : ', ' ?>
+        <? }); ?>
+      </p>
+    <? } ?>
   </div>
 
   <?
@@ -85,8 +91,8 @@
   </div>
 
   <? if( it.is_authenticated ){ ?>
-    <a id="link-edit" href="/admin/releases/edit">EDIT THIS ENTRY</a>
-    <form class="form-delete" action="/admin/releases" method="POST" accept-charset="UTF-8">
+    <a id="link-edit" href="/admin/releases/<?= it.release._id ?>/edit">EDIT THIS ENTRY</a>
+    <form class="form-delete" action="/admin/releases/<?= it.release._id ?>" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_method" value="delete" />
       <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
       <input class="btn-delete" type="submit" value="DELETE THIS ENTRY" />
@@ -95,7 +101,7 @@
 </div>
 
 <div id="sidebar">
-  <img id="release-cover" src="/img/home/release-thumb.jpeg" alt="cover">
+  <img id="release-cover" src="<?= it.release.cover ?>" alt="cover">
   <!-- soundcloud player goes here -->
   <iframe
     width="232px"
