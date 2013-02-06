@@ -38,7 +38,7 @@ var Schema = function ( Schema ){
       name         : { type : String, required : true },
       desc         : { type : String, default : '' },
       release_date : { type : String, default : '' },
-      cover        : { type : String, default : '' }, // url
+      cover        : { type : String, default : '/img/common/default-banner.jpg' }, // url
       songs        : [{ type : ObjectId, ref : 'Song' }],
       created_at   : { type : Number, default : Date.now },
       updated_at   : { type : Number }
