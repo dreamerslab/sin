@@ -6,7 +6,7 @@
   <span class="form-tip">最小尺寸需為 280x280 px</span>
 </div>
 
-<input id="input-link" type="text" name="url" placeholder="http://">
+<input id="input-link" type="text" name="url" placeholder="http://" value="<?= it.show_ori_body_field( it.ori_body, 'url' )?>">
 
 <div class="form-block-wrap">
   <label id="label-artists" class="form-label" for="input-artists">相關藝人</label>
@@ -16,7 +16,7 @@
   <span class="form-tip">此欄位為多選，請用逗號作分隔</span>
 </div>
 
-<input id="input-artists" type="text" name="artists">
+<input id="input-artists" type="text" name="artists" value="<?= it.show_ori_body_field( it.ori_body, 'artists' )?>">
 
 <div id="btns-wrap">
   <a id="content-link-cancel" href="/admin/news/index">Cancel</a>
