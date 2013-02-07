@@ -76,11 +76,10 @@
     <div id="releases-list">
       <?= it.show_no_content_err( it.releases ) ?>
       <? it.releases.forEach( function ( release ){ ?>
-        <a href="/releases/show" class="release-link">
-          <img class="release-thumb" src="/img/home/release-thumb.jpeg" alt="thumb">
-          <p class="release-date">2011</p>
-          <h4 class="release-author">偷摸大雞</h4>
-          <h3 class="release-title">同名EP</h3>
+        <a href="<?= it.namespace ?>/releases/<?= release._id ?>" class="release-link">
+          <img class="release-thumb" src="<?= release.cover ?>" alt="thumb">
+          <p class="release-date"><?= release.release_date ?></p>
+          <h3 class="release-title"><?= release.name ?></h3>
         </a>
       <? }); ?>
 
