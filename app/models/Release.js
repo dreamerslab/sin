@@ -81,53 +81,83 @@ module.exports = {
           deleted();
         });
       });
-    }
-  },
-
-  methods : {
-
-    insert_song : function ( song_id, target_page ){
-      var page = parseInt( target_page, 10 );
-      var pos  = page - 1;
-      var len  = this.songs.length;
-
-      if( pos < 0 )   pos = 0;
-      if( pos > len ) pos = len;
-
-      this.songs.splice( pos, 0, song_id );
     },
 
-    move_song : function ( current_page, target_page ){
-      var len       = this.songs.length;
-      var new_index = parseInt( target_page, 10 ) - 1;
-      var old_index = parseInt( current_page, 10 ) - 1;
+    add_song : function ( args, next, no_content, added ){
+      this.findById( args.release._id, function ( err, release ){
+        if( err )      return next( err );
+        if( !release ) return no_content( req, res );
 
-      if( new_index < 0 )   new_index = 0;
-      if( new_index > len ) new_index = len - 1;
+        var page = parseInt( args.target_order, 10 );
+        var pos  = page - 1;
+        var len  = release.songs.length;
 
-      if( new_index >= len ){
-        var k = new_index - len;
+        if( pos < 0 )   pos = 0;
+        if( pos > len ) pos = len;
 
-        while(( k-- ) + 1 ){
-          this.songs.push( UTILS.uid( 24 ));
-        }
-      }
+        release.songs.splice( pos, 0, args.song_id );
+        release.save( function ( err, release ){
+          if( err ) return next( err );
 
-      this.songs.splice( new_index, 0, this.songs.splice( old_index, 1 )[ 0 ]);
+          added();
+        });
+      });
     },
 
-    remove_song : function ( song_id ){
-      var pos = 0;
-      var len = this.songs.length;
+    move_song : function ( args, next, no_content, moved ){
+      this.findById( args.release_id, function ( err, release ){
+        if( err )      return next( err );
+        if( !release ) return no_content( req, res );
 
-      for( ; len--;){
-        if( this.songs[ len ]._id == song_id ){
-          pos = len;
-          break;
+        if( args.target_order !== undefined ){
+          var i            = 0;
+          var len          = release.songs.length;
+          var current_page = release.songs.indexOf( args.song_id );
+          var new_index    = parseInt( args.target_order, 10 ) - 1;
+
+          if( new_index < 0 )   new_index = 0;
+          if( new_index > len ) new_index = len - 1;
+
+          if( new_index >= len ){
+            var k = new_index - len;
+
+            while(( k-- ) + 1 ){
+              release.songs.push( UTILS.uid( 24 ));
+            }
+          }
+
+          release.songs.splice( new_index, 0, release.songs.splice( current_page, 1 )[ 0 ]);
+          release.save( function ( err, release ){
+            LOG.debug( '[model][Release][move_song] done', release );
+
+            moved();
+          });
         }
-      }
+      });
+    },
 
-      this.songs.splice( pos, 1 );
+    remove_song : function ( args, next, no_content, removed ){
+      this.findById( args.release._id, function ( err, release ){
+        if( err )      return next( err );
+        if( !release ) return no_content();
+
+        var pos = 0;
+        var len = release.songs.length;
+
+        for( ; len--;){
+          if( release.songs[ len ] == args.id ){
+            pos = len;
+            break;
+          }
+        }
+
+        release.songs.splice( pos, 1 );
+        release.save( function ( err, release ){
+          if( err ) return next( err );
+
+          removed();
+        });
+      });
     }
   }
 };

@@ -2,7 +2,6 @@
 
 <? it.title = '三十而立 sincerely music | (藝人名稱) - (專輯名稱)'; ?>
 <? it.nav_selected = 'releases'; ?>
-<? it.admin_view = 'edit'; ?>
 
 <div id="main">
   <h3 id="release-name"><?= it.release.name ?></h3>
@@ -20,73 +19,49 @@
     <? } ?>
   </div>
 
-  <?
-    var songs = [ '', '', '', '', '', '', '', '' ];
-    var count = 3;
-  ?>
-
   <? if( it.admin_view == 'new' ){ ?>
-    <form class="songs-form" action="/admin/releases/mongo_id/songs/create" method="POST" accept-charset="UTF-8">
+    <form class="songs-form" action="/admin/releases/<?= it.release._id ?>/songs" method="POST" accept-charset="UTF-8">
       <?= it.partial( 'admin/songs/_fields' ) ?>
     </form>
   <? } ?>
 
   <div id="songs">
     <ul class="songs-list">
-      <li class="songs-item">
-        <a class="song-link" href="/releases/mongo_id/songs/show">ASUS 華碩與三十而立</a>
-        <span class="song-number">1.</span>
-        <span class="song-length">3:49</span>
-        <a class="song-itunes-link" href="/releases/show?itunes-link=111">Download on iTunes</a>
+      <? it.songs.forEach( function ( song, index ){ ?>
+        <? if(( it.admin_view == 'edit') && ( it.current_song._id == song._id )){ ?>
+          <form class="songs-form-delete" action="/admin/releases/<?= it.release._id ?>/songs/<?= song._id ?>" method="POST" accept-charset="UTF-8">
+            <input type="hidden" name="_method" value="delete" />
+            <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+            <input class="songs-btn-delete" type="submit" value="DELETE THIS ENTRY" />
+          </form>
 
-        <? if( it.is_authenticated ){ ?>
-          <a class="link-edit" href="/admin/releases/mongo_id/songs/mongo_id/edit">EDIT THIS ENTRY</a>
+          <form class="songs-form-edit" action="/admin/releases/<?= it.release._id ?>/songs/<?= song._id ?>" method="POST" accept-charset="UTF-8">
+            <input type="hidden" name="_method" value="put" />
+            <? it.ori_body = song; ?>
+            <? it.ori_body.target_order = index + 1; ?>
+            <?= it.partial( 'admin/songs/_fields' ) ?>
+          </form>
+        <? }else{ ?>
+          <li class="songs-item">
+            <a class="song-link" href="<?= it.namespace ?>/releases/<?= it.release._id ?>/songs/<?= song._id ?>"><?= song.title ?></a>
+            <span class="song-number"><?= index + 1 ?></span>
+            <span class="song-length"><?= song.duration ?></span>
+
+            <? if( song.itunes ){ ?>
+              <a class="song-itunes-link" href="<?= song.itunes ?>">Download on iTunes</a>
+            <? } ?>
+
+            <? if( it.is_authenticated ){ ?>
+              <a class="link-edit" href="/admin/releases/<?= it.release._id ?>/songs/<?= song._id ?>/edit">EDIT THIS ENTRY</a>
+            <? } ?>
+          </li>
         <? } ?>
-      </li>
-
-      <!-- this if is for temp, use mongo id to check if this song is the current song -->
-      <? if( it.admin_view == 'edit' ){ ?>
-        <form class="songs-form-delete" action="/admin/releases" method="POST" accept-charset="UTF-8">
-          <input type="hidden" name="_method" value="delete" />
-          <input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
-          <input class="songs-btn-delete" type="submit" value="DELETE THIS ENTRY" />
-        </form>
-
-        <form class="songs-form-edit" action="/admin/releases/mongo_id/songs/" method="POST" accept-charset="UTF-8">
-          <input type="hidden" name="_method" value="put" />
-          <?= it.partial( 'admin/songs/_fields' ) ?>
-        </form>
-      <? }else{ ?>
-        <li class="songs-item">
-          <a class="song-link" href="/releases/mongo_id/songs/show">ASUS 華碩與三十而立</a>
-          <span class="song-number">2.</span>
-          <span class="song-length">3:49</span>
-          <a class="song-itunes-link" href="/releases/show?itunes-link=111">Download on iTunes</a>
-
-          <a class="link-edit" href="/admin/releases/mongo_id/songs/mongo_id/edit">EDIT THIS ENTRY</a>
-        </li>
-      <? } ?>
-
-      <? songs.forEach( function ( song ){ ?>
-        <li class="songs-item">
-          <a class="song-link" href="/releases/mongo_id/songs/show">ASUS 華碩與三十而立</a>
-          <span class="song-number"><?= count ?>.</span>
-          <span class="song-length">3:49</span>
-          <a class="song-itunes-link" href="/releases/show?itunes-link=111">Download on iTunes</a>
-
-          <? if( it.is_authenticated ){ ?>
-            <a class="link-edit" href="/admin/releases/mongo_id/songs/mongo_id/edit">EDIT THIS ENTRY</a>
-          <? } ?>
-        </li>
-      <?
-          count++;
-        });
-      ?>
+      <? }); ?>
     </ul>
 
     <!-- this if is for temp, still figuring out better way to decide when to show add link -->
-    <? if(( it.admin_view !== 'new' ) && ( it.admin_view !== 'edit' )){ ?>
-      <a href="/" id="btn-add">ADD NEW SONG</a>
+    <? if( it.is_authenticated && ( it.admin_view !== 'new' ) && ( it.admin_view !== 'edit' )){ ?>
+      <a href="/admin/releases/<?= it.release._id ?>/songs/new" id="btn-add">ADD NEW SONG</a>
     <? } ?>
   </div>
 
@@ -103,11 +78,15 @@
 <div id="sidebar">
   <img id="release-cover" src="<?= it.release.cover ?>" alt="cover">
   <!-- soundcloud player goes here -->
-  <iframe
+  <? if( it.current_song && it.current_song.soundcloud ){ ?>
+    <?= it.current_song.soundcloud ?>
+  <? } ?>
+
+  <!-- <iframe
     width="232px"
     height="59px"
     scrolling="no"
     frameborder="no"
     src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1983744&amp;color=75d0dc&amp;auto_play=false&amp;show_artwork=true">
-  </iframe>
+  </iframe> -->
 </div>

@@ -1,6 +1,7 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/songs' );
 var Song        = Model( 'Song' );
+var Release     = Model( 'Release' );
 
 module.exports = Application.extend( validations, {
 
@@ -15,13 +16,13 @@ module.exports = Application.extend( validations, {
     before( this.namespace );
     before( this.banner_type );
     before( this.current_banner );
-    before( this.current_release,        { only : [ 'index', 'show', 'new', 'edit', 'destroy' ]});
-    before( this.current_song_for_index, { only : [ 'index', 'new' ]});
+    before( this.current_release );
+    before( this.current_song_for_index, { only : [ 'index', 'new', 'create' ]});
     before( this.current_song_for_show,  { only : [ 'show', 'edit' ]});
   },
 
   banner_type : function ( req, res, next ){
-    req.banner_type = 'home';
+    req.banner_type = 'releases';
     next();
   },
 
@@ -35,9 +36,11 @@ module.exports = Application.extend( validations, {
   },
 
   create : function ( req, res, next ){
+    var self = this;
     var args = req.form;
 
-    args.release = req.release;
+    args.release    = req.release;
+    args.soundcloud = req.body.soundcloud;
 
     if( !req.form.isValid ){
       res.render( 'releases/show', {
@@ -53,7 +56,17 @@ module.exports = Application.extend( validations, {
     }
 
     Song.insert( args, next, function ( song ){
-      res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
+      args.song_id = song._id;
+
+      Release.add_song( args, next,
+        // no content
+        function (){
+          self.no_content( req, res );
+        },
+        // added
+        function (){
+          res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
+        });
     });
   },
 
@@ -81,9 +94,11 @@ module.exports = Application.extend( validations, {
   },
 
   update : function ( req, res, next ){
+    var self = this;
     var args = req.form;
 
-    args.release = req.release;
+    args.release    = req.release;
+    args.soundcloud = req.body.soundcloud;
 
     if( !req.form.isValid ){
       res.render( 'releases/show', {
@@ -99,19 +114,47 @@ module.exports = Application.extend( validations, {
     }
 
     Song.update_props( args, next,
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // updated
       function ( song ){
-        res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
+        args.song_id = song._id;
+
+        Release.move_song( args, next,
+          function (){
+            self.no_content( req, res );
+          },
+          function (){
+            res.redirect( '/admin/releases/' + req.params.release_id + '/songs/' + song._id );
+          });
       });
   },
 
   destroy : function ( req, res, next ){
+    var self = this;
     var args = {
       id      : req.params.id,
       release : req.release
     };
 
-    Song.destroy( args, next, function (){
-      res.redirect( '/admin/releases' + req.params.release_id );
-    });
+    Release.remove_song( args, next,
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // removed
+      function ( err, release ){
+        Song.destroy( args, next,
+          // no content
+          function (){
+            self.no_content( req, res );
+          },
+          // deleted
+          function (){
+            res.redirect( '/admin/releases/' + req.params.release_id );
+          });
+      });
   }
 });

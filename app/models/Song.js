@@ -13,12 +13,7 @@ module.exports = {
       }).save( function ( err, song ){
         if( err ) return next( err );
 
-        current_release.insert_song( song._id, args.target_order );
-        current_release.save( function ( err, release ){
-          if( err ) return next( err );
-
-          created( song );
-        });
+        created( song );
       });
     },
 
@@ -35,13 +30,6 @@ module.exports = {
         if( err )   return next( err );
         if( !song ) return no_content();
 
-        if( args.target_order !== undefined ){
-          current_release.move_song( song._id, args.target_order );
-          current_release.save( function ( err, release ){
-            if( err ) return next( err );
-          });
-        }
-
         updated( song );
       });
     },
@@ -53,12 +41,7 @@ module.exports = {
         if( err )   return next( err );
         if( !song ) return no_content( err );
 
-        current_release.remove_song( song._id, args.target_order );
-        current_release.save( function ( err, release ){
-          if( err ) return next( err );
-
-          deleted();
-        });
+        deleted();
       });
     }
   }

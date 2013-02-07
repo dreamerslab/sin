@@ -1,23 +1,25 @@
+<input type="hidden" name="_csrf" value="<?= it.csrf ?>" />
+
 <div class="form-block-wrap">
   <div class="form-tips-wrap">
     <label id="label-order" class="form-label" for="input-order">曲順*</label>
   </div>
 
-  <input id="input-order" type="text" name="target_order">
+  <input id="input-order" type="text" name="target_order" value="<?= it.show_ori_body_field( it.ori_body, 'target_order' )?>">
 </div>
 <div class="form-block-wrap">
   <div class="form-tips-wrap">
     <label id="label-name" class="form-label" for="input-name">曲名*</label>
   </div>
 
-  <input id="input-name" type="text" name="title">
+  <input id="input-name" type="text" name="title" value="<?= it.show_ori_body_field( it.ori_body, 'title' )?>">
 </div>
 <div id="form-block-duration" class="form-block-wrap">
   <div class="form-tips-wrap">
     <label id="label-duration" class="form-label" for="input-duration">歌曲長度*</label>
   </div>
 
-  <input id="input-duration" type="text" name="duration">
+  <input id="input-duration" type="text" name="duration" value="<?= it.show_ori_body_field( it.ori_body, 'duration' )?>">
 </div>
 <div id="form-block-itunes" class="form-block-wrap">
   <div class="form-tips-wrap">
@@ -25,22 +27,23 @@
     <span class="form-tip">*為必填</span>
   </div>
 
-  <input id="input-itunes" type="text" name="itunes">
+  <input id="input-itunes" type="text" name="itunes" value="<?= it.show_ori_body_field( it.ori_body, 'itunes' )?>">
 </div>
 <div class="form-block-wrap">
   <div class="form-tips-wrap">
     <label id="label-soundcloud" class="form-label" for="input-soundcloud">SoundCloud Player 嵌入程式碼</label>
   </div>
 
-  <input id="input-soundcloud" type="text" name="soundcloud">
+  <input id="input-soundcloud" type="text" name="soundcloud" value="<?- it.show_ori_body_field( it.ori_body, 'soundcloud' )?>">
 </div>
 
 <div id="btns-wrap">
-  <a id="content-link-cancel" href="/admin/releases/mongo_id/songs/mongo_id">Cancel</a>
+  <a id="content-link-cancel" href="/admin/releases/<?= it.release._id ?>/songs/<?= it.show_req_params().id || '' ?>">Cancel</a>
   <input id="btn-submit" type="submit" value="Submit" />
 </div>
 
-<p class="error">error message goes here</p>
-<p class="error">error message goes here</p>
-<p class="error">error message goes here</p>
-<p class="error">error message goes here</p>
+<?= it.show_form_err( 'target_order' ) ?>
+<?= it.show_form_err( 'title' ) ?>
+<?= it.show_form_err( 'duration' ) ?>
+<?= it.show_form_err( 'itunes' ) ?>
+<?= it.show_form_err( 'soundcloud' ) ?>

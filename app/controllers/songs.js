@@ -5,8 +5,8 @@ var Release     = Model( 'Release' );
 module.exports = Application.extend( validations, {
 
   init : function ( before, after ){
-    before( this.validate_index, { only : [ 'index' ]});
-    before( this.validate_show,  { only : [ 'show' ]});
+    before( this.validate_index_n_new, { only : [ 'index' ]});
+    before( this.validate_show_n_edit, { only : [ 'show' ]});
     before( this.is_validate );
 
     before( this.namespace );
@@ -39,7 +39,7 @@ module.exports = Application.extend( validations, {
         res.render( 'releases/show', {
           _assets      : 'releases/assets/_show',
           release      : release,
-          songs        : req.songs,
+          songs        : req.release.songs,
           current_song : req.current_song
         });
       });

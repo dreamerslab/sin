@@ -10,10 +10,10 @@ form.configure({
 module.exports = {
 
   validate_index_n_new : form(
-    field( 'id' ).required( '', lang._404 ).is( r.id, lang._404 )
+    field( 'release_id' ).required( '', lang._404 ).is( r.id, lang._404 )
   ),
 
-  validate_show : form(
+  validate_show_n_edit : form(
     field( 'release_id' ).required( '', lang._404 ).is( r.id, lang._404 ),
     field( 'id'         ).required( '', lang._404 ).is( r.id, lang._404 )
   ),
@@ -22,9 +22,8 @@ module.exports = {
     field( 'release_id'   ).required( '', lang._404 ).is( r.id, lang._404 ),
     field( 'id'           ).is( r.id, lang._404 ),
     field( 'target_order' ).required(  '', lang.required.target_order ).isInt( lang.invalid.target_order ),
-    field( 'name'         ).required(  '', lang.required.name ).maxLength( 50, lang.invalid.name ),
+    field( 'title'        ).required(  '', lang.required.name ).maxLength( 50, lang.invalid.name ),
     field( 'duration'     ).maxLength(  7, lang.invalid.duration ),
-    field( 'soundcloud'   ).isUrl(         lang.invalid.soundcloud ),
     field( 'itunes'       ).isUrl(         lang.invalid.itunes )
   )
 };

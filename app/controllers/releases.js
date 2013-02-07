@@ -61,7 +61,7 @@ module.exports = Application.extend( validations, {
         res.render( 'releases/show', {
           _assets      : 'releases/assets/_show',
           release      : release,
-          songs        : req.songs,
+          songs        : release.songs,
           current_song : req.current_song
         });
       });
