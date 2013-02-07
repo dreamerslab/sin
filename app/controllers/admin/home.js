@@ -40,15 +40,31 @@ module.exports = Application.extend( validations, {
   },
 
   soundcloud_edit : function ( req, res, next ){
-    res.render( 'admin/home/edit', {
-      action_type : 'soundcloud',
-      subtitle    : 'Soundcloud 播放器',
-      type        : 'home_soundcloud'
-    });
+    var self = this;
+    var args = {
+      type : 'home_soundcloud'
+    };
+
+    Url.show( args, next,
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // ok
+      function ( url ){
+        res.render( 'admin/home/edit', {
+          action_type : 'soundcloud',
+          subtitle    : 'Soundcloud 播放器',
+          type        : 'home_soundcloud',
+          ori_body    : url
+        });
+      });
   },
 
   soundcloud_udpate : function ( req, res, next ){
     var args = req.form;
+
+    args.url = req.body.url;
 
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {
@@ -65,15 +81,31 @@ module.exports = Application.extend( validations, {
   },
 
   facebook_edit : function ( req, res, next ){
-    res.render( 'admin/home/edit', {
-      action_type : 'facebook',
-      subtitle    : '臉書粉絲頁',
-      type        : 'home_facebook'
-    });
+    var self = this;
+    var args = {
+      type : 'home_soundcloud'
+    };
+
+    Url.show( args, next,
+      // no content
+      function (){
+        self.no_content( req, res );
+      },
+      // ok
+      function ( url ){
+        res.render( 'admin/home/edit', {
+          action_type : 'facebook',
+          subtitle    : '臉書粉絲頁',
+          type        : 'home_facebook',
+          ori_body    : url
+        });
+      });
   },
 
   facebook_udpate : function ( req, res, next ){
     var args = req.form;
+
+    args.url = req.body.url;
 
     if( !req.form.isValid ){
       return res.render( 'admin/home/edit', {

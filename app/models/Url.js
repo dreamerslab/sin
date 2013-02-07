@@ -16,6 +16,15 @@ module.exports = {
             save( function ( err, url ){
               if( err ) return next( err );
 
+              if(( url.type == 'home_soundcloud' ) || ( url.type == 'home_facebook' )){
+                url.url = '';
+                url.save( function ( err, url ){
+                  if( err ) return next( err );
+                });
+
+                return created( url );
+              }
+
               created( url );
             });
         });
