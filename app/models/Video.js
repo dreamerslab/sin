@@ -24,8 +24,6 @@ module.exports = {
           artists : new RegExp( args.artist, 'i' )
         } : {};
 
-      console.log( query );
-
       this.find( query ).
         sort( '-created_at' ).
         skip( args.page * 10 ).
@@ -34,8 +32,6 @@ module.exports = {
         exec( function ( err, videos ){
           if( err )            return next( err );
           if( !videos.length ) return no_content();
-
-          console.log( videos );
 
           ok( videos );
       });
