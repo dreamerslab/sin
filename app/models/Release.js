@@ -21,7 +21,7 @@ module.exports = {
     index : function ( args, next, no_content, ok ){
       var query = args.artist ?
         {
-          artists : { $in : [ new RegExp( args.artist, 'i' )]}
+          artists : new RegExp( args.artist, 'i' )
         } : {};
 
       this.find( query ).

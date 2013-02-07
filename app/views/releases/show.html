@@ -13,7 +13,7 @@
       <p id="related-artists">
         相關藝人：
         <? it.release.artists.forEach( function ( artist_name, index ){ ?>
-          <a href="<?= it.namespace ?>/news?artist=<?- artist_name ?>" title="與<?= artist_name ?>相關的新聞"><?= artist_name ?></a><?= index == ( it.release.artists.length - 1 ) ? '' : ', ' ?>
+          <a href="<?= it.namespace ?>/releases?artist=<?- artist_name ?>" title="與<?= artist_name ?>相關的新聞"><?= artist_name ?></a><?= index == ( it.release.artists.length - 1 ) ? '' : ', ' ?>
         <? }); ?>
       </p>
     <? } ?>

@@ -19,10 +19,10 @@ module.exports = {
     index : function ( args, next, no_content, ok ){
       var query = args.artist ?
         {
-          artists : { $in : [ new RegExp( args.artist, 'i' )]}
+          artists : new RegExp( args.artist, 'i' )
         } : {};
 
-      this.find( args.query ).
+      this.find( query ).
         sort( '-created_at' ).
         skip(( args.page - 1 ) * args.limit ).
         batchSize( args.limit + 1 ).

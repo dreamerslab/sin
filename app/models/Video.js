@@ -21,10 +21,12 @@ module.exports = {
     index : function ( args, next, no_content, ok ){
       var query = args.artist ?
         {
-          artists : { $in : [ new RegExp( args.artist, 'i' )]}
+          artists : new RegExp( args.artist, 'i' )
         } : {};
 
-      this.find( args.query ).
+      console.log( query );
+
+      this.find( query ).
         sort( '-created_at' ).
         skip( args.page * 10 ).
         batchSize( args.limit ).
@@ -32,6 +34,8 @@ module.exports = {
         exec( function ( err, videos ){
           if( err )            return next( err );
           if( !videos.length ) return no_content();
+
+          console.log( videos );
 
           ok( videos );
       });
