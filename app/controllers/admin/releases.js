@@ -1,6 +1,7 @@
 var Application = require( './application' );
 var validations = require( LIB_DIR + 'validations/releases' );
 var Release     = Model( 'Release' );
+var Song        = Model( 'Song' );
 
 module.exports = Application.extend( validations, {
 
@@ -170,7 +171,28 @@ module.exports = Application.extend( validations, {
         self.no_content( req, res );
       },
       // deleted
-      function (){
+      function ( songs ){
+        var args_for_song;
+
+        console.log( songs );
+
+        songs.forEach( function ( song_id, index ){
+          args_for_song = {
+            id : song_id
+          };
+
+          Song.destroy( args_for_song,
+            function ( err ){
+              LOG.error( 500, 'Song remove fail', err );
+            },
+            function ( err ){
+              LOG.error( 500, 'Song remove fail, not found', err );
+            },
+            function (){
+              LOG.debug( 'Song remove done', song_id );
+            });
+        });
+
         res.redirect( '/admin/releases' );
       });
   }

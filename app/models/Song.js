@@ -35,8 +35,6 @@ module.exports = {
     },
 
     destroy : function ( args, next, no_content, deleted ){
-      var current_release = args.release;
-
       this.findByIdAndRemove( args.id, function ( err, song ){
         if( err )   return next( err );
         if( !song ) return no_content( err );

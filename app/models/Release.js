@@ -80,10 +80,12 @@ module.exports = {
         if( err )      return next( err );
         if( !release ) return no_content( err );
 
+        var songs = release.songs;
+
         release.remove( function ( err ){
           if( err ) return next( err );
 
-          deleted();
+          deleted( songs );
         });
       });
     },
