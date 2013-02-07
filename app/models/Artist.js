@@ -49,7 +49,6 @@ module.exports = {
               },
               function ( link ){
                 link.add_to_artists( artist );
-                next();
               });
           }
 
