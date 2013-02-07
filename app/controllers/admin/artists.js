@@ -33,17 +33,11 @@ module.exports = Application.extend( validations, {
   create : function ( req, res, next ){
     var args = req.form;
 
-    if( req.body.link_name1 ) args.link_name1 = req.body.link_name1;
-    if( req.body.link_name2 ) args.link_name2 = req.body.link_name2;
-    if( req.body.link_name3 ) args.link_name3 = req.body.link_name3;
-    if( req.body.link_name4 ) args.link_name4 = req.body.link_name4;
-    if( req.body.link_name5 ) args.link_name5 = req.body.link_name5;
-
-    if( req.body.link1 ) args.link1 = req.body.link1;
-    if( req.body.link2 ) args.link2 = req.body.link2;
-    if( req.body.link3 ) args.link3 = req.body.link3;
-    if( req.body.link4 ) args.link4 = req.body.link4;
-    if( req.body.link5 ) args.link5 = req.body.link5;
+    if( req.body.link_name1 !== undefined ) args.link_name1 = req.body.link_name1;
+    if( req.body.link_name2 !== undefined ) args.link_name2 = req.body.link_name2;
+    if( req.body.link_name3 !== undefined ) args.link_name3 = req.body.link_name3;
+    if( req.body.link_name4 !== undefined ) args.link_name4 = req.body.link_name4;
+    if( req.body.link_name5 !== undefined ) args.link_name5 = req.body.link_name5;
 
     if( req.body.thumb ) args.thumb = req.body.thumb;
     if( req.body.cover ) args.cover = req.body.cover;
@@ -117,17 +111,11 @@ module.exports = Application.extend( validations, {
     var self = this;
     var args = req.form;
 
-    if( req.body.link_name1 ) args.link_name1 = req.body.link_name1;
-    if( req.body.link_name2 ) args.link_name2 = req.body.link_name2;
-    if( req.body.link_name3 ) args.link_name3 = req.body.link_name3;
-    if( req.body.link_name4 ) args.link_name4 = req.body.link_name4;
-    if( req.body.link_name5 ) args.link_name5 = req.body.link_name5;
-
-    if( req.body.link1 ) args.link1 = req.body.link1;
-    if( req.body.link2 ) args.link2 = req.body.link2;
-    if( req.body.link3 ) args.link3 = req.body.link3;
-    if( req.body.link4 ) args.link4 = req.body.link4;
-    if( req.body.link5 ) args.link5 = req.body.link5;
+    if( req.body.link_name1 !== undefined ) args.link_name1 = req.body.link_name1;
+    if( req.body.link_name2 !== undefined ) args.link_name2 = req.body.link_name2;
+    if( req.body.link_name3 !== undefined ) args.link_name3 = req.body.link_name3;
+    if( req.body.link_name4 !== undefined ) args.link_name4 = req.body.link_name4;
+    if( req.body.link_name5 !== undefined ) args.link_name5 = req.body.link_name5;
 
     if( req.body.thumb ) args.thumb = req.body.thumb;
     if( req.body.cover ) args.cover = req.body.cover;
