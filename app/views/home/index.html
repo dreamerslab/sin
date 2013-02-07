@@ -5,18 +5,21 @@
     <h2 id="news-title" class="title">
       <a id="news-title-link" class="block-title" href="<?= it.namespace ?>/news">news 新聞</a>
     </h2>
-    <? var entries = [ '', '', '' ]; ?>
-    <?= it.show_no_content_err( entries ) ?>
-    <? entries.forEach( function (){ ?>
+    <?= it.show_no_content_err( it.posts ) ?>
+    <? it.posts.forEach( function ( post ){ ?>
       <div class="news-entry">
         <h3 class="news-entry-title">
-          <a href="<?= it.namespace ?>/news/show" class="news-entry-title-link" title="">流亞定合大前流亞定合大前流亞定合大前流亞定合大前流亞定合大前</a>
+          <a href="<?= it.namespace ?>/news/<?= post._id ?>" class="news-entry-title-link" title="See more about '<?= post.title ?>'"><?= post.title ?></a>
         </h3>
-        <p class="news-entry-p">是此參、清路他，<strong>市論的放市館在只黑聲</strong>，取舞全印面，<strong><em>旅我遠電市身年全</em></strong>。氣毒一去好福那身相時樂眼遊看，西影才構去：一到究！界人一，的隊天；步樣香不往心的，不色家大還是打法加算們父數是，動物車</p>
-        <p class="news-date">2012.12.10</p>
-        <a href="<?= it.namespace ?>/news/show" class="news-thumb-link">
-          <img class="news-thumb" src="/img/home/news-thumb.jpeg" alt="thumb">
-        </a>
+
+        <?= it.markdown( post.content ) ?>
+
+        <p class="news-date"><?= it.date( post.created_at )?></p>
+        <? if( post.cover ){ ?>
+          <a href="<?= it.namespace ?>/news/<?= post._id ?>" class="news-thumb-link">
+            <img class="news-thumb" src="<?= post.cover ?>" alt="thumb">
+          </a>
+        <? } ?>
       </div>
     <? }); ?>
   </div>
@@ -25,19 +28,16 @@
       <a id="release-title-link" class="block-title" href="<?= it.namespace ?>/releases">NEW RELEASES</a>
     </h2>
     <div id="releases-list">
-      <? var releases = [ '', '', '' ]; ?>
-
-      <?= it.show_no_content_err( releases ) ?>
-      <? releases.forEach( function (){ ?>
-        <a href="<?= it.namespace ?>/releases/show" class="release-link">
-          <img class="release-thumb" src="/img/home/release-thumb.jpeg" alt="thumb">
-          <p class="release-date">2011</p>
-          <h4 class="release-author">偷摸大雞</h4>
-          <h3 class="release-title">同名EP</h3>
+      <?= it.show_no_content_err( it.releases ) ?>
+      <? it.releases.forEach( function ( release ){ ?>
+        <a href="<?= it.namespace ?>/releases/<?= release._id ?>" class="release-link">
+          <img class="release-thumb" src="<?= release.cover ?>" alt="thumb">
+          <p class="release-date"><?= release.release_date ?></p>
+          <h3 class="release-title"><?= release.name ?></h3>
         </a>
       <? }); ?>
 
-      <? if( releases.length >= 3 ){ ?>
+      <? if( it.releases.length >= 3 ){ ?>
         <a id="releases-more" class="btn-more" href="<?= it.namespace ?>/releases">More</a>
       <? } ?>
     </div>
@@ -75,13 +75,10 @@
   <div id="latest-lives">
     <h3 id="lives-title">live</h3>
     <div id="live-list">
-      <? var lives = [ '', '', '', '' ]; ?>
-
-      <?= it.show_no_content_err( lives ) ?>
-      <? lives.forEach( function ( live ){ ?>
-        <!-- remember truncate artist, prevent layout crash -->
-        <a href="<?= it.namespace ?>/live/show" class="live-link">
-          偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL 偷摸大雞 ＠The WALL<span class="live-date">12.25</span>
+      <?= it.show_no_content_err( it.lives ) ?>
+      <? it.lives.forEach( function ( live ){ ?>
+        <a class="live-link" <?= it.show_live_link( live ) ?>>
+          <?= live.title ?> ＠<?= live.location ?><span class="live-date"><?= live.date ?></span>
         </a>
       <? }); ?>
 
