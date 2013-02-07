@@ -59,11 +59,10 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
       artist : req.query.artist,
       limit  : 5,
-      skip   : page
+      page   : req.page
     };
 
     Video.index( args, next,
@@ -71,14 +70,19 @@ module.exports = Application.extend( validations, {
       function (){
         res.render( 'videos/index', {
           _assets : 'admin/videos/assets/_index',
-          videos  : []
+          videos  : [],
+          qs_prev : '',
+          qs_next : ''
         });
       },
       // ok
-      function ( videos ){
+      function ( videos, more ){
+        if( !more ) req.qs_next = null;
         res.render( 'videos/index', {
           _assets : 'admin/videos/assets/_index',
-          videos  : videos
+          videos  : videos,
+          qs_prev : req.qs_prev,
+          qs_next : req.qs_next
         });
       });
   },

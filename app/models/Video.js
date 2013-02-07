@@ -26,14 +26,19 @@ module.exports = {
 
       this.find( query ).
         sort( '-created_at' ).
-        skip( args.page * 10 ).
-        batchSize( args.limit ).
-        limit( args.limit ).
+        skip(( args.page - 1 ) * args.limit ).
+        batchSize( args.limit + 1 ).
+        limit( args.limit + 1 ).
         exec( function ( err, videos ){
           if( err )            return next( err );
           if( !videos.length ) return no_content();
 
-          ok( videos );
+          var more = videos.length > args.limit;
+          if( more ){
+            videos.pop();
+          }
+
+          ok( videos, more );
       });
     },
 
