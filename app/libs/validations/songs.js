@@ -24,6 +24,6 @@ module.exports = {
     field( 'target_order' ).required(  '', lang.required.target_order ).isInt( lang.invalid.target_order ),
     field( 'title'        ).required(  '', lang.required.name ).maxLength( 50, lang.invalid.name ),
     field( 'duration'     ).maxLength(  7, lang.invalid.duration ),
-    field( 'itunes'       ).isUrl(         lang.invalid.itunes )
+    field( 'itunes'       ).isUrl(         lang.invalid.itunes ).is( r.has_http_or_https, lang.invalid.no_http_or_https )
   )
 };

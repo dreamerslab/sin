@@ -60,16 +60,18 @@ module.exports = function ( app ){
       return value || '';
     },
 
-    show_ori_link_title : function ( ori_artist, index ){
-      if( !ori_artist ) return '';
+    show_ori_link_title : function ( ori, index ){
+      if( !ori )       return '';
+      if( !ori.links ) return ori[ 'link_name' + ( index + 1 )];
 
-      return ori_artist.links[ index ].title;
+      return ori.links[ index ].title;
     },
 
-    show_ori_link_url : function ( ori_artist, index ){
-      if( !ori_artist ) return '';
+    show_ori_link_url : function ( ori, index ){
+      if( !ori )       return '';
+      if( !ori.links ) return ori[ 'link' + ( index + 1 )];
 
-      return ori_artist.links[ index ].url;
+      return ori.links[ index ].url;
     },
 
     show_err : function ( err ){

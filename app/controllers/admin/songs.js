@@ -18,7 +18,7 @@ module.exports = Application.extend( validations, {
     before( this.current_banner );
     before( this.current_release );
     before( this.current_song_for_index, { only : [ 'index', 'new', 'create' ]});
-    before( this.current_song_for_show,  { only : [ 'show', 'edit' ]});
+    before( this.current_song_for_show,  { only : [ 'show', 'edit', 'update' ]});
   },
 
   banner_type : function ( req, res, next ){
