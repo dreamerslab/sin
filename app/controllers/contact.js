@@ -6,7 +6,6 @@ module.exports = Application.extend( validations, {
 
   init : function ( before, after ){
     before( this.validate_create, { only : [ 'create' ]});
-    before( this.is_validate,     { only : [ 'create' ]});
 
     before( this.namespace );
     before( this.banner_type );
