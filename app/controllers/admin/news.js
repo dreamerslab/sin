@@ -14,6 +14,7 @@ module.exports = Application.extend( validations, {
     before( this.namespace );
     before( this.banner_type );
     before( this.current_banner );
+    before( this.nav_querystring,  { only : [ 'index' ]});
     before( this.is_artists_found, { only : [ 'create', 'update' ]});
   },
 
@@ -53,11 +54,10 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
       artist : req.query.artist,
       limit  : 3,
-      skip   : page
+      page   : req.page
     };
 
     Post.index( args, next,
@@ -65,14 +65,19 @@ module.exports = Application.extend( validations, {
       function (){
         res.render( 'news/index', {
           _assets : 'admin/news/assets/_index',
-          posts   : []
+          posts   : [],
+          qs_prev : '',
+          qs_next : ''
         });
       },
       // ok
-      function ( posts ){
+      function ( posts, more ){
+        if( !more ) req.qs_next = null;
         res.render( 'news/index', {
           _assets : 'admin/news/assets/_index',
-          posts   : posts
+          posts   : posts,
+          qs_prev : req.qs_prev,
+          qs_next : req.qs_next
         });
       });
   },

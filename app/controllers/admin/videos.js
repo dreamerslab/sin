@@ -15,6 +15,7 @@ module.exports = Application.extend( validations, {
     before( this.namespace );
     before( this.banner_type );
     before( this.current_banner );
+    before( this.nav_querystring,       { only : [ 'index' ]});
     before( this.is_artists_found,      { only : [ 'create', 'update' ]});
 
     before( this.is_validate_create,    { only : [ 'create' ]});

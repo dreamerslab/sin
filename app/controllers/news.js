@@ -1,7 +1,6 @@
 var Application = require( CONTROLLER_DIR + 'application' );
 var validations = require( LIB_DIR + 'validations/news' );
 var Post        = Model( 'Post' );
-var querystring = require( 'querystring' );
 
 module.exports = Application.extend( validations, {
 
@@ -12,6 +11,7 @@ module.exports = Application.extend( validations, {
     before( this.namespace );
     before( this.banner_type );
     before( this.current_banner );
+    before( this.nav_querystring, { only : [ 'index' ]});
   },
 
   banner_type : function ( req, res, next ){
@@ -20,21 +20,11 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    var page = req.query.page ? parseInt( req.query.page ) : 1;
     var args = {
       artist : req.query.artist,
-      limit  : 2,
-      page   : page
+      limit  : 3,
+      page   : req.page
     };
-
-    var qsPrev;
-    if( page > 1 ){
-      if( req.query.artist ) qsPrev.artist = req.query.artist;
-      qsPrev = { page : page - 1 };
-    }
-
-    var qsNext = { page : page + 1 };
-    if( req.query.artist ) qsNext.artist = req.query.artist;
 
     Post.index( args, next,
       // no content
@@ -42,18 +32,18 @@ module.exports = Application.extend( validations, {
         res.render( 'news/index', {
           _assets : 'news/assets/_index',
           posts   : [],
-          qsPrev: '',
-          qsNext: ''
+          qs_prev : '',
+          qs_next : ''
         });
       },
       // ok
       function ( posts, more ){
-        if( !more ) qsNext = null;
+        if( !more ) req.qs_next = null;
         res.render( 'news/index', {
           _assets : 'news/assets/_index',
           posts   : posts,
-          qsPrev: querystring.stringify( qsPrev ),
-          qsNext: querystring.stringify( qsNext )
+          qs_prev : req.qs_prev,
+          qs_next : req.qs_next
         });
       });
   },

@@ -29,6 +29,6 @@
 </div>
 
 <div id="nav-wrap">
-  <a id="btn-prev" href="<?= it.namespace ?>/live">Prev</a>
-  <a id="btn-next" href="<?= it.namespace ?>/live">Next</a>
+  <a class="btn-prev <?= it.is_btn_disable( it.qs_prev ) ?>" href="<?= it.namespace ?>/live<?= it.show_nav_qs( it.qs_prev ) ?>">Prev</a>
+  <a class="btn-next <?= it.is_btn_disable( it.qs_next ) ?>" href="<?= it.namespace ?>/live<?= it.show_nav_qs( it.qs_next ) ?>">Next</a>
 </div>

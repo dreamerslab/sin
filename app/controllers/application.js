@@ -1,12 +1,13 @@
-var Class   = require( 'node.class' );
-var Flow    = require( 'node.flow' );
-var Post    = Model( 'Post' );
-var Artist  = Model( 'Artist' );
-var Video   = Model( 'Video' );
-var Release = Model( 'Release' );
-var Live    = Model( 'Live' );
-var Song    = Model( 'Song' );
-var Url     = Model( 'Url' );
+var Class       = require( 'node.class' );
+var Flow        = require( 'node.flow' );
+var querystring = require( 'querystring' );
+var Post        = Model( 'Post' );
+var Artist      = Model( 'Artist' );
+var Video       = Model( 'Video' );
+var Release     = Model( 'Release' );
+var Live        = Model( 'Live' );
+var Song        = Model( 'Song' );
+var Url         = Model( 'Url' );
 
 module.exports = Class.extend({
 
@@ -37,6 +38,25 @@ module.exports = Class.extend({
     res.render( 'error/404', {
       layout : false
     });
+  },
+
+  nav_querystring : function ( req, res, next ){
+    var page = req.query.page ? parseInt( req.query.page ) : 1;
+
+    var qs_prev = {};
+    if( page > 1 ){
+      if( req.query.artist ) qs_prev.artist = req.query.artist;
+      qs_prev.page = page - 1 ;
+    }
+
+    var qs_next = { page : page + 1 };
+    if( req.query.artist ) qs_next.artist = req.query.artist;
+
+    req.page    = page;
+    req.qs_prev = querystring.stringify( qs_prev );
+    req.qs_next = querystring.stringify( qs_next );
+
+    next();
   },
 
   namespace : function ( req, res, next ){

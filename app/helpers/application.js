@@ -42,6 +42,14 @@ module.exports = function ( app ){
       return moment( date ).format( format || 'YYYY/MM/DD' );
     },
 
+    is_btn_disable : function ( qs ){
+      return qs ? '' : 'btn-disable';
+    },
+
+    show_nav_qs : function ( qs ){
+      return qs ? '?' + qs : '';
+    },
+
     show_live_link : function ( live ){
       return live.url ? 'href="' + live.url + '"' : '';
     },

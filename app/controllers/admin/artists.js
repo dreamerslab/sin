@@ -14,6 +14,7 @@ module.exports = Application.extend( validations, {
     before( this.namespace );
     before( this.banner_type );
     before( this.current_banner );
+    before( this.nav_querystring, { only : [ 'index' ]});
     before( this.current_artist,  { only : [ 'show', 'edit' ]});
     before( this.recent_news,     { only : [ 'show' ]});
     before( this.recent_videos,   { only : [ 'show' ]});

@@ -14,6 +14,7 @@ module.exports = Application.extend( validations, {
     before( this.namespace );
     before( this.banner_type );
     before( this.current_banner );
+    before( this.nav_querystring, { only : [ 'index' ]});
   },
 
   banner_type : function ( req, res, next ){

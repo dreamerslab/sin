@@ -32,7 +32,7 @@ module.exports = {
           if( !posts.length ) return no_content();
 
           var more = posts.length > args.limit;
-          if ( more ) {
+          if( more ){
             posts.pop();
           }
           ok( posts, more );

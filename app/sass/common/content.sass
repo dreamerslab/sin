@@ -189,7 +189,7 @@ $nav-padding-top-n-bot: 5px
   margin: 0 0 0 -48px
   clear: both
 
-#btn-prev, #btn-next
+.btn-prev, .btn-next
   +inline-block
   color: $color-link
   font-family: $default-font
@@ -198,12 +198,15 @@ $nav-padding-top-n-bot: 5px
   &:hover
     opacity: 1
 
-#btn-prev
+.btn-prev
   background: image-url( "common/footer-nav-prev@2x.png" ) no-repeat top left
   background-size: 12px auto
   padding: $nav-padding-top-n-bot 40px $nav-padding-top-n-bot 28px
 
-#btn-next
+.btn-next
   background: image-url( "common/footer-nav-next@2x.png" ) no-repeat top right
   background-size: 12px auto
   padding: $nav-padding-top-n-bot 28px $nav-padding-top-n-bot 40px
+
+.btn-disable
+  display: none
