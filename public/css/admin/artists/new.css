@@ -35,6 +35,18 @@
 }
 
 /* line 29, ../../../../app/sass/admin/artists/new.sass */
+#links-error-wrap {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 31, ../../../../app/sass/admin/artists/new.sass */
+#links-error-wrap .error {
+  float: none;
+  display: block;
+  padding: 8px 0;
+}
+
+/* line 36, ../../../../app/sass/admin/artists/new.sass */
 .form-tip {
   display: inline;
   float: right;
@@ -43,7 +55,7 @@
   color: #555555;
 }
 
-/* line 34, ../../../../app/sass/admin/artists/new.sass */
+/* line 41, ../../../../app/sass/admin/artists/new.sass */
 #input-name, #input-thumb, #input-cover, .input-link {
   display: block;
   width: 100%;
@@ -56,7 +68,7 @@
   max-width: 584px;
 }
 
-/* line 37, ../../../../app/sass/admin/artists/new.sass */
+/* line 44, ../../../../app/sass/admin/artists/new.sass */
 #input-intro {
   display: block;
   width: 100%;
@@ -74,33 +86,33 @@
   max-width: 568px;
 }
 
-/* line 40, ../../../../app/sass/admin/artists/new.sass */
+/* line 47, ../../../../app/sass/admin/artists/new.sass */
 #links-wrap {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 43, ../../../../app/sass/admin/artists/new.sass */
+/* line 50, ../../../../app/sass/admin/artists/new.sass */
 #link-titles {
   display: inline;
   float: left;
   width: 160px;
 }
 
-/* line 47, ../../../../app/sass/admin/artists/new.sass */
+/* line 54, ../../../../app/sass/admin/artists/new.sass */
 .input-link {
   max-width: 383px;
   margin: 0 0 24px;
 }
 
-/* line 51, ../../../../app/sass/admin/artists/new.sass */
+/* line 58, ../../../../app/sass/admin/artists/new.sass */
 #links {
   display: inline;
   float: right;
   width: 400px;
 }
 
-/* line 55, ../../../../app/sass/admin/artists/new.sass */
+/* line 62, ../../../../app/sass/admin/artists/new.sass */
 #btns-wrap {
   overflow: hidden;
   *zoom: 1;
@@ -109,7 +121,7 @@
   margin: 0 auto;
 }
 
-/* line 61, ../../../../app/sass/admin/artists/new.sass */
+/* line 68, ../../../../app/sass/admin/artists/new.sass */
 #content-link-cancel {
   display: inline;
   float: left;
@@ -123,7 +135,7 @@
   background-color: #d2d2d2;
 }
 
-/* line 66, ../../../../app/sass/admin/artists/new.sass */
+/* line 73, ../../../../app/sass/admin/artists/new.sass */
 #btn-submit {
   display: inline;
   float: left;
