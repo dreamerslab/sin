@@ -26,13 +26,15 @@ module.exports = Application.extend( validations, {
       limit  : 2,
       page   : page
     };
+
     var qsPrev;
-    if ( page > 1 ) {
-      if ( req.query.artist ) { qsPrev.artist = req.query.artist; }
-      qsPrev = { page: page - 1 };
+    if( page > 1 ){
+      if( req.query.artist ) qsPrev.artist = req.query.artist;
+      qsPrev = { page : page - 1 };
     }
-    var qsNext = { page: page + 1 };
-    if ( req.query.artist ) { qsNext.artist = req.query.artist; }
+
+    var qsNext = { page : page + 1 };
+    if( req.query.artist ) qsNext.artist = req.query.artist;
 
     Post.index( args, next,
       // no content
@@ -46,7 +48,7 @@ module.exports = Application.extend( validations, {
       },
       // ok
       function ( posts, more ){
-        if ( !more ) { qsNext = null; }
+        if( !more ) qsNext = null;
         res.render( 'news/index', {
           _assets : 'news/assets/_index',
           posts   : posts,

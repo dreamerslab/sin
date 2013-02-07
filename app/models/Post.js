@@ -24,7 +24,7 @@ module.exports = {
 
       this.find( args.query ).
         sort( '-created_at' ).
-        skip( ( args.page - 1 ) * args.limit ).
+        skip(( args.page - 1 ) * args.limit ).
         batchSize( args.limit + 1 ).
         limit( args.limit + 1 ).
         exec( function ( err, posts ){
