@@ -52,7 +52,7 @@
         </a>
       <? }); ?>
 
-      <? if( it.releases.length > 3 ){ ?>
+      <? if( it.videos.length >= 3 ){ ?>
         <a id="videos-more" class="btn-more" href="<?= it.namespace ?>/videos?artist=<?- it.artist.name ?>">More</a>
       <? } ?>
     </div>
@@ -84,7 +84,7 @@
         </a>
       <? }); ?>
 
-      <? if( it.releases.length > 3 ){ ?>
+      <? if( it.releases.length >= 3 ){ ?>
         <a id="releases-more" href="<?= it.namespace ?>/releases?artist=<?- it.artist.name ?>">more</a>
       <? } ?>
     </div>
