@@ -69,11 +69,10 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
       artist : req.query.artist,
       limit  : 3,
-      skip   : page
+      page   : req.page
     };
 
     Artist.index( args, next,
@@ -81,14 +80,19 @@ module.exports = Application.extend( validations, {
       function (){
         res.render( 'artists/index', {
           _assets : 'admin/artists/assets/_index',
-          artists : []
+          artists : [],
+          qs_prev : '',
+          qs_next : ''
         });
       },
       // ok
-      function ( artists ){
+      function ( artists, more ){
+        if( !more ) req.qs_next = null;
         res.render( 'artists/index', {
           _assets : 'admin/artists/assets/_index',
-          artists : artists
+          artists : artists,
+          qs_prev : req.qs_prev,
+          qs_next : req.qs_next
         });
       });
   },

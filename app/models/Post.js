@@ -35,6 +35,7 @@ module.exports = {
           if( more ){
             posts.pop();
           }
+
           ok( posts, more );
       });
     },

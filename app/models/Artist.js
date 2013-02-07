@@ -61,14 +61,19 @@ module.exports = {
     index : function ( args, next, no_content, ok ){
       this.find().
         sort( '-created_at' ).
-        skip( args.page * 3 ).
-        batchSize( args.limit ).
-        limit( args.limit ).
+        skip(( args.page - 1 ) * args.limit ).
+        batchSize( args.limit + 1 ).
+        limit( args.limit + 1 ).
         exec( function ( err, artists ){
           if( err )             return next( err );
           if( !artists.length ) return no_content();
 
-          ok( artists );
+          var more = artists.length > args.limit;
+          if( more ){
+            artists.pop();
+          }
+
+          ok( artists, more );
       });
     },
 
