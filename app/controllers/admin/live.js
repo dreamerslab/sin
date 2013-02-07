@@ -23,11 +23,10 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    var page = req.query.page ? parseInt( req.query.page ) : 0;
     var args = {
       artist : req.query.artist,
       limit  : 10,
-      skip   : page
+      page   : req.page
     };
 
     Live.index( args, next,
@@ -35,14 +34,19 @@ module.exports = Application.extend( validations, {
       function (){
         res.render( 'live/index', {
           _assets : 'admin/live/assets/_index',
-          lives   : []
+          lives   : [],
+          qs_prev : '',
+          qs_next : ''
         });
       },
       // ok
-      function ( lives ){
+      function ( lives, more ){
+        if( !more ) req.qs_next = null;
         res.render( 'live/index', {
           _assets : 'admin/live/assets/_index',
-          lives   : lives
+          lives   : lives,
+          qs_prev : req.qs_prev,
+          qs_next : req.qs_next
         });
       });
   },
