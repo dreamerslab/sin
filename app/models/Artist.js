@@ -1,4 +1,5 @@
 var Link  = Model( 'Link' );
+var Flow  = require( 'node.flow' );
 var hooks = require( MODEL_DIR + 'hooks/artist' );
 
 module.exports = {
@@ -17,6 +18,7 @@ module.exports = {
 
     insert : function ( args, next, exist, created ){
       var self          = this;
+      var flow          = new Flow();
       var args_for_link = {};
       var query         = {
         name : new RegExp( args.name, 'i' )
@@ -38,21 +40,29 @@ module.exports = {
           var i = 1;
 
           for( ; i < 6; i++ ){
-            args_for_link = {
-              title : args[ 'link_name' + i ],
-              url   : args[ 'link' + i ]
-            };
+            flow.series( function ( i ){
+              return function ( next ){
+                args_for_link = {
+                  title : args[ 'link_name' + i ],
+                  url   : args[ 'link' + i ]
+                };
 
-            Link.insert( args_for_link,
-              function( err ){
-                LOG.error( 500, 'Link insert fail', err );
-              },
-              function ( link ){
-                link.add_to_artists( artist );
-              });
+                Link.insert( args_for_link,
+                  function( err ){
+                    LOG.error( 500, 'Link insert fail', err );
+                    next();
+                  },
+                  function ( link ){
+                    link.add_to_artists( artist );
+                    next();
+                  });
+              };
+            }( i ));
           }
 
-          created( artist );
+          flow.error( next ).end( function (){
+            created( artist );
+          });
         });
       });
     },
