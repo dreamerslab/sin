@@ -38,26 +38,26 @@ module.exports = {
           if( err ) return next( err );
 
           var i = 1;
+          var insert_init_link = function ( i ){
+            return function ( next ){
+              args_for_link = {
+                title : args[ 'link_name' + i ],
+                url   : args[ 'link' + i ]
+              };
+
+              Link.insert( args_for_link,
+                function ( err ){
+                  LOG.error( 500, 'Link insert fail', err );
+                  next();
+                },
+                function ( link ){
+                  link.add_to_artists( artist, next );
+                });
+            };
+          };
 
           for( ; i < 6; i++ ){
-            flow.series( function ( i ){
-              return function ( next ){
-                args_for_link = {
-                  title : args[ 'link_name' + i ],
-                  url   : args[ 'link' + i ]
-                };
-
-                Link.insert( args_for_link,
-                  function( err ){
-                    LOG.error( 500, 'Link insert fail', err );
-                    next();
-                  },
-                  function ( link ){
-                    link.add_to_artists( artist );
-                    next();
-                  });
-              };
-            }( i ));
+            flow.series( insert_init_link( i ));
           }
 
           flow.error( next ).end( function (){

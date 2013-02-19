@@ -27,13 +27,15 @@ module.exports = {
   },
 
   methods : {
-    add_to_artists : function ( artist ){
+    add_to_artists : function ( artist, added ){
       var self   = this;
       var Artist = Model( 'Artist' );
       var query  = { _id : artist._id };
       var update = { $push : { links : this._id }};
 
       Artist.update( query, update, function ( err, artist ){
+        added();
+
         if( err )     return LOG.error( 500, '[methods][link][add_to_artists] fail', err );
         if( !artist ) return LOG.error( 404, '[methods][link][add_to_artists] fail artist not found' );
 
