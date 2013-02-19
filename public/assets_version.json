@@ -1,0 +1,35 @@
+{
+  "css": {
+    "common": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "error": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "home": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-home": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "news-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-news-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "news-show": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-news-show": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-news-new": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "artists-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-artists-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "artists-show": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-artists-show": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-artists-new": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "releases-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-releases-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-releases-new": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "releases-show": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-releases-show": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-songs": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "videos-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-videos-new": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-videos-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "live-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-live-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "admin-live-new": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "contact-index": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39",
+    "sessions": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39"
+  },
+  "js": {
+    "common": "YqckquOMllMnQ4PoMCHmh7gVJNy6rx39"
+  }
+}
