@@ -22,11 +22,16 @@ module.exports = Application.extend({
       page   : req.page
     };
 
+    res.locals({
+      title        : '三十而立 sincerely music | 影音',
+      nav_selected : 'videos',
+      _assets      : [ 'videos-index' ]
+    });
+
     Video.index( args, next,
       // no content
       function (){
         res.render( 'videos/index', {
-          _assets : 'videos/assets/_index',
           videos  : [],
           qs_prev : '',
           qs_next : ''
@@ -36,7 +41,6 @@ module.exports = Application.extend({
       function ( videos, more ){
         if( !more ) req.qs_next = null;
         res.render( 'videos/index', {
-          _assets : 'videos/assets/_index',
           videos  : videos,
           qs_prev : req.qs_prev,
           qs_next : req.qs_next

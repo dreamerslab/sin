@@ -1,7 +1,4 @@
-<?= it.partial( it._assets ) ?>
-
-<? it.title = '三十而立 sincerely music | 影音'; ?>
-<? it.nav_selected = 'videos'; ?>
+<? it.styles.push.apply( it.styles, it._assets ); ?>
 
 <div id="videos">
   <? if ( it.is_authenticated ){ ?>
