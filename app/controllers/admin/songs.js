@@ -71,8 +71,10 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    res.render( 'releases/show', {
-      _assets      : 'admin/releases/assets/_show',
+    res.render( 'admin/releases/show', {
+      title        : '三十而立 sincerely music | ' + req.release.name,
+      nav_selected : 'releases',
+      _assets      : [ 'admin-releases-show', 'admin-songs' ],
       release      : req.release,
       songs        : req.release.songs,
       current_song : req.current_song
@@ -84,7 +86,7 @@ module.exports = Application.extend( validations, {
   },
 
   edit : function ( req, res, next ){
-    res.render( 'releases/show', {
+    res.render( 'admin/releases/show', {
       _assets      : 'admin/releases/assets/_show',
       admin_view   : 'edit',
       release      : req.release,
