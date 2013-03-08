@@ -35,7 +35,8 @@ module.exports = Application.extend( validations, {
       // no content
       function (){
         res.render( 'artists/index', {
-          _assets : 'artists/assets/_index',
+          title   : '三十而立 sincerely music | 藝人',
+          _assets : [ 'artists-index' ],
           artists : [],
           qs_prev : '',
           qs_next : ''
@@ -45,7 +46,8 @@ module.exports = Application.extend( validations, {
       function ( artists, more ){
         if( !more ) req.qs_next = null;
         res.render( 'artists/index', {
-          _assets : 'artists/assets/_index',
+          title   : '三十而立 sincerely music | 藝人',
+          _assets : [ 'artists-index' ],
           artists : artists,
           qs_prev : req.qs_prev,
           qs_next : req.qs_next
@@ -55,7 +57,8 @@ module.exports = Application.extend( validations, {
 
   show : function ( req, res, next ){
     res.render( 'artists/show', {
-      _assets  : 'artists/assets/_show',
+      title    : '三十而立 sincerely music | ' + req.artist.name,
+      _assets  : [ 'artists-show' ],
       artist   : req.artist,
       posts    : req.posts,
       videos   : req.videos,

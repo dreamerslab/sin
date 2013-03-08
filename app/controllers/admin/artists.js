@@ -72,8 +72,9 @@ module.exports = Application.extend( validations, {
     Artist.index( args, next,
       // no content
       function (){
-        res.render( 'artists/index', {
-          _assets : 'admin/artists/assets/_index',
+        res.render( 'admin/artists/index', {
+          title   : '三十而立 sincerely music | 藝人',
+          _assets : [ 'admin-artists-index' ],
           artists : [],
           qs_prev : '',
           qs_next : ''
@@ -82,8 +83,9 @@ module.exports = Application.extend( validations, {
       // ok
       function ( artists, more ){
         if( !more ) req.qs_next = null;
-        res.render( 'artists/index', {
-          _assets : 'admin/artists/assets/_index',
+        res.render( 'admin/artists/index', {
+          title   : '三十而立 sincerely music | 藝人',
+          _assets : [ 'admin-artists-index' ],
           artists : artists,
           qs_prev : req.qs_prev,
           qs_next : req.qs_next
@@ -92,8 +94,9 @@ module.exports = Application.extend( validations, {
   },
 
   show : function ( req, res, next ){
-    res.render( 'artists/show', {
-      _assets  : 'admin/artists/assets/_show',
+    res.render( 'admin/artists/show', {
+      title    : '三十而立 sincerely music | ' + req.artist.name,
+      _assets  : [ 'admin-artists-show' ],
       artist   : req.artist,
       posts    : req.posts,
       videos   : req.videos,
