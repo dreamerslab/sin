@@ -22,11 +22,16 @@ module.exports = Application.extend({
       page   : req.page
     };
 
+    res.locals({
+      title        : '三十而立 sincerely music | 現場',
+      nav_selected : 'live'
+    });
+
     Live.index( args, next,
       // no content
       function (){
         res.render( 'live/index', {
-          _assets : 'live/assets/_index',
+          _assets : [ 'live-index' ],
           lives   : [],
           qs_prev : '',
           qs_next : ''
@@ -36,7 +41,7 @@ module.exports = Application.extend({
       function ( lives, more ){
         if( !more ) req.qs_next = null;
         res.render( 'live/index', {
-          _assets : 'live/assets/_index',
+          _assets : [ 'live-index' ],
           lives   : lives,
           qs_prev : req.qs_prev,
           qs_next : req.qs_next
