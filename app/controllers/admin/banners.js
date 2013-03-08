@@ -40,7 +40,11 @@ module.exports = Application.extend( validations, {
     }
 
     Url.update_props( args, next, function (){
-      res.redirect( '/admin/' + req.params.type );
+      var url_redirect = req.params.type == 'contact' ?
+        '/' + req.params.type :
+        '/admin/' + req.params.type;
+
+      res.redirect( url_redirect );
     });
   }
 });
