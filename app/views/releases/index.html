@@ -1,7 +1,4 @@
-<?= it.partial( it._assets ) ?>
-
-<? it.title = '三十而立 sincerely music | 作品'; ?>
-<? it.nav_selected = 'releases'; ?>
+<? it.styles.push.apply( it.styles, it._assets ); ?>
 
 <div id="releases">
   <? if ( it.is_authenticated ){ ?>
