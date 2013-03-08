@@ -31,14 +31,14 @@ module.exports = Application.extend( validations, {
 
     res.locals({
       title        : '三十而立 sincerely music | 現場',
-      nav_selected : 'live'
+      nav_selected : 'live',
+      _assets      : [ 'admin-live-index' ]
     });
 
     Live.index( args, next,
       // no content
       function (){
         res.render( 'admin/live/index', {
-          _assets : [ 'admin-live-index' ],
           lives   : [],
           qs_prev : '',
           qs_next : ''
@@ -48,7 +48,6 @@ module.exports = Application.extend( validations, {
       function ( lives, more ){
         if( !more ) req.qs_next = null;
         res.render( 'admin/live/index', {
-          _assets : [ 'admin-live-index' ],
           lives   : lives,
           qs_prev : req.qs_prev,
           qs_next : req.qs_next
