@@ -28,7 +28,6 @@ module.exports = Application.extend( validations, {
       id : req.params.release_id
     };
 
-
     Release.show( args, next,
       // no content
       function (){
@@ -37,7 +36,9 @@ module.exports = Application.extend( validations, {
       // ok
       function ( release ){
         res.render( 'releases/show', {
-          _assets      : 'releases/assets/_show',
+          title        : '三十而立 sincerely music | ' + release.name,
+          nav_selected : 'releases',
+          _assets      : [ 'releases-show' ],
           release      : release,
           songs        : req.release.songs,
           current_song : req.current_song

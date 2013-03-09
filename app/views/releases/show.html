@@ -1,7 +1,4 @@
-<?= it.partial( it._assets ) ?>
-
-<? it.title = '三十而立 sincerely music | (藝人名稱) - (專輯名稱)'; ?>
-<? it.nav_selected = 'releases'; ?>
+<? it.styles.push.apply( it.styles, it._assets ); ?>
 
 <div id="main">
   <h3 id="release-name"><?= it.release.name ?></h3>

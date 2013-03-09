@@ -26,11 +26,16 @@ module.exports = Application.extend( validations, {
       page   : req.page
     };
 
+    res.locals({
+      title        : '三十而立 sincerely music | 新聞',
+      nav_selected : 'news',
+      _assets      : [ 'news-index' ]
+    });
+
     Post.index( args, next,
       // no content
       function (){
         res.render( 'news/index', {
-          _assets : 'news/assets/_index',
           posts   : [],
           qs_prev : '',
           qs_next : ''
@@ -40,7 +45,6 @@ module.exports = Application.extend( validations, {
       function ( posts, more ){
         if( !more ) req.qs_next = null;
         res.render( 'news/index', {
-          _assets : 'news/assets/_index',
           posts   : posts,
           qs_prev : req.qs_prev,
           qs_next : req.qs_next
@@ -62,8 +66,10 @@ module.exports = Application.extend( validations, {
       // ok
       function ( post ){
         res.render( 'news/show', {
-          _assets : 'news/assets/_show',
-          post    : post
+          title        : '三十而立 sincerely music | ' + post.title,
+          nav_selected : 'news',
+          _assets      : [ 'news-show' ],
+          post         : post
         });
       });
   }

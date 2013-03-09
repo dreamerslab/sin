@@ -33,8 +33,44 @@
   width: 416px;
   padding: 31px 0 17px;
 }
+/* line 40, ../../../app/sass/common/content.sass */
+.news-entry h1 {
+  font-family: serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: black;
+  margin: 0 0 16px;
+}
+/* line 46, ../../../app/sass/common/content.sass */
+.news-entry p, .news-entry h2, .news-entry h3, .news-entry h4, .news-entry h5, .news-entry h6 {
+  margin: 0 0 24px;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5em;
+}
+/* line 51, ../../../app/sass/common/content.sass */
+.news-entry img {
+  display: none;
+}
+/* line 53, ../../../app/sass/common/content.sass */
+.news-entry a {
+  color: #6da4b2;
+  text-decoration: none;
+}
+/* line 56, ../../../app/sass/common/content.sass */
+.news-entry a:hover {
+  text-decoration: underline;
+}
+/* line 58, ../../../app/sass/common/content.sass */
+.news-entry strong {
+  font-weight: bold;
+}
+/* line 60, ../../../app/sass/common/content.sass */
+.news-entry em {
+  font-style: italic;
+}
 
-/* line 41, ../../../app/sass/common/content.sass */
+/* line 63, ../../../app/sass/common/content.sass */
 .title {
   display: -moz-inline-stack;
   display: inline-block;
@@ -46,12 +82,12 @@
   color: black;
 }
 
-/* line 46, ../../../app/sass/common/content.sass */
+/* line 68, ../../../app/sass/common/content.sass */
 .news-entry-title {
   padding: 0 0 12px;
 }
 
-/* line 49, ../../../app/sass/common/content.sass */
+/* line 71, ../../../app/sass/common/content.sass */
 .news-entry-title-link {
   color: black;
   font-family: serif;
@@ -59,12 +95,12 @@
   line-height: 28px;
   text-decoration: none;
 }
-/* line 55, ../../../app/sass/common/content.sass */
+/* line 77, ../../../app/sass/common/content.sass */
 .news-entry-title-link:hover {
   color: #6da4b2;
 }
 
-/* line 58, ../../../app/sass/common/content.sass */
+/* line 80, ../../../app/sass/common/content.sass */
 .news-entry-p {
   font-family: Helvetica, sans-serif;
   font-size: 13px;
@@ -73,7 +109,7 @@
   margin: 0 0 20px;
 }
 
-/* line 65, ../../../app/sass/common/content.sass */
+/* line 87, ../../../app/sass/common/content.sass */
 .news-date {
   position: absolute;
   top: 9px;
@@ -84,7 +120,7 @@
   line-height: 18px;
 }
 
-/* line 74, ../../../app/sass/common/content.sass */
+/* line 96, ../../../app/sass/common/content.sass */
 .news-thumb {
   position: absolute;
   top: 10px;
@@ -94,19 +130,19 @@
   height: 120px;
 }
 
-/* line 82, ../../../app/sass/common/content.sass */
+/* line 104, ../../../app/sass/common/content.sass */
 #release-title-link {
   background-image: url('/img/common/releases-title@2x.png?1359778345');
   background-size: 93px auto;
   width: 93px;
   height: 24px;
 }
-/* line 87, ../../../app/sass/common/content.sass */
+/* line 109, ../../../app/sass/common/content.sass */
 #release-title-link:hover {
   background-position: 0 -24px;
 }
 
-/* line 90, ../../../app/sass/common/content.sass */
+/* line 112, ../../../app/sass/common/content.sass */
 #releases-list {
   overflow: hidden;
   *zoom: 1;
@@ -114,7 +150,7 @@
   padding: 30px 0;
 }
 
-/* line 95, ../../../app/sass/common/content.sass */
+/* line 117, ../../../app/sass/common/content.sass */
 .release-link {
   display: inline;
   float: left;
@@ -123,12 +159,12 @@
   padding: 0 16px 0 0;
   text-decoration: none;
 }
-/* line 101, ../../../app/sass/common/content.sass */
+/* line 123, ../../../app/sass/common/content.sass */
 .release-link:hover {
   color: #6da4b2;
 }
 
-/* line 104, ../../../app/sass/common/content.sass */
+/* line 126, ../../../app/sass/common/content.sass */
 .release-thumb {
   display: -moz-inline-stack;
   display: inline-block;
@@ -140,24 +176,24 @@
   height: 160px;
 }
 
-/* line 109, ../../../app/sass/common/content.sass */
+/* line 131, ../../../app/sass/common/content.sass */
 #videos-title {
   padding: 0 0 16px;
 }
 
-/* line 112, ../../../app/sass/common/content.sass */
+/* line 134, ../../../app/sass/common/content.sass */
 #videos-title-link {
   background-image: url('/img/common/videos-title@2x.png?1359778345');
   background-size: 79px auto;
   width: 79px;
   height: 24px;
 }
-/* line 117, ../../../app/sass/common/content.sass */
+/* line 139, ../../../app/sass/common/content.sass */
 #videos-title-link:hover {
   background-position: 0 -24px;
 }
 
-/* line 120, ../../../app/sass/common/content.sass */
+/* line 142, ../../../app/sass/common/content.sass */
 .release-date {
   display: block;
   color: #6da4b2;
@@ -165,13 +201,13 @@
   font-size: 14px;
 }
 
-/* line 126, ../../../app/sass/common/content.sass */
+/* line 148, ../../../app/sass/common/content.sass */
 .release-author, .release-title {
   font-size: 13px;
   line-height: 21px;
 }
 
-/* line 130, ../../../app/sass/common/content.sass */
+/* line 152, ../../../app/sass/common/content.sass */
 .btn-more {
   text-indent: -119988px;
   overflow: hidden;
@@ -183,35 +219,35 @@
   height: 50px;
 }
 
-/* line 138, ../../../app/sass/common/content.sass */
+/* line 160, ../../../app/sass/common/content.sass */
 #releases-more {
   top: 82px;
 }
 
-/* line 141, ../../../app/sass/common/content.sass */
+/* line 163, ../../../app/sass/common/content.sass */
 #videos-more {
   top: 46px;
 }
 
-/* line 144, ../../../app/sass/common/content.sass */
+/* line 166, ../../../app/sass/common/content.sass */
 #videos-list {
   position: relative;
 }
 
-/* line 147, ../../../app/sass/common/content.sass */
+/* line 169, ../../../app/sass/common/content.sass */
 .video {
   display: inline;
   float: left;
   padding: 0 16px 0 0;
 }
 
-/* line 151, ../../../app/sass/common/content.sass */
+/* line 173, ../../../app/sass/common/content.sass */
 .video-thumb {
   width: 248px;
   height: 140px;
 }
 
-/* line 155, ../../../app/sass/common/content.sass */
+/* line 177, ../../../app/sass/common/content.sass */
 #sidebar {
   display: inline;
   float: right;
@@ -219,12 +255,12 @@
   padding: 0 48px 0 0;
 }
 
-/* line 160, ../../../app/sass/common/content.sass */
+/* line 182, ../../../app/sass/common/content.sass */
 #soundcould-player, #latest-lives, #fb-fanpage {
   padding: 0 0 48px;
 }
 
-/* line 163, ../../../app/sass/common/content.sass */
+/* line 185, ../../../app/sass/common/content.sass */
 #soundcould-player-title, #lives-title, #fb-fanpage-title {
   text-indent: -119988px;
   overflow: hidden;
@@ -234,7 +270,7 @@
   background-position: top left;
 }
 
-/* line 169, ../../../app/sass/common/content.sass */
+/* line 191, ../../../app/sass/common/content.sass */
 #soundcould-player-title {
   background-image: url('/img/home/sidebar-music-title.png?1359778345');
   width: 54px;
@@ -242,7 +278,7 @@
   background-size: 54px auto;
 }
 
-/* line 175, ../../../app/sass/common/content.sass */
+/* line 197, ../../../app/sass/common/content.sass */
 #lives-title {
   background-image: url('/img/home/sidebar-live-title.png?1359778345');
   width: 33px;
@@ -250,7 +286,7 @@
   background-size: 33px auto;
 }
 
-/* line 181, ../../../app/sass/common/content.sass */
+/* line 203, ../../../app/sass/common/content.sass */
 #fb-fanpage-title {
   background-image: url('/img/home/sidebar-facebook-title.png?1359778345');
   width: 87px;
@@ -258,14 +294,14 @@
   background-size: 87px auto;
 }
 
-/* line 187, ../../../app/sass/common/content.sass */
+/* line 209, ../../../app/sass/common/content.sass */
 #nav-wrap {
   text-align: center;
   margin: 0 0 0 -48px;
   clear: both;
 }
 
-/* line 192, ../../../app/sass/common/content.sass */
+/* line 214, ../../../app/sass/common/content.sass */
 .btn-prev, .btn-next {
   display: -moz-inline-stack;
   display: inline-block;
@@ -278,26 +314,26 @@
   text-decoration: none;
   opacity: 0.7;
 }
-/* line 198, ../../../app/sass/common/content.sass */
+/* line 220, ../../../app/sass/common/content.sass */
 .btn-prev:hover, .btn-next:hover {
   opacity: 1;
 }
 
-/* line 201, ../../../app/sass/common/content.sass */
+/* line 223, ../../../app/sass/common/content.sass */
 .btn-prev {
   background: url('/img/common/footer-nav-prev@2x.png?1359778345') no-repeat top left;
   background-size: 12px auto;
   padding: 5px 40px 5px 28px;
 }
 
-/* line 206, ../../../app/sass/common/content.sass */
+/* line 228, ../../../app/sass/common/content.sass */
 .btn-next {
   background: url('/img/common/footer-nav-next@2x.png?1359778345') no-repeat top right;
   background-size: 12px auto;
   padding: 5px 28px 5px 40px;
 }
 
-/* line 211, ../../../app/sass/common/content.sass */
+/* line 233, ../../../app/sass/common/content.sass */
 .btn-disable {
   display: none;
 }

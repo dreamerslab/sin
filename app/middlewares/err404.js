@@ -3,7 +3,7 @@ module.exports = function err404( req, res, next ){
 
   // respond with html page
   if( req.accepts( 'html' )){
-    return res.render( 'error/404' );
+    return res.render( 'error/404', { layout : false });
   }
 
   // respond with json

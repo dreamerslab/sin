@@ -28,11 +28,16 @@ module.exports = Application.extend( validations, {
       page   : req.page
     };
 
+    res.locals({
+      title        : '三十而立 sincerely music | 作品',
+      nav_selected : 'releases',
+      _assets      : [ 'releases-index' ]
+    });
+
     Release.index( args, next,
       // no content
       function (){
         res.render( 'releases/index', {
-          _assets  : 'releases/assets/_index',
           releases : [],
           qs_prev  : '',
           qs_next  : ''
@@ -42,7 +47,6 @@ module.exports = Application.extend( validations, {
       function ( releases, more ){
         if( !more ) req.qs_next = null;
         res.render( 'releases/index', {
-          _assets  : 'releases/assets/_index',
           releases : releases,
           qs_prev  : req.qs_prev,
           qs_next  : req.qs_next
@@ -64,7 +68,9 @@ module.exports = Application.extend( validations, {
       // ok
       function ( release ){
         res.render( 'releases/show', {
-          _assets      : 'releases/assets/_show',
+          title        : '三十而立 sincerely music | ' + release.name,
+          nav_selected : 'releases',
+          _assets      : [ 'releases-show' ],
           release      : release,
           songs        : release.songs,
           current_song : req.current_song

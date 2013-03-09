@@ -4,7 +4,7 @@ module.exports = function err500( err, req, res, next ){
 
   // respond with html page
   if( req.accepts( 'html' )){
-    return res.render( 'error/500' );
+    return res.render( 'error/500', { layout : false });
   }
 
   // respond with json
