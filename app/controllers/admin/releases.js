@@ -73,7 +73,7 @@ module.exports = Application.extend( validations, {
     Release.index( args, next,
       // no content
       function (){
-        res.render( 'admin/releases/index', {
+        res.render( 'releases/index', {
           releases : [],
           qs_prev  : '',
           qs_next  : ''
@@ -82,7 +82,7 @@ module.exports = Application.extend( validations, {
       // ok
       function ( releases, more ){
         if( !more ) req.qs_next = null;
-        res.render( 'admin/releases/index', {
+        res.render( 'releases/index', {
           releases : releases,
           qs_prev  : req.qs_prev,
           qs_next  : req.qs_next
@@ -103,7 +103,7 @@ module.exports = Application.extend( validations, {
       },
       // ok
       function ( release ){
-        res.render( 'admin/releases/show', {
+        res.render( 'releases/show', {
           title        : '三十而立 sincerely music | ' + release.name,
           nav_selected : 'releases',
           _assets      : [ 'admin-releases-show', 'admin-songs' ],
@@ -179,8 +179,6 @@ module.exports = Application.extend( validations, {
       // deleted
       function ( songs ){
         var args_for_song;
-
-        console.log( songs );
 
         songs.forEach( function ( song_id, index ){
           args_for_song = {

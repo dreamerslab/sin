@@ -74,7 +74,7 @@ module.exports = Application.extend( validations, {
     Video.index( args, next,
       // no content
       function (){
-        res.render( 'admin/videos/index', {
+        res.render( 'videos/index', {
           videos  : [],
           qs_prev : '',
           qs_next : ''
@@ -82,11 +82,12 @@ module.exports = Application.extend( validations, {
       },
       // ok
       function ( videos, more ){
-        if( !more ) req.qs_next = null;
-        res.render( 'admin/videos/index', {
+        var qs_next = !more ? null : req.qs_next;
+
+        res.render( 'videos/index', {
           videos  : videos,
           qs_prev : req.qs_prev,
-          qs_next : req.qs_next
+          qs_next : qs_next
         });
       });
   },

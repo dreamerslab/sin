@@ -38,7 +38,7 @@ module.exports = Application.extend( validations, {
     Live.index( args, next,
       // no content
       function (){
-        res.render( 'admin/live/index', {
+        res.render( 'live/index', {
           lives   : [],
           qs_prev : '',
           qs_next : ''
@@ -47,7 +47,7 @@ module.exports = Application.extend( validations, {
       // ok
       function ( lives, more ){
         if( !more ) req.qs_next = null;
-        res.render( 'admin/live/index', {
+        res.render( 'live/index', {
           lives   : lives,
           qs_prev : req.qs_prev,
           qs_next : req.qs_next

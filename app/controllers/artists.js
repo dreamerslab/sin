@@ -58,17 +58,14 @@ module.exports = Application.extend( validations, {
   },
 
   show : function ( req, res, next ){
-    res.locals({
+    res.render( 'artists/show', {
       title        : '三十而立 sincerely music | ' + req.artist.name,
       nav_selected : 'artists',
-      _assets      : [ 'artists-show' ]
-    });
-
-    res.render( 'artists/show', {
-      artist   : req.artist,
-      posts    : req.posts,
-      videos   : req.videos,
-      releases : req.releases
+      _assets      : [ 'artists-show' ],
+      artist       : req.artist,
+      posts        : req.posts,
+      videos       : req.videos,
+      releases     : req.releases
     });
   }
 });

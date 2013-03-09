@@ -27,7 +27,7 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    res.render( 'admin/home/index', {
+    res.render( 'home/index', {
       title      : '三十而立 sincerely music',
       _assets    : [ 'home', 'admin-home' ],
       soundcloud : req.soundcloud,

@@ -28,7 +28,7 @@ module.exports = Application.extend( validations, {
 
   new : function ( req, res, next ){
     res.render( 'releases/show', {
-      _assets    : 'admin/releases/assets/_show',
+      _assets    : [ 'admin-releases-show', 'admin-songs' ],
       admin_view : 'new',
       release    : req.release,
       songs      : req.release.songs
@@ -44,7 +44,7 @@ module.exports = Application.extend( validations, {
 
     if( !req.form.isValid ){
       res.render( 'releases/show', {
-        _assets      : 'admin/releases/assets/_show',
+        _assets      : [ 'admin-releases-show', 'admin-songs' ],
         admin_view   : 'new',
         ori_body     : req.body,
         release      : req.release,
@@ -71,7 +71,7 @@ module.exports = Application.extend( validations, {
   },
 
   index : function ( req, res, next ){
-    res.render( 'admin/releases/show', {
+    res.render( 'releases/show', {
       title        : '三十而立 sincerely music | ' + req.release.name,
       nav_selected : 'releases',
       _assets      : [ 'admin-releases-show', 'admin-songs' ],
@@ -86,8 +86,8 @@ module.exports = Application.extend( validations, {
   },
 
   edit : function ( req, res, next ){
-    res.render( 'admin/releases/show', {
-      _assets      : 'admin/releases/assets/_show',
+    res.render( 'releases/show', {
+      _assets      : [ 'admin-releases-show', 'admin-songs' ],
       admin_view   : 'edit',
       release      : req.release,
       songs        : req.release.songs,
@@ -104,7 +104,7 @@ module.exports = Application.extend( validations, {
 
     if( !req.form.isValid ){
       res.render( 'releases/show', {
-        _assets      : 'admin/releases/assets/_show',
+        _assets      : [ 'admin-releases-show', 'admin-songs' ],
         admin_view   : 'edit',
         ori_body     : req.body,
         release      : req.release,
