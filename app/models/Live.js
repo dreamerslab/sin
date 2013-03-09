@@ -25,9 +25,8 @@ module.exports = {
           if( !lives.length ) return no_content();
 
           var more = lives.length > args.limit;
-          if( more ){
-            lives.pop();
-          }
+
+          more && lives.pop();
 
           ok( lives, more );
         });

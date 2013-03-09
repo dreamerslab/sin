@@ -1,4 +1,5 @@
 module.exports = {
+
   statics : {
 
     insert : function ( args, next, created ){

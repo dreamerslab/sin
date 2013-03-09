@@ -78,9 +78,8 @@ module.exports = {
           if( !artists.length ) return no_content();
 
           var more = artists.length > args.limit;
-          if( more ){
-            artists.pop();
-          }
+
+          more && artists.pop();
 
           ok( artists, more );
       });
@@ -113,7 +112,7 @@ module.exports = {
         if( !artist ) return no_content();
 
         artist.links.forEach( function ( link_id, index ){
-          index = index + 1;
+          index += 1;
 
           args_for_link.id    = link_id;
           args_for_link.title = args[ 'link_name' + index ];

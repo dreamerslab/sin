@@ -1,4 +1,5 @@
 module.exports = {
+
   statics : {
 
     insert : function ( args, next, not_found, created ){
@@ -20,9 +21,7 @@ module.exports = {
 
     index : function ( args, next, no_content, ok ){
       var query = args.artist ?
-        {
-          artists : new RegExp( args.artist, 'i' )
-        } : {};
+        { artists : new RegExp( args.artist, 'i' )} : {};
 
       this.find( query ).
         sort( '-created_at' ).
@@ -34,9 +33,8 @@ module.exports = {
           if( !releases.length ) return no_content();
 
           var more = releases.length > args.limit;
-          if( more ){
-            releases.pop();
-          }
+
+          more && releases.pop();
 
           ok( releases, more );
       });
