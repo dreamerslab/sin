@@ -57,7 +57,7 @@ module.exports = Application.extend({
 
     var youtube_id = req.form.url.match( regex_for_get_youtube_id )[ 7 ];
     var cond       = [
-      'https://gdata.youtube.com/feeds/api/videos/',
+      'http://gdata.youtube.com/feeds/api/videos/',
       youtube_id,
       '?v=',   '2',
       '&alt=', 'json'
