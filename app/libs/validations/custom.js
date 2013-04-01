@@ -1,4 +1,5 @@
-var r = require( './regex' );
+var r      = require( './regex' );
+var moment = require( 'moment' );
 
 module.exports = {
 
@@ -18,5 +19,9 @@ module.exports = {
     if( !value.length ) return value;
 
     return r.has_http_or_https.test( value ) ? value : 'http://' + value;
+  },
+
+  date : function ( value ){
+    return moment( value ).format( 'YYYY-MM-DD' );
   }
 };

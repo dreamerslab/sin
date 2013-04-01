@@ -1,7 +1,7 @@
 module.exports = {
   invalid : {
     title            : '請將標題縮短到 25 字以內',
-    date             : '請將舉辦日期縮短到 500 字以內',
+    date             : '日期過長或有誤',
     location         : '請將舉辦地點縮短到 25 字以內',
     url              : '請輸入符合規格的網址',
     no_http_or_https : '請在網址前面加上 http:// 或是 https://'
