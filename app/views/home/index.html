@@ -78,7 +78,8 @@
       <?= it.show_no_content_err( it.lives ) ?>
       <? it.lives.forEach( function ( live ){ ?>
         <a class="live-link" <?= it.show_live_link( live ) ?>>
-          <?= live.title ?> ＠<?= live.location ?><span class="live-date"><?= live.date ?></span>
+          <span class="live-date"><?= live.date ?></span>
+          <span class="live-content"><?= live.title ?> ＠<?= live.location ?></span>
         </a>
       <? }); ?>
 

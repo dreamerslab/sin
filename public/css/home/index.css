@@ -10,7 +10,7 @@
 .live-link {
   display: block;
   position: relative;
-  padding: 10px 0 10px 42px;
+  padding: 10px 0;
   border-bottom: 1px solid #6da4b2;
   font-family: Helvetica, sans-serif;
   font-size: 13px;
@@ -25,14 +25,12 @@
 
 /* line 26, ../../../app/sass/home/index.sass */
 .live-date {
-  position: absolute;
-  top: 10px;
-  left: 0;
+  display: block;
   color: #6da4b2;
   margin: 0 10px 0 0;
 }
 
-/* line 33, ../../../app/sass/home/index.sass */
+/* line 31, ../../../app/sass/home/index.sass */
 #live-more {
   display: inline;
   float: right;
@@ -40,7 +38,7 @@
   text-decoration: none;
   padding: 10px 0 0;
 }
-/* line 38, ../../../app/sass/home/index.sass */
+/* line 36, ../../../app/sass/home/index.sass */
 #live-more:hover {
   text-decoration: underline;
 }
