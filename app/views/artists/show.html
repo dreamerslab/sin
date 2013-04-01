@@ -35,6 +35,11 @@
         <?= it.markdown( post.content ) ?>
 
         <p class="news-date"><?= it.date( post.created_at )?></p>
+        <? if( post.cover ){ ?>
+          <a href="<?= it.namespace ?>/news/<?= post._id ?>" class="news-thumb-link">
+            <img class="news-thumb" src="<?= post.cover ?>" alt="thumb">
+          </a>
+        <? } ?>
       </div>
     <? }); ?>
   </div>
