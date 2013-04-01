@@ -13,7 +13,7 @@
           <a href="<?= it.namespace ?>/news/<?= post._id ?>" class="news-entry-title-link" title="See more about <?= post.title ?>"><?= post.title ?></a>
         </h2>
 
-        <?= it.markdown( post.content ) ?>
+        <?= it.markdown( it.truncate( post.content, 700 )) ?>
 
         <span class="news-date"><?= it.date( post.created_at )?></span>
 

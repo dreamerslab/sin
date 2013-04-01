@@ -12,7 +12,7 @@
           <a href="<?= it.namespace ?>/news/<?= post._id ?>" class="news-entry-title-link" title="See more about '<?= post.title ?>'"><?= post.title ?></a>
         </h3>
 
-        <?= it.markdown( post.content ) ?>
+        <?= it.markdown( it.truncate( post.content )) ?>
 
         <p class="news-date"><?= it.date( post.created_at )?></p>
         <? if( post.cover ){ ?>
