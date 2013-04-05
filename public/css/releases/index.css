@@ -11,19 +11,15 @@
   padding: 0 24px 48px 0;
   width: auto;
 }
-/* line 15, ../../../app/sass/releases/index.sass */
-.release-link:hover .release-thumb {
-  opacity: 0.5;
-}
 
-/* line 18, ../../../app/sass/releases/index.sass */
+/* line 15, ../../../app/sass/releases/index.sass */
 .release-thumb {
   display: block;
   width: 272px;
   height: 272px;
 }
 
-/* line 23, ../../../app/sass/releases/index.sass */
+/* line 20, ../../../app/sass/releases/index.sass */
 .release-date {
   padding: 16px 0 3px;
 }

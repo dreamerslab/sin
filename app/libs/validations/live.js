@@ -17,8 +17,8 @@ module.exports = {
   validate_create_n_update : form(
     field( 'id'       ).is( r.id, lang._404 ),
     field( 'title'    ).required( '', lang.required.title    ).maxLength( 50, lang.invalid.title ),
-    field( 'date'     ).required( '', lang.required.date     ).maxLength( 10, lang.invalid.date ),
+    field( 'date'     ).required( '', lang.required.date     ).maxLength( 10, lang.invalid.date ).custom( c.date ),
     field( 'location' ).required( '', lang.required.location ).maxLength( 50, lang.invalid.location ),
-    field( 'url'      ).isUrl(        lang.invalid.url ).is( r.has_http_or_https, lang.invalid.no_http_or_https )
+    field( 'url'      ).isUrl(        lang.invalid.url ).custom( c.add_http_or_https_if_dont_exist )
   )
 };

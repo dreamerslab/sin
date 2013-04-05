@@ -16,7 +16,7 @@ module.exports = {
 
     index : function ( args, next, no_content, ok ){
       this.find().
-        sort( '-created_at' ).
+        sort( '-date' ).
         skip(( args.page - 1 ) * args.limit ).
         batchSize( args.limit + 1 ).
         limit( args.limit + 1 ).

@@ -12,7 +12,7 @@
           <a href="<?= it.namespace ?>/news/<?= post._id ?>" class="news-entry-title-link" title="See more about '<?= post.title ?>'"><?= post.title ?></a>
         </h3>
 
-        <?= it.markdown( post.content ) ?>
+        <?= it.markdown( it.truncate( post.content )) ?>
 
         <p class="news-date"><?= it.date( post.created_at )?></p>
         <? if( post.cover ){ ?>
@@ -78,7 +78,8 @@
       <?= it.show_no_content_err( it.lives ) ?>
       <? it.lives.forEach( function ( live ){ ?>
         <a class="live-link" <?= it.show_live_link( live ) ?>>
-          <?= live.title ?> ＠<?= live.location ?><span class="live-date"><?= live.date ?></span>
+          <span class="live-date"><?= live.date ?></span>
+          <span class="live-content"><?= live.title ?> ＠<?= live.location ?></span>
         </a>
       <? }); ?>
 
