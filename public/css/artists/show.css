@@ -21,38 +21,74 @@
   text-decoration: none;
 }
 
-/* line 25, ../../../app/sass/artists/show.sass */
-#artist-intro p {
-  margin: 0 0 24px;
+/* line 24, ../../../app/sass/artists/show.sass */
+#artist-intro {
   font-family: Helvetica, sans-serif;
   font-size: 13px;
+}
+/* line 27, ../../../app/sass/artists/show.sass */
+#artist-intro h1 {
+  font-family: serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: black;
+  margin: 0 0 16px;
+}
+/* line 33, ../../../app/sass/artists/show.sass */
+#artist-intro p, #artist-intro h2, #artist-intro h3, #artist-intro h4, #artist-intro h5, #artist-intro h6 {
+  margin: 0 0 24px;
   line-height: 1.5em;
 }
-/* line 30, ../../../app/sass/artists/show.sass */
+/* line 36, ../../../app/sass/artists/show.sass */
+#artist-intro img {
+  display: block;
+  margin: 0 auto 24px;
+  max-width: 600px;
+  max-height: 600px;
+}
+/* line 41, ../../../app/sass/artists/show.sass */
 #artist-intro a {
   color: #6da4b2;
   text-decoration: none;
 }
-/* line 33, ../../../app/sass/artists/show.sass */
+/* line 44, ../../../app/sass/artists/show.sass */
 #artist-intro a:hover {
   text-decoration: underline;
 }
-/* line 35, ../../../app/sass/artists/show.sass */
+/* line 46, ../../../app/sass/artists/show.sass */
 #artist-intro strong {
   font-weight: bold;
 }
-/* line 37, ../../../app/sass/artists/show.sass */
+/* line 48, ../../../app/sass/artists/show.sass */
 #artist-intro em {
   font-style: italic;
 }
+/* line 50, ../../../app/sass/artists/show.sass */
+#artist-intro ul {
+  margin: 0 0 16px 64px;
+  line-height: 1.5em;
+}
+/* line 53, ../../../app/sass/artists/show.sass */
+#artist-intro ul li {
+  list-style-type: disc;
+}
+/* line 55, ../../../app/sass/artists/show.sass */
+#artist-intro ol {
+  margin: 0 0 16px 64px;
+  line-height: 1.5em;
+}
+/* line 58, ../../../app/sass/artists/show.sass */
+#artist-intro ol li {
+  list-style-type: decimal;
+}
 
-/* line 40, ../../../app/sass/artists/show.sass */
+/* line 61, ../../../app/sass/artists/show.sass */
 #social-links {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 43, ../../../app/sass/artists/show.sass */
+/* line 64, ../../../app/sass/artists/show.sass */
 .social-link {
   display: inline;
   float: left;
@@ -62,32 +98,32 @@
   padding: 1px 16px;
   border-right: 1px solid #6da4b2;
 }
-/* line 50, ../../../app/sass/artists/show.sass */
+/* line 71, ../../../app/sass/artists/show.sass */
 .social-link:hover {
   text-decoration: underline;
 }
 
-/* line 53, ../../../app/sass/artists/show.sass */
+/* line 74, ../../../app/sass/artists/show.sass */
 .social-link:first-child {
   padding: 1px 16px 1px 0;
 }
 
-/* line 56, ../../../app/sass/artists/show.sass */
+/* line 77, ../../../app/sass/artists/show.sass */
 .social-link:last-child {
   border: none;
 }
 
-/* line 59, ../../../app/sass/artists/show.sass */
+/* line 80, ../../../app/sass/artists/show.sass */
 #news {
   padding: 48px 0 0;
 }
 
-/* line 62, ../../../app/sass/artists/show.sass */
+/* line 83, ../../../app/sass/artists/show.sass */
 #videos-more {
   right: 52px;
 }
 
-/* line 65, ../../../app/sass/artists/show.sass */
+/* line 86, ../../../app/sass/artists/show.sass */
 #sidebar {
   display: inline;
   float: right;
@@ -100,12 +136,12 @@
   font-family: Helvetica, sans-serif;
 }
 
-/* line 75, ../../../app/sass/artists/show.sass */
+/* line 96, ../../../app/sass/artists/show.sass */
 #releases-list {
   padding: 10px 0 30px;
 }
 
-/* line 78, ../../../app/sass/artists/show.sass */
+/* line 99, ../../../app/sass/artists/show.sass */
 #release-title {
   text-indent: -119988px;
   overflow: hidden;
@@ -115,12 +151,12 @@
   height: 18px;
 }
 
-/* line 84, ../../../app/sass/artists/show.sass */
+/* line 105, ../../../app/sass/artists/show.sass */
 .release-link {
   padding: 0 16px 18px 0;
 }
 
-/* line 87, ../../../app/sass/artists/show.sass */
+/* line 108, ../../../app/sass/artists/show.sass */
 .release-thumb {
   display: -moz-inline-stack;
   display: inline-block;
@@ -130,13 +166,13 @@
   *display: inline;
 }
 
-/* line 90, ../../../app/sass/artists/show.sass */
+/* line 111, ../../../app/sass/artists/show.sass */
 .release-thumb {
   width: 160px;
   height: 160px;
 }
 
-/* line 94, ../../../app/sass/artists/show.sass */
+/* line 115, ../../../app/sass/artists/show.sass */
 .release-date {
   display: block;
   color: #6da4b2;
@@ -144,13 +180,13 @@
   font-size: 14px;
 }
 
-/* line 100, ../../../app/sass/artists/show.sass */
+/* line 121, ../../../app/sass/artists/show.sass */
 .release-author, .release-title {
   font-size: 13px;
   line-height: 21px;
 }
 
-/* line 104, ../../../app/sass/artists/show.sass */
+/* line 125, ../../../app/sass/artists/show.sass */
 #releases-more {
   display: inline;
   float: right;
@@ -163,7 +199,7 @@
   margin: 0 8px 0 0;
   opacity: 0.7;
 }
-/* line 114, ../../../app/sass/artists/show.sass */
+/* line 135, ../../../app/sass/artists/show.sass */
 #releases-more:hover {
   opacity: 1;
 }

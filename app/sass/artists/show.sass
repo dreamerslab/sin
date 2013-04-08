@@ -22,11 +22,22 @@ $social-link-padding-top-n-bot: 1px
   text-decoration: none
 
 #artist-intro
-  p
+  font-family: $default-font
+  font-size: 13px
+  h1
+    font-family: serif
+    font-size: 24px
+    line-height: 28px
+    color: #000
+    margin: 0 0 16px
+  p, h2, h3, h4, h5, h6
     margin: 0 0 24px
-    font-family: $default-font
-    font-size: 13px
     line-height: 1.5em
+  img
+    display: block
+    margin: 0 auto 24px
+    max-width: 600px
+    max-height: 600px
   a
     color: $color-link
     text-decoration: none
@@ -36,6 +47,16 @@ $social-link-padding-top-n-bot: 1px
     font-weight: bold
   em
     font-style: italic
+  ul
+    margin: 0 0 16px 64px
+    line-height: 1.5em
+    li
+      list-style-type: disc
+  ol
+    margin: 0 0 16px 64px
+    line-height: 1.5em
+    li
+      list-style-type: decimal
 
 #social-links
   +clearfix

@@ -35,11 +35,22 @@ $length-color: #555
 
 #release-intro
   padding: 0 0 48px
-  p
+  font-family: $default-font
+  font-size: 13px
+  h1
+    font-family: serif
+    font-size: 24px
+    line-height: 28px
+    color: #000
+    margin: 0 0 16px
+  p, h2, h3, h4, h5, h6
     margin: 0 0 24px
-    font-family: $default-font
-    font-size: 13px
     line-height: 1.5em
+  img
+    display: block
+    margin: 0 auto 24px
+    max-width: 600px
+    max-height: 600px
   a
     color: $link-color
     text-decoration: none
@@ -49,6 +60,16 @@ $length-color: #555
     font-weight: bold
   em
     font-style: italic
+  ul
+    margin: 0 0 16px 64px
+    line-height: 1.5em
+    li
+      list-style-type: disc
+  ol
+    margin: 0 0 16px 64px
+    line-height: 1.5em
+    li
+      list-style-type: decimal
 
 #songs
   border-top: 1px dotted $link-color

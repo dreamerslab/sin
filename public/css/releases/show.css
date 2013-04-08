@@ -36,45 +36,78 @@
 /* line 36, ../../../app/sass/releases/show.sass */
 #release-intro {
   padding: 0 0 48px;
-}
-/* line 38, ../../../app/sass/releases/show.sass */
-#release-intro p {
-  margin: 0 0 24px;
   font-family: Helvetica, sans-serif;
   font-size: 13px;
+}
+/* line 40, ../../../app/sass/releases/show.sass */
+#release-intro h1 {
+  font-family: serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: black;
+  margin: 0 0 16px;
+}
+/* line 46, ../../../app/sass/releases/show.sass */
+#release-intro p, #release-intro h2, #release-intro h3, #release-intro h4, #release-intro h5, #release-intro h6 {
+  margin: 0 0 24px;
   line-height: 1.5em;
 }
-/* line 43, ../../../app/sass/releases/show.sass */
+/* line 49, ../../../app/sass/releases/show.sass */
+#release-intro img {
+  display: block;
+  margin: 0 auto 24px;
+  max-width: 600px;
+  max-height: 600px;
+}
+/* line 54, ../../../app/sass/releases/show.sass */
 #release-intro a {
   color: #6da4b2;
   text-decoration: none;
 }
-/* line 46, ../../../app/sass/releases/show.sass */
+/* line 57, ../../../app/sass/releases/show.sass */
 #release-intro a:hover {
   text-decoration: underline;
 }
-/* line 48, ../../../app/sass/releases/show.sass */
+/* line 59, ../../../app/sass/releases/show.sass */
 #release-intro strong {
   font-weight: bold;
 }
-/* line 50, ../../../app/sass/releases/show.sass */
+/* line 61, ../../../app/sass/releases/show.sass */
 #release-intro em {
   font-style: italic;
 }
+/* line 63, ../../../app/sass/releases/show.sass */
+#release-intro ul {
+  margin: 0 0 16px 64px;
+  line-height: 1.5em;
+}
+/* line 66, ../../../app/sass/releases/show.sass */
+#release-intro ul li {
+  list-style-type: disc;
+}
+/* line 68, ../../../app/sass/releases/show.sass */
+#release-intro ol {
+  margin: 0 0 16px 64px;
+  line-height: 1.5em;
+}
+/* line 71, ../../../app/sass/releases/show.sass */
+#release-intro ol li {
+  list-style-type: decimal;
+}
 
-/* line 53, ../../../app/sass/releases/show.sass */
+/* line 74, ../../../app/sass/releases/show.sass */
 #songs {
   border-top: 1px dotted #6da4b2;
 }
 
-/* line 56, ../../../app/sass/releases/show.sass */
+/* line 77, ../../../app/sass/releases/show.sass */
 .songs-item {
   border-bottom: 1px dotted #6da4b2;
   position: relative;
   padding: 14px 0 14px 48px;
 }
 
-/* line 61, ../../../app/sass/releases/show.sass */
+/* line 82, ../../../app/sass/releases/show.sass */
 .song-link {
   display: block;
   width: 400px;
@@ -87,12 +120,12 @@
   font-size: 13px;
   line-height: 1.5em;
 }
-/* line 72, ../../../app/sass/releases/show.sass */
+/* line 93, ../../../app/sass/releases/show.sass */
 .song-link:hover {
   color: #6da4b2;
 }
 
-/* line 75, ../../../app/sass/releases/show.sass */
+/* line 96, ../../../app/sass/releases/show.sass */
 .song-number {
   position: absolute;
   top: 17px;
@@ -102,7 +135,7 @@
   color: #555555;
 }
 
-/* line 83, ../../../app/sass/releases/show.sass */
+/* line 104, ../../../app/sass/releases/show.sass */
 .song-length {
   position: absolute;
   top: 17px;
@@ -112,7 +145,7 @@
   color: #555555;
 }
 
-/* line 91, ../../../app/sass/releases/show.sass */
+/* line 112, ../../../app/sass/releases/show.sass */
 .song-itunes-link {
   text-indent: -119988px;
   overflow: hidden;
@@ -126,7 +159,7 @@
   right: 8px;
   opacity: 0.7;
 }
-/* line 101, ../../../app/sass/releases/show.sass */
+/* line 122, ../../../app/sass/releases/show.sass */
 .song-itunes-link:hover {
   opacity: 1;
 }

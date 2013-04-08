@@ -4,48 +4,15 @@
   padding: 21px 0 64px;
   width: 864px;
 }
-
-/* line 14, ../../../app/sass/news/show.sass */
-.news-entry h1 {
-  font-family: serif;
-  font-size: 24px;
-  line-height: 28px;
-  color: black;
-  margin: 0 0 16px;
-}
-/* line 20, ../../../app/sass/news/show.sass */
-.news-entry p, .news-entry h2, .news-entry h3, .news-entry h4, .news-entry h5, .news-entry h6 {
-  margin: 0 0 24px;
-  font-family: Helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 1.5em;
-}
-/* line 25, ../../../app/sass/news/show.sass */
+/* line 12, ../../../app/sass/news/show.sass */
 .news-entry img {
   display: block;
   margin: 0 auto 24px;
   max-width: 864px;
   max-height: 600px;
 }
-/* line 30, ../../../app/sass/news/show.sass */
-.news-entry a {
-  color: #6da4b2;
-  text-decoration: none;
-}
-/* line 33, ../../../app/sass/news/show.sass */
-.news-entry a:hover {
-  text-decoration: underline;
-}
-/* line 35, ../../../app/sass/news/show.sass */
-.news-entry strong {
-  font-weight: bold;
-}
-/* line 37, ../../../app/sass/news/show.sass */
-.news-entry em {
-  font-style: italic;
-}
 
-/* line 40, ../../../app/sass/news/show.sass */
+/* line 18, ../../../app/sass/news/show.sass */
 h3.news-entry-title {
   font-family: serif;
   font-size: 24px;
@@ -54,7 +21,7 @@ h3.news-entry-title {
   margin: 0 0 32px;
 }
 
-/* line 47, ../../../app/sass/news/show.sass */
+/* line 25, ../../../app/sass/news/show.sass */
 .news-date {
   top: 0;
 }
