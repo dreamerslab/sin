@@ -3,7 +3,7 @@
   "version"     : "0.0.1",
   "private"     : true,
   "dependencies": {
-    "coke"             : "0.14.1",
+    "coke"             : "0.15.0",
     "connect-mongodb"  : "1.1.5",
     "emailjs"          : "0.3.4",
     "express-messages" : "0.0.2",
