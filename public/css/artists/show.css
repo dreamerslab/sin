@@ -65,7 +65,7 @@
 }
 /* line 50, ../../../app/sass/artists/show.sass */
 #artist-intro ul {
-  margin: 0 0 16px 64px;
+  margin: 0 0 16px 40px;
   line-height: 1.5em;
 }
 /* line 53, ../../../app/sass/artists/show.sass */
@@ -74,7 +74,7 @@
 }
 /* line 55, ../../../app/sass/artists/show.sass */
 #artist-intro ol {
-  margin: 0 0 16px 64px;
+  margin: 0 0 16px 40px;
   line-height: 1.5em;
 }
 /* line 58, ../../../app/sass/artists/show.sass */

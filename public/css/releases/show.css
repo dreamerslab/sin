@@ -78,7 +78,7 @@
 }
 /* line 63, ../../../app/sass/releases/show.sass */
 #release-intro ul {
-  margin: 0 0 16px 64px;
+  margin: 0 0 16px 40px;
   line-height: 1.5em;
 }
 /* line 66, ../../../app/sass/releases/show.sass */
@@ -87,7 +87,7 @@
 }
 /* line 68, ../../../app/sass/releases/show.sass */
 #release-intro ol {
-  margin: 0 0 16px 64px;
+  margin: 0 0 16px 40px;
   line-height: 1.5em;
 }
 /* line 71, ../../../app/sass/releases/show.sass */

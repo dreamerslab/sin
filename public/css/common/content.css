@@ -75,7 +75,7 @@
 }
 /* line 64, ../../../app/sass/common/content.sass */
 .news-entry ul {
-  margin: 0 0 16px 64px;
+  margin: 0 0 16px 40px;
   line-height: 1.5em;
 }
 /* line 67, ../../../app/sass/common/content.sass */
@@ -84,7 +84,7 @@
 }
 /* line 69, ../../../app/sass/common/content.sass */
 .news-entry ol {
-  margin: 0 0 16px 64px;
+  margin: 0 0 16px 40px;
   line-height: 1.5em;
 }
 /* line 72, ../../../app/sass/common/content.sass */
